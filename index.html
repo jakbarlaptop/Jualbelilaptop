@@ -169,46 +169,46 @@
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
 
     <!-- ==================== TOPBAR INFO ==================== -->
-    <div class="bg-gradient-to-r from-indigo-950 via-slate-900 to-cyan-950 border-b border-slate-800/80 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-col sm:flex-row items-center justify-between gap-1.5">
-            <div class="flex items-center space-x-2 text-emerald-300 font-semibold text-center sm:text-left leading-snug">
+    <div class="bg-gradient-to-r from-indigo-950 via-slate-900 to-cyan-950 border-b border-slate-800/80 text-[11px] sm:text-xs">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row items-center justify-between gap-1">
+            <div class="flex items-center justify-center sm:justify-start space-x-1.5 text-emerald-300 font-semibold text-center sm:text-left leading-tight">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-                <span id="topbarLeftText" class="break-words">Garansi Toko 30 Hari Penuh • Lulus QC 40 Titik Hardware • Free Tas & Charger Original</span>
+                <span id="topbarLeftText" class="break-words">Garansi Toko 30 Hari Penuh • Lulus QC 40 Titik Hardware</span>
             </div>
-            <div class="flex items-center space-x-3 text-slate-300 text-center sm:text-right leading-snug">
-                <span id="topbarRightText" class="break-words">📍 Toko: Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat • Voucher: <strong class="text-amber-300">JAKBARPROMO</strong> (-Rp 150rb)</span>
-                <button onclick="openQuickSectionEditor('topbar')" class="admin-only-btn hidden px-2.5 py-1 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-bold shrink-0">
-                    Edit Topbar
+            <div class="flex items-center justify-center sm:justify-end space-x-2 text-slate-300 text-center sm:text-right leading-tight">
+                <span id="topbarRightText" class="break-words">📍 Toko: Gg. Mawar 1 No. 35, Kebon Jeruk, Jakbar • WA: <strong class="text-amber-300">0822-9868-8189</strong></span>
+                <button onclick="openQuickSectionEditor('topbar')" class="admin-only-btn hidden px-2 py-0.5 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] font-bold shrink-0">
+                    Edit
                 </button>
             </div>
         </div>
     </div>
 
     <!-- ==================== FLOATING ANIMATED GLASS HEADER ==================== -->
-    <header class="sticky top-0 z-40 px-2.5 sm:px-6 lg:px-8 pt-2 pb-1.5 transition-all duration-300">
-        <div class="max-w-7xl mx-auto rounded-2xl sm:rounded-3xl bg-slate-900/80 backdrop-blur-2xl border border-indigo-500/25 shadow-[0_12px_36px_-10px_rgba(15,23,42,0.9)] px-3.5 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-2 relative overflow-hidden">
+    <header class="sticky top-0 z-40 px-2 sm:px-6 lg:px-8 pt-2 pb-1.5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto rounded-2xl sm:rounded-3xl bg-slate-900/90 backdrop-blur-2xl border border-indigo-500/25 shadow-[0_12px_36px_-10px_rgba(15,23,42,0.9)] px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2 relative overflow-hidden">
             <!-- Subtle Ambient Glow inside Navbar -->
             <div class="aurora-blob absolute -top-10 left-1/3 w-44 h-20 bg-indigo-500/20 blur-2xl rounded-full"></div>
             <div class="aurora-blob absolute -bottom-10 right-1/4 w-44 h-20 bg-cyan-500/15 blur-2xl rounded-full"></div>
 
-            <!-- Brand Logo -->
-            <div class="flex items-center space-x-2.5 min-w-0 relative z-10">
-                <button onclick="switchPage('home')" ondblclick="triggerSecretAdminAccess()" class="flex items-center space-x-2.5 text-left group min-w-0 py-1">
-                    <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-cyan-400 flex items-center justify-center text-white font-black text-base sm:text-lg shadow-lg shadow-indigo-500/35 shrink-0 group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
+            <!-- Brand Logo (Protected from overlapping with flex-1 & clean truncation) -->
+            <div class="flex items-center min-w-0 flex-1 relative z-10">
+                <button onclick="switchPage('home')" ondblclick="triggerSecretAdminAccess()" class="flex items-center space-x-2.5 text-left group min-w-0 py-0.5">
+                    <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-cyan-400 flex items-center justify-center text-white font-black text-sm sm:text-lg shadow-lg shadow-indigo-500/35 shrink-0 group-hover:rotate-6 transition-all duration-300">
                         JL
                     </div>
-                    <div class="min-w-0">
+                    <div class="min-w-0 overflow-hidden">
                         <div class="flex items-center space-x-1.5">
-                            <span class="font-extrabold text-[15px] sm:text-lg tracking-tight bg-gradient-to-r from-white via-indigo-100 to-cyan-200 bg-clip-text text-transparent whitespace-nowrap">JAKBAR LAPTOP</span>
-                            <span id="cloudStatusBadge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-700 whitespace-nowrap hidden sm:inline-block">Mode Mandiri</span>
+                            <span class="font-extrabold text-sm sm:text-lg tracking-tight bg-gradient-to-r from-white via-indigo-100 to-cyan-200 bg-clip-text text-transparent truncate block">JAKBAR LAPTOP</span>
+                            <span id="cloudStatusBadge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-300 border border-slate-700 whitespace-nowrap hidden md:inline-block">Mode Mandiri</span>
                         </div>
-                        <p class="text-[11px] sm:text-xs text-slate-400 truncate">Toko Laptop Grade A+ Bergaransi</p>
+                        <p class="text-[10px] sm:text-xs text-slate-400 truncate block">Toko Laptop Grade A+ Bergaransi</p>
                     </div>
                 </button>
             </div>
 
             <!-- Desktop Floating Capsule Navigation with Icons -->
-            <nav class="hidden xl:flex items-center space-x-1 bg-slate-950/85 p-1.5 rounded-2xl border border-slate-800/90 shadow-inner relative z-10">
+            <nav class="hidden xl:flex items-center space-x-1 bg-slate-950/85 p-1.5 rounded-2xl border border-slate-800/90 shadow-inner relative z-10 shrink-0">
                 <button onclick="switchPage('home')" data-nav="home" class="nav-btn nav-btn-active px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap flex items-center space-x-1.5"><span>🏠</span><span>Beranda</span></button>
                 <button onclick="switchPage('catalog')" data-nav="catalog" class="nav-btn px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap text-slate-300 hover:text-white flex items-center space-x-1.5"><span>💻</span><span>Katalog</span></button>
                 <button onclick="switchPage('service')" data-nav="service" class="nav-btn px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap text-slate-300 hover:text-white flex items-center space-x-1.5"><span>🛠️</span><span>Service</span></button>
@@ -219,30 +219,30 @@
                 <button id="navAdminBtn" onclick="switchPage('admin')" data-nav="admin" class="nav-btn hidden px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap text-amber-300 bg-amber-500/15 border border-amber-500/30 flex items-center space-x-1.5"><span>⚙️</span><span>Admin</span></button>
             </nav>
 
-            <!-- Action Icons Right -->
+            <!-- Action Icons Right (Compact on mobile so they never overlap the brand name) -->
             <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0 relative z-10">
-                <!-- Compare Button -->
-                <button onclick="switchPage('compare')" title="Bandingkan Unit" class="relative min-h-[42px] px-2.5 sm:px-3 rounded-xl bg-slate-950/90 hover:bg-slate-800 hover:-translate-y-0.5 active:scale-95 border border-slate-800 text-slate-200 text-xs font-bold flex items-center space-x-1 transition-all duration-200">
+                <!-- Compare Button (Hidden on narrow mobile, available in Mobile Drawer & Tablet+) -->
+                <button onclick="switchPage('compare')" title="Bandingkan Unit" class="hidden sm:flex relative h-10 px-2.5 sm:px-3 rounded-xl bg-slate-950/90 hover:bg-slate-800 active:scale-95 border border-slate-800 text-slate-200 text-xs font-bold items-center space-x-1 transition-all">
                     <span class="text-sm">⚖️</span>
-                    <span id="compareCountBadge" class="px-1.5 py-0.5 rounded-full bg-indigo-600 text-white text-[11px] font-extrabold">0</span>
+                    <span id="compareCountBadge" class="px-1.5 py-0.5 rounded-full bg-indigo-600 text-white text-[10px] font-extrabold">0</span>
                 </button>
-                <!-- Wishlist Button -->
-                <button onclick="openWishlistModal()" title="Unit Favorit" class="relative min-h-[42px] px-2.5 sm:px-3 rounded-xl bg-slate-950/90 hover:bg-slate-800 hover:-translate-y-0.5 active:scale-95 border border-slate-800 text-slate-200 text-xs font-bold flex items-center space-x-1 transition-all duration-200">
+                <!-- Wishlist Button (Hidden on narrow mobile, available in Mobile Drawer & Tablet+) -->
+                <button onclick="openWishlistModal()" title="Unit Favorit" class="hidden sm:flex relative h-10 px-2.5 sm:px-3 rounded-xl bg-slate-950/90 hover:bg-slate-800 active:scale-95 border border-slate-800 text-slate-200 text-xs font-bold items-center space-x-1 transition-all">
                     <span class="text-sm">❤️</span>
-                    <span id="wishlistCountBadge" class="px-1.5 py-0.5 rounded-full bg-rose-600 text-white text-[11px] font-extrabold">0</span>
+                    <span id="wishlistCountBadge" class="px-1.5 py-0.5 rounded-full bg-rose-600 text-white text-[10px] font-extrabold">0</span>
                 </button>
-                <!-- Cart Button -->
-                <button onclick="openCartModal()" title="Keranjang Belanja" class="relative min-h-[42px] px-2.5 sm:px-3 rounded-xl bg-slate-950/90 hover:bg-slate-800 hover:-translate-y-0.5 active:scale-95 border border-slate-800 text-slate-200 text-xs font-bold flex items-center space-x-1 transition-all duration-200">
+                <!-- Cart Button (Always visible with floating badge) -->
+                <button onclick="openCartModal()" title="Keranjang Belanja" class="relative h-9 sm:h-10 px-2.5 sm:px-3 rounded-xl bg-slate-950/90 hover:bg-slate-800 active:scale-95 border border-slate-800 text-slate-200 text-xs font-bold flex items-center space-x-1 transition-all">
                     <span class="text-sm">🛒</span>
-                    <span id="cartCountBadge" class="px-1.5 py-0.5 rounded-full bg-emerald-600 text-white text-[11px] font-extrabold">0</span>
+                    <span id="cartCountBadge" class="px-1.5 py-0.5 rounded-full bg-emerald-600 text-white text-[10px] font-extrabold">0</span>
                 </button>
                 <!-- Auth Button -->
-                <button id="headerAuthBtn" onclick="handleHeaderAuthClick()" class="btn-shimmer min-h-[42px] px-3.5 sm:px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 active:scale-95 text-white font-bold text-xs sm:text-sm shadow-lg shadow-indigo-600/30 transition whitespace-nowrap">
+                <button id="headerAuthBtn" onclick="handleHeaderAuthClick()" class="btn-shimmer h-9 sm:h-10 px-3 sm:px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 active:scale-95 text-white font-bold text-xs shadow-lg shadow-indigo-600/30 transition whitespace-nowrap">
                     Login
                 </button>
                 <!-- Mobile Menu Trigger -->
-                <button onclick="toggleMobileMenu()" aria-label="Buka Menu Lengkap" class="xl:hidden min-h-[42px] min-w-[42px] flex items-center justify-center rounded-xl bg-slate-950/90 border border-indigo-500/30 text-indigo-300 hover:bg-slate-800 active:scale-90 text-base font-bold transition-all">
-                    ✨
+                <button onclick="toggleMobileMenu()" aria-label="Buka Menu Lengkap" class="xl:hidden h-9 w-9 sm:h-10 sm:w-10 flex items-center justify-center rounded-xl bg-slate-950/90 border border-indigo-500/30 text-indigo-300 hover:bg-slate-800 active:scale-90 text-sm font-bold transition-all shrink-0">
+                    ☰
                 </button>
             </div>
         </div>
@@ -252,6 +252,17 @@
             <div class="flex items-center justify-between px-1">
                 <span class="text-[11px] font-extrabold uppercase tracking-wider text-indigo-400">✨ Navigasi Cepat Toko</span>
                 <button onclick="toggleMobileMenu()" class="text-xs text-slate-400 hover:text-white font-bold">Tutup ✕</button>
+            </div>
+            <!-- Quick Mobile Actions for Compare & Wishlist -->
+            <div class="grid grid-cols-2 gap-2 sm:hidden pb-1 border-b border-slate-800">
+                <button onclick="switchPage('compare'); toggleMobileMenu();" class="py-2.5 px-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-200 flex items-center justify-between">
+                    <span>⚖️ Bandingkan Unit</span>
+                    <span id="mobileCompareBadge" class="px-2 py-0.5 rounded-full bg-indigo-600 text-white text-[10px]">0</span>
+                </button>
+                <button onclick="openWishlistModal(); toggleMobileMenu();" class="py-2.5 px-3 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-slate-200 flex items-center justify-between">
+                    <span>❤️ Favorit Saya</span>
+                    <span id="mobileWishlistBadge" class="px-2 py-0.5 rounded-full bg-rose-600 text-white text-[10px]">0</span>
+                </button>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                 <button onclick="switchPage('home'); toggleMobileMenu();" class="min-h-[46px] px-3.5 py-2.5 rounded-2xl bg-slate-800/80 hover:bg-indigo-600/30 border border-slate-700/70 active:scale-95 text-left text-xs sm:text-sm font-bold text-white flex items-center space-x-2.5 transition">
@@ -328,6 +339,9 @@
                                 <button onclick="switchPage('catalog')" class="btn-shimmer min-h-[48px] px-6 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 active:scale-[0.98] text-white font-extrabold text-sm shadow-xl shadow-indigo-600/35 transition text-center">
                                     🚀 Jelajahi Katalog Unit →
                                 </button>
+                                <button onclick="openSmartFinderModal()" class="min-h-[48px] px-5 py-3.5 rounded-2xl bg-indigo-500/15 hover:bg-indigo-500/25 hover:-translate-y-0.5 active:scale-[0.98] text-indigo-300 font-bold text-sm border border-indigo-500/30 transition text-center">
+                                    🤖 Asisten Pilih Laptop
+                                </button>
                                 <button onclick="switchPage('service')" class="min-h-[48px] px-5 py-3.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 hover:-translate-y-0.5 active:scale-[0.98] text-slate-200 font-bold text-sm border border-slate-700/80 transition text-center">
                                     🛠️ Jasa Service & Upgrade
                                 </button>
@@ -337,18 +351,18 @@
                             </div>
 
                             <!-- 3 Stat Cards -->
-                            <div class="grid grid-cols-3 gap-2.5 sm:gap-4 pt-3">
-                                <div class="glass-card p-3.5 sm:p-4 min-w-0">
-                                    <p id="stat1Val" class="text-lg sm:text-2xl font-extrabold text-white truncate">1.450+</p>
-                                    <p id="stat1Label" class="text-xs text-slate-400 mt-0.5 break-words leading-snug">Unit Terjual Se-Indonesia</p>
+                            <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-3">
+                                <div class="glass-card p-3 sm:p-4 min-w-0 text-center sm:text-left">
+                                    <p id="stat1Val" class="text-sm sm:text-2xl font-extrabold text-white truncate">100% QC</p>
+                                    <p id="stat1Label" class="text-[11px] sm:text-xs text-slate-400 mt-0.5 break-words leading-tight">40 Titik Hardware</p>
                                 </div>
-                                <div class="glass-card p-3.5 sm:p-4 min-w-0">
-                                    <p id="stat2Val" class="text-lg sm:text-2xl font-extrabold text-emerald-400 truncate">100% Lulus</p>
-                                    <p id="stat2Label" class="text-xs text-slate-400 mt-0.5 break-words leading-snug">40 Titik Stress-Test QC</p>
+                                <div class="glass-card p-3 sm:p-4 min-w-0 text-center sm:text-left">
+                                    <p id="stat2Val" class="text-sm sm:text-2xl font-extrabold text-emerald-400 truncate">30 Hari</p>
+                                    <p id="stat2Label" class="text-[11px] sm:text-xs text-slate-400 mt-0.5 break-words leading-tight">Garansi Penuh Toko</p>
                                 </div>
-                                <div class="glass-card p-3.5 sm:p-4 min-w-0">
-                                    <p id="stat3Val" class="text-lg sm:text-2xl font-extrabold text-cyan-400 truncate">4.9 / 5.0</p>
-                                    <p id="stat3Label" class="text-xs text-slate-400 mt-0.5 break-words leading-snug">Rating Kepuasan Pembeli</p>
+                                <div class="glass-card p-3 sm:p-4 min-w-0 text-center sm:text-left">
+                                    <p id="stat3Val" class="text-sm sm:text-2xl font-extrabold text-cyan-400 truncate">Grade A+</p>
+                                    <p id="stat3Label" class="text-[11px] sm:text-xs text-slate-400 mt-0.5 break-words leading-tight">Jujur Plus & Minus</p>
                                 </div>
                             </div>
                         </div>
@@ -660,6 +674,33 @@
                     <button onclick="openFaqItemModal()" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg">
                         + Tambah FAQ
                     </button>
+                    <button onclick="exportDatabaseBackup()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold text-xs">
+                        ⬇️ Backup Data JSON
+                    </button>
+                    <label class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-amber-300 font-bold text-xs cursor-pointer">
+                        ⬆️ Restore JSON
+                        <input type="file" accept=".json" onchange="importDatabaseBackup(event)" class="hidden">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Executive Analytics Cards -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="glass-card p-4 border border-indigo-500/30">
+                    <p class="text-[11px] font-bold uppercase text-slate-400">Total Unit Aktif</p>
+                    <p id="adminStatProducts" class="text-xl sm:text-2xl font-extrabold text-white mt-1">0 Unit</p>
+                </div>
+                <div class="glass-card p-4 border border-emerald-500/30">
+                    <p class="text-[11px] font-bold uppercase text-slate-400">Estimasi Nilai Stok</p>
+                    <p id="adminStatInventoryVal" class="text-xl sm:text-2xl font-extrabold text-emerald-400 mt-1">Rp 0</p>
+                </div>
+                <div class="glass-card p-4 border border-cyan-500/30">
+                    <p class="text-[11px] font-bold uppercase text-slate-400">Total Pesanan Masuk</p>
+                    <p id="adminStatOrders" class="text-xl sm:text-2xl font-extrabold text-cyan-400 mt-1">0 Invoice</p>
+                </div>
+                <div class="glass-card p-4 border border-amber-500/30">
+                    <p class="text-[11px] font-bold uppercase text-slate-400">Total Omzet Pesanan</p>
+                    <p id="adminStatRevenue" class="text-xl sm:text-2xl font-extrabold text-amber-300 mt-1">Rp 0</p>
                 </div>
             </div>
 
@@ -731,33 +772,34 @@
     </footer>
 
     <!-- ==================== ANIMATED MOBILE & TABLET FLOATING BOTTOM DOCK ==================== -->
-    <nav aria-label="Bottom Dock Navigation" class="xl:hidden fixed bottom-3 inset-x-3 z-40 rounded-3xl bg-slate-900/90 backdrop-blur-2xl border border-indigo-500/35 shadow-[0_15px_35px_rgba(2,6,23,0.95)] px-2 py-2 flex items-center justify-around">
-        <button onclick="switchPage('home')" data-dock="home" class="dock-btn dock-btn-active flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl text-slate-400">
-            <span class="dock-icon-box w-9 h-9 rounded-xl flex items-center justify-center text-base transition-all duration-300">🏠</span>
+    <nav aria-label="Bottom Dock Navigation" class="xl:hidden fixed bottom-2.5 inset-x-3 z-40 rounded-2xl bg-slate-900/95 backdrop-blur-2xl border border-indigo-500/35 shadow-[0_15px_35px_rgba(2,6,23,0.95)] px-2 py-1.5 flex items-center justify-around">
+        <button onclick="switchPage('home')" data-dock="home" class="dock-btn dock-btn-active flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-400">
+            <span class="dock-icon-box w-8 h-8 rounded-xl flex items-center justify-center text-sm transition-all duration-300">🏠</span>
             <span class="text-[10px] font-extrabold mt-0.5">Beranda</span>
         </button>
-        <button onclick="switchPage('catalog')" data-dock="catalog" class="dock-btn flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl text-slate-400">
-            <span class="dock-icon-box w-9 h-9 rounded-xl flex items-center justify-center text-base transition-all duration-300">💻</span>
+        <button onclick="switchPage('catalog')" data-dock="catalog" class="dock-btn flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-400">
+            <span class="dock-icon-box w-8 h-8 rounded-xl flex items-center justify-center text-sm transition-all duration-300">💻</span>
             <span class="text-[10px] font-extrabold mt-0.5">Katalog</span>
         </button>
-        <button onclick="switchPage('service')" data-dock="service" class="dock-btn flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl text-slate-400">
-            <span class="dock-icon-box w-9 h-9 rounded-xl flex items-center justify-center text-base transition-all duration-300">🛠️</span>
+        <button onclick="switchPage('service')" data-dock="service" class="dock-btn flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-400">
+            <span class="dock-icon-box w-8 h-8 rounded-xl flex items-center justify-center text-sm transition-all duration-300">🛠️</span>
             <span class="text-[10px] font-extrabold mt-0.5">Service</span>
         </button>
-        <button onclick="switchPage('tracking')" data-dock="tracking" class="dock-btn flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl text-slate-400">
-            <span class="dock-icon-box w-9 h-9 rounded-xl flex items-center justify-center text-base transition-all duration-300">📦</span>
+        <button onclick="switchPage('tracking')" data-dock="tracking" class="dock-btn flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-400">
+            <span class="dock-icon-box w-8 h-8 rounded-xl flex items-center justify-center text-sm transition-all duration-300">📦</span>
             <span class="text-[10px] font-extrabold mt-0.5">Lacak</span>
         </button>
-        <button onclick="toggleMobileMenu()" class="dock-btn flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl text-slate-400">
-            <span class="dock-icon-box w-9 h-9 rounded-xl bg-slate-800/80 flex items-center justify-center text-base transition-all duration-300">✨</span>
-            <span class="text-[10px] font-extrabold mt-0.5">Lainnya</span>
+        <button onclick="toggleMobileMenu()" class="dock-btn flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-400">
+            <span class="dock-icon-box w-8 h-8 rounded-xl bg-slate-800/80 flex items-center justify-center text-sm transition-all duration-300">☰</span>
+            <span class="text-[10px] font-extrabold mt-0.5">Menu</span>
         </button>
     </nav>
 
-    <!-- Floating WhatsApp Button (Adjusted above mobile bottom dock) -->
-    <a href="https://wa.me/6282298688189?text=Halo%20Admin%20JAKBAR%20LAPTOP,%20saya%20ingin%20bertanya%20mengenai%20unit%20laptop" target="_blank" rel="noopener noreferrer" class="btn-shimmer fixed bottom-24 xl:bottom-5 right-4 z-40 px-4 py-3 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-slate-950 font-extrabold text-xs shadow-2xl flex items-center space-x-2 transition-all duration-300 hover:scale-105">
-        <span class="w-2 h-2 rounded-full bg-slate-950 animate-ping"></span>
-        <span>💬 Chat WA: 0822-9868-8189</span>
+    <!-- Floating WhatsApp Button (Compact badge on mobile so it doesn't cover CTA buttons) -->
+    <a href="https://wa.me/6282298688189?text=Halo%20Admin%20JAKBAR%20LAPTOP,%20saya%20ingin%20bertanya%20mengenai%20unit%20laptop" target="_blank" rel="noopener noreferrer" class="btn-shimmer fixed bottom-20 xl:bottom-5 right-3.5 z-30 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-slate-950 font-extrabold text-[11px] sm:text-xs shadow-2xl flex items-center space-x-1.5 transition-all duration-300 hover:scale-105">
+        <span class="w-2 h-2 rounded-full bg-slate-950 animate-ping shrink-0"></span>
+        <span class="sm:hidden">💬 Chat WA</span>
+        <span class="hidden sm:inline">💬 Chat WA: 0822-9868-8189</span>
     </a>
 
     <!-- ==================== MODALS ==================== -->
@@ -794,6 +836,10 @@
                         <option value="QRIS / E-Wallet">QRIS / E-Wallet</option>
                     </select>
                     <input id="chkVoucher" type="text" placeholder="Kode Voucher (Ketik: JAKBARPROMO)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
+                    <label class="text-[11px] font-bold text-slate-300 block">📎 Upload Bukti Transfer / DP (Opsional — Mempercepat Verifikasi Admin)</label>
+                    <input id="chkReceiptFile" type="file" accept="image/*" onchange="handleReceiptUpload(event)" class="w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white">
                 </div>
                 <button type="submit" class="w-full py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm transition">
                     Buat Pesanan & Dapatkan Invoice Resmi
@@ -1013,6 +1059,56 @@
         </div>
     </div>
 
+    <!-- 11. Smart Laptop Finder Quiz Modal -->
+    <div id="smartFinderModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="glass-card max-w-lg w-full p-6 space-y-4 border border-indigo-500/40 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-400">REKOMENDASI PINTAR</span>
+                    <h3 class="text-lg font-extrabold text-white">🤖 Asisten Pencari Laptop Terbaik</h3>
+                </div>
+                <button onclick="closeSmartFinderModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
+            </div>
+            <div class="space-y-3">
+                <div>
+                    <label class="text-xs font-bold text-slate-300 block mb-1">1. Kebutuhan Utama Anda:</label>
+                    <select id="finderUsage" onchange="runSmartFinder()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                        <option value="all">Semua Kebutuhan (Umum)</option>
+                        <option value="Bisnis & Kantoran">Kerja Kantoran, WFH & Multitasking</option>
+                        <option value="Desain & Creator">Editing Video, Desain Grafis & Content Creator</option>
+                        <option value="Gaming & Render">Gaming Berat, 3D & Arsitektur</option>
+                        <option value="Kuliah & Pelajar">Kuliah, Tugas Kampus & Skripsi</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-300 block mb-1">2. Batas Anggaran Maksimal:</label>
+                    <select id="finderBudget" onchange="runSmartFinder()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                        <option value="999999999">Semua Harga (Bebas)</option>
+                        <option value="5000000">Di Bawah Rp 5 Juta</option>
+                        <option value="8000000">Di Bawah Rp 8 Juta</option>
+                        <option value="12000000">Di Bawah Rp 12 Juta</option>
+                    </select>
+                </div>
+                <div id="smartFinderResults" class="space-y-2.5 pt-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12. 40-Point QC Digital Certificate & Official Invoice Modal -->
+    <div id="qcCertificateModal" class="hidden fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="glass-card max-w-xl w-full p-6 space-y-4 border border-emerald-500/40 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between">
+                <h3 id="qcModalTitle" class="text-lg font-extrabold text-white">🛡️ Sertifikat Lulus Inspeksi QC 40 Titik</h3>
+                <button onclick="closeQcModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
+            </div>
+            <div id="qcModalContent" class="space-y-4 text-xs"></div>
+            <div class="grid grid-cols-2 gap-2.5 pt-2">
+                <button onclick="window.print()" class="py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs">🖨️ Cetak / Simpan PDF</button>
+                <button onclick="closeQcModal()" class="py-2.5 rounded-xl bg-slate-800 text-slate-300 font-bold text-xs">Tutup</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toastNotification" class="hidden fixed bottom-20 right-4 z-50 px-4 py-3 rounded-2xl bg-slate-900 border border-indigo-500/50 text-white text-xs font-bold shadow-2xl"></div>
 
@@ -1075,6 +1171,7 @@
         let currentHeroSlide = 0;
         let secretClickCounter = 0;
         let secretClickTimer = null;
+        let pendingReceiptDataUrl = '';
 
         // Firebase State
         let db = null;
@@ -1620,6 +1717,10 @@
         window.openProductDetailModal = function(prodId) {
             const p = products.find(x => x.id === prodId);
             if (!p) return;
+            const cicilan3 = Math.round((Number(p.price) * 1.03) / 3);
+            const cicilan6 = Math.round((Number(p.price) * 1.05) / 6);
+            const cicilan12 = Math.round((Number(p.price) * 1.08) / 12);
+
             document.getElementById('detailModalTitle').textContent = p.name;
             document.getElementById('detailModalBody').innerHTML = `
                 <img src="${p.image}" alt="${p.name}" class="w-full rounded-2xl smart-frame-img border border-slate-800">
@@ -1638,9 +1739,35 @@
                         <ul class="space-y-1 text-amber-200">${(p.cons || []).map(i => `<li>• ${i}</li>`).join('')}</ul>
                     </div>
                 </div>
-                <button onclick="addToCart('${p.id}'); closeProductDetailModal();" class="w-full py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs sm:text-sm">
-                    + Masukkan Keranjang & Checkout
-                </button>
+                <!-- Simulasi Cicilan Transparan -->
+                <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
+                    <div class="flex items-center justify-between">
+                        <span class="font-extrabold text-cyan-300">💳 Estimasi Cicilan / Tokopedia / ShopeePayLater:</span>
+                        <button onclick="openQcCertificateForProduct('${p.id}')" class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 font-bold text-[11px]">🛡️ Lihat Sertifikat QC</button>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 text-center">
+                        <div class="p-2 rounded-lg bg-slate-950 border border-slate-800">
+                            <p class="text-[10px] text-slate-400">3 Bulan</p>
+                            <p class="font-extrabold text-white">${formatRp(cicilan3)}/bln</p>
+                        </div>
+                        <div class="p-2 rounded-lg bg-slate-950 border border-slate-800">
+                            <p class="text-[10px] text-slate-400">6 Bulan</p>
+                            <p class="font-extrabold text-white">${formatRp(cicilan6)}/bln</p>
+                        </div>
+                        <div class="p-2 rounded-lg bg-slate-950 border border-slate-800">
+                            <p class="text-[10px] text-slate-400">12 Bulan</p>
+                            <p class="font-extrabold text-white">${formatRp(cicilan12)}/bln</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <button onclick="addToCart('${p.id}'); closeProductDetailModal();" class="w-full py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs sm:text-sm">
+                        + Masukkan Keranjang & Checkout
+                    </button>
+                    <a href="https://wa.me/6282298688189?text=${encodeURIComponent('Halo Admin Toko JAKBAR LAPTOP, saya tertarik dengan unit: ' + p.name + ' (' + formatRp(p.price) + ')')}" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm flex items-center justify-center">
+                        💬 Tanya Unit via WhatsApp
+                    </a>
+                </div>
             `;
             document.getElementById('productDetailModal').classList.remove('hidden');
         };
@@ -1654,9 +1781,13 @@
             const c = document.getElementById('cartCountBadge');
             const w = document.getElementById('wishlistCountBadge');
             const cm = document.getElementById('compareCountBadge');
+            const mw = document.getElementById('mobileWishlistBadge');
+            const mcm = document.getElementById('mobileCompareBadge');
             if (c) c.textContent = cart.length;
             if (w) w.textContent = wishlist.length;
             if (cm) cm.textContent = compareList.length;
+            if (mw) mw.textContent = wishlist.length;
+            if (mcm) mcm.textContent = compareList.length;
         }
 
         window.addToCart = function(prodId) {
@@ -1696,6 +1827,17 @@
             document.getElementById('cartModal').classList.add('hidden');
         };
 
+        window.handleReceiptUpload = function(e) {
+            const file = e.target.files?.[0];
+            if (!file) { pendingReceiptDataUrl = ''; return; }
+            const reader = new FileReader();
+            reader.onload = () => {
+                pendingReceiptDataUrl = reader.result;
+                showToast('Bukti transfer siap dilampirkan pada pesanan.');
+            };
+            reader.readAsDataURL(file);
+        };
+
         window.handleCheckoutSubmit = function(e) {
             e.preventDefault();
             if (!cart.length) {
@@ -1704,6 +1846,7 @@
             }
             const name = document.getElementById('chkName').value;
             const phone = document.getElementById('chkPhone').value;
+            const address = document.getElementById('chkAddress').value;
             const payment = document.getElementById('chkPayment').value;
             const voucher = (document.getElementById('chkVoucher').value || '').trim().toUpperCase();
             let total = cart.reduce((s, i) => s + Number(i.price), 0);
@@ -1711,8 +1854,20 @@
 
             const invId = 'INV-JL' + Math.floor(100 + Math.random() * 900);
             const itemNames = cart.map(i => i.name).join(', ');
-            orders.unshift({ id: invId, customer: name, phone, items: itemNames, total, status: 'Menunggu Verifikasi Admin', payment });
+            orders.unshift({
+                id: invId,
+                customer: name,
+                phone,
+                address,
+                items: itemNames,
+                total,
+                status: 'Menunggu Verifikasi Admin',
+                payment,
+                receipt: pendingReceiptDataUrl || '',
+                date: new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' })
+            });
             cart = [];
+            pendingReceiptDataUrl = '';
             updateBadges();
             closeCartModal();
             persistAllState();
@@ -1798,13 +1953,17 @@
             }
             const found = orders.filter(o => o.id.toLowerCase().includes(q) || (o.phone || '').toLowerCase().includes(q));
             box.innerHTML = found.length ? found.map(o => `
-                <div class="p-4 rounded-2xl bg-slate-900 border border-indigo-500/30 space-y-1 text-xs">
+                <div class="p-4 rounded-2xl bg-slate-900 border border-indigo-500/30 space-y-2 text-xs">
                     <div class="flex items-center justify-between">
-                        <span class="font-extrabold text-indigo-400">${o.id}</span>
+                        <span class="font-extrabold text-indigo-400">${o.id} • ${o.date || 'Hari Ini'}</span>
                         <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">${o.status}</span>
                     </div>
                     <p class="text-white font-bold">${o.customer} (${o.phone})</p>
                     <p class="text-slate-400">${o.items} — <strong class="text-emerald-400">${formatRp(o.total)}</strong></p>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <button onclick="openOfficialInvoiceModal('${o.id}')" class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold">🧾 Cetak Invoice & Kartu Garansi</button>
+                        <button onclick="openQcCertificateForOrder('${o.id}')" class="px-3 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold">🛡️ Sertifikat Lulus QC 40 Titik</button>
+                    </div>
                 </div>
             `).join('') : `<p class="text-xs text-slate-400">Pesanan dengan nomor tersebut belum ditemukan.</p>`;
         };
@@ -1971,6 +2130,20 @@
 
         // Admin Orders & UI Customizer
         function renderAdminOrders() {
+            const prodEl = document.getElementById('adminStatProducts');
+            const invValEl = document.getElementById('adminStatInventoryVal');
+            const ordEl = document.getElementById('adminStatOrders');
+            const revEl = document.getElementById('adminStatRevenue');
+
+            const totalStock = products.reduce((s, p) => s + (Number(p.stock) || 0), 0);
+            const totalInvValue = products.reduce((s, p) => s + (Number(p.price) * (Number(p.stock) || 1)), 0);
+            const totalRev = orders.reduce((s, o) => s + Number(o.total || 0), 0);
+
+            if (prodEl) prodEl.textContent = `${products.length} Tipe (${totalStock} Unit)`;
+            if (invValEl) invValEl.textContent = formatRp(totalInvValue);
+            if (ordEl) ordEl.textContent = `${orders.length} Invoice`;
+            if (revEl) revEl.textContent = formatRp(totalRev);
+
             const box = document.getElementById('adminOrdersContainer');
             if (!box) return;
             if (!orders.length) {
@@ -1979,28 +2152,41 @@
             }
             box.innerHTML = orders.map((o, idx) => `
                 <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-                    <div>
+                    <div class="space-y-1">
                         <span class="font-extrabold text-indigo-400">${o.id}</span> — <strong class="text-white">${o.customer}</strong> (${o.phone})
-                        <p class="text-slate-400">${o.items} • <span class="text-emerald-400 font-bold">${formatRp(o.total)}</span></p>
+                        <p class="text-slate-400">${o.items} • <span class="text-emerald-400 font-bold">${formatRp(o.total)}</span> (${o.payment || 'Transfer'})</p>
                     </div>
-                    <div class="flex items-center gap-2">
+                    <div class="flex flex-wrap items-center gap-2">
+                        ${o.receipt ? `<button onclick="previewOrderReceipt(${idx})" class="px-3 py-1.5 rounded-lg bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 font-bold">🖼️ Lihat Bukti</button>` : ''}
+                        <button onclick="openOfficialInvoiceModal('${o.id}')" class="px-3 py-1.5 rounded-lg bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 font-bold">🧾 Nota</button>
                         <select onchange="updateOrderStatus(${idx}, this.value)" class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-white text-xs">
                             <option value="Menunggu Verifikasi Admin" ${o.status === 'Menunggu Verifikasi Admin' ? 'selected' : ''}>Menunggu Verifikasi</option>
                             <option value="Pembayaran Lunas & Sedang QC" ${o.status === 'Pembayaran Lunas & Sedang QC' ? 'selected' : ''}>Lunas & Sedang QC</option>
                             <option value="Sedang Dikirim Kurir" ${o.status === 'Sedang Dikirim Kurir' ? 'selected' : ''}>Sedang Dikirim</option>
                             <option value="Selesai Diterima" ${o.status === 'Selesai Diterima' ? 'selected' : ''}>Selesai</option>
                         </select>
+                        <button onclick="deleteOrder(${idx})" class="px-2.5 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 font-bold">✕</button>
                     </div>
                 </div>
             `).join('');
         }
 
-        window.updateOrderStatus = function(idx, status) {
-            if (orders[idx]) {
-                orders[idx].status = status;
-                persistAllState();
-                showToast('Status pesanan diperbarui!');
-            }
+        window.deleteOrder = function(idx) {
+            orders.splice(idx, 1);
+            renderAdminOrders();
+            persistAllState();
+            showToast('Data pesanan dihapus.');
+        };
+
+        window.previewOrderReceipt = function(idx) {
+            const o = orders[idx];
+            if (!o || !o.receipt) return;
+            document.getElementById('qcModalTitle').textContent = `🖼️ Bukti Pembayaran — ${o.id}`;
+            document.getElementById('qcModalContent').innerHTML = `
+                <img src="${o.receipt}" alt="Bukti Transfer" class="w-full rounded-xl border border-slate-700 max-h-96 object-contain bg-slate-950">
+                <p class="text-slate-300">Pelanggan: <strong>${o.customer}</strong> • Total: <strong class="text-emerald-400">${formatRp(o.total)}</strong></p>
+            `;
+            document.getElementById('qcCertificateModal').classList.remove('hidden');
         };
 
         window.openUiCustomizerModal = function() {
@@ -2087,6 +2273,169 @@
             const unitName = sel?.options[sel.selectedIndex]?.text || 'Unit Katalog';
             const msg = encodeURIComponent(`Halo Admin JAKBAR LAPTOP, saya ingin mengajukan inspeksi Tukar Tambah ke unit: *${unitName}*`);
             window.open(`https://wa.me/6282298688189?text=${msg}`, '_blank');
+        };
+
+        // Smart Finder Assistant
+        window.openSmartFinderModal = function() {
+            runSmartFinder();
+            document.getElementById('smartFinderModal').classList.remove('hidden');
+        };
+
+        window.closeSmartFinderModal = function() {
+            document.getElementById('smartFinderModal').classList.add('hidden');
+        };
+
+        window.runSmartFinder = function() {
+            const usage = document.getElementById('finderUsage')?.value || 'all';
+            const maxBudget = Number(document.getElementById('finderBudget')?.value || 999999999);
+            const box = document.getElementById('smartFinderResults');
+            if (!box) return;
+
+            const matched = products.filter(p => {
+                const uOk = usage === 'all' || p.category === usage;
+                const bOk = Number(p.price) <= maxBudget;
+                return uOk && bOk;
+            });
+
+            if (!matched.length) {
+                box.innerHTML = `
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-center space-y-2">
+                        <p class="text-xs text-slate-300">Saat ini belum ada unit di katalog yang sesuai filter tersebut, namun stok gudang kami terus bertambah setiap hari.</p>
+                        <a href="https://wa.me/6282298688189?text=Halo%20Admin%20Toko%20JAKBAR%20LAPTOP,%20saya%20mencari%20rekomendasi%20laptop%20sesuai%20kebutuhan%20saya" target="_blank" class="inline-block px-4 py-2 rounded-xl bg-emerald-500 text-slate-950 font-extrabold text-xs">💬 Minta Rekomendasi via WhatsApp</a>
+                    </div>
+                `;
+                return;
+            }
+
+            box.innerHTML = matched.slice(0, 3).map(p => `
+                <div class="p-3 rounded-xl bg-slate-900 border border-indigo-500/30 flex items-center justify-between gap-3">
+                    <div class="min-w-0">
+                        <p class="text-xs font-extrabold text-white truncate">${p.name}</p>
+                        <p class="text-[11px] text-emerald-400 font-bold">${formatRp(p.price)} • ${p.category}</p>
+                    </div>
+                    <button onclick="closeSmartFinderModal(); openProductDetailModal('${p.id}');" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-bold text-xs shrink-0">Lihat Unit</button>
+                </div>
+            `).join('');
+        };
+
+        // 40-Point QC Digital Certificate & Official Invoice Generator
+        function buildQcChecklistHTML(unitTitle, refCode) {
+            return `
+                <div class="p-4 rounded-2xl bg-slate-900 border border-emerald-500/30 space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+                        <div>
+                            <p class="text-[10px] font-bold text-emerald-400 uppercase">LABORATORIUM QC TOKO JAKBAR LAPTOP</p>
+                            <h4 class="text-sm font-extrabold text-white">${unitTitle}</h4>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-extrabold text-[10px]">LULUS 40/40 TITIK</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-300">
+                        <div>✅ 1–8: Layar, Dead Pixel & Engsel</div>
+                        <div>✅ 9–16: Keyboard, Touchpad & Backlight</div>
+                        <div>✅ 17–24: Kesehatan Baterai & Charger Ori</div>
+                        <div>✅ 25–32: Stress-Test Suhu CPU/GPU</div>
+                        <div>✅ 33–36: SSD Sentinel 100% & Memori RAM</div>
+                        <div>✅ 37–40: Wi-Fi, Webcam, Speaker & Semua Port</div>
+                    </div>
+                    <p class="text-[11px] text-slate-400 pt-1 border-t border-slate-800">Kode Verifikasi: <strong class="text-white">${refCode}</strong> • Toko: Gg. Mawar 1 No. 35, Kebon Jeruk, Jakarta Barat</p>
+                </div>
+            `;
+        }
+
+        window.openQcCertificateForProduct = function(prodId) {
+            const p = products.find(x => x.id === prodId);
+            if (!p) return;
+            document.getElementById('qcModalTitle').textContent = '🛡️ Sertifikat Lulus Inspeksi QC 40 Titik';
+            document.getElementById('qcModalContent').innerHTML = buildQcChecklistHTML(p.name, 'QC-' + p.id.toUpperCase());
+            document.getElementById('qcCertificateModal').classList.remove('hidden');
+        };
+
+        window.openQcCertificateForOrder = function(orderId) {
+            const o = orders.find(x => x.id === orderId);
+            if (!o) return;
+            document.getElementById('qcModalTitle').textContent = '🛡️ Sertifikat Lulus Inspeksi QC 40 Titik';
+            document.getElementById('qcModalContent').innerHTML = buildQcChecklistHTML(o.items, 'QC-' + o.id);
+            document.getElementById('qcCertificateModal').classList.remove('hidden');
+        };
+
+        window.openOfficialInvoiceModal = function(orderId) {
+            const o = orders.find(x => x.id === orderId);
+            if (!o) return;
+            document.getElementById('qcModalTitle').textContent = `🧾 Nota Invoice & Kartu Garansi — ${o.id}`;
+            document.getElementById('qcModalContent').innerHTML = `
+                <div class="p-4 rounded-2xl bg-slate-900 border border-indigo-500/40 space-y-3">
+                    <div class="flex items-start justify-between border-b border-slate-800 pb-3">
+                        <div>
+                            <h4 class="font-extrabold text-sm text-white">TOKO JAKBAR LAPTOP</h4>
+                            <p class="text-[11px] text-slate-400">Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan, Kebon Jeruk, Jakarta Barat</p>
+                            <p class="text-[11px] text-slate-400">WhatsApp Resmi: 0822-9868-8189</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-extrabold text-indigo-400 text-xs">${o.id}</span>
+                            <p class="text-[10px] text-slate-400">${o.date || '2026'}</p>
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-slate-300">Pembeli: <strong class="text-white">${o.customer}</strong> (${o.phone})</p>
+                        <p class="text-slate-300">Alamat / Metode: <strong class="text-white">${o.address || o.payment}</strong></p>
+                        <p class="text-slate-300">Unit Dipesan: <strong class="text-emerald-300">${o.items}</strong></p>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+                        <span class="font-bold text-slate-300">Total Pembayaran</span>
+                        <span class="text-base font-extrabold text-emerald-400">${formatRp(o.total)}</span>
+                    </div>
+                    <p class="text-[11px] text-emerald-300">✅ Dilindungi Garansi Penuh Toko 30 Hari & Standar Lulus 40 Titik QC Hardware.</p>
+                </div>
+            `;
+            document.getElementById('qcCertificateModal').classList.remove('hidden');
+        };
+
+        window.closeQcModal = function() {
+            document.getElementById('qcCertificateModal').classList.add('hidden');
+        };
+
+        // Admin JSON Backup & Restore
+        window.exportDatabaseBackup = function() {
+            const payload = { products, services, testimonials, faqs, orders, customSections, uiPreferences, exportedAt: new Date().toISOString() };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `backup-jakbar-laptop-${new Date().toISOString().slice(0, 10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('File Backup JSON berhasil diunduh!');
+        };
+
+        window.importDatabaseBackup = function(e) {
+            const file = e.target.files?.[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = () => {
+                try {
+                    const data = JSON.parse(reader.result);
+                    if (Array.isArray(data.products)) products = data.products;
+                    if (Array.isArray(data.services)) services = data.services;
+                    if (Array.isArray(data.testimonials)) testimonials = data.testimonials;
+                    if (Array.isArray(data.faqs)) faqs = data.faqs;
+                    if (Array.isArray(data.orders)) orders = data.orders;
+                    if (data.customSections) customSections = data.customSections;
+                    if (data.uiPreferences) uiPreferences = data.uiPreferences;
+                    applyUiPreferences();
+                    applyCustomSectionsToDOM();
+                    renderHeroSlider();
+                    renderProductsGrid();
+                    renderServicesSection();
+                    renderTestimonialsSection();
+                    renderFaqSection();
+                    renderAdminOrders();
+                    persistAllState();
+                    showToast('Database berhasil dipulihkan (Restore)!');
+                } catch (err) {
+                    showToast('Format file JSON tidak valid.');
+                }
+            };
+            reader.readAsText(file);
         };
 
         // Start Hero Auto-Slider
