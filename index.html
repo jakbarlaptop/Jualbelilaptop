@@ -193,7 +193,7 @@
 
             <!-- Brand Logo -->
             <div class="flex items-center space-x-2.5 min-w-0 relative z-10">
-                <button onclick="switchPage('home')" class="flex items-center space-x-2.5 text-left group min-w-0 py-1">
+                <button onclick="switchPage('home')" ondblclick="triggerSecretAdminAccess()" class="flex items-center space-x-2.5 text-left group min-w-0 py-1">
                     <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-cyan-400 flex items-center justify-center text-white font-black text-base sm:text-lg shadow-lg shadow-indigo-500/35 shrink-0 group-hover:rotate-6 group-hover:scale-110 transition-all duration-300">
                         JL
                     </div>
@@ -551,13 +551,13 @@
             </div>
         </section>
 
-        <!-- ==================== PAGE 6: ORDER TRACKING ==================== -->
+                <!-- Order Tracking -->
         <section id="page-tracking" class="hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-6">
             <div class="glass-card p-6 sm:p-8 space-y-5">
                 <div>
                     <p class="text-xs font-bold uppercase tracking-widest text-indigo-400">REAL-TIME TRACKING</p>
                     <h2 class="text-2xl font-extrabold text-white">Lacak Status Pesanan & Pengiriman</h2>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Masukkan ID Invoice Anda (Contoh: <code class="text-indigo-300">INV-JL101</code>) atau Nomor WhatsApp pemesan.</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Masukkan Nomor Invoice resmi atau Nomor WhatsApp yang Anda gunakan saat pemesanan.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3">
                     <input id="trackingSearchInput" type="text" placeholder="Ketik Nomor Invoice atau No. WhatsApp..." class="flex-1 px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white">
@@ -628,6 +628,12 @@
                     <button onclick="openProductModal()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg">
                         + Tambah Produk Baru
                     </button>
+                    <button onclick="openServiceItemModal()" class="px-4 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs shadow-lg">
+                        + Tambah Paket Service
+                    </button>
+                    <button onclick="openFaqItemModal()" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg">
+                        + Tambah FAQ
+                    </button>
                 </div>
             </div>
 
@@ -675,7 +681,7 @@
                 </div>
             </div>
             <div class="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
-                <p>© 2026 JAKBAR LAPTOP Enterprise. Seluruh Hak Cipta Dilindungi.</p>
+                <p onclick="handleSecretFooterClick()" class="cursor-pointer select-none" title="Hak Cipta Resmi">© 2026 JAKBAR LAPTOP Enterprise. Seluruh Hak Cipta Dilindungi.</p>
                 <p>Standar Inspeksi 40 Titik QC • Transparansi Plus & Minus</p>
             </div>
         </div>
@@ -764,23 +770,23 @@
         </div>
     </div>
 
-    <!-- 4. Auth Modal (Customer & Admin Login / Register) -->
+    <!-- 4. Auth Modal (Customer Login / Register & Hidden Admin Portal) -->
     <div id="authModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-card max-w-md w-full p-6 space-y-5 border border-slate-700">
             <div class="flex items-center justify-between">
-                <h3 class="text-lg font-extrabold text-white">🔐 Akses Akun JAKBAR LAPTOP</h3>
+                <h3 id="authModalHeading" class="text-lg font-extrabold text-white">🔐 Masuk / Daftar Akun Pelanggan</h3>
                 <button onclick="closeAuthModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
             </div>
-            <div class="grid grid-cols-2 gap-2 p-1 bg-slate-900 rounded-xl">
-                <button id="authTabLogin" onclick="switchAuthTab('login')" class="py-2 rounded-lg text-xs font-bold bg-indigo-600 text-white">Login</button>
-                <button id="authTabRegister" onclick="switchAuthTab('register')" class="py-2 rounded-lg text-xs font-bold text-slate-400">Buat Akun Baru</button>
+            <div id="authCustomerTabs" class="grid grid-cols-2 gap-2 p-1 bg-slate-900 rounded-xl">
+                <button id="authTabLogin" type="button" onclick="switchAuthTab('login')" class="py-2 rounded-lg text-xs font-bold bg-indigo-600 text-white">Login Pelanggan</button>
+                <button id="authTabRegister" type="button" onclick="switchAuthTab('register')" class="py-2 rounded-lg text-xs font-bold text-slate-400">Buat Akun Baru</button>
             </div>
             <form onsubmit="handleAuthSubmit(event)" class="space-y-3">
                 <div id="authNameWrapper" class="hidden">
                     <input id="authNameInput" type="text" placeholder="Nama Lengkap Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
                 </div>
-                <input id="authEmailInput" required type="email" placeholder="Email (Admin: admin@jakbarlaptop.com)" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
-                <input id="authPasswordInput" required type="password" placeholder="Password (Admin: admin123)" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                <input id="authEmailInput" required type="email" placeholder="Alamat Email Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                <input id="authPasswordInput" required type="password" placeholder="Kata Sandi" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
                 <button type="submit" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs">
                     Lanjutkan
                 </button>
@@ -930,6 +936,40 @@
         </div>
     </div>
 
+    <!-- 9. Add Service Package Modal (Admin) -->
+    <div id="serviceEditorModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 space-y-4 border border-cyan-500/40">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-extrabold text-white">🛠️ Tambah Paket Jasa Service</h3>
+                <button onclick="closeServiceItemModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
+            </div>
+            <form onsubmit="handleSaveServiceItem(event)" class="space-y-3">
+                <input id="srvItemName" required type="text" placeholder="Nama Paket Service / Upgrade" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                <div class="grid grid-cols-2 gap-3">
+                    <input id="srvItemPrice" required type="number" placeholder="Biaya (Rp)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                    <input id="srvItemDuration" required type="text" placeholder="Estimasi Waktu (Contoh: 60 Menit)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                </div>
+                <textarea id="srvItemDesc" required rows="3" placeholder="Rincian pengerjaan dan garansi service..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></textarea>
+                <button type="submit" class="w-full py-3 rounded-xl bg-cyan-500 text-slate-950 font-extrabold text-xs">Simpan Paket Service</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 10. Add FAQ Item Modal (Admin) -->
+    <div id="faqEditorModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 space-y-4 border border-indigo-500/40">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-extrabold text-white">❓ Tambah Pertanyaan FAQ & Garansi</h3>
+                <button onclick="closeFaqItemModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
+            </div>
+            <form onsubmit="handleSaveFaqItem(event)" class="space-y-3">
+                <input id="faqQuestionInput" required type="text" placeholder="Pertanyaan Umum Pelanggan" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                <textarea id="faqAnswerInput" required rows="3" placeholder="Jawaban jelas beserta prosedur garansi..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></textarea>
+                <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 text-slate-950 font-extrabold text-xs">Simpan Pertanyaan FAQ</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toastNotification" class="hidden fixed bottom-20 right-4 z-50 px-4 py-3 rounded-2xl bg-slate-900 border border-indigo-500/50 text-white text-xs font-bold shadow-2xl"></div>
 
@@ -939,77 +979,25 @@
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Default Initial Data
-        let products = [
-            {
-                id: 'prod-1',
-                name: 'Lenovo ThinkPad X1 Carbon Gen 8 Ultrabook',
-                category: 'Bisnis & Kantoran',
-                price: 7850000,
-                stock: 4,
-                image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=900&q=80',
-                specs: 'Intel Core i7-10510U (8 CPUs) • 16GB LPDDR3 • 512GB SSD NVMe • 14" FHD IPS Anti-Glare',
-                pros: ['Bobot super ringan 1.09 Kg serat karbon', 'Keyboard ThinkPad ternyaman dengan Backlit', 'Lulus QC 40 Titik Hardware & Baterai Awet 5+ Jam'],
-                cons: ['RAM onboard 16GB (tidak bisa ditambah lagi)', 'Baret halus wajar pemakaian di bagian bawah casing']
-            },
-            {
-                id: 'prod-2',
-                name: 'Apple MacBook Pro M1 2020 13-Inch Retina',
-                category: 'Desain & Creator',
-                price: 11450000,
-                stock: 3,
-                image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80',
-                specs: 'Apple M1 Chip 8-Core CPU & GPU • 8GB Unified • 256GB SSD Apple • 13.3" Retina TrueTone',
-                pros: ['Battery Health 92% Cycle Count rendah (Tahan 10+ Jam)', 'Layar Retina sangat akurat untuk editing foto/video', 'Fullset Box & MagSafe/Type-C Original Apple'],
-                cons: ['Hanya memiliki 2 port Thunderbolt / USB-C']
-            },
-            {
-                id: 'prod-3',
-                name: 'ASUS ROG Zephyrus G14 Gaming & Creator',
-                category: 'Gaming & Render',
-                price: 13900000,
-                stock: 2,
-                image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=900&q=80',
-                specs: 'AMD Ryzen 7 5800HS • RTX 3050 4GB • 16GB RAM • 512GB NVMe • 14" 144Hz Pantone Validated',
-                pros: ['Sudah repasta Thermal Grizzly Kryonaut suhu adem', 'Performa tinggi untuk render 3D & gaming AAA', 'Body compact 14 inci mudah dibawa mobilitas'],
-                cons: ['Tidak memiliki webcam bawaan pabrik (Bonus Webcam Eksternal FHD)']
-            }
-        ];
-
-        let services = [
-            { id: 'srv-1', name: 'Deep Cleaning + Repasta Thermal Grizzly', price: 185000, duration: '60 Menit (Bisa Ditunggu)', desc: 'Pembersihan total kipas heatsink dari debu menumpuk + penggantian pasta prosesor & GPU dengan Thermal Grizzly Kryonaut.' },
-            { id: 'srv-2', name: 'Paket Upgrade SSD NVMe 512GB + Instalasi OS', price: 690000, duration: '90 Menit', desc: 'Termasuk SSD NVMe Gen3/Gen4 Baru Bergaransi Resmi 3 Tahun + migrasi data dan Windows 11 Pro Original.' },
-            { id: 'srv-3', name: 'Perbaikan Engsel Patah / Casing & LCD Original', price: 350000, duration: '1 - 2 Hari Kerja', desc: 'Rekonstruksi dudukan engsel laptop dengan resin baja presisi atau penggantian panel LCD bergaransi 3 bulan.' }
-        ];
-
-        let testimonials = [
-            { id: 'rev-1', name: 'Dimas Pratama', role: 'Software Engineer — Kebon Jeruk', rating: 5, comment: 'Beli ThinkPad X1 Carbon di JAKBAR LAPTOP beneran dijelasin jujur plus minusnya. Unit mulus banget, baterai awet dipakai ngoding seharian!' },
-            { id: 'rev-2', name: 'Nadia Putri', role: 'Content Creator — Tangerang', rating: 5, comment: 'Tukar tambah laptop lama ke MacBook Pro M1 prosesnya transparan dan cepat. Admin ramah banget bantu pindahin data.' },
-            { id: 'rev-3', name: 'Hendra Wijaya', role: 'Arsitek — Palmerah', rating: 5, comment: 'Service deep cleaning ROG di sini langsung turun 15 derajat suhunya. Dikerjain rapi di depan mata.' }
-        ];
-
-        let faqs = [
-            { id: 'faq-1', q: 'Bagaimana prosedur klaim Garansi 30 Hari di JAKBAR LAPTOP?', a: 'Cukup bawa unit beserta nota/invoice digital ke showroom kami atau hubungi WhatsApp Admin. Jika terdapat kendala hardware di luar catatan awal, kami perbaiki gratis atau tukar unit setara.' },
-            { id: 'faq-2', q: 'Apakah yang dimaksud dengan Catatan Jujur pada setiap produk?', a: 'Kami selalu mencantumkan kondisi riil setiap unit, termasuk jika ada baret halus pemakaian atau keterbatasan upgrade, agar pembeli tidak pernah merasa tertipu.' },
-            { id: 'faq-3', q: 'Apakah bisa kirim ke luar kota Jakarta?', a: 'Sangat bisa! Pengiriman luar kota wajib menggunakan asuransi penuh dan gratis packing kayu berlapis bubble wrap tebal.' }
-        ];
-
-        let orders = [
-            { id: 'INV-JL101', customer: 'Budi Santoso', phone: '081299887766', items: 'Lenovo ThinkPad X1 Carbon Gen 8', total: 7850000, status: 'Sedang Dikemas & QC Akhir', payment: 'Transfer Bank BCA / Mandiri' }
-        ];
+        // Production Clean State (All Dummy Data Removed — Ready for Real Live Input)
+        let products = [];
+        let services = [];
+        let testimonials = [];
+        let faqs = [];
+        let orders = [];
 
         let customSections = {
             topbar: {
                 left: 'Garansi Toko 30 Hari Penuh • Lulus QC 40 Titik Hardware • Free Tas & Charger Original',
-                right: '📍 Showroom: Palmerah & Kebon Jeruk, Jakarta Barat • Voucher Promo: JAKBARPROMO (-Rp 150rb)'
+                right: '📍 Showroom: Palmerah & Kebon Jeruk, Jakarta Barat • Konsultasi Resmi WhatsApp: 0822-9868-8189'
             },
             hero: {
                 badge: 'TRANSPARANSI KELEBIHAN & KEKURANGAN TIAP UNIT',
                 title: 'Solusi Cerdas Beli Laptop Second Kualitas Grade A+ Tanpa Rasa Khawatir.',
                 subtitle: 'Setiap unit di JAKBAR LAPTOP telah melewati inspeksi ketat 40 titik hardware, dilengkapi rincian Keuntungan & Catatan Jujur secara terbuka, serta dilindungi Garansi Tukar Unit.',
-                stat1Val: '1.450+', stat1Label: 'Unit Terjual Se-Indonesia',
-                stat2Val: '100% Lulus', stat2Label: '40 Titik Stress-Test QC',
-                stat3Val: '4.9 / 5.0', stat3Label: 'Rating Kepuasan Pembeli'
+                stat1Val: '100% QC', stat1Label: '40 Titik Hardware Test',
+                stat2Val: '30 Hari', stat2Label: 'Garansi Penuh Showroom',
+                stat3Val: 'Grade A+', stat3Label: 'Transparan Plus & Minus'
             },
             serviceBanner: {
                 tag: '🛠️ LABORATORIUM SERVICE & UPGRADE JAKBAR LAPTOP',
@@ -1017,7 +1005,7 @@
                 desc: 'Selain menjual laptop second berkualitas, teknisi spesialis kami melayani jasa Deep Cleaning + Thermal Paste Grizzly, Upgrade RAM/SSD NVMe, ganti LCD/Baterai Original, hingga perbaikan Motherboard bergaransi.'
             },
             about: {
-                title: 'Mengapa Ribuan Profesional & Mahasiswa Memilih JAKBAR LAPTOP?',
+                title: 'Mengapa Memilih Showroom JAKBAR LAPTOP?',
                 desc: 'Berdiri di Jakarta Barat, JAKBAR LAPTOP hadir menghapus stigma negatif membeli laptop bekas. Kami menerapkan standar keterbukaan penuh: setiap unit diuji 40 titik hardware, dijelaskan kelebihan serta catatan fisiknya apa adanya, dan dilindungi garansi toko yang jelas.'
             },
             footer: {
@@ -1042,6 +1030,8 @@
         let currentUser = null;
         let authMode = 'login';
         let currentHeroSlide = 0;
+        let secretClickCounter = 0;
+        let secretClickTimer = null;
 
         // Firebase State
         let db = null;
@@ -1213,7 +1203,15 @@
             if (!cardEl || !dotsEl) return;
 
             if (!products.length) {
-                cardEl.innerHTML = `<p class="text-xs text-slate-400 py-8 text-center">Belum ada unit di katalog.</p>`;
+                const isAdmin = currentUser?.role === 'admin';
+                cardEl.innerHTML = `
+                    <div class="py-10 px-4 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center mx-auto text-xl">💻</div>
+                        <p class="text-sm font-extrabold text-white">Katalog Showroom Sedang Diperbarui</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Hubungi tim kami melalui WhatsApp untuk menanyakan stok unit Grade A+ terbaru hari ini.</p>
+                        ${isAdmin ? `<button onclick="openProductModal()" class="mt-2 px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs">+ Tambah Unit Pertama</button>` : ''}
+                    </div>
+                `;
                 dotsEl.innerHTML = '';
                 return;
             }
@@ -1323,9 +1321,16 @@
         function renderProductsGrid() {
             const homeGrid = document.getElementById('homeFeaturedGrid');
             const catalogGrid = document.getElementById('catalogProductsGrid');
+            const isAdmin = currentUser?.role === 'admin';
 
             if (homeGrid) {
-                homeGrid.innerHTML = products.slice(0, 3).map(createProductCardHTML).join('');
+                homeGrid.innerHTML = products.length
+                    ? products.slice(0, 3).map(createProductCardHTML).join('')
+                    : `<div class="col-span-full glass-card p-8 text-center space-y-3">
+                        <p class="text-sm font-bold text-slate-300">Stok unit terbaru sedang dalam proses inspeksi QC.</p>
+                        <p class="text-xs text-slate-400">Silakan hubungi WhatsApp resmi kami untuk daftar unit ready stock hari ini.</p>
+                        ${isAdmin ? `<button onclick="openProductModal()" class="px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs">+ Tambah Unit Baru</button>` : ''}
+                    </div>`;
             }
 
             if (catalogGrid) {
@@ -1344,7 +1349,7 @@
 
                 catalogGrid.innerHTML = filtered.length
                     ? filtered.map(createProductCardHTML).join('')
-                    : `<div class="col-span-full glass-card p-8 text-center text-slate-400 text-sm">Tidak ada unit yang sesuai dengan pencarian Anda.</div>`;
+                    : `<div class="col-span-full glass-card p-8 text-center text-slate-400 text-sm">Belum ada unit laptop pada kategori/pencarian ini.</div>`;
             }
         }
 
@@ -1365,7 +1370,7 @@
             const isAdmin = currentUser?.role === 'admin';
 
             if (grid) {
-                grid.innerHTML = services.map(s => `
+                grid.innerHTML = services.length ? services.map(s => `
                     <div class="glass-card p-5 flex flex-col justify-between space-y-4">
                         <div class="space-y-2">
                             <span class="px-2.5 py-1 rounded-lg bg-cyan-500/15 text-cyan-300 text-[10px] font-bold">⏱️ Estimasi: ${s.duration}</span>
@@ -1377,12 +1382,38 @@
                             ${isAdmin ? `<button onclick="deleteServiceItem('${s.id}')" class="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-300 text-[11px] font-bold">Hapus</button>` : ''}
                         </div>
                     </div>
-                `).join('');
+                `).join('') : `<div class="col-span-full glass-card p-8 text-center text-slate-400 text-xs sm:text-sm">Silakan isi formulir booking di bawah untuk konsultasi keluhan atau upgrade laptop Anda secara langsung.</div>`;
             }
             if (select) {
-                select.innerHTML = services.map(s => `<option value="${s.name}">${s.name} (${formatRp(s.price)})</option>`).join('');
+                select.innerHTML = services.length
+                    ? services.map(s => `<option value="${s.name}">${s.name} (${formatRp(s.price)})</option>`).join('')
+                    : `<option value="Konsultasi Service & Upgrade Umum">Konsultasi Service & Upgrade Umum</option>`;
             }
         }
+
+        window.openServiceItemModal = function() {
+            document.getElementById('serviceEditorModal').classList.remove('hidden');
+        };
+
+        window.closeServiceItemModal = function() {
+            document.getElementById('serviceEditorModal').classList.add('hidden');
+        };
+
+        window.handleSaveServiceItem = function(e) {
+            e.preventDefault();
+            services.push({
+                id: 'srv-' + Date.now(),
+                name: document.getElementById('srvItemName').value,
+                price: Number(document.getElementById('srvItemPrice').value),
+                duration: document.getElementById('srvItemDuration').value,
+                desc: document.getElementById('srvItemDesc').value
+            });
+            e.target.reset();
+            closeServiceItemModal();
+            renderServicesSection();
+            persistAllState();
+            showToast('Paket service berhasil ditambahkan!');
+        };
 
         window.deleteServiceItem = function(id) {
             services = services.filter(s => s.id !== id);
@@ -1415,16 +1446,24 @@
                     </div>
                     <div class="pt-2 border-t border-slate-800/80 flex items-center justify-between">
                         <div>
-                            <p class="font-extrabold text-xs text-white">${t.name}</p>
-                            <p class="text-[10px] text-slate-400">${t.role}</p>
+                            <p class="font-extrabold text-xs sm:text-sm text-white">${t.name}</p>
+                            <p class="text-[11px] text-slate-400">${t.role}</p>
                         </div>
-                        ${isAdmin ? `<button onclick="deleteTestimonial('${t.id}')" class="px-2 py-1 rounded bg-rose-500/20 text-rose-300 text-[10px] font-bold">Hapus</button>` : ''}
+                        ${isAdmin ? `<button onclick="deleteTestimonial('${t.id}')" class="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-300 text-[10px] font-bold">Hapus</button>` : ''}
                     </div>
                 </div>
             `;
 
-            if (homeGrid) homeGrid.innerHTML = testimonials.slice(0, 3).map(buildCard).join('');
-            if (fullGrid) fullGrid.innerHTML = testimonials.map(buildCard).join('');
+            if (homeGrid) {
+                homeGrid.innerHTML = testimonials.length
+                    ? testimonials.slice(0, 3).map(buildCard).join('')
+                    : `<div class="col-span-full glass-card p-8 text-center text-slate-400 text-xs sm:text-sm">Belum ada ulasan. Jadilah pelanggan pertama yang membagikan pengalaman berbelanja di JAKBAR LAPTOP!</div>`;
+            }
+            if (fullGrid) {
+                fullGrid.innerHTML = testimonials.length
+                    ? testimonials.map(buildCard).join('')
+                    : `<div class="col-span-full glass-card p-8 text-center text-slate-400 text-xs sm:text-sm">Belum ada ulasan pelanggan. Silakan tulis ulasan Anda pada formulir di bawah.</div>`;
+            }
         }
 
         window.handleAddTestimonial = function(e) {
@@ -1451,7 +1490,7 @@
             const container = document.getElementById('faqListContainer');
             const isAdmin = currentUser?.role === 'admin';
             if (!container) return;
-            container.innerHTML = faqs.map(f => `
+            container.innerHTML = faqs.length ? faqs.map(f => `
                 <div class="glass-card p-5 space-y-2">
                     <div class="flex items-start justify-between gap-2">
                         <h4 class="font-extrabold text-sm sm:text-base text-white">❓ ${f.q}</h4>
@@ -1459,8 +1498,30 @@
                     </div>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${f.a}</p>
                 </div>
-            `).join('');
+            `).join('') : `<div class="glass-card p-8 text-center text-slate-400 text-xs sm:text-sm">Informasi ketentuan garansi & FAQ sedang diperbarui.</div>`;
         }
+
+        window.openFaqItemModal = function() {
+            document.getElementById('faqEditorModal').classList.remove('hidden');
+        };
+
+        window.closeFaqItemModal = function() {
+            document.getElementById('faqEditorModal').classList.add('hidden');
+        };
+
+        window.handleSaveFaqItem = function(e) {
+            e.preventDefault();
+            faqs.push({
+                id: 'faq-' + Date.now(),
+                q: document.getElementById('faqQuestionInput').value,
+                a: document.getElementById('faqAnswerInput').value
+            });
+            e.target.reset();
+            closeFaqItemModal();
+            renderFaqSection();
+            persistAllState();
+            showToast('Pertanyaan FAQ berhasil ditambahkan!');
+        };
 
         window.deleteFaqItem = function(id) {
             faqs = faqs.filter(f => f.id !== id);
@@ -1654,61 +1715,108 @@
             compareList = [];
             updateBadges();
             renderComparePage();
+            showToast('Perbandingan dikosongkan.');
         };
 
         function renderComparePage() {
             const box = document.getElementById('compareContainer');
+            if (!box) return;
             const items = products.filter(p => compareList.includes(p.id));
             if (!items.length) {
-                box.innerHTML = `<p class="text-xs text-slate-400 text-center py-6">Pilih tombol "Bandingkan" pada kartu katalog untuk membandingkan spesifikasi.</p>`;
+                box.innerHTML = `<p class="text-xs sm:text-sm text-slate-400 text-center py-6">Belum ada unit yang dipilih untuk dibandingkan. Klik tombol <strong>Banding</strong> pada katalog laptop.</p>`;
                 return;
             }
             box.innerHTML = `
                 <div class="grid grid-cols-1 md:grid-cols-${Math.min(items.length, 3)} gap-4">
                     ${items.map(p => `
                         <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
-                            <img src="${p.image}" class="w-full rounded-xl smart-frame-img">
-                            <h4 class="font-extrabold text-white text-sm">${p.name}</h4>
-                            <p class="text-emerald-400 font-extrabold">${formatRp(p.price)}</p>
+                            <h4 class="font-extrabold text-sm text-white">${p.name}</h4>
+                            <p class="text-emerald-400 font-extrabold text-base">${formatRp(p.price)}</p>
                             <p class="text-slate-300">${p.specs}</p>
+                            <div class="pt-2 border-t border-slate-800 text-emerald-300">
+                                <strong>Kelebihan:</strong> ${(p.pros || []).join(', ')}
+                            </div>
+                            <div class="text-amber-300">
+                                <strong>Catatan Jujur:</strong> ${(p.cons || []).join(', ')}
+                            </div>
                         </div>
                     `).join('')}
                 </div>
             `;
         }
 
-        // Order Tracking
         window.handleTrackOrder = function() {
             const q = (document.getElementById('trackingSearchInput')?.value || '').trim().toLowerCase();
-            const res = document.getElementById('trackingResultBox');
-            const found = orders.filter(o => o.id.toLowerCase().includes(q) || o.phone.toLowerCase().includes(q));
-            res.innerHTML = found.length ? found.map(o => `
-                <div class="p-4 rounded-2xl bg-slate-900 border border-indigo-500/40 space-y-1 text-xs">
+            const box = document.getElementById('trackingResultBox');
+            if (!box) return;
+            if (!q) {
+                box.innerHTML = `<p class="text-xs text-amber-300">Silakan masukkan Nomor Invoice atau Nomor WhatsApp Anda.</p>`;
+                return;
+            }
+            const found = orders.filter(o => o.id.toLowerCase().includes(q) || (o.phone || '').toLowerCase().includes(q));
+            box.innerHTML = found.length ? found.map(o => `
+                <div class="p-4 rounded-2xl bg-slate-900 border border-indigo-500/30 space-y-1 text-xs">
                     <div class="flex items-center justify-between">
-                        <span class="font-extrabold text-indigo-300">${o.id}</span>
+                        <span class="font-extrabold text-indigo-400">${o.id}</span>
                         <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">${o.status}</span>
                     </div>
                     <p class="text-white font-bold">${o.customer} (${o.phone})</p>
-                    <p class="text-slate-400">Unit: ${o.items}</p>
-                    <p class="text-emerald-400 font-extrabold">Total: ${formatRp(o.total)} • ${o.payment}</p>
+                    <p class="text-slate-400">${o.items} — <strong class="text-emerald-400">${formatRp(o.total)}</strong></p>
                 </div>
-            `).join('') : `<p class="text-xs text-rose-300">Pesanan tidak ditemukan. Pastikan ID Invoice atau Nomor WA benar.</p>`;
+            `).join('') : `<p class="text-xs text-slate-400">Pesanan dengan nomor tersebut belum ditemukan.</p>`;
         };
 
-        // Authentication (Customer & Admin)
+        // Authentication (Customer & Hidden Admin Access)
         window.handleHeaderAuthClick = function() {
             if (currentUser) {
                 currentUser = null;
                 updateAuthUI();
+                switchPage('home');
+                renderHeroSlider();
                 renderProductsGrid();
                 renderServicesSection();
                 renderTestimonialsSection();
                 renderFaqSection();
                 showToast('Anda telah keluar (Logout).');
             } else {
+                const heading = document.getElementById('authModalHeading');
+                const tabs = document.getElementById('authCustomerTabs');
+                if (heading) heading.textContent = '🔐 Masuk / Daftar Akun Pelanggan';
+                if (tabs) tabs.classList.remove('hidden');
+                switchAuthTab('login');
                 document.getElementById('authModal').classList.remove('hidden');
             }
         };
+
+        // Hidden Admin Trigger (5x Click on Footer Copyright or Double-Click Logo or Alt+Shift+A)
+        window.handleSecretFooterClick = function() {
+            secretClickCounter++;
+            clearTimeout(secretClickTimer);
+            secretClickTimer = setTimeout(() => { secretClickCounter = 0; }, 2200);
+            if (secretClickCounter >= 5) {
+                secretClickCounter = 0;
+                triggerSecretAdminAccess();
+            }
+        };
+
+        window.triggerSecretAdminAccess = function() {
+            const heading = document.getElementById('authModalHeading');
+            const tabs = document.getElementById('authCustomerTabs');
+            if (heading) heading.textContent = '🛡️ Portal Otorisasi Administrator';
+            if (tabs) tabs.classList.add('hidden');
+            document.getElementById('authNameWrapper')?.classList.add('hidden');
+            document.getElementById('authEmailInput').value = '';
+            document.getElementById('authPasswordInput').value = '';
+            document.getElementById('authModal').classList.remove('hidden');
+            showToast('Mode Login Administrator dibuka.');
+        };
+
+        window.addEventListener('keydown', (e) => {
+            if (e.altKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+                e.preventDefault();
+                triggerSecretAdminAccess();
+            }
+        });
 
         window.closeAuthModal = function() {
             document.getElementById('authModal').classList.add('hidden');
@@ -1728,15 +1836,24 @@
             const name = document.getElementById('authNameInput').value.trim() || 'Pelanggan JAKBAR';
 
             if (email === 'admin@jakbarlaptop.com' && pass === 'admin123') {
-                currentUser = { email, name: 'Admin Utama', role: 'admin' };
-                showToast('Selamat datang Administrator! Mode Edit & Preset Aktif.');
-            } else {
-                currentUser = { email, name, role: 'customer' };
-                showToast(`Halo ${name}, Anda berhasil masuk!`);
+                currentUser = { email, name: 'Administrator', role: 'admin' };
+                showToast('Selamat datang Administrator! Panel Kendali Aktif.');
+                closeAuthModal();
+                updateAuthUI();
+                renderHeroSlider();
+                renderProductsGrid();
+                renderServicesSection();
+                renderTestimonialsSection();
+                renderFaqSection();
+                switchPage('admin');
+                return;
             }
 
+            currentUser = { email, name, role: 'customer' };
+            showToast(`Halo ${name}, Anda berhasil masuk!`);
             closeAuthModal();
             updateAuthUI();
+            renderHeroSlider();
             renderProductsGrid();
             renderServicesSection();
             renderTestimonialsSection();
@@ -1813,6 +1930,10 @@
         function renderAdminOrders() {
             const box = document.getElementById('adminOrdersContainer');
             if (!box) return;
+            if (!orders.length) {
+                box.innerHTML = `<p class="text-xs text-slate-400 py-4 text-center">Belum ada pesanan masuk saat ini.</p>`;
+                return;
+            }
             box.innerHTML = orders.map((o, idx) => `
                 <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
                     <div>
@@ -1890,7 +2011,9 @@
         window.openTradeInModal = function() {
             const sel = document.getElementById('tradeTargetSelect');
             if (sel) {
-                sel.innerHTML = products.map(p => `<option value="${p.price}">${p.name} (${formatRp(p.price)})</option>`).join('');
+                sel.innerHTML = products.length
+                    ? products.map(p => `<option value="${p.price}">${p.name} (${formatRp(p.price)})</option>`).join('')
+                    : `<option value="0">Tanyakan Stok Unit Tujuan via WhatsApp</option>`;
             }
             calculateTradeIn();
             document.getElementById('tradeInModal').classList.remove('hidden');
@@ -1943,6 +2066,11 @@
             renderTestimonialsSection();
             renderFaqSection();
             initFirebaseConnection();
+
+            // Support secret URL parameter ?admin=1
+            if (window.location.search.includes('admin=1') || window.location.hash === '#admin') {
+                triggerSecretAdminAccess();
+            }
         });
     </script>
 </body>
