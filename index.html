@@ -173,10 +173,10 @@
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row items-center justify-between gap-1">
             <div class="flex items-center justify-center sm:justify-start space-x-1.5 text-emerald-300 font-semibold text-center sm:text-left leading-tight">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-                <span id="topbarLeftText" class="break-words">Garansi Toko 30 Hari Penuh • Lulus QC 40 Titik Hardware</span>
+                <span id="topbarLeftText" class="break-words">✨ Promo Spesial Hari Ini: Garansi Penuh 30 Hari • Lulus Uji 40 Titik QC • Gratis Tas, Mouse & Charger Ori!</span>
             </div>
             <div class="flex items-center justify-center sm:justify-end space-x-2 text-slate-300 text-center sm:text-right leading-tight">
-                <span id="topbarRightText" class="break-words">📍 Toko: Gg. Mawar 1 No. 35, Kebon Jeruk, Jakbar • WA: <strong class="text-amber-300">0822-9868-8189</strong></span>
+                <span id="topbarRightText" class="break-words">📍 Toko: Gg. Mawar 1 No. 35, Kebon Jeruk, Jakbar • WA Fast Response: <strong class="text-amber-300">0822-9868-8189</strong></span>
                 <button onclick="openQuickSectionEditor('topbar')" class="admin-only-btn hidden px-2 py-0.5 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] font-bold shrink-0">
                     Edit
                 </button>
@@ -311,7 +311,10 @@
                     <!-- Quick Admin Hero Controls -->
                     <div class="admin-only-btn hidden mb-4 flex flex-wrap gap-2.5">
                         <button onclick="openQuickSectionEditor('hero')" class="min-h-[42px] px-4 py-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs sm:text-sm font-bold">
-                            ✏️ Edit Teks Hero & Statistik
+                            ✏️ Edit Kata-Kata Pemikat Hero & Statistik
+                        </button>
+                        <button onclick="openQuickSectionEditor('homeSections')" class="min-h-[42px] px-4 py-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs sm:text-sm font-bold">
+                            ✏️ Edit Judul Seksi Katalog & Ulasan Beranda
                         </button>
                         <button onclick="openUiCustomizerModal()" class="min-h-[42px] px-4 py-2 rounded-xl bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs sm:text-sm font-bold">
                             🎨 Atur Preset Layout & Frame
@@ -323,46 +326,53 @@
                         <div class="lg:col-span-7 space-y-5 min-w-0">
                             <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-bold max-w-full">
                                 <span class="w-2 h-2 rounded-full bg-indigo-400 shrink-0"></span>
-                                <span id="heroBadgeText" class="truncate">TRANSPARANSI KELEBIHAN & KEKURANGAN TIAP UNIT</span>
+                                <span id="heroBadgeText" class="truncate">💎 PUSAT LAPTOP SECOND RASA BARU • JUJUR, TRANSPARAN & BERGARANSI</span>
                             </div>
 
                             <h1 id="heroTitleText" class="hero-fluid-title font-extrabold tracking-tight text-white break-words">
-                                Solusi Cerdas Beli Laptop Second Kualitas Grade A+ Tanpa Rasa Khawatir.
+                                Punya Laptop Impian Kualitas Grade A+ Kini Lebih Hemat Jutaan Rupiah Tanpa Rasa Cemas!
                             </h1>
 
                             <p id="heroSubtitleText" class="body-fluid-text text-slate-300 break-words">
-                                Setiap unit di JAKBAR LAPTOP telah melewati inspeksi ketat 40 titik hardware, dilengkapi rincian Keuntungan & Catatan Jujur secara terbuka, serta dilindungi Garansi Tukar Unit.
+                                Jangan pertaruhkan uang Anda membeli laptop bekas yang belum jelas kondisinya. Di Toko JAKBAR LAPTOP, setiap unit diseleksi ketat melewati 40 titik inspeksi hardware, dibuka jujur kelebihan & catatannya, siap pakai untuk kerja berat, kuliah, maupun desain dengan perlindungan Garansi Toko 30 Hari Penuh.
                             </p>
+
+                            <!-- Value Proposition Highlights Pills (Editable by Admin) -->
+                            <div class="flex flex-wrap gap-2 pt-0.5 text-[11px] sm:text-xs font-bold">
+                                <span id="heroPill1" class="px-3 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300">✅ Bebas Reset & Siap Kerja</span>
+                                <span id="heroPill2" class="px-3 py-1.5 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-300">🎁 Bonus Tas + Charger Original</span>
+                                <span id="heroPill3" class="px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300">🤝 Bisa Cek Sepuasnya di Toko Kebon Jeruk</span>
+                            </div>
 
                             <!-- CTA Buttons (Full-width stack on small phones, easy thumb tap) -->
                             <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-3 pt-1">
                                 <button onclick="switchPage('catalog')" class="btn-shimmer min-h-[48px] px-6 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 active:scale-[0.98] text-white font-extrabold text-sm shadow-xl shadow-indigo-600/35 transition text-center">
-                                    🚀 Jelajahi Katalog Unit →
+                                    🚀 Pilih Unit Impian Sekarang →
                                 </button>
                                 <button onclick="openSmartFinderModal()" class="min-h-[48px] px-5 py-3.5 rounded-2xl bg-indigo-500/15 hover:bg-indigo-500/25 hover:-translate-y-0.5 active:scale-[0.98] text-indigo-300 font-bold text-sm border border-indigo-500/30 transition text-center">
-                                    🤖 Asisten Pilih Laptop
+                                    🤖 Bantu Carikan Laptop
                                 </button>
                                 <button onclick="switchPage('service')" class="min-h-[48px] px-5 py-3.5 rounded-2xl bg-slate-900/90 hover:bg-slate-800 hover:-translate-y-0.5 active:scale-[0.98] text-slate-200 font-bold text-sm border border-slate-700/80 transition text-center">
                                     🛠️ Jasa Service & Upgrade
                                 </button>
                                 <button onclick="openTradeInModal()" class="min-h-[48px] px-5 py-3.5 rounded-2xl bg-emerald-500/15 hover:bg-emerald-500/25 hover:-translate-y-0.5 active:scale-[0.98] text-emerald-300 font-bold text-sm border border-emerald-500/30 transition text-center">
-                                    🔄 Kalkulator Tukar Tambah
+                                    🔄 Tukar Tambah Laptop Lama
                                 </button>
                             </div>
 
                             <!-- 3 Stat Cards -->
                             <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-3">
                                 <div class="glass-card p-3 sm:p-4 min-w-0 text-center sm:text-left">
-                                    <p id="stat1Val" class="text-sm sm:text-2xl font-extrabold text-white truncate">100% QC</p>
-                                    <p id="stat1Label" class="text-[11px] sm:text-xs text-slate-400 mt-0.5 break-words leading-tight">40 Titik Hardware</p>
+                                    <p id="stat1Val" class="text-sm sm:text-2xl font-extrabold text-white truncate">100% Lulus QC</p>
+                                    <p id="stat1Label" class="text-[11px] sm:text-xs text-slate-400 mt-0.5 break-words leading-tight">40 Titik Mesin & Layar</p>
                                 </div>
                                 <div class="glass-card p-3 sm:p-4 min-w-0 text-center sm:text-left">
-                                    <p id="stat2Val" class="text-sm sm:text-2xl font-extrabold text-emerald-400 truncate">30 Hari</p>
-                                    <p id="stat2Label" class="text-[11px] sm:text-xs text-slate-400 mt-0.5 break-words leading-tight">Garansi Penuh Toko</p>
+                                    <p id="stat2Val" class="text-sm sm:text-2xl font-extrabold text-emerald-400 truncate">Garansi 30 Hari</p>
+                                    <p id="stat2Label" class="text-[11px] sm:text-xs text-slate-400 mt-0.5 break-words leading-tight">Tukar Unit Tanpa Ribet</p>
                                 </div>
                                 <div class="glass-card p-3 sm:p-4 min-w-0 text-center sm:text-left">
-                                    <p id="stat3Val" class="text-sm sm:text-2xl font-extrabold text-cyan-400 truncate">Grade A+</p>
-                                    <p id="stat3Label" class="text-[11px] sm:text-xs text-slate-400 mt-0.5 break-words leading-tight">Jujur Plus & Minus</p>
+                                    <p id="stat3Val" class="text-sm sm:text-2xl font-extrabold text-cyan-400 truncate">Hemat s/d 50%</p>
+                                    <p id="stat3Label" class="text-[11px] sm:text-xs text-slate-400 mt-0.5 break-words leading-tight">Performa Setara Baru</p>
                                 </div>
                             </div>
                         </div>
@@ -393,8 +403,9 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
                 <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
                     <div class="min-w-0">
-                        <p class="text-xs font-bold uppercase tracking-widest text-indigo-400">PILIHAN TERBAIK HARI INI</p>
-                        <h3 class="section-fluid-title font-extrabold text-white mt-1 break-words">Unit Siap Pakai & Terverifikasi QC</h3>
+                        <p id="homeFeaturedTag" class="text-xs font-bold uppercase tracking-widest text-indigo-400">🔥 KOLEKSI PALING DICARI MINGGU INI</p>
+                        <h3 id="homeFeaturedTitle" class="section-fluid-title font-extrabold text-white mt-1 break-words">Unit Pilihan Siap Pakai — Mesin Segel, Fisik Mulus & Bergaransi</h3>
+                        <p id="homeFeaturedSubtitle" class="text-xs sm:text-sm text-slate-400 mt-1 break-words">Stok terbatas karena setiap unit diseleksi ketat satu per satu. Amankan unit incaran Anda sebelum kehabisan!</p>
                     </div>
                     <button onclick="switchPage('catalog')" class="self-start sm:self-auto min-h-[42px] px-4 py-2 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-xs sm:text-sm font-bold text-indigo-300 hover:text-white flex items-center space-x-1.5 shrink-0">
                         <span>Lihat Semua Katalog</span>
@@ -418,18 +429,18 @@
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
                         <div class="lg:col-span-8 space-y-3 min-w-0">
-                            <span id="serviceBannerTag" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 inline-block max-w-full truncate">🛠️ LABORATORIUM SERVICE & UPGRADE JAKBAR LAPTOP</span>
-                            <h3 id="serviceBannerTitle" class="section-fluid-title font-extrabold text-white break-words">Laptop Lama Anda Lemot, Cepat Panas, atau Engsel Patah?</h3>
+                            <span id="serviceBannerTag" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 inline-block max-w-full truncate">🛠️ KLINIK SERVICE & UPGRADE KILAT JAKBAR LAPTOP</span>
+                            <h3 id="serviceBannerTitle" class="section-fluid-title font-extrabold text-white break-words">Sayang Laptop Lama Kalau Dijual Murah? Bikin Ngebut Lagi Seperti Baru!</h3>
                             <p id="serviceBannerDesc" class="body-fluid-text text-slate-300 break-words">
-                                Selain menjual laptop second berkualitas, teknisi spesialis kami melayani jasa Deep Cleaning + Thermal Paste Grizzly, Upgrade RAM/SSD NVMe, ganti LCD/Baterai Original, hingga perbaikan Motherboard bergaransi.
+                                Jangan buru-buru ganti baru jika laptop lama Anda hanya lemot, cepat panas (overheat), baterai drop, atau engsel patah. Teknisi ahli kami di Toko Kebon Jeruk siap melakukan Deep Cleaning + Thermal Paste Grizzly, Upgrade SSD NVMe & RAM bisa ditunggu, dengan biaya jujur dan bergaransi!
                             </p>
                         </div>
                         <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
                             <button onclick="switchPage('service')" class="w-full min-h-[48px] py-3.5 px-5 rounded-2xl bg-cyan-500 hover:bg-cyan-400 active:scale-[0.99] text-slate-950 font-extrabold text-sm shadow-lg shadow-cyan-500/25 transition text-center">
-                                Lihat Daftar Harga Service & Booking
+                                Cek Paket Upgrade & Booking Service
                             </button>
                             <a href="https://wa.me/6282298688189?text=Halo%20Admin%20JAKBAR%20LAPTOP,%20saya%20ingin%20konsultasi%20service/upgrade%20laptop" target="_blank" rel="noopener noreferrer" class="w-full min-h-[48px] py-3.5 px-5 rounded-2xl bg-slate-800 hover:bg-slate-700 active:scale-[0.99] text-slate-200 font-semibold text-sm border border-slate-700 transition flex items-center justify-center text-center">
-                                💬 Konsultasi Gratis via WhatsApp
+                                💬 Konsultasi Kerusakan Gratis via WA
                             </a>
                         </div>
                     </div>
@@ -440,8 +451,9 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
                 <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
                     <div class="min-w-0">
-                        <p class="text-xs font-bold uppercase tracking-widest text-emerald-400">ULASAN TERVERIFIKASI</p>
-                        <h3 class="section-fluid-title font-extrabold text-white mt-1 break-words">Apa Kata Pembeli JAKBAR LAPTOP?</h3>
+                        <p id="homeTestiTag" class="text-xs font-bold uppercase tracking-widest text-emerald-400">⭐ BUKTI KEPUASAN PELANGGAN ASLI</p>
+                        <h3 id="homeTestiTitle" class="section-fluid-title font-extrabold text-white mt-1 break-words">Bukan Sekadar Janji — Ini Pengalaman Mereka yang Sudah Membuktikan!</h3>
+                        <p id="homeTestiSubtitle" class="text-xs sm:text-sm text-slate-400 mt-1 break-words">Kepercayaan Anda adalah prioritas utama kami. Transparan sejak konsultasi pertama hingga layanan purna jual.</p>
                     </div>
                     <button onclick="switchPage('testimonials')" class="self-start sm:self-auto min-h-[42px] px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs sm:text-sm font-bold text-emerald-300 hover:text-white shrink-0">
                         Lihat Semua & Tulis Ulasan →
@@ -451,45 +463,139 @@
             </div>
         </section>
 
-        <!-- ==================== PAGE 2: FULL CATALOG ==================== -->
-        <section id="page-catalog" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-6">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-indigo-400">KATALOG LENGKAP</p>
-                    <h2 class="section-fluid-title font-extrabold text-white">Katalog Unit Laptop Siap Pakai</h2>
-                </div>
-                <div class="flex flex-wrap items-center gap-2.5">
-                    <button onclick="openProductModal()" class="admin-only-btn hidden min-h-[44px] px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-600/20">
-                        + Tambah Unit Baru
-                    </button>
-                    <button onclick="openUiCustomizerModal()" class="admin-only-btn hidden min-h-[44px] px-4 py-2.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold text-xs sm:text-sm">
-                        🎨 Preset Kolom & Frame
-                    </button>
+        <!-- ==================== PAGE 2: FULL CATALOG (ENHANCED SHOWROOM EDITION) ==================== -->
+        <section id="page-catalog" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 space-y-6">
+            <!-- Catalog Hero Banner -->
+            <div class="glass-card p-5 sm:p-8 border border-indigo-500/30 bg-gradient-to-br from-indigo-950/50 via-slate-900/90 to-cyan-950/40 relative overflow-hidden">
+                <div class="aurora-blob absolute -top-12 -right-12 w-60 h-60 rounded-full bg-indigo-500/15 blur-3xl"></div>
+                <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+                    <div class="space-y-2.5 max-w-3xl min-w-0">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-[11px] font-extrabold">
+                            <span>💻</span>
+                            <span id="catalogPageTag">KATALOG RESMI TOKO JAKBAR LAPTOP</span>
+                        </div>
+                        <h2 id="catalogPageTitle" class="section-fluid-title font-extrabold text-white break-words">
+                            Etalase Unit Laptop Siap Pakai — Lulus Uji 40 Titik QC & Bergaransi!
+                        </h2>
+                        <p id="catalogPageSubtitle" class="text-xs sm:text-sm text-slate-300 leading-relaxed break-words">
+                            Setiap unit yang tampil di bawah ini telah lulus pengetesan mesin, layar, keyboard, dan baterai secara ketat. Lengkap dengan rincian Kelebihan & Catatan Jujur serta bisa dicek langsung sepuasnya di Toko Kebon Jeruk.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-1 text-[11px] font-bold">
+                            <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-emerald-300">🛡️ Garansi Penuh 30 Hari</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/15 border border-cyan-500/30 text-cyan-300">🎁 Gratis Tas & Charger Ori</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300">🔄 Bisa Tukar Tambah</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap lg:flex-col gap-2.5 shrink-0">
+                        <button onclick="openSmartFinderModal()" class="min-h-[44px] px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-indigo-600/25">
+                            🤖 Bantu Pilihkan Laptop
+                        </button>
+                        <button onclick="openTradeInModal()" class="min-h-[44px] px-4 py-2.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-300 font-bold text-xs sm:text-sm">
+                            🔄 Hitung Tukar Tambah
+                        </button>
+                        <div class="admin-only-btn hidden flex flex-wrap gap-2 pt-1">
+                            <button onclick="openProductModal()" class="min-h-[40px] px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow">
+                                + Tambah Unit
+                            </button>
+                            <button onclick="openQuickSectionEditor('catalogHeader')" class="min-h-[40px] px-3.5 py-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold text-xs">
+                                ✏️ Edit Judul Katalog
+                            </button>
+                            <button onclick="openUiCustomizerModal()" class="min-h-[40px] px-3.5 py-2 rounded-xl bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 font-bold text-xs">
+                                🎨 Preset Kolom
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Filter & Search Bar -->
-            <div class="glass-card p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                <input id="searchInput" oninput="renderProductsGrid()" type="text" placeholder="Cari tipe laptop, prosesor, RAM..." class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500">
-                <select id="categoryFilter" onchange="renderProductsGrid()" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500">
+            <!-- Interactive 1-Click Category Pills & Smart Filter Bar -->
+            <div class="glass-card p-4 sm:p-5 space-y-4 border border-slate-800/90">
+                <!-- Quick Category Chips -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 shrink-0 mr-1">Kategori:</span>
+                    <button onclick="selectCatalogCategoryChip('all')" data-cat-chip="all" class="cat-chip-btn px-3.5 py-2 rounded-xl text-xs font-extrabold bg-indigo-600 text-white shadow whitespace-nowrap transition">🔥 Semua Unit</button>
+                    <button onclick="selectCatalogCategoryChip('Bisnis & Kantoran')" data-cat-chip="Bisnis & Kantoran" class="cat-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition">💼 Bisnis & Kantoran</button>
+                    <button onclick="selectCatalogCategoryChip('Desain & Creator')" data-cat-chip="Desain & Creator" class="cat-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition">🎨 Desain & Creator</button>
+                    <button onclick="selectCatalogCategoryChip('Gaming & Render')" data-cat-chip="Gaming & Render" class="cat-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition">🎮 Gaming & Render</button>
+                    <button onclick="selectCatalogCategoryChip('Kuliah & Pelajar')" data-cat-chip="Kuliah & Pelajar" class="cat-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition">🎓 Kuliah & Pelajar</button>
+                </div>
+
+                <!-- Search, Price Range, Sort & Stock Controls -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 items-center">
+                    <div class="lg:col-span-4 relative">
+                        <input id="searchInput" oninput="renderProductsGrid()" type="text" placeholder="🔍 Cari merk, seri, prosesor (i5/i7/Ryzen/M1), RAM..." class="w-full min-h-[46px] pl-4 pr-9 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div class="lg:col-span-3">
+                        <select id="priceRangeFilter" onchange="renderProductsGrid()" class="w-full min-h-[46px] px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:border-indigo-500">
+                            <option value="all">💰 Semua Rentang Harga</option>
+                            <option value="under5">Hemat: Di Bawah Rp 5 Juta</option>
+                            <option value="5to8">Menengah: Rp 5 Juta – Rp 8 Juta</option>
+                            <option value="above8">Premium: Di Atas Rp 8 Juta</option>
+                        </select>
+                    </div>
+                    <div class="lg:col-span-3">
+                        <select id="sortFilter" onchange="renderProductsGrid()" class="w-full min-h-[46px] px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:border-indigo-500">
+                            <option value="featured">✨ Urutkan: Rekomendasi Utama</option>
+                            <option value="price-asc">⬇️ Harga: Terendah ke Tertinggi</option>
+                            <option value="price-desc">⬆️ Harga: Tertinggi ke Terendah</option>
+                            <option value="stock-desc">📦 Stok: Terbanyak Lebih Dulu</option>
+                        </select>
+                    </div>
+                    <div class="lg:col-span-2 flex items-center gap-2">
+                        <button onclick="resetCatalogFilters()" class="w-full min-h-[46px] px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 font-bold text-xs sm:text-sm transition">
+                            🔄 Reset
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hidden native category select synced with chips -->
+                <select id="categoryFilter" onchange="renderProductsGrid()" class="hidden">
                     <option value="all">Semua Kategori</option>
                     <option value="Bisnis & Kantoran">Bisnis & Kantoran</option>
                     <option value="Desain & Creator">Desain & Creator</option>
                     <option value="Gaming & Render">Gaming & Render</option>
                     <option value="Kuliah & Pelajar">Kuliah & Pelajar</option>
                 </select>
-                <select id="sortFilter" onchange="renderProductsGrid()" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500">
-                    <option value="featured">Urutkan: Rekomendasi Utama</option>
-                    <option value="price-asc">Harga: Terendah ke Tertinggi</option>
-                    <option value="price-desc">Harga: Tertinggi ke Terendah</option>
-                </select>
-                <button onclick="resetCatalogFilters()" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 font-bold text-sm transition">
-                    Reset Filter
-                </button>
+
+                <!-- Status Bar: Result Count, Ready Stock Toggle & View Switcher -->
+                <div class="pt-3 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
+                    <div class="flex flex-wrap items-center gap-3">
+                        <span id="catalogResultCountText" class="font-extrabold text-indigo-300">Menampilkan 0 Unit Siap Pakai</span>
+                        <label class="inline-flex items-center space-x-2 cursor-pointer select-none text-slate-300 font-semibold">
+                            <input id="onlyReadyStockToggle" type="checkbox" onchange="renderProductsGrid()" class="rounded bg-slate-900 border-slate-700 text-indigo-600 focus:ring-0">
+                            <span>Hanya Stok Tersedia (Ready)</span>
+                        </label>
+                    </div>
+                    <div class="flex items-center space-x-1.5 bg-slate-900 p-1 rounded-xl border border-slate-800">
+                        <button onclick="setCatalogViewMode('grid')" id="viewModeGridBtn" class="px-3 py-1.5 rounded-lg text-[11px] font-extrabold bg-indigo-600 text-white transition">☷ Grid Kartu</button>
+                        <button onclick="setCatalogViewMode('list')" id="viewModeListBtn" class="px-3 py-1.5 rounded-lg text-[11px] font-bold text-slate-400 hover:text-white transition">☰ Daftar Ringkas</button>
+                    </div>
+                </div>
             </div>
 
             <!-- Products Grid -->
             <div id="catalogProductsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+            <!-- Request Specific Laptop Unit Box (Lead Magnet when user wants a custom type) -->
+            <div class="glass-card p-5 sm:p-7 border border-emerald-500/30 bg-gradient-to-r from-slate-900 via-emerald-950/20 to-slate-900">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+                    <div class="lg:col-span-5 space-y-1.5">
+                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-400">🔍 CARI TIPE KHUSUS / REQUEST STOK?</span>
+                        <h3 class="text-base sm:text-xl font-extrabold text-white">Belum Menemukan Tipe Laptop yang Anda Cari di Katalog?</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Stok di Toko Kebon Jeruk berputar sangat cepat setiap hari. Beritahu kami merk/spesifikasi dan budget Anda, tim kami siap mencarikan unit Grade A+ terbaik untuk Anda!
+                        </p>
+                    </div>
+                    <form onsubmit="handleCatalogRequestUnit(event)" class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        <input id="reqUnitModel" required type="text" placeholder="Tipe/Spesifikasi (Misal: ThinkPad i5 RAM 16GB)" class="min-h-[44px] px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white">
+                        <input id="reqUnitBudget" required type="text" placeholder="Kisaran Budget (Misal: 5 - 7 Juta)" class="min-h-[44px] px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white">
+                        <button type="submit" class="min-h-[44px] px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs shadow-lg transition">
+                            💬 Carikan Unit via WA
+                        </button>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <!-- ==================== PAGE 3: COMPARE ==================== -->
@@ -506,31 +612,223 @@
             <div id="compareContainer" class="glass-card p-5 overflow-x-auto"></div>
         </section>
 
-        <!-- ==================== PAGE 4: SERVICE & UPGRADE ==================== -->
-        <section id="page-service" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-8">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-cyan-400">LABORATORIUM TEKNISI JAKBAR LAPTOP</p>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Daftar Paket Jasa Service & Upgrade Laptop</h2>
+        <!-- ==================== PAGE 4: SERVICE & UPGRADE (USER-FRIENDLY INTERACTIVE EDITION) ==================== -->
+        <section id="page-service" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 space-y-8">
+            <!-- 1. Service Hero Header Banner -->
+            <div class="glass-card p-5 sm:p-8 border border-cyan-500/35 bg-gradient-to-br from-cyan-950/45 via-slate-900/95 to-indigo-950/40 relative overflow-hidden">
+                <div class="aurora-blob absolute -top-12 -right-12 w-64 h-64 rounded-full bg-cyan-500/15 blur-3xl"></div>
+                <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class="space-y-3 max-w-3xl min-w-0">
+                        <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-[11px] font-extrabold">
+                            <span>🛠️</span>
+                            <span id="servicePageTag">LABORATORIUM TEKNISI SPESIALIS JAKBAR LAPTOP</span>
+                        </div>
+                        <h2 id="servicePageTitle" class="section-fluid-title font-extrabold text-white break-words">
+                            Solusi Jujur & Cepat untuk Segala Keluhan Laptop Anda — Bisa Ditunggu & Bergaransi!
+                        </h2>
+                        <p id="servicePageSubtitle" class="text-xs sm:text-sm text-slate-300 leading-relaxed break-words">
+                            Bingung kenapa laptop tiba-tiba lemot, cepat panas, atau mati total? Jangan khawatir! Di Toko JAKBAR LAPTOP Kebon Jeruk, Anda mendapat <strong>Pengecekan Awal Gratis</strong>, penjelasan biaya di depan sebelum dikerjakan, serta jaminan keamanan data 100%.
+                        </p>
+                        <!-- Trust Badges -->
+                        <div class="flex flex-wrap gap-2 pt-1 text-[11px] font-bold">
+                            <span class="px-3 py-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300">✅ Gratis Cek & Diagnosa Awal</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-300">⚡ Bisa Ditunggu (Cleaning/Upgrade)</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-indigo-500/15 border border-indigo-500/30 text-indigo-300">🔒 Data Pribadi 100% Aman</span>
+                            <span class="px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300">🛡️ Garansi Service Resmi</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap lg:flex-col gap-2.5 shrink-0">
+                        <button onclick="scrollToServiceBooking()" class="min-h-[46px] px-5 py-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm shadow-lg shadow-cyan-500/25">
+                            📅 Booking Jadwal Service Sekarang
+                        </button>
+                        <a href="https://wa.me/6282298688189?text=Halo%20Teknisi%20Toko%20JAKBAR%20LAPTOP,%20saya%20ingin%20konsultasi%20gratis%20mengenai%20keluhan%20laptop%20saya" target="_blank" rel="noopener noreferrer" class="min-h-[46px] px-5 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold text-xs sm:text-sm text-center flex items-center justify-center">
+                            💬 Tanya Teknisi via WA (Gratis)
+                        </a>
+                        <div class="admin-only-btn hidden flex flex-wrap gap-2 pt-1">
+                            <button onclick="openServiceItemModal()" class="min-h-[40px] px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow">
+                                + Tambah Paket Service
+                            </button>
+                            <button onclick="openQuickSectionEditor('servicePageHeader')" class="min-h-[40px] px-3.5 py-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold text-xs">
+                                ✏️ Edit Header Service
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <button onclick="openServiceItemModal()" class="admin-only-btn hidden px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs">
-                    + Tambah Paket Service
-                </button>
             </div>
 
-            <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            <!-- 2. 4-Step Transparent Service Workflow (User-Friendly Guide) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="glass-card p-4 sm:p-5 border border-slate-800/90 flex items-start space-x-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 font-extrabold text-sm flex items-center justify-center shrink-0">1</div>
+                    <div class="min-w-0">
+                        <h4 class="font-extrabold text-xs sm:text-sm text-white">Konsultasi & Cek Gratis</h4>
+                        <p class="text-[11px] sm:text-xs text-slate-400 mt-1 leading-relaxed">Sampaikan keluhan via WA atau bawa langsung ke Toko Kebon Jeruk untuk pengecekan awal tanpa biaya.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-4 sm:p-5 border border-slate-800/90 flex items-start space-x-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 font-extrabold text-sm flex items-center justify-center shrink-0">2</div>
+                    <div class="min-w-0">
+                        <h4 class="font-extrabold text-xs sm:text-sm text-white">Persetujuan Biaya Jujur</h4>
+                        <p class="text-[11px] sm:text-xs text-slate-400 mt-1 leading-relaxed">Teknisi menjelaskan solusi & rincian biaya di awal. Tidak ada pengerjaan atau biaya siluman tanpa izin Anda.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-4 sm:p-5 border border-slate-800/90 flex items-start space-x-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-extrabold text-sm flex items-center justify-center shrink-0">3</div>
+                    <div class="min-w-0">
+                        <h4 class="font-extrabold text-xs sm:text-sm text-white">Pengerjaan Transparan</h4>
+                        <p class="text-[11px] sm:text-xs text-slate-400 mt-1 leading-relaxed">Upgrade RAM/SSD & Deep Cleaning bisa ditunggu langsung (30–60 menit). Data pribadi Anda dijamin utuh.</p>
+                    </div>
+                </div>
+                <div class="glass-card p-4 sm:p-5 border border-slate-800/90 flex items-start space-x-3.5">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-500/15 border border-amber-500/30 text-amber-300 font-extrabold text-sm flex items-center justify-center shrink-0">4</div>
+                    <div class="min-w-0">
+                        <h4 class="font-extrabold text-xs sm:text-sm text-white">Uji Coba & Garansi</h4>
+                        <p class="text-[11px] sm:text-xs text-slate-400 mt-1 leading-relaxed">Unit dites bersama Anda setelah selesai dan dilindungi garansi toko untuk ketenangan penuh.</p>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Booking Service Form -->
-            <div class="glass-card p-6 sm:p-8 border border-cyan-500/30">
-                <h3 class="text-lg sm:text-xl font-extrabold text-white mb-4">📅 Formulir Booking Jadwal Service / Upgrade</h3>
-                <form onsubmit="handleServiceBooking(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input id="srvCustName" required type="text" placeholder="Nama Lengkap Anda" class="px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white">
-                    <input id="srvCustPhone" required type="text" placeholder="Nomor WhatsApp Aktif" class="px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white">
-                    <input id="srvLaptopModel" required type="text" placeholder="Merk & Tipe Laptop (Contoh: ThinkPad X1 / ASUS ROG)" class="px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white">
-                    <select id="srvPackageSelect" class="px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white"></select>
-                    <textarea id="srvNotes" rows="3" placeholder="Keluhan detail atau permintaan khusus..." class="sm:col-span-2 px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white"></textarea>
-                    <button type="submit" class="sm:col-span-2 py-3.5 rounded-2xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-xs sm:text-sm transition">
-                        Kirim Booking Service & Hubungi Teknisi via WhatsApp
+            <!-- 3. Interactive Symptom Checker (1-Click Quick Diagnosis for Non-Tech Users) -->
+            <div class="glass-card p-5 sm:p-7 border border-indigo-500/30 space-y-5">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-indigo-400">🩺 DIAGNOSA MANDIRI 1-KLIK (RAMAH AWAM)</span>
+                        <h3 class="text-base sm:text-xl font-extrabold text-white mt-0.5">Apa Keluhan Laptop Anda Saat Ini? Klik Salah Satu:</h3>
+                    </div>
+                    <span class="text-[11px] text-slate-400">Klik keluhan untuk melihat rekomendasi solusi & isi form otomatis</span>
+                </div>
+
+                <!-- Symptom Buttons -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+                    <button type="button" onclick="selectServiceSymptom('slow')" data-symptom-btn="slow" class="symptom-btn p-3 rounded-2xl bg-indigo-600/25 border border-indigo-500 text-left transition hover:scale-[1.02] active:scale-95">
+                        <span class="text-xl block">🐢</span>
+                        <p class="font-extrabold text-xs text-white mt-1.5">Lemot / Loading Lama</p>
+                        <p class="text-[10px] text-indigo-200 mt-0.5">Buka aplikasi sering Not Responding</p>
+                    </button>
+                    <button type="button" onclick="selectServiceSymptom('overheat')" data-symptom-btn="overheat" class="symptom-btn p-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 text-left transition hover:scale-[1.02] active:scale-95">
+                        <span class="text-xl block">🔥</span>
+                        <p class="font-extrabold text-xs text-white mt-1.5">Cepat Panas & Berisik</p>
+                        <p class="text-[10px] text-slate-400 mt-0.5">Kipas kencang / suka mati mendadak</p>
+                    </button>
+                    <button type="button" onclick="selectServiceSymptom('battery')" data-symptom-btn="battery" class="symptom-btn p-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 text-left transition hover:scale-[1.02] active:scale-95">
+                        <span class="text-xl block">🔋</span>
+                        <p class="font-extrabold text-xs text-white mt-1.5">Baterai Drop / Bocor</p>
+                        <p class="text-[10px] text-slate-400 mt-0.5">Harus colok cas terus / silang merah</p>
+                    </button>
+                    <button type="button" onclick="selectServiceSymptom('screen')" data-symptom-btn="screen" class="symptom-btn p-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 text-left transition hover:scale-[1.02] active:scale-95">
+                        <span class="text-xl block">🖥️</span>
+                        <p class="font-extrabold text-xs text-white mt-1.5">LayarBergaris / Pecah</p>
+                        <p class="text-[10px] text-slate-400 mt-0.5">Blank putih/hitam atau kedip-kedip</p>
+                    </button>
+                    <button type="button" onclick="selectServiceSymptom('keyboard')" data-symptom-btn="keyboard" class="symptom-btn p-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 text-left transition hover:scale-[1.02] active:scale-95">
+                        <span class="text-xl block">⌨️</span>
+                        <p class="font-extrabold text-xs text-white mt-1.5">Keyboard / Engsel</p>
+                        <p class="text-[10px] text-slate-400 mt-0.5">Tombol tidak berfungsi / engsel keras</p>
+                    </button>
+                    <button type="button" onclick="selectServiceSymptom('dead')" data-symptom-btn="dead" class="symptom-btn p-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 text-left transition hover:scale-[1.02] active:scale-95">
+                        <span class="text-xl block">⚡</span>
+                        <p class="font-extrabold text-xs text-white mt-1.5">Mati Total / Kena Air</p>
+                        <p class="text-[10px] text-slate-400 mt-0.5">Tidak mau nyala / ketumpahan cairan</p>
+                    </button>
+                </div>
+
+                <!-- Dynamic Recommendation Result Box -->
+                <div id="symptomResultCard" class="p-4 sm:p-5 rounded-2xl bg-slate-900/95 border border-indigo-500/35 flex flex-col md:flex-row md:items-center justify-between gap-4"></div>
+            </div>
+
+            <!-- 4. Service Packages List with Search & Filter -->
+            <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-cyan-400">DAFTAR PAKET & ESTIMASI BIAYA</p>
+                        <h3 class="text-lg sm:text-2xl font-extrabold text-white">Pilih Paket Service / Upgrade Sesuai Kebutuhan</h3>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <input id="serviceSearchInput" oninput="renderServicesSection()" type="text" placeholder="🔍 Cari layanan (SSD, RAM, Cleaning, LCD)..." class="min-h-[42px] px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white focus:outline-none focus:border-cyan-500">
+                        <button onclick="openServiceItemModal()" class="admin-only-btn hidden min-h-[42px] px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs">
+                            + Tambah Paket
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Filter Chips for Service -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+                    <button type="button" onclick="setServiceCategoryFilter('all')" data-srv-chip="all" class="srv-chip-btn px-3.5 py-2 rounded-xl text-xs font-extrabold bg-cyan-500 text-slate-950 shadow whitespace-nowrap transition">🔥 Semua Layanan</button>
+                    <button type="button" onclick="setServiceCategoryFilter('Perawatan & Cleaning')" data-srv-chip="Perawatan & Cleaning" class="srv-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition">❄️ Perawatan & Cleaning</button>
+                    <button type="button" onclick="setServiceCategoryFilter('Upgrade Performa')" data-srv-chip="Upgrade Performa" class="srv-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition">🚀 Upgrade Performa (SSD/RAM)</button>
+                    <button type="button" onclick="setServiceCategoryFilter('Ganti Sparepart')" data-srv-chip="Ganti Sparepart" class="srv-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition">🔋 Ganti Sparepart (LCD/Baterai/Keyboard)</button>
+                    <button type="button" onclick="setServiceCategoryFilter('Perbaikan Mesin')" data-srv-chip="Perbaikan Mesin" class="srv-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition">🔬 Perbaikan Motherboard & Engsel</button>
+                </div>
+
+                <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"></div>
+            </div>
+
+            <!-- 5. User-Friendly Guided Booking Service Form -->
+            <div id="serviceBookingCard" class="glass-card p-5 sm:p-8 border border-cyan-500/40 bg-gradient-to-b from-slate-900/95 to-slate-950 space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                    <div>
+                        <span class="px-2.5 py-1 rounded-full bg-cyan-500/15 text-cyan-300 text-[10px] font-extrabold uppercase tracking-wider">RESPON CEPAT & PRIORITAS ANTRIAN</span>
+                        <h3 class="text-lg sm:text-2xl font-extrabold text-white mt-1">📅 Formulir Booking Service & Konsultasi Gratis</h3>
+                        <p class="text-xs text-slate-400 mt-0.5">Isi data singkat di bawah ini agar teknisi kami menyiapkan slot pengerjaan atau suku cadang untuk unit Anda.</p>
+                    </div>
+                    <div class="text-left sm:text-right text-xs text-slate-400 shrink-0">
+                        <p class="font-bold text-emerald-400">📍 Toko JAKBAR LAPTOP</p>
+                        <p>Gg. Mawar 1 No. 35, Kebon Jeruk</p>
+                        <p>Buka Setiap Hari: 10.00 – 21.00 WIB</p>
+                    </div>
+                </div>
+
+                <form onsubmit="handleServiceBooking(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-xs font-bold text-slate-300 block mb-1.5">1. Nama Lengkap Anda *</label>
+                            <input id="srvCustName" required type="text" placeholder="Contoh: Budi Santoso" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-500">
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold text-slate-300 block mb-1.5">2. Nomor WhatsApp Aktif *</label>
+                            <input id="srvCustPhone" required type="tel" placeholder="Contoh: 0812xxxx" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-500">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="text-xs font-bold text-slate-300 block mb-1.5">3. Merk & Tipe Laptop *</label>
+                            <input id="srvLaptopModel" required type="text" placeholder="Contoh: Lenovo ThinkPad / ASUS VivoBook" class="w-full min-h-[46px] px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-500">
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold text-slate-300 block mb-1.5">4. Pilih Paket / Jenis Layanan</label>
+                            <select id="srvPackageSelect" class="w-full min-h-[46px] px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-500"></select>
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold text-slate-300 block mb-1.5">5. Metode Layanan & Waktu</label>
+                            <select id="srvVisitType" class="w-full min-h-[46px] px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-500">
+                                <option value="Datang Langsung ke Toko Kebon Jeruk (Bisa Ditunggu)">🏢 Datang ke Toko Kebon Jeruk</option>
+                                <option value="Kirim Unit via GoSend / GrabExpress Instant">🛵 Kirim via Ojek Online Instant</option>
+                                <option value="Konsultasi & Tanya Estimasi Biaya Dulu">💬 Tanya Estimasi Biaya Dulu</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Quick Complaint Tag Helper -->
+                    <div class="space-y-2">
+                        <div class="flex flex-wrap items-center justify-between gap-1">
+                            <label class="text-xs font-bold text-slate-300">6. Detail Keluhan / Permintaan Upgrade (Bisa klik tag cepat di bawah):</label>
+                            <span class="text-[11px] text-cyan-400">Klik tag untuk menambahkan ke catatan</span>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <button type="button" onclick="appendServiceNoteTag('Laptop terasa lemot ingin upgrade SSD/RAM')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-[11px] text-slate-300">+ Lemot / Upgrade SSD</button>
+                            <button type="button" onclick="appendServiceNoteTag('Mesin cepat panas & kipas berisik (Deep Cleaning + Repasta)')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-[11px] text-slate-300">+ Cepat Panas / Cleaning</button>
+                            <button type="button" onclick="appendServiceNoteTag('Baterai cepat habis / harus colok cas terus')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-[11px] text-slate-300">+ Baterai Drop</button>
+                            <button type="button" onclick="appendServiceNoteTag('Layar bergaris / pecah / berkedip')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-[11px] text-slate-300">+ Masalah Layar LCD</button>
+                            <button type="button" onclick="appendServiceNoteTag('Beberapa tombol keyboard tidak berfungsi')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-[11px] text-slate-300">+ Keyboard Error</button>
+                            <button type="button" onclick="appendServiceNoteTag('Engsel patah / casing renggang saat dibuka')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-[11px] text-slate-300">+ Engsel Patah</button>
+                        </div>
+                        <textarea id="srvNotes" rows="3" placeholder="Ceritakan keluhan laptop Anda atau tanyakan stok sparepart yang dibutuhkan..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-shimmer w-full min-h-[50px] py-3.5 px-6 rounded-2xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm shadow-xl shadow-cyan-500/20 transition">
+                        🚀 Kirim Booking Service & Hubungi Teknisi via WhatsApp Sekarang
                     </button>
                 </form>
             </div>
@@ -565,21 +863,101 @@
             </div>
         </section>
 
-                <!-- Order Tracking -->
-        <section id="page-tracking" class="hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-6">
-            <div class="glass-card p-6 sm:p-8 space-y-5">
-                <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-indigo-400">REAL-TIME TRACKING</p>
-                    <h2 class="text-2xl font-extrabold text-white">Lacak Status Pesanan & Pengiriman</h2>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Masukkan Nomor Invoice resmi atau Nomor WhatsApp yang Anda gunakan saat pemesanan.</p>
+        <!-- ==================== PAGE 6: ORDER & WARRANTY TRACKING (USER-FRIENDLY VISUAL EDITION) ==================== -->
+        <section id="page-tracking" class="hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 space-y-6">
+            <!-- 1. Hero Header Banner Lacak -->
+            <div class="glass-card p-5 sm:p-8 border border-sky-500/35 bg-gradient-to-br from-sky-950/45 via-slate-900/95 to-indigo-950/40 relative overflow-hidden">
+                <div class="aurora-blob absolute -top-12 -right-12 w-60 h-60 rounded-full bg-sky-500/15 blur-3xl"></div>
+                <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+                    <div class="space-y-2.5 max-w-3xl min-w-0">
+                        <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-[11px] font-extrabold">
+                            <span>📦</span>
+                            <span id="trackingPageTag">REAL-TIME ORDER & WARRANTY TRACKER</span>
+                        </div>
+                        <h2 id="trackingPageTitle" class="section-fluid-title font-extrabold text-white break-words">
+                            Lacak Status Pesanan, Pengiriman & Masa Aktif Garansi 30 Hari
+                        </h2>
+                        <p id="trackingPageSubtitle" class="text-xs sm:text-sm text-slate-300 leading-relaxed break-words">
+                            Pantau tahapan inspeksi QC, status pengiriman kurir, unduh Nota Invoice resmi, hingga cek sisa masa garansi toko 30 hari cukup dengan memasukkan <strong>Nomor Invoice</strong> atau <strong>Nomor WhatsApp</strong> Anda.
+                        </p>
+                    </div>
+                    <div class="admin-only-btn hidden flex flex-wrap gap-2 shrink-0">
+                        <button onclick="openQuickSectionEditor('trackingHeader')" class="min-h-[40px] px-3.5 py-2 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold text-xs">
+                            ✏️ Edit Header Lacak
+                        </button>
+                        <button onclick="switchPage('admin')" class="min-h-[40px] px-3.5 py-2 rounded-xl bg-indigo-600 text-white font-bold text-xs">
+                            ⚙️ Kelola Status Pesanan
+                        </button>
+                    </div>
                 </div>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <input id="trackingSearchInput" type="text" placeholder="Ketik Nomor Invoice atau No. WhatsApp..." class="flex-1 px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-white">
-                    <button onclick="handleTrackOrder()" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs sm:text-sm">
-                        Cek Status
-                    </button>
-                </div>
+            </div>
+
+            <!-- 2. Interactive Search Box & Quick Recent Invoices -->
+            <div class="glass-card p-5 sm:p-7 space-y-5 border border-slate-800/90">
+                <form onsubmit="event.preventDefault(); handleTrackOrder();" class="space-y-3">
+                    <label for="trackingSearchInput" class="text-xs sm:text-sm font-extrabold text-white block">
+                        🔍 Masukkan Nomor Invoice atau Nomor WhatsApp Pembeli:
+                    </label>
+                    <div class="flex flex-col sm:flex-row gap-2.5">
+                        <div class="relative flex-1">
+                            <input id="trackingSearchInput" type="text" placeholder="Contoh: INV-JL... atau 0812xxxxxxx" class="w-full min-h-[48px] pl-4 pr-10 py-3 rounded-xl bg-slate-900 border border-slate-700/90 text-xs sm:text-sm text-white focus:outline-none focus:border-sky-400">
+                            <button type="button" onclick="clearTrackingSearch()" title="Bersihkan" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs font-bold">✕</button>
+                        </div>
+                        <button type="submit" class="btn-shimmer min-h-[48px] px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-sky-500/25 shrink-0">
+                            📦 Lacak Sekarang
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Recent / Available Invoice Quick Chips -->
+                <div id="recentTrackingChipsBox" class="flex flex-wrap items-center gap-2 pt-1 text-xs"></div>
+
+                <!-- Dynamic Tracking Results Container -->
                 <div id="trackingResultBox" class="space-y-4 pt-2"></div>
+            </div>
+
+            <!-- 3. Visual Explanation of 4 Order Stages & Lost Invoice Helper -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                <div class="lg:col-span-8 glass-card p-5 sm:p-6 border border-slate-800/90 space-y-4">
+                    <h3 class="text-sm sm:text-base font-extrabold text-white">🧭 Panduan 4 Tahap Proses Pesanan di Toko JAKBAR LAPTOP</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
+                            <span class="font-extrabold text-amber-300">1. Menunggu Verifikasi Admin</span>
+                            <p class="text-slate-400 leading-relaxed">Pesanan Anda telah tercatat di sistem. Admin sedang memverifikasi pembayaran atau jadwal ambil COD di Toko Kebon Jeruk.</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
+                            <span class="font-extrabold text-cyan-300">2. Pembayaran Lunas & Sedang QC</span>
+                            <p class="text-slate-400 leading-relaxed">Teknisi melakukan pengecekan akhir 40 titik hardware, instalasi siap pakai, serta pengemasan aman (*bubble wrap* tebal / kayu).</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
+                            <span class="font-extrabold text-indigo-300">3. Sedang Dikirim Kurir</span>
+                            <p class="text-slate-400 leading-relaxed">Unit sedang diantar oleh kurir Instant/Ekspedisi menuju alamat Anda atau sudah siap diambil langsung di Toko.</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1">
+                            <span class="font-extrabold text-emerald-300">4. Selesai Diterima & Garansi Aktif</span>
+                            <p class="text-slate-400 leading-relaxed">Unit telah diterima dengan baik. Masa perlindungan <strong>Garansi Penuh Toko 30 Hari</strong> langsung berjalan otomatis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help Card for Lost Invoice / Warranty Claim -->
+                <div class="lg:col-span-4 glass-card p-5 sm:p-6 border border-emerald-500/30 bg-gradient-to-b from-slate-900 to-emerald-950/20 flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-extrabold text-[10px]">BANTUAN PELANGGAN</span>
+                        <h3 class="text-sm sm:text-base font-extrabold text-white">Lupa Nomor Invoice atau Ingin Klaim Garansi?</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Jangan khawatir! Sebutkan nama atau nomor WhatsApp saat pembelian, tim Admin Toko JAKBAR LAPTOP siap membantu mengecek data garansi Anda.
+                        </p>
+                    </div>
+                    <div class="space-y-2 pt-1">
+                        <a href="https://wa.me/6282298688189?text=Halo%20Admin%20Toko%20JAKBAR%20LAPTOP,%20saya%20ingin%20mengecek%20status%20pesanan%20/%20garansi%20laptop%20saya" target="_blank" rel="noopener noreferrer" class="w-full min-h-[44px] py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs flex items-center justify-center shadow-lg transition">
+                            💬 Hubungi Admin Lacak via WA
+                        </a>
+                        <button type="button" onclick="switchPage('faq')" class="w-full min-h-[42px] py-2 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition">
+                            🛡️ Baca Syarat & Ketentuan Garansi
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -659,7 +1037,7 @@
                 <div>
                     <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">ADMINISTRATOR MODE</span>
                     <h2 class="text-2xl font-extrabold text-white mt-1">Panel Kendali Utama JAKBAR LAPTOP</h2>
-                    <p class="text-xs text-slate-400">Kelola produk, pesanan pelanggan, bukti transfer, serta preset otomatisasi layout & frame.</p>
+                    <p class="text-xs text-slate-400">Kelola produk, pesanan pelanggan, bukti transfer, dan checklist verifikasi QC 40 titik.</p>
                 </div>
                 <div class="flex flex-wrap gap-2">
                     <button onclick="openUiCustomizerModal()" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg">
@@ -704,10 +1082,13 @@
                 </div>
             </div>
 
-            <!-- Orders Management Table -->
+            <!-- Orders Management Table with Interactive QC Checklist Verification -->
             <div class="glass-card p-6 space-y-4">
-                <h3 class="text-lg font-extrabold text-white">📦 Daftar Pesanan Masuk & Verifikasi Pembayaran</h3>
-                <div id="adminOrdersContainer" class="space-y-3"></div>
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-extrabold text-white">📦 Daftar Pesanan Masuk & Checklist Verifikasi QC 40 Titik</h3>
+                    <span class="text-xs text-slate-400">Pastikan checklist QC tuntas sebelum kirim</span>
+                </div>
+                <div id="adminOrdersContainer" class="space-y-4"></div>
             </div>
         </section>
 
@@ -850,33 +1231,33 @@
 
     <!-- 3. Wishlist Modal -->
     <div id="wishlistModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-lg w-full p-5 sm:p-6 space-y-4 max-h-[85vh] overflow-y-auto">
+        <div class="glass-card max-w-md w-full p-6 space-y-4 border border-slate-700">
             <div class="flex items-center justify-between">
-                <h3 class="text-lg font-extrabold text-white">❤️ Daftar Unit Favorit Anda</h3>
+                <h3 class="text-lg font-extrabold text-white">❤️ Unit Favorit Saya</h3>
                 <button onclick="closeWishlistModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
             </div>
-            <div id="wishlistItemsContainer" class="space-y-3"></div>
+            <div id="wishlistItemsContainer" class="space-y-2.5 max-h-80 overflow-y-auto"></div>
         </div>
     </div>
 
-    <!-- 4. Auth Modal (Customer Login / Register & Hidden Admin Portal) -->
+    <!-- 4. Auth Modal (Customer Login/Register & Hidden Admin Portal) -->
     <div id="authModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-md w-full p-6 space-y-5 border border-slate-700">
+        <div class="glass-card max-w-md w-full p-6 space-y-4 border border-indigo-500/40">
             <div class="flex items-center justify-between">
                 <h3 id="authModalHeading" class="text-lg font-extrabold text-white">🔐 Masuk / Daftar Akun Pelanggan</h3>
                 <button onclick="closeAuthModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
             </div>
-            <div id="authCustomerTabs" class="grid grid-cols-2 gap-2 p-1 bg-slate-900 rounded-xl">
-                <button id="authTabLogin" type="button" onclick="switchAuthTab('login')" class="py-2 rounded-lg text-xs font-bold bg-indigo-600 text-white">Login Pelanggan</button>
-                <button id="authTabRegister" type="button" onclick="switchAuthTab('register')" class="py-2 rounded-lg text-xs font-bold text-slate-400">Buat Akun Baru</button>
+            <div id="authCustomerTabs" class="grid grid-cols-2 gap-2 p-1 rounded-xl bg-slate-900 border border-slate-800">
+                <button type="button" id="authTabLogin" onclick="switchAuthTab('login')" class="py-2 rounded-lg text-xs font-bold bg-indigo-600 text-white">Masuk (Login)</button>
+                <button type="button" id="authTabRegister" onclick="switchAuthTab('register')" class="py-2 rounded-lg text-xs font-bold text-slate-400">Daftar Baru</button>
             </div>
             <form onsubmit="handleAuthSubmit(event)" class="space-y-3">
                 <div id="authNameWrapper" class="hidden">
-                    <input id="authNameInput" type="text" placeholder="Nama Lengkap Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                    <input id="authNameInput" type="text" placeholder="Nama Lengkap Anda" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
                 </div>
-                <input id="authEmailInput" required type="email" placeholder="Alamat Email Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
-                <input id="authPasswordInput" required type="password" placeholder="Kata Sandi" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
-                <button type="submit" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs">
+                <input id="authEmailInput" required type="email" placeholder="Alamat Email" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                <input id="authPasswordInput" required type="password" placeholder="Kata Sandi" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-extrabold text-xs shadow-lg">
                     Lanjutkan
                 </button>
             </form>
@@ -885,14 +1266,14 @@
 
     <!-- 5. Add/Edit Product Modal (Admin) -->
     <div id="productEditorModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-        <div class="glass-card max-w-xl w-full p-6 space-y-4 max-h-[90vh] overflow-y-auto">
+        <div class="glass-card max-w-lg w-full p-6 space-y-4 border border-emerald-500/40 max-h-[90vh] overflow-y-auto">
             <div class="flex items-center justify-between">
-                <h3 id="productEditorTitle" class="text-lg font-extrabold text-white">Tambah / Edit Unit Laptop</h3>
+                <h3 class="text-lg font-extrabold text-white">💻 Tambah / Edit Unit Katalog</h3>
                 <button onclick="closeProductModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
             </div>
             <form onsubmit="handleSaveProduct(event)" class="space-y-3">
                 <input id="prodIdInput" type="hidden">
-                <input id="prodNameInput" required type="text" placeholder="Nama Unit Laptop" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                <input id="prodNameInput" required type="text" placeholder="Nama & Seri Laptop (Contoh: Lenovo ThinkPad X1 Carbon Gen 8)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
                 <div class="grid grid-cols-2 gap-3">
                     <select id="prodCategoryInput" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
                         <option value="Bisnis & Kantoran">Bisnis & Kantoran</option>
@@ -900,145 +1281,129 @@
                         <option value="Gaming & Render">Gaming & Render</option>
                         <option value="Kuliah & Pelajar">Kuliah & Pelajar</option>
                     </select>
-                    <input id="prodPriceInput" required type="number" placeholder="Harga (Rp)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                    <input id="prodStockInput" required type="number" min="0" placeholder="Jumlah Stok" value="1" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
                 </div>
-                <div class="grid grid-cols-2 gap-3">
-                    <input id="prodStockInput" required type="number" placeholder="Stok Unit" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
-                    <input id="prodImageInput" required type="url" placeholder="URL Foto Laptop" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <input id="prodPriceInput" required type="number" placeholder="Harga Jual (Rp)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                    <input id="prodImageInput" required type="text" placeholder="URL Foto Produk (https://...)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
                 </div>
-                <input id="prodSpecsInput" required type="text" placeholder="Ringkasan Spesifikasi (CPU / RAM / SSD / Layar)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
-                <textarea id="prodProsInput" required rows="2" placeholder="Keuntungan Utama (Pisahkan dengan baris baru)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></textarea>
-                <textarea id="prodConsInput" required rows="2" placeholder="Catatan Jujur / Minus Fisik (Pisahkan dengan baris baru)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></textarea>
+                <textarea id="prodSpecsInput" required rows="2" placeholder="Spesifikasi Lengkap (CPU, RAM, SSD, GPU, Layar)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></textarea>
+                <textarea id="prodProsInput" rows="2" placeholder="Kelebihan Unit (Pisahkan tiap poin dengan baris baru / Enter)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></textarea>
+                <textarea id="prodConsInput" rows="2" placeholder="Catatan Jujur Fisik/Fungsi (Pisahkan dengan Enter)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></textarea>
                 <button type="submit" class="w-full py-3 rounded-xl bg-emerald-500 text-slate-950 font-extrabold text-xs">Simpan Unit ke Katalog</button>
             </form>
         </div>
     </div>
 
-    <!-- 6. Admin UI Preset & Frame Customizer Modal -->
-    <div id="uiCustomizerModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-lg w-full p-6 space-y-5 border border-indigo-500/40">
+    <!-- 6. Quick Section Content Editor Modal (Admin) -->
+    <div id="quickSectionModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="glass-card max-w-lg w-full p-6 space-y-4 border border-amber-500/40 max-h-[90vh] overflow-y-auto">
             <div class="flex items-center justify-between">
-                <div>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-indigo-400">OTOMATISASI VISUAL ADMIN</span>
-                    <h3 class="text-lg font-extrabold text-white">Preset Layout, Frame & Tipografi</h3>
-                </div>
-                <button onclick="closeUiCustomizerModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
-            </div>
-
-            <!-- 1-Click Presets -->
-            <div class="space-y-2">
-                <label class="text-xs font-bold text-slate-300">Pilih Preset Otomatis 1-Klik:</label>
-                <div class="grid grid-cols-3 gap-2.5">
-                    <button onclick="applyAdminPreset('showroom')" class="p-3 rounded-xl bg-slate-900 hover:bg-indigo-950/60 border border-slate-700 text-left">
-                        <p class="text-xs font-extrabold text-white">✨ Standar Toko</p>
-                        <p class="text-[10px] text-slate-400 mt-0.5">3 Kolom Seimbang</p>
-                    </button>
-                    <button onclick="applyAdminPreset('compact')" class="p-3 rounded-xl bg-slate-900 hover:bg-indigo-950/60 border border-slate-700 text-left">
-                        <p class="text-xs font-extrabold text-cyan-300">⚡ Katalog Padat</p>
-                        <p class="text-[10px] text-slate-400 mt-0.5">4 Kolom Ringkas</p>
-                    </button>
-                    <button onclick="applyAdminPreset('cinematic')" class="p-3 rounded-xl bg-slate-900 hover:bg-indigo-950/60 border border-slate-700 text-left">
-                        <p class="text-xs font-extrabold text-emerald-300">💎 Sinematik</p>
-                        <p class="text-[10px] text-slate-400 mt-0.5">2 Kolom Lebar</p>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Font & Radius Controls -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                    <label class="text-xs font-bold text-slate-300 block mb-1">Tipografi Utama</label>
-                    <select id="uiFontSelect" onchange="updateUiCustomSetting('font', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs text-white">
-                        <option value="'Plus Jakarta Sans', sans-serif">Plus Jakarta Sans (Modern)</option>
-                        <option value="'Inter', sans-serif">Inter Clean (Profesional)</option>
-                        <option value="'Space Grotesk', sans-serif">Space Grotesk (Tech)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="text-xs font-bold text-slate-300 block mb-1">Rasio Bingkai Foto</label>
-                    <select id="uiAspectSelect" onchange="updateUiCustomSetting('aspect', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-xs text-white">
-                        <option value="16 / 10">16:10 Proporsional Laptop</option>
-                        <option value="16 / 9">16:9 Widescreen</option>
-                        <option value="4 / 3">4:3 Klasik</option>
-                    </select>
-                </div>
-            </div>
-
-            <button onclick="closeUiCustomizerModal()" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs">
-                Simpan & Terapkan ke Seluruh Pengunjung
-            </button>
-        </div>
-    </div>
-
-    <!-- 7. Trade-In Calculator Modal -->
-    <div id="tradeInModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-lg w-full p-6 space-y-4 border border-emerald-500/40">
-            <div class="flex items-center justify-between">
-                <h3 class="text-lg font-extrabold text-white">🔄 Kalkulator Estimasi Tukar Tambah</h3>
-                <button onclick="closeTradeInModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
-            </div>
-            <div class="space-y-3">
-                <div>
-                    <label class="text-xs text-slate-300 font-bold block mb-1">Pilih Unit Impian di JAKBAR LAPTOP</label>
-                    <select id="tradeTargetSelect" onchange="calculateTradeIn()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></select>
-                </div>
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="text-xs text-slate-300 font-bold block mb-1">Prosesor Laptop Lama Anda</label>
-                        <select id="tradeOldCpu" onchange="calculateTradeIn()" class="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
-                            <option value="2200000">Intel Core i3 / Ryzen 3</option>
-                            <option value="3600000" selected>Intel Core i5 / Ryzen 5</option>
-                            <option value="5200000">Intel Core i7 / Ryzen 7 / Apple M1</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="text-xs text-slate-300 font-bold block mb-1">Kondisi Fisik & Fungsi</label>
-                        <select id="tradeOldCond" onchange="calculateTradeIn()" class="w-full px-3 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
-                            <option value="1">Mulus Normal (90-98%)</option>
-                            <option value="0.8">Lecet Pemakaian Normal</option>
-                            <option value="0.6">Ada Minus Ringan (Baterai/LCD)</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="tradeResultBox" class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-1"></div>
-                <button onclick="sendTradeInWhatsApp()" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs">
-                    Ajukan Inspeksi Tukar Tambah via WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 8. Quick Section Editor Modal (Admin) -->
-    <div id="quickSectionModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card max-w-lg w-full p-6 space-y-4 border border-amber-500/40">
-            <div class="flex items-center justify-between">
-                <h3 id="quickSecModalTitle" class="text-lg font-extrabold text-white">Edit Konten Halaman</h3>
+                <h3 class="text-lg font-extrabold text-white">✏️ Edit Teks & Copywriting Halaman</h3>
                 <button onclick="closeQuickSectionModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
             </div>
             <form onsubmit="saveQuickSectionModal(event)" class="space-y-3">
-                <input type="hidden" id="quickSecKey">
-                <div id="quickSecFieldsContainer" class="space-y-3"></div>
-                <button type="submit" class="w-full py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-xs">
-                    Simpan Perubahan Konten
-                </button>
+                <input id="quickSecKey" type="hidden">
+                <div id="quickSecFieldsContainer" class="space-y-2.5"></div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-xs">Simpan Perubahan Teks</button>
             </form>
         </div>
     </div>
 
-    <!-- 9. Add Service Package Modal (Admin) -->
+    <!-- 7. Admin UI Customizer Modal -->
+    <div id="uiCustomizerModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 space-y-4 border border-indigo-500/40">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-extrabold text-white">🎨 Otomatisasi Preset Layout & Frame</h3>
+                <button onclick="closeUiCustomizerModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
+            </div>
+            <div class="space-y-3 text-xs">
+                <p class="text-slate-400">Pilih preset tampilan yang akan disinkronkan ke seluruh pengunjung:</p>
+                <div class="grid grid-cols-3 gap-2">
+                    <button type="button" onclick="applyAdminPreset('showroom')" class="p-3 rounded-xl bg-slate-900 hover:bg-indigo-600/30 border border-indigo-500/40 font-bold text-white">✨ Showroom (3 Kolom)</button>
+                    <button type="button" onclick="applyAdminPreset('compact')" class="p-3 rounded-xl bg-slate-900 hover:bg-indigo-600/30 border border-slate-800 font-bold text-slate-200">⚡ Padat (4 Kolom)</button>
+                    <button type="button" onclick="applyAdminPreset('cinematic')" class="p-3 rounded-xl bg-slate-900 hover:bg-indigo-600/30 border border-slate-800 font-bold text-slate-200">💎 Sinematik (2 Kolom)</button>
+                </div>
+                <div>
+                    <label class="font-bold text-slate-300 block mb-1">Jenis Huruf (Font Utama):</label>
+                    <select onchange="updateUiCustomSetting('font', this.value)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white">
+                        <option value="'Plus Jakarta Sans', sans-serif">Plus Jakarta Sans (Modern Elegan)</option>
+                        <option value="'Inter', sans-serif">Inter Clean (Standar Profesional)</option>
+                        <option value="'Space Grotesk', sans-serif">Space Grotesk (Teknologi Futuristik)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-bold text-slate-300 block mb-1">Rasio Bingkai Foto Produk:</label>
+                    <select onchange="updateUiCustomSetting('aspect', this.value)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white">
+                        <option value="16 / 10">16:10 (Proporsi Laptop Ideal)</option>
+                        <option value="16 / 9">16:9 (Widescreen Sinematik)</option>
+                        <option value="4 / 3">4:3 (Klasik Katalog)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Trade-In Estimator Modal -->
+    <div id="tradeInModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 space-y-4 border border-emerald-500/40">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-extrabold text-white">🔄 Kalkulator Tukar Tambah Laptop</h3>
+                <button onclick="closeTradeInModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
+            </div>
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="font-bold text-slate-300 block mb-1">1. Pilih Unit Incaran di Katalog:</label>
+                    <select id="tradeTargetSelect" onchange="calculateTradeIn()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white"></select>
+                </div>
+                <div>
+                    <label class="font-bold text-slate-300 block mb-1">2. Spesifikasi Laptop Lama Anda:</label>
+                    <select id="tradeOldCpu" onchange="calculateTradeIn()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white">
+                        <option value="2200000">Intel Core i3 / Ryzen 3 (RAM 4GB–8GB)</option>
+                        <option value="3500000">Intel Core i5 / Ryzen 5 (RAM 8GB–16GB)</option>
+                        <option value="5200000">Intel Core i7 / Ryzen 7 / MacBook Series</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-bold text-slate-300 block mb-1">3. Kondisi Fisik & Fungsi Laptop Lama:</label>
+                    <select id="tradeOldCond" onchange="calculateTradeIn()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white">
+                        <option value="1">Mulus & Normal Semua (Grade A)</option>
+                        <option value="0.82">Lecet Pemakaian Wajar, Fungsi Normal (Grade B)</option>
+                        <option value="0.6">Ada Minus Baterai / Keyboard / Layar (Perlu Servis)</option>
+                    </select>
+                </div>
+                <div id="tradeResultBox" class="p-3.5 rounded-xl bg-slate-900 border border-emerald-500/30 space-y-1"></div>
+                <button type="button" onclick="sendTradeInWhatsApp()" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold">
+                    💬 Ajukan Tukar Tambah via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. Add/Edit Service Package Modal (Admin) -->
     <div id="serviceEditorModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-card max-w-md w-full p-6 space-y-4 border border-cyan-500/40">
             <div class="flex items-center justify-between">
-                <h3 class="text-lg font-extrabold text-white">🛠️ Tambah Paket Jasa Service</h3>
+                <h3 id="serviceEditorModalTitle" class="text-lg font-extrabold text-white">🛠️ Tambah / Edit Paket Jasa Service</h3>
                 <button onclick="closeServiceItemModal()" class="w-8 h-8 rounded-xl bg-slate-800 text-slate-300 font-bold">✕</button>
             </div>
             <form onsubmit="handleSaveServiceItem(event)" class="space-y-3">
+                <input id="srvItemId" type="hidden">
                 <input id="srvItemName" required type="text" placeholder="Nama Paket Service / Upgrade" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
                 <div class="grid grid-cols-2 gap-3">
-                    <input id="srvItemPrice" required type="number" placeholder="Biaya (Rp)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
-                    <input id="srvItemDuration" required type="text" placeholder="Estimasi Waktu (Contoh: 60 Menit)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                    <select id="srvItemCategory" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                        <option value="Perawatan & Cleaning">Perawatan & Cleaning</option>
+                        <option value="Upgrade Performa">Upgrade Performa</option>
+                        <option value="Ganti Sparepart">Ganti Sparepart</option>
+                        <option value="Perbaikan Mesin">Perbaikan Mesin</option>
+                    </select>
+                    <input id="srvItemWarranty" required type="text" placeholder="Garansi (Contoh: 30 Hari)" value="Garansi 30 Hari" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
                 </div>
-                <textarea id="srvItemDesc" required rows="3" placeholder="Rincian pengerjaan dan garansi service..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></textarea>
+                <div class="grid grid-cols-2 gap-3">
+                    <input id="srvItemPrice" required type="number" placeholder="Mulai Biaya (Rp)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                    <input id="srvItemDuration" required type="text" placeholder="Estimasi Waktu (Contoh: 45 Menit)" class="px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white">
+                </div>
+                <textarea id="srvItemDesc" required rows="3" placeholder="Rincian pengerjaan yang mudah dipahami pelanggan..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"></textarea>
                 <button type="submit" class="w-full py-3 rounded-xl bg-cyan-500 text-slate-950 font-extrabold text-xs">Simpan Paket Service</button>
             </form>
         </div>
@@ -1127,24 +1492,50 @@
 
         let customSections = {
             topbar: {
-                left: 'Garansi Toko 30 Hari Penuh • Lulus QC 40 Titik Hardware • Free Tas & Charger Original',
-                right: '📍 Toko: Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat • WA: 0822-9868-8189'
+                left: '✨ Promo Spesial Hari Ini: Garansi Penuh 30 Hari • Lulus Uji 40 Titik QC • Gratis Tas, Mouse & Charger Ori!',
+                right: '📍 Toko: Gg. Mawar 1 No. 35, Kebon Jeruk, Jakbar • WA Fast Response: 0822-9868-8189'
             },
             hero: {
-                badge: 'TRANSPARANSI KELEBIHAN & KEKURANGAN TIAP UNIT',
-                title: 'Solusi Cerdas Beli Laptop Second Kualitas Grade A+ Tanpa Rasa Khawatir.',
-                subtitle: 'Setiap unit di Toko JAKBAR LAPTOP telah melewati inspeksi ketat 40 titik hardware, dilengkapi rincian Keuntungan & Catatan Jujur secara terbuka, serta dilindungi Garansi Tukar Unit.',
-                stat1Val: '100% QC', stat1Label: '40 Titik Hardware Test',
-                stat2Val: '30 Hari', stat2Label: 'Garansi Penuh Toko',
-                stat3Val: 'Grade A+', stat3Label: 'Transparan Plus & Minus'
+                badge: '💎 PUSAT LAPTOP SECOND RASA BARU • JUJUR, TRANSPARAN & BERGARANSI',
+                title: 'Punya Laptop Impian Kualitas Grade A+ Kini Lebih Hemat Jutaan Rupiah Tanpa Rasa Cemas!',
+                subtitle: 'Jangan pertaruhkan uang Anda membeli laptop bekas yang belum jelas kondisinya. Di Toko JAKBAR LAPTOP, setiap unit diseleksi ketat melewati 40 titik inspeksi hardware, dibuka jujur kelebihan & catatannya, siap pakai untuk kerja berat, kuliah, maupun desain dengan perlindungan Garansi Toko 30 Hari Penuh.',
+                pill1: '✅ Bebas Reset & Siap Kerja',
+                pill2: '🎁 Bonus Tas + Charger Original',
+                pill3: '🤝 Bisa Cek Sepuasnya di Toko Kebon Jeruk',
+                stat1Val: '100% Lulus QC', stat1Label: '40 Titik Mesin & Layar',
+                stat2Val: 'Garansi 30 Hari', stat2Label: 'Tukar Unit Tanpa Ribet',
+                stat3Val: 'Hemat s/d 50%', stat3Label: 'Performa Setara Baru'
+            },
+            homeSections: {
+                featuredTag: '🔥 KOLEKSI PALING DICARI MINGGU INI',
+                featuredTitle: 'Unit Pilihan Siap Pakai — Mesin Segel, Fisik Mulus & Bergaransi',
+                featuredSubtitle: 'Stok terbatas karena setiap unit diseleksi ketat satu per satu. Amankan unit incaran Anda sebelum kehabisan!',
+                testiTag: '⭐ BUKTI KEPUASAN PELANGGAN ASLI',
+                testiTitle: 'Bukan Sekadar Janji — Ini Pengalaman Mereka yang Sudah Membuktikan!',
+                testiSubtitle: 'Kepercayaan Anda adalah prioritas utama kami. Transparan sejak konsultasi pertama hingga layanan purna jual.'
+            },
+            catalogHeader: {
+                tag: 'KATALOG RESMI TOKO JAKBAR LAPTOP',
+                title: 'Etalase Unit Laptop Siap Pakai — Lulus Uji 40 Titik QC & Bergaransi!',
+                subtitle: 'Setiap unit yang tampil di bawah ini telah lulus pengetesan mesin, layar, keyboard, dan baterai secara ketat. Lengkap dengan rincian Kelebihan & Catatan Jujur serta bisa dicek langsung sepuasnya di Toko Kebon Jeruk.'
+            },
+            servicePageHeader: {
+                tag: 'LABORATORIUM TEKNISI SPESIALIS JAKBAR LAPTOP',
+                title: 'Solusi Jujur & Cepat untuk Segala Keluhan Laptop Anda — Bisa Ditunggu & Bergaransi!',
+                subtitle: 'Bingung kenapa laptop tiba-tiba lemot, cepat panas, atau mati total? Jangan khawatir! Di Toko JAKBAR LAPTOP Kebon Jeruk, Anda mendapat Pengecekan Awal Gratis, penjelasan biaya di depan sebelum dikerjakan, serta jaminan keamanan data 100%.'
+            },
+            trackingHeader: {
+                tag: 'REAL-TIME ORDER & WARRANTY TRACKER',
+                title: 'Lacak Status Pesanan, Pengiriman & Masa Aktif Garansi 30 Hari',
+                subtitle: 'Pantau tahapan inspeksi QC, status pengiriman kurir, unduh Nota Invoice resmi, hingga cek sisa masa garansi toko 30 hari cukup dengan memasukkan Nomor Invoice atau Nomor WhatsApp Anda.'
             },
             serviceBanner: {
-                tag: '🛠️ LABORATORIUM SERVICE & UPGRADE JAKBAR LAPTOP',
-                title: 'Laptop Lama Anda Lemot, Cepat Panas, atau Engsel Patah?',
-                desc: 'Selain menjual laptop second berkualitas, teknisi spesialis kami di Toko Kebon Jeruk melayani jasa Deep Cleaning + Thermal Paste Grizzly, Upgrade RAM/SSD NVMe, ganti LCD/Baterai Original, hingga perbaikan Motherboard bergaransi.'
+                tag: '🛠️ KLINIK SERVICE & UPGRADE KILAT JAKBAR LAPTOP',
+                title: 'Sayang Laptop Lama Kalau Dijual Murah? Bikin Ngebut Lagi Seperti Baru!',
+                desc: 'Jangan buru-buru ganti baru jika laptop lama Anda hanya lemot, cepat panas (overheat), baterai drop, atau engsel patah. Teknisi ahli kami di Toko Kebon Jeruk siap melakukan Deep Cleaning + Thermal Paste Grizzly, Upgrade SSD NVMe & RAM bisa ditunggu, dengan biaya jujur dan bergaransi!'
             },
             about: {
-                title: 'Mengapa Memilih Toko JAKBAR LAPTOP?',
+                title: 'Mengapa Ribuan Profesional & Mahasiswa Memilih Toko JAKBAR LAPTOP?',
                 desc: 'Berlokasi di Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat, Toko JAKBAR LAPTOP hadir menghapus stigma negatif membeli laptop bekas. Kami menerapkan standar keterbukaan penuh: setiap unit diuji 40 titik hardware, dijelaskan kelebihan serta catatan fisiknya apa adanya, dan dilindungi garansi toko yang jelas.'
             },
             footer: {
@@ -1172,6 +1563,60 @@
         let secretClickCounter = 0;
         let secretClickTimer = null;
         let pendingReceiptDataUrl = '';
+        let catalogViewMode = 'grid';
+        let activeServiceCategory = 'all';
+        let activeSymptomKey = 'slow';
+
+        const symptomDiagnosisMap = {
+            slow: {
+                icon: '🐢',
+                title: 'Solusi Laptop Lemot, Booting Lama & Sering Not Responding',
+                solution: '95% masalah laptop lemot teratasi secara instan dengan mengganti Harddisk lama ke SSD NVMe/SATA berkecepatan tinggi atau menambah kapasitas RAM agar multitasking lancar.',
+                recommendedPkg: 'Upgrade SSD NVMe / SATA + Clone Windows (Data Aman)',
+                estTime: '± 45 – 60 Menit (Bisa Ditunggu)',
+                noteText: 'Laptop terasa lemot & loading lama, ingin konsultasi upgrade SSD / RAM tanpa hapus data.'
+            },
+            overheat: {
+                icon: '🔥',
+                title: 'Solusi Laptop Cepat Panas (Overheat), Kipas Berisik & Suka Mati Sendiri',
+                solution: 'Debu yang menumpuk di heatsink dan pasta prosesor yang mengering membuat suhu melonjak. Solusinya adalah Deep Cleaning menyeluruh + penggantian Thermal Paste Kryonaut/Grizzly.',
+                recommendedPkg: 'Deep Cleaning Total + Repasta Thermal Grizzly',
+                estTime: '± 45 – 60 Menit (Bisa Ditunggu)',
+                noteText: 'Laptop cepat panas (overheat) dan kipas berisik, ingin paket Deep Cleaning + Repasta Thermal.'
+            },
+            battery: {
+                icon: '🔋',
+                title: 'Solusi Baterai Drop, Bocor, Silang Merah, atau Kembung',
+                solution: 'Kami menyediakan penggantian baterai kualitas Original dengan garansi toko, sekaligus pengecekan IC Charging agar pengisian daya kembali normal dan awet.',
+                recommendedPkg: 'Ganti Baterai Original Bergaransi',
+                estTime: '± 30 – 45 Menit (Bisa Ditunggu)',
+                noteText: 'Baterai laptop cepat habis / harus colok cas terus, ingin cek & ganti baterai original.'
+            },
+            screen: {
+                icon: '🖥️',
+                title: 'Solusi Layar Bergaris, Berkedip (Flicker), Blank, atau Pecah',
+                solution: 'Teknisi kami akan mengecek apakah kerusakan ada pada kabel fleksibel atau panel LCD, lalu menggantinya dengan panel IPS/HD/FHD baru yang jernih dan bergaransi.',
+                recommendedPkg: 'Ganti Panel Layar LCD / LED Original',
+                estTime: '± 45 – 90 Menit (Bisa Ditunggu)',
+                noteText: 'Layar laptop bermasalah (bergaris/pecah/kedip), ingin cek & estimasi ganti LCD.'
+            },
+            keyboard: {
+                icon: '⌨️',
+                title: 'Solusi Tombol Keyboard Error/Mengetik Sendiri & Engsel Patah/Keras',
+                solution: 'Penggantian modul keyboard baru yang presisi atau reparasi dudukan baut engsel dengan penguat khusus agar buka-tutup layar kembali lembut seperti semula.',
+                recommendedPkg: 'Ganti Keyboard / Reparasi Engsel & Casing',
+                estTime: '± 60 – 120 Menit',
+                noteText: 'Tombol keyboard error / engsel terasa keras atau patah, ingin diperbaiki di toko.'
+            },
+            dead: {
+                icon: '⚡',
+                title: 'Solusi Laptop Mati Total, Korslet, atau Ketumpahan Air/Kopi',
+                solution: 'Jangan dinyalakan paksa! Segera bawa ke laboratorium kami untuk pembersihan korosi ultrasonik dan pelacakan jalur IC Motherboard dengan peralatan mikroskop lengkap.',
+                recommendedPkg: 'Inspeksi & Perbaikan Motherboard / Kena Cairan',
+                estTime: 'Pengecekan Awal Gratis (1–3 Hari Kerja)',
+                noteText: 'Laptop mati total / terkena cairan, butuh pengecekan mesin oleh teknisi.'
+            }
+        };
 
         // Firebase State
         let db = null;
@@ -1268,12 +1713,16 @@
 
             const catalogGrid = document.getElementById('catalogProductsGrid');
             if (catalogGrid) {
-                const cols = Number(uiPreferences.columns) || 3;
-                catalogGrid.className = cols === 4
-                    ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'
-                    : cols === 2
-                    ? 'grid grid-cols-1 md:grid-cols-2 gap-6'
-                    : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6';
+                if (catalogViewMode === 'list') {
+                    catalogGrid.className = 'grid grid-cols-1 gap-4';
+                } else {
+                    const cols = Number(uiPreferences.columns) || 3;
+                    catalogGrid.className = cols === 4
+                        ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'
+                        : cols === 2
+                        ? 'grid grid-cols-1 md:grid-cols-2 gap-6'
+                        : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6';
+                }
             }
         }
 
@@ -1319,12 +1768,30 @@
             setTxt('heroBadgeText', customSections.hero?.badge);
             setTxt('heroTitleText', customSections.hero?.title);
             setTxt('heroSubtitleText', customSections.hero?.subtitle);
+            setTxt('heroPill1', customSections.hero?.pill1);
+            setTxt('heroPill2', customSections.hero?.pill2);
+            setTxt('heroPill3', customSections.hero?.pill3);
             setTxt('stat1Val', customSections.hero?.stat1Val);
             setTxt('stat1Label', customSections.hero?.stat1Label);
             setTxt('stat2Val', customSections.hero?.stat2Val);
             setTxt('stat2Label', customSections.hero?.stat2Label);
             setTxt('stat3Val', customSections.hero?.stat3Val);
             setTxt('stat3Label', customSections.hero?.stat3Label);
+            setTxt('homeFeaturedTag', customSections.homeSections?.featuredTag);
+            setTxt('homeFeaturedTitle', customSections.homeSections?.featuredTitle);
+            setTxt('homeFeaturedSubtitle', customSections.homeSections?.featuredSubtitle);
+            setTxt('homeTestiTag', customSections.homeSections?.testiTag);
+            setTxt('homeTestiTitle', customSections.homeSections?.testiTitle);
+            setTxt('homeTestiSubtitle', customSections.homeSections?.testiSubtitle);
+            setTxt('catalogPageTag', customSections.catalogHeader?.tag);
+            setTxt('catalogPageTitle', customSections.catalogHeader?.title);
+            setTxt('catalogPageSubtitle', customSections.catalogHeader?.subtitle);
+            setTxt('servicePageTag', customSections.servicePageHeader?.tag);
+            setTxt('servicePageTitle', customSections.servicePageHeader?.title);
+            setTxt('servicePageSubtitle', customSections.servicePageHeader?.subtitle);
+            setTxt('trackingPageTag', customSections.trackingHeader?.tag);
+            setTxt('trackingPageTitle', customSections.trackingHeader?.title);
+            setTxt('trackingPageSubtitle', customSections.trackingHeader?.subtitle);
             setTxt('serviceBannerTag', customSections.serviceBanner?.tag);
             setTxt('serviceBannerTitle', customSections.serviceBanner?.title);
             setTxt('serviceBannerDesc', customSections.serviceBanner?.desc);
@@ -1345,11 +1812,14 @@
             if (!products.length) {
                 const isAdmin = currentUser?.role === 'admin';
                 cardEl.innerHTML = `
-                    <div class="py-10 px-4 text-center space-y-3">
-                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center mx-auto text-xl">💻</div>
-                        <p class="text-sm font-extrabold text-white">Katalog Toko Sedang Diperbarui</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">Hubungi tim kami melalui WhatsApp atau kunjungi langsung Toko kami di Kebon Jeruk untuk stok unit Grade A+ terbaru hari ini.</p>
-                        ${isAdmin ? `<button onclick="openProductModal()" class="mt-2 px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs">+ Tambah Unit Pertama</button>` : ''}
+                    <div class="py-8 px-4 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center mx-auto text-xl">💎</div>
+                        <p class="text-sm sm:text-base font-extrabold text-white">Stok Unit Grade A+ Siap Dipinang!</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Ingin dapat unit mulus dengan harga paling hemat minggu ini? Konsultasikan kebutuhan dan anggaran Anda gratis sekarang, atau mampir langsung cek unit sepuasnya di Toko Kebon Jeruk!</p>
+                        <div class="pt-1 flex flex-wrap items-center justify-center gap-2">
+                            <a href="https://wa.me/6282298688189?text=Halo%20Admin%20Toko%20JAKBAR%20LAPTOP,%20boleh%20minta%20daftar%20stok%20unit%20Grade%20A+%20yang%20ready%20hari%20ini?" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs">💬 Minta Daftar Stok via WA</a>
+                            ${isAdmin ? `<button onclick="openProductModal()" class="px-4 py-2 rounded-xl bg-indigo-600 text-white font-bold text-xs">+ Tambah Unit Pertama</button>` : ''}
+                        </div>
                     </div>
                 `;
                 dotsEl.innerHTML = '';
@@ -1406,11 +1876,52 @@
             renderHeroSlider();
         };
 
-        // Product Card Builder
-        function createProductCardHTML(p) {
+        // Product Card Builder (Supports Grid Card & Compact List View)
+        function createProductCardHTML(p, mode = 'grid') {
             const isAdmin = currentUser?.role === 'admin';
             const prosHTML = (p.pros || []).slice(0, 2).map(pr => `<li class="truncate">• ${pr}</li>`).join('');
             const consHTML = (p.cons || []).slice(0, 1).map(cn => `<li class="truncate">• ${cn}</li>`).join('');
+            const estInstallment = Math.round((Number(p.price) * 1.08) / 12);
+
+            if (mode === 'list') {
+                return `
+                    <div class="glass-card p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border border-slate-800 hover:border-indigo-500/40 transition">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 min-w-0 flex-1 w-full">
+                            <div class="relative w-full sm:w-44 rounded-xl overflow-hidden bg-slate-900 border border-slate-800 shrink-0">
+                                <img src="${p.image}" alt="${p.name}" onerror="this.src='https://placehold.co/800x500/0f172a/6366f1?text=JAKBAR+LAPTOP'" class="smart-frame-img">
+                                <span class="absolute top-2 left-2 px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-950/90 text-indigo-300">${p.category}</span>
+                            </div>
+                            <div class="space-y-1.5 min-w-0 flex-1">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold ${Number(p.stock) > 0 ? 'bg-emerald-500/20 text-emerald-300' : 'bg-rose-500/20 text-rose-300'}">${Number(p.stock) > 0 ? `Ready: ${p.stock} Unit` : 'Stok Habis'}</span>
+                                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-cyan-500/15 text-cyan-300">🛡️ Lulus 40 Titik QC</span>
+                                </div>
+                                <h4 class="font-extrabold text-base sm:text-lg text-white break-words">${p.name}</h4>
+                                <p class="text-xs text-slate-300 break-words">${p.specs}</p>
+                                <div class="flex flex-wrap gap-2 pt-1 text-[11px]">
+                                    <span class="text-emerald-300 truncate">✅ ${(p.pros && p.pros[0]) || 'Mesin Segel & Normal'}</span>
+                                    <span class="text-amber-300 truncate">⚠️ ${(p.cons && p.cons[0]) || 'Fisik Mulus Pemakaian Wajar'}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-auto flex flex-col sm:flex-row md:flex-col items-start sm:items-center md:items-end justify-between gap-3 pt-3 md:pt-0 border-t md:border-t-0 border-slate-800 shrink-0">
+                            <div class="text-left md:text-right">
+                                <p class="text-lg sm:text-xl font-extrabold text-emerald-400">${formatRp(p.price)}</p>
+                                <p class="text-[11px] text-slate-400">Cicilan mulai ${formatRp(estInstallment)}/bln</p>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                                <button onclick="openProductDetailModal('${p.id}')" class="min-h-[40px] px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs">Detail</button>
+                                <button onclick="addToCompare('${p.id}')" class="min-h-[40px] px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 font-bold text-xs">⚖️</button>
+                                <button onclick="addToCart('${p.id}')" class="min-h-[40px] px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs">+ Beli</button>
+                                ${isAdmin ? `
+                                    <button onclick="openProductModal('${p.id}')" class="min-h-[40px] px-3 py-2 rounded-xl bg-amber-500/20 text-amber-300 font-bold text-xs">✏️</button>
+                                    <button onclick="deleteProduct('${p.id}')" class="min-h-[40px] px-3 py-2 rounded-xl bg-rose-500/20 text-rose-300 font-bold text-xs">🗑️</button>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
 
             return `
                 <div class="glass-card adaptive-card flex flex-col justify-between space-y-4 min-w-0 hover:border-indigo-500/40 transition">
@@ -1419,13 +1930,17 @@
                             <img src="${p.image}" alt="${p.name}" onerror="this.src='https://placehold.co/800x500/0f172a/6366f1?text=JAKBAR+LAPTOP'" class="smart-frame-img">
                             <span class="absolute top-2.5 left-2.5 px-3 py-1 rounded-lg text-xs font-bold bg-slate-950/85 text-indigo-300 border border-indigo-500/30">${p.category}</span>
                             <button onclick="toggleWishlist('${p.id}')" aria-label="Favoritkan" class="absolute top-2.5 right-2.5 w-10 h-10 rounded-full bg-slate-950/85 text-white flex items-center justify-center text-sm hover:bg-rose-600 active:scale-95 transition">♥</button>
-                            <span class="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md text-xs font-bold bg-slate-950/90 text-emerald-300">Stok: ${p.stock} Unit</span>
+                            <span class="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md text-xs font-bold bg-slate-950/90 ${Number(p.stock) > 0 ? 'text-emerald-300' : 'text-rose-300'}">${Number(p.stock) > 0 ? `Stok: ${p.stock} Unit` : 'Stok Habis'}</span>
+                            <button onclick="openQcCertificateForProduct('${p.id}')" class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md text-[10px] font-extrabold bg-emerald-500/90 text-slate-950 shadow">🛡️ Lulus QC</button>
                         </div>
 
                         <div class="min-w-0">
                             <h4 class="font-extrabold text-base sm:text-lg text-white break-words line-clamp-1">${p.name}</h4>
                             <p class="text-xs sm:text-sm text-slate-400 line-clamp-2 mt-1 break-words leading-relaxed">${p.specs}</p>
-                            <p class="text-lg sm:text-xl font-extrabold text-emerald-400 mt-2">${formatRp(p.price)}</p>
+                            <div class="flex items-baseline justify-between gap-2 mt-2">
+                                <p class="text-lg sm:text-xl font-extrabold text-emerald-400">${formatRp(p.price)}</p>
+                                <span class="text-[10px] text-slate-400 truncate">~${formatRp(estInstallment)}/bln</span>
+                            </div>
                         </div>
 
                         <!-- Pros & Cons Transparency Box -->
@@ -1461,77 +1976,293 @@
         function renderProductsGrid() {
             const homeGrid = document.getElementById('homeFeaturedGrid');
             const catalogGrid = document.getElementById('catalogProductsGrid');
+            const countLabel = document.getElementById('catalogResultCountText');
             const isAdmin = currentUser?.role === 'admin';
 
             if (homeGrid) {
                 homeGrid.innerHTML = products.length
-                    ? products.slice(0, 3).map(createProductCardHTML).join('')
-                    : `<div class="col-span-full glass-card p-8 text-center space-y-3">
-                        <p class="text-sm font-bold text-slate-300">Stok unit terbaru sedang dalam proses inspeksi QC.</p>
-                        <p class="text-xs text-slate-400">Silakan hubungi WhatsApp resmi kami untuk daftar unit ready stock hari ini.</p>
-                        ${isAdmin ? `<button onclick="openProductModal()" class="px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs">+ Tambah Unit Baru</button>` : ''}
+                    ? products.slice(0, 3).map(p => createProductCardHTML(p, 'grid')).join('')
+                    : `<div class="col-span-full glass-card p-8 text-center space-y-3 border border-indigo-500/30">
+                        <p class="text-sm sm:text-base font-extrabold text-white">✨ Ribuan Pembeli Puas Mendapatkan Laptop Impiannya di Sini!</p>
+                        <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">Tim teknisi kami sedang menyiapkan daftar unit lolos inspeksi 40 titik terbaru. Anda juga bisa langsung *request* tipe laptop incaran Anda (ThinkPad, MacBook, ROG, VivoBook, dll) melalui WhatsApp resmi kami!</p>
+                        <div class="pt-1 flex flex-wrap justify-center gap-2.5">
+                            <a href="https://wa.me/6282298688189?text=Halo%20Admin%20Toko%20JAKBAR%20LAPTOP,%20saya%20ingin%20tanya%20unit%20laptop%20yang%20ready%20stock%20hari%20ini" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs">💬 Tanya Stok Ready Hari Ini</a>
+                            ${isAdmin ? `<button onclick="openProductModal()" class="px-4 py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs">+ Tambah Unit Baru (Admin)</button>` : ''}
+                        </div>
                     </div>`;
             }
 
             if (catalogGrid) {
                 const q = (document.getElementById('searchInput')?.value || '').toLowerCase();
                 const cat = document.getElementById('categoryFilter')?.value || 'all';
+                const priceRange = document.getElementById('priceRangeFilter')?.value || 'all';
                 const sort = document.getElementById('sortFilter')?.value || 'featured';
+                const onlyReady = document.getElementById('onlyReadyStockToggle')?.checked || false;
 
                 let filtered = products.filter(p => {
-                    const matchQ = p.name.toLowerCase().includes(q) || p.specs.toLowerCase().includes(q);
+                    const matchQ = p.name.toLowerCase().includes(q) || p.specs.toLowerCase().includes(q) || (p.category || '').toLowerCase().includes(q);
                     const matchCat = cat === 'all' || p.category === cat;
-                    return matchQ && matchCat;
+                    const price = Number(p.price) || 0;
+                    const matchPrice = priceRange === 'all'
+                        || (priceRange === 'under5' && price < 5000000)
+                        || (priceRange === '5to8' && price >= 5000000 && price <= 8000000)
+                        || (priceRange === 'above8' && price > 8000000);
+                    const matchStock = !onlyReady || Number(p.stock) > 0;
+                    return matchQ && matchCat && matchPrice && matchStock;
                 });
 
                 if (sort === 'price-asc') filtered.sort((a, b) => a.price - b.price);
                 if (sort === 'price-desc') filtered.sort((a, b) => b.price - a.price);
+                if (sort === 'stock-desc') filtered.sort((a, b) => (Number(b.stock) || 0) - (Number(a.stock) || 0));
+
+                if (countLabel) {
+                    countLabel.textContent = `Menampilkan ${filtered.length} dari ${products.length} Unit di Katalog`;
+                }
 
                 catalogGrid.innerHTML = filtered.length
-                    ? filtered.map(createProductCardHTML).join('')
-                    : `<div class="col-span-full glass-card p-8 text-center text-slate-400 text-sm">Belum ada unit laptop pada kategori/pencarian ini.</div>`;
+                    ? filtered.map(p => createProductCardHTML(p, catalogViewMode)).join('')
+                    : `<div class="col-span-full glass-card p-8 sm:p-10 text-center space-y-3 border border-indigo-500/30">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center mx-auto text-xl">💻</div>
+                        <p class="text-sm sm:text-base font-extrabold text-white">${products.length ? 'Tidak Ada Unit yang Cocok dengan Filter Ini' : 'Etalase Katalog Siap Diisi Unit Terbaik!'}</p>
+                        <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+                            ${products.length
+                                ? 'Coba tekan tombol Reset Filter atau gunakan kotak Request Unit di bawah untuk menanyakan ketersediaan stok di Toko Kebon Jeruk.'
+                                : 'Stok di Toko JAKBAR LAPTOP terus diperbarui setiap hari. Hubungi WhatsApp kami untuk mendapatkan foto & daftar unit yang baru masuk hari ini!'}
+                        </p>
+                        <div class="pt-1 flex flex-wrap justify-center gap-2.5">
+                            ${products.length ? `<button onclick="resetCatalogFilters()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs">🔄 Reset Semua Filter</button>` : ''}
+                            <a href="https://wa.me/6282298688189?text=Halo%20Admin%20Toko%20JAKBAR%20LAPTOP,%20boleh%20info%20katalog%20unit%20yang%20ready%20hari%20ini?" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs">💬 Minta Katalog Ready via WA</a>
+                            ${isAdmin ? `<button onclick="openProductModal()" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs">+ Tambah Unit Pertama</button>` : ''}
+                        </div>
+                    </div>`;
             }
         }
+
+        window.selectCatalogCategoryChip = function(catValue) {
+            const c = document.getElementById('categoryFilter');
+            if (c) c.value = catValue;
+            document.querySelectorAll('.cat-chip-btn').forEach(btn => {
+                const active = btn.getAttribute('data-cat-chip') === catValue;
+                btn.className = active
+                    ? 'cat-chip-btn px-3.5 py-2 rounded-xl text-xs font-extrabold bg-indigo-600 text-white shadow whitespace-nowrap transition'
+                    : 'cat-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition';
+            });
+            renderProductsGrid();
+        };
+
+        window.setCatalogViewMode = function(mode) {
+            catalogViewMode = mode;
+            const gBtn = document.getElementById('viewModeGridBtn');
+            const lBtn = document.getElementById('viewModeListBtn');
+            if (gBtn && lBtn) {
+                gBtn.className = mode === 'grid'
+                    ? 'px-3 py-1.5 rounded-lg text-[11px] font-extrabold bg-indigo-600 text-white transition'
+                    : 'px-3 py-1.5 rounded-lg text-[11px] font-bold text-slate-400 hover:text-white transition';
+                lBtn.className = mode === 'list'
+                    ? 'px-3 py-1.5 rounded-lg text-[11px] font-extrabold bg-indigo-600 text-white transition'
+                    : 'px-3 py-1.5 rounded-lg text-[11px] font-bold text-slate-400 hover:text-white transition';
+            }
+            applyUiPreferences();
+            renderProductsGrid();
+        };
+
+        window.handleCatalogRequestUnit = function(e) {
+            e.preventDefault();
+            const model = document.getElementById('reqUnitModel')?.value || '';
+            const budget = document.getElementById('reqUnitBudget')?.value || '';
+            const msg = encodeURIComponent(`Halo Admin Toko JAKBAR LAPTOP, saya ingin request / menanyakan ketersediaan unit:\n- Tipe/Spesifikasi: *${model}*\n- Kisaran Budget: *${budget}*\nMohon info jika ada unit Grade A+ yang cocok. Terima kasih!`);
+            window.open(`https://wa.me/6282298688189?text=${msg}`, '_blank');
+        };
 
         window.resetCatalogFilters = function() {
             const s = document.getElementById('searchInput');
             const c = document.getElementById('categoryFilter');
+            const pr = document.getElementById('priceRangeFilter');
             const sr = document.getElementById('sortFilter');
+            const rd = document.getElementById('onlyReadyStockToggle');
             if (s) s.value = '';
             if (c) c.value = 'all';
+            if (pr) pr.value = 'all';
             if (sr) sr.value = 'featured';
-            renderProductsGrid();
+            if (rd) rd.checked = false;
+            selectCatalogCategoryChip('all');
         };
 
-        // Services Section
+        // Interactive Symptom Diagnosis & User-Friendly Services Section
+        window.selectServiceSymptom = function(symKey) {
+            activeSymptomKey = symKey;
+            const info = symptomDiagnosisMap[symKey] || symptomDiagnosisMap.slow;
+
+            document.querySelectorAll('.symptom-btn').forEach(btn => {
+                const isSelected = btn.getAttribute('data-symptom-btn') === symKey;
+                btn.className = isSelected
+                    ? 'symptom-btn p-3 rounded-2xl bg-indigo-600/25 border border-indigo-500 text-left transition hover:scale-[1.02] active:scale-95 shadow-lg shadow-indigo-600/15'
+                    : 'symptom-btn p-3 rounded-2xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 text-left transition hover:scale-[1.02] active:scale-95';
+            });
+
+            const card = document.getElementById('symptomResultCard');
+            if (!card) return;
+            card.innerHTML = `
+                <div class="space-y-1.5 max-w-2xl">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-lg bg-emerald-500/20 text-emerald-300 font-extrabold text-[10px]">💡 REKOMENDASI TEKNISI</span>
+                        <span class="text-[11px] font-bold text-cyan-300">⏱️ Estimasi: ${info.estTime}</span>
+                    </div>
+                    <h4 class="font-extrabold text-sm sm:text-base text-white">${info.icon} ${info.title}</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">${info.solution}</p>
+                </div>
+                <div class="flex flex-col sm:flex-row md:flex-col gap-2 shrink-0">
+                    <button type="button" onclick="chooseServiceFromSymptom('${symKey}')" class="min-h-[42px] px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-xs shadow-lg transition">
+                        ✅ Pilih Solusi Ini & Isi Form Booking ↓
+                    </button>
+                </div>
+            `;
+        };
+
+        window.chooseServiceFromSymptom = function(symKey) {
+            const info = symptomDiagnosisMap[symKey] || symptomDiagnosisMap.slow;
+            const select = document.getElementById('srvPackageSelect');
+            const notes = document.getElementById('srvNotes');
+
+            if (select) {
+                const existingOption = Array.from(select.options).find(opt => opt.value.toLowerCase().includes(info.recommendedPkg.toLowerCase().slice(0, 12)));
+                if (existingOption) {
+                    select.value = existingOption.value;
+                } else {
+                    const customOpt = document.createElement('option');
+                    customOpt.value = info.recommendedPkg;
+                    customOpt.textContent = info.recommendedPkg;
+                    select.appendChild(customOpt);
+                    select.value = info.recommendedPkg;
+                }
+            }
+            if (notes) {
+                notes.value = info.noteText;
+            }
+            scrollToServiceBooking();
+            showToast('Solusi berhasil dimasukkan ke formulir booking! Silakan lengkapi nama & nomor WA Anda.');
+        };
+
+        window.scrollToServiceBooking = function() {
+            const card = document.getElementById('serviceBookingCard');
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        window.appendServiceNoteTag = function(tagText) {
+            const notes = document.getElementById('srvNotes');
+            if (!notes) return;
+            notes.value = notes.value ? `${notes.value.trim()} • ${tagText}` : tagText;
+            notes.focus();
+        };
+
+        window.setServiceCategoryFilter = function(catVal) {
+            activeServiceCategory = catVal;
+            document.querySelectorAll('.srv-chip-btn').forEach(btn => {
+                const active = btn.getAttribute('data-srv-chip') === catVal;
+                btn.className = active
+                    ? 'srv-chip-btn px-3.5 py-2 rounded-xl text-xs font-extrabold bg-cyan-500 text-slate-950 shadow whitespace-nowrap transition'
+                    : 'srv-chip-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 whitespace-nowrap transition';
+            });
+            renderServicesSection();
+        };
+
+        window.selectServicePackageToForm = function(pkgName) {
+            const select = document.getElementById('srvPackageSelect');
+            if (select) {
+                const found = Array.from(select.options).find(o => o.value === pkgName);
+                if (found) select.value = pkgName;
+            }
+            scrollToServiceBooking();
+            showToast(`Paket "${pkgName}" dipilih! Silakan lengkapi data booking.`);
+        };
+
         function renderServicesSection() {
             const grid = document.getElementById('servicesGrid');
             const select = document.getElementById('srvPackageSelect');
             const isAdmin = currentUser?.role === 'admin';
+            const q = (document.getElementById('serviceSearchInput')?.value || '').toLowerCase();
+
+            if (!document.getElementById('symptomResultCard')?.innerHTML) {
+                selectServiceSymptom(activeSymptomKey);
+            }
 
             if (grid) {
-                grid.innerHTML = services.length ? services.map(s => `
-                    <div class="glass-card p-5 flex flex-col justify-between space-y-4">
-                        <div class="space-y-2">
-                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/15 text-cyan-300 text-[10px] font-bold">⏱️ Estimasi: ${s.duration}</span>
-                            <h4 class="font-extrabold text-base text-white">${s.name}</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed">${s.desc}</p>
+                const filtered = services.filter(s => {
+                    const matchQ = (s.name || '').toLowerCase().includes(q) || (s.desc || '').toLowerCase().includes(q) || (s.category || '').toLowerCase().includes(q);
+                    const matchCat = activeServiceCategory === 'all' || (s.category || 'Perawatan & Cleaning') === activeServiceCategory;
+                    return matchQ && matchCat;
+                });
+
+                grid.innerHTML = filtered.length ? filtered.map(s => `
+                    <div class="glass-card p-5 flex flex-col justify-between space-y-4 border border-slate-800 hover:border-cyan-500/40 transition">
+                        <div class="space-y-2.5">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-[10px] font-extrabold">${s.category || 'Layanan Teknisi'}</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-slate-300 text-[10px] font-bold">⏱️ ${s.duration}</span>
+                            </div>
+                            <h4 class="font-extrabold text-base sm:text-lg text-white break-words">${s.name}</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed break-words">${s.desc}</p>
+                            <div class="pt-1">
+                                <span class="inline-block px-2.5 py-0.5 rounded-md bg-emerald-500/15 text-emerald-300 text-[10px] font-bold">🛡️ ${s.warranty || 'Garansi Toko 30 Hari'}</span>
+                            </div>
                         </div>
-                        <div class="pt-2 border-t border-slate-800 flex items-center justify-between">
-                            <span class="text-base font-extrabold text-emerald-400">${formatRp(s.price)}</span>
-                            ${isAdmin ? `<button onclick="deleteServiceItem('${s.id}')" class="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-300 text-[11px] font-bold">Hapus</button>` : ''}
+                        <div class="pt-3 border-t border-slate-800/90 space-y-2.5">
+                            <div class="flex items-baseline justify-between">
+                                <span class="text-[11px] text-slate-400">Estimasi Biaya Mulai</span>
+                                <span class="text-base sm:text-lg font-extrabold text-emerald-400">${formatRp(s.price)}</span>
+                            </div>
+                            <button type="button" onclick="selectServicePackageToForm('${s.name.replace(/'/g, "\\'")}')" class="w-full min-h-[42px] py-2.5 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500 hover:text-slate-950 border border-cyan-500/40 text-cyan-300 font-extrabold text-xs transition">
+                                📅 Pilih Paket & Booking Jadwal
+                            </button>
+                            ${isAdmin ? `
+                                <div class="grid grid-cols-2 gap-2 pt-1">
+                                    <button type="button" onclick="openServiceItemModal('${s.id}')" class="py-1.5 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[11px] font-bold">✏️ Edit</button>
+                                    <button type="button" onclick="deleteServiceItem('${s.id}')" class="py-1.5 rounded-lg bg-rose-500/20 border border-rose-500/40 text-rose-300 text-[11px] font-bold">🗑️ Hapus</button>
+                                </div>
+                            ` : ''}
                         </div>
                     </div>
-                `).join('') : `<div class="col-span-full glass-card p-8 text-center text-slate-400 text-xs sm:text-sm">Silakan isi formulir booking di bawah untuk konsultasi keluhan atau upgrade laptop Anda secara langsung.</div>`;
+                `).join('') : `
+                    <div class="col-span-full glass-card p-8 text-center space-y-3 border border-cyan-500/30">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center mx-auto text-xl">🛠️</div>
+                        <p class="text-sm sm:text-base font-extrabold text-white">Daftar Paket Service Siap Disesuaikan dengan Kebutuhan Anda!</p>
+                        <p class="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+                            Gunakan fitur <strong>Diagnosa Mandiri 1-Klik</strong> di atas atau langsung isi <strong>Formulir Booking Service</strong> di bawah untuk mendapatkan estimasi biaya terbaik dari teknisi kami.
+                        </p>
+                        <div class="pt-1 flex flex-wrap justify-center gap-2.5">
+                            <button type="button" onclick="scrollToServiceBooking()" class="px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-xs">📅 Isi Form Booking di Bawah</button>
+                            ${isAdmin ? `<button type="button" onclick="openServiceItemModal()" class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs">+ Tambah Paket Service (Admin)</button>` : ''}
+                        </div>
+                    </div>
+                `;
             }
+
             if (select) {
-                select.innerHTML = services.length
-                    ? services.map(s => `<option value="${s.name}">${s.name} (${formatRp(s.price)})</option>`).join('')
-                    : `<option value="Konsultasi Service & Upgrade Umum">Konsultasi Service & Upgrade Umum</option>`;
+                const defaultOptions = [
+                    'Konsultasi & Cek Kerusakan Gratis di Toko',
+                    'Deep Cleaning Total + Repasta Thermal Grizzly',
+                    'Upgrade SSD NVMe / SATA + Clone Windows (Data Aman)',
+                    'Upgrade Kapasitas RAM DDR4 / DDR5',
+                    'Ganti Baterai Original Bergaransi',
+                    'Ganti Panel Layar LCD / LED Original',
+                    'Ganti Keyboard / Reparasi Engsel & Casing',
+                    'Inspeksi & Perbaikan Motherboard / Kena Cairan'
+                ];
+                const dynamicOptions = services.map(s => `${s.name} (${formatRp(s.price)})`);
+                const combined = [...new Set([...dynamicOptions, ...defaultOptions])];
+                select.innerHTML = combined.map(opt => `<option value="${opt}">${opt}</option>`).join('');
             }
         }
 
-        window.openServiceItemModal = function() {
+        window.openServiceItemModal = function(srvId = null) {
+            const s = services.find(x => x.id === srvId);
+            document.getElementById('srvItemId').value = s ? s.id : '';
+            document.getElementById('srvItemName').value = s ? s.name : '';
+            document.getElementById('srvItemCategory').value = s ? (s.category || 'Perawatan & Cleaning') : 'Perawatan & Cleaning';
+            document.getElementById('srvItemWarranty').value = s ? (s.warranty || 'Garansi 30 Hari') : 'Garansi 30 Hari';
+            document.getElementById('srvItemPrice').value = s ? s.price : '';
+            document.getElementById('srvItemDuration').value = s ? s.duration : '';
+            document.getElementById('srvItemDesc').value = s ? s.desc : '';
             document.getElementById('serviceEditorModal').classList.remove('hidden');
         };
 
@@ -1541,18 +2272,25 @@
 
         window.handleSaveServiceItem = function(e) {
             e.preventDefault();
-            services.push({
-                id: 'srv-' + Date.now(),
+            const id = document.getElementById('srvItemId').value || ('srv-' + Date.now());
+            const itemObj = {
+                id,
                 name: document.getElementById('srvItemName').value,
+                category: document.getElementById('srvItemCategory').value,
+                warranty: document.getElementById('srvItemWarranty').value,
                 price: Number(document.getElementById('srvItemPrice').value),
                 duration: document.getElementById('srvItemDuration').value,
                 desc: document.getElementById('srvItemDesc').value
-            });
+            };
+            const existingIdx = services.findIndex(x => x.id === id);
+            if (existingIdx > -1) services[existingIdx] = itemObj;
+            else services.push(itemObj);
+
             e.target.reset();
             closeServiceItemModal();
             renderServicesSection();
             persistAllState();
-            showToast('Paket service berhasil ditambahkan!');
+            showToast('Paket service berhasil disimpan!');
         };
 
         window.deleteServiceItem = function(id) {
@@ -1565,10 +2303,12 @@
         window.handleServiceBooking = function(e) {
             e.preventDefault();
             const name = document.getElementById('srvCustName').value;
+            const phone = document.getElementById('srvCustPhone').value;
             const model = document.getElementById('srvLaptopModel').value;
             const pkg = document.getElementById('srvPackageSelect').value;
+            const visitType = document.getElementById('srvVisitType')?.value || 'Datang ke Toko Kebon Jeruk';
             const notes = document.getElementById('srvNotes').value;
-            const msg = encodeURIComponent(`Halo Teknisi JAKBAR LAPTOP, saya *${name}* ingin booking service:\n- Unit: ${model}\n- Paket: ${pkg}\n- Catatan: ${notes || '-'}`);
+            const msg = encodeURIComponent(`Halo Teknisi Toko JAKBAR LAPTOP, saya ingin booking jadwal service / konsultasi:\n- Nama: *${name}* (${phone})\n- Tipe Laptop: *${model}*\n- Layanan: *${pkg}*\n- Metode: *${visitType}*\n- Keluhan/Catatan: ${notes || '-'}\nMohon info jadwal yang tersedia. Terima kasih!`);
             window.open(`https://wa.me/6282298688189?text=${msg}`, '_blank');
         };
 
@@ -1704,6 +2444,7 @@
             });
 
             if (pageId === 'compare') renderComparePage();
+            if (pageId === 'tracking') renderTrackingQuickChips();
             if (pageId === 'admin') renderAdminOrders();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };
@@ -1864,6 +2605,7 @@
                 status: 'Menunggu Verifikasi Admin',
                 payment,
                 receipt: pendingReceiptDataUrl || '',
+                createdAt: Date.now(),
                 date: new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' })
             });
             cart = [];
@@ -1943,29 +2685,191 @@
             `;
         }
 
-        window.handleTrackOrder = function() {
-            const q = (document.getElementById('trackingSearchInput')?.value || '').trim().toLowerCase();
-            const box = document.getElementById('trackingResultBox');
-            if (!box) return;
-            if (!q) {
-                box.innerHTML = `<p class="text-xs text-amber-300">Silakan masukkan Nomor Invoice atau Nomor WhatsApp Anda.</p>`;
+        // User-Friendly Visual Order & Warranty Tracker
+        function getOrderStepIndex(statusStr) {
+            const s = (statusStr || '').toLowerCase();
+            if (s.includes('selesai')) return 4;
+            if (s.includes('dikirim')) return 3;
+            if (s.includes('lunas') || s.includes('qc')) return 2;
+            return 1;
+        }
+
+        function getWarrantyRemainingDays(orderObj) {
+            const created = Number(orderObj.createdAt) || Date.now();
+            const elapsedDays = Math.floor((Date.now() - created) / (1000 * 60 * 60 * 24));
+            return Math.max(0, 30 - elapsedDays);
+        }
+
+        function renderTrackingQuickChips() {
+            const chipBox = document.getElementById('recentTrackingChipsBox');
+            if (!chipBox) return;
+            if (!orders.length) {
+                chipBox.innerHTML = `<span class="text-[11px] text-slate-400">💡 Tips: Setelah Anda membuat pesanan di Katalog, nomor Invoice akan langsung muncul di sini untuk dilacak 1-klik.</span>`;
                 return;
             }
-            const found = orders.filter(o => o.id.toLowerCase().includes(q) || (o.phone || '').toLowerCase().includes(q));
-            box.innerHTML = found.length ? found.map(o => `
-                <div class="p-4 rounded-2xl bg-slate-900 border border-indigo-500/30 space-y-2 text-xs">
-                    <div class="flex items-center justify-between">
-                        <span class="font-extrabold text-indigo-400">${o.id} • ${o.date || 'Hari Ini'}</span>
-                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-bold">${o.status}</span>
+            chipBox.innerHTML = `
+                <span class="text-[11px] font-bold text-slate-400">⚡ Klik Cepat Pesanan Terbaru:</span>
+                ${orders.slice(0, 4).map(o => `
+                    <button type="button" onclick="quickSelectInvoice('${o.id}')" class="px-3 py-1 rounded-lg bg-slate-900 hover:bg-sky-500/20 border border-slate-700 hover:border-sky-500/40 text-sky-300 font-bold text-[11px] transition">
+                        ${o.id} (${o.customer})
+                    </button>
+                `).join('')}
+            `;
+        }
+
+        window.quickSelectInvoice = function(invId) {
+            const inp = document.getElementById('trackingSearchInput');
+            if (inp) inp.value = invId;
+            handleTrackOrder();
+        };
+
+        window.clearTrackingSearch = function() {
+            const inp = document.getElementById('trackingSearchInput');
+            const box = document.getElementById('trackingResultBox');
+            if (inp) inp.value = '';
+            if (box) box.innerHTML = '';
+        };
+
+        window.copyInvoiceCode = function(invId) {
+            const temp = document.createElement('input');
+            temp.value = invId;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast(`Nomor Invoice ${invId} berhasil disalin!`);
+        };
+
+        window.handleTrackOrder = function() {
+            renderTrackingQuickChips();
+            const rawQ = (document.getElementById('trackingSearchInput')?.value || '').trim();
+            const q = rawQ.toLowerCase();
+            const cleanDigits = rawQ.replace(/\D/g, '');
+            const box = document.getElementById('trackingResultBox');
+            if (!box) return;
+
+            if (!q) {
+                box.innerHTML = `
+                    <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-xs text-amber-200 flex items-center justify-between gap-3">
+                        <span>⚠️ Silakan ketik <strong>Nomor Invoice</strong> (misal: INV-JL...) atau <strong>Nomor WhatsApp</strong> Anda terlebih dahulu.</span>
                     </div>
-                    <p class="text-white font-bold">${o.customer} (${o.phone})</p>
-                    <p class="text-slate-400">${o.items} — <strong class="text-emerald-400">${formatRp(o.total)}</strong></p>
-                    <div class="flex flex-wrap gap-2 pt-1">
-                        <button onclick="openOfficialInvoiceModal('${o.id}')" class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold">🧾 Cetak Invoice & Kartu Garansi</button>
-                        <button onclick="openQcCertificateForOrder('${o.id}')" class="px-3 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold">🛡️ Sertifikat Lulus QC 40 Titik</button>
+                `;
+                return;
+            }
+
+            const found = orders.filter(o => {
+                const matchId = (o.id || '').toLowerCase().includes(q);
+                const matchName = (o.customer || '').toLowerCase().includes(q);
+                const orderDigits = (o.phone || '').replace(/\D/g, '');
+                const matchPhone = (o.phone || '').toLowerCase().includes(q) || (cleanDigits.length >= 4 && orderDigits.includes(cleanDigits));
+                return matchId || matchPhone || matchName;
+            });
+
+            if (!found.length) {
+                box.innerHTML = `
+                    <div class="p-6 rounded-2xl bg-slate-900/95 border border-slate-800 text-center space-y-3">
+                        <div class="w-11 h-11 rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center mx-auto text-lg">🔍</div>
+                        <p class="text-sm font-extrabold text-white">Data Pesanan "${rawQ}" Belum Ditemukan</p>
+                        <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
+                            Pastikan Nomor Invoice atau Nomor WhatsApp yang Anda masukkan sudah benar, atau klik tombol di bawah untuk dibantu langsung oleh Admin Toko JAKBAR LAPTOP.
+                        </p>
+                        <div class="pt-1">
+                            <a href="https://wa.me/6282298688189?text=${encodeURIComponent('Halo Admin Toko JAKBAR LAPTOP, mohon bantu cek status pesanan saya dengan data: ' + rawQ)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs">
+                                💬 Tanya Status Pesanan via WhatsApp
+                            </a>
+                        </div>
                     </div>
-                </div>
-            `).join('') : `<p class="text-xs text-slate-400">Pesanan dengan nomor tersebut belum ditemukan.</p>`;
+                `;
+                return;
+            }
+
+            const steps = [
+                { idx: 1, label: 'Pesanan Dibuat', icon: '📝' },
+                { idx: 2, label: 'Lulus Verifikasi & QC', icon: '🔬' },
+                { idx: 3, label: 'Sedang Dikirim / COD', icon: '🚚' },
+                { idx: 4, label: 'Selesai & Bergaransi', icon: '🛡️' }
+            ];
+
+            box.innerHTML = found.map(o => {
+                const currentStep = getOrderStepIndex(o.status);
+                const remDays = getWarrantyRemainingDays(o);
+
+                const stepperHTML = steps.map(st => {
+                    const done = currentStep >= st.idx;
+                    const isCurrent = currentStep === st.idx;
+                    return `
+                        <div class="p-3 rounded-xl border ${done ? 'bg-indigo-950/50 border-indigo-500/50 text-white' : 'bg-slate-950/60 border-slate-800 text-slate-500'} flex items-center space-x-2.5">
+                            <div class="w-8 h-8 rounded-lg ${done ? 'bg-indigo-600 text-white shadow' : 'bg-slate-900 text-slate-500'} flex items-center justify-center text-sm shrink-0">
+                                ${done ? '✓' : st.icon}
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-[10px] font-bold uppercase ${isCurrent ? 'text-cyan-300' : done ? 'text-indigo-300' : 'text-slate-500'}">Tahap ${st.idx}</p>
+                                <p class="text-xs font-extrabold truncate">${st.label}</p>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                return `
+                    <div class="p-5 sm:p-6 rounded-2xl bg-slate-900/95 border border-sky-500/35 space-y-5 shadow-xl">
+                        <!-- Top Summary Row -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
+                            <div class="space-y-1">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="font-extrabold text-sm sm:text-base text-sky-400">${o.id}</span>
+                                    <button type="button" onclick="copyInvoiceCode('${o.id}')" class="px-2 py-0.5 rounded-md bg-slate-800 hover:bg-slate-700 text-[10px] font-bold text-slate-300">📋 Salin ID</button>
+                                    <span class="text-[11px] text-slate-400">• Tanggal: ${o.date || 'Hari Ini'}</span>
+                                </div>
+                                <p class="text-xs sm:text-sm font-bold text-white">👤 ${o.customer} <span class="text-slate-400 font-normal">(${o.phone})</span></p>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-extrabold text-xs">
+                                    ● ${o.status}
+                                </span>
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 font-bold text-[11px]">
+                                    🛡️ Garansi Aktif: Sisa ${remDays} Hari
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 4-Stage Visual Stepper -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+                            ${stepperHTML}
+                        </div>
+
+                        <!-- Order Item & Payment Details -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 p-3.5 rounded-xl bg-slate-950/90 border border-slate-800/90 text-xs">
+                            <div>
+                                <p class="text-[10px] font-bold uppercase text-slate-400">Unit Dipesan</p>
+                                <p class="font-extrabold text-white mt-0.5 break-words">${o.items}</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-bold uppercase text-slate-400">Metode & Tujuan</p>
+                                <p class="font-bold text-slate-200 mt-0.5 break-words">${o.payment || 'Transfer'} — ${o.address || 'Toko Kebon Jeruk'}</p>
+                            </div>
+                            <div class="md:text-right">
+                                <p class="text-[10px] font-bold uppercase text-slate-400">Total Pembayaran</p>
+                                <p class="text-base font-extrabold text-emerald-400 mt-0.5">${formatRp(o.total)}</p>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap items-center justify-between gap-2.5 pt-1">
+                            <div class="flex flex-wrap gap-2">
+                                <button type="button" onclick="openOfficialInvoiceModal('${o.id}')" class="min-h-[40px] px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-xs shadow">
+                                    🧾 Cetak Nota Invoice & Garansi
+                                </button>
+                                <button type="button" onclick="openQcCertificateForOrder('${o.id}')" class="min-h-[40px] px-4 py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/35 text-emerald-300 font-bold text-xs">
+                                    🛡️ Lihat Sertifikat Lulus QC 40 Titik
+                                </button>
+                            </div>
+                            <a href="https://wa.me/6282298688189?text=${encodeURIComponent('Halo Admin Toko JAKBAR LAPTOP, saya ingin konfirmasi pesanan dengan Nomor Invoice: ' + o.id + ' atas nama ' + o.customer)}" target="_blank" rel="noopener noreferrer" class="min-h-[40px] px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold text-xs flex items-center">
+                                💬 Hubungi Admin Mengenai Invoice Ini
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         };
 
         // Authentication (Customer & Hidden Admin Access)
@@ -2150,26 +3054,88 @@
                 box.innerHTML = `<p class="text-xs text-slate-400 py-4 text-center">Belum ada pesanan masuk saat ini.</p>`;
                 return;
             }
-            box.innerHTML = orders.map((o, idx) => `
-                <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-                    <div class="space-y-1">
-                        <span class="font-extrabold text-indigo-400">${o.id}</span> — <strong class="text-white">${o.customer}</strong> (${o.phone})
-                        <p class="text-slate-400">${o.items} • <span class="text-emerald-400 font-bold">${formatRp(o.total)}</span> (${o.payment || 'Transfer'})</p>
+
+            box.innerHTML = orders.map((o, idx) => {
+                // Ensure qcChecklist object exists on order
+                if (!o.qcChecklist) {
+                    o.qcChecklist = { step1: false, step2: false, step3: false, step4: false, step5: false };
+                }
+                const qc = o.qcChecklist;
+                const allChecked = qc.step1 && qc.step2 && qc.step3 && qc.step4 && qc.step5;
+
+                return `
+                    <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-4 text-xs">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+                            <div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="font-extrabold text-indigo-400 text-sm">${o.id}</span>
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold ${allChecked ? 'bg-emerald-500/20 text-emerald-300' : 'bg-amber-500/20 text-amber-300'}">${allChecked ? '✅ QC 40 Titik Tuntas' : '⚠️ QC Belum Lengkap'}</span>
+                                </div>
+                                <p class="text-white font-bold mt-0.5">👤 ${o.customer} <span class="text-slate-400">(${o.phone})</span></p>
+                                <p class="text-slate-300">${o.items} • <span class="text-emerald-400 font-bold">${formatRp(o.total)}</span> (${o.payment || 'Transfer'})</p>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                ${o.receipt ? `<button onclick="previewOrderReceipt(${idx})" class="px-3 py-2 rounded-xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 font-bold">🖼️ Lihat Bukti</button>` : ''}
+                                <button onclick="openOfficialInvoiceModal('${o.id}')" class="px-3 py-2 rounded-xl bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 font-bold">🧾 Nota</button>
+                                <select onchange="updateOrderStatus(${idx}, this.value)" class="px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs">
+                                    <option value="Menunggu Verifikasi Admin" ${o.status === 'Menunggu Verifikasi Admin' ? 'selected' : ''}>Menunggu Verifikasi</option>
+                                    <option value="Pembayaran Lunas & Sedang QC" ${o.status === 'Pembayaran Lunas & Sedang QC' ? 'selected' : ''}>Lunas & Sedang QC</option>
+                                    <option value="Sedang Dikirim Kurir" ${o.status === 'Sedang Dikirim Kurir' ? 'selected' : ''}>Sedang Dikirim</option>
+                                    <option value="Selesai Diterima" ${o.status === 'Selesai Diterima' ? 'selected' : ''}>Selesai</option>
+                                </select>
+                                <button onclick="deleteOrder(${idx})" class="px-2.5 py-2 rounded-xl bg-rose-500/20 text-rose-300 font-bold">✕</button>
+                            </div>
+                        </div>
+
+                        <!-- Admin QC Checklist 40 Titik Box -->
+                        <div class="p-3.5 rounded-xl bg-slate-950 border border-indigo-500/30 space-y-2">
+                            <p class="font-extrabold text-indigo-300 text-[11px] uppercase tracking-wider">🔬 Checklist Verifikasi QC 40 Titik (Cegah Terlewat):</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+                                <label class="flex items-center space-x-2 cursor-pointer bg-slate-900 p-2 rounded-lg border border-slate-800">
+                                    <input type="checkbox" ${qc.step1 ? 'checked' : ''} onchange="toggleAdminQcCheck(${idx}, 'step1')" class="rounded bg-slate-950 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span class="text-[11px] text-slate-200">1. Layar & Engsel (1–8)</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer bg-slate-900 p-2 rounded-lg border border-slate-800">
+                                    <input type="checkbox" ${qc.step2 ? 'checked' : ''} onchange="toggleAdminQcCheck(${idx}, 'step2')" class="rounded bg-slate-950 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span class="text-[11px] text-slate-200">2. Keyboard & Touchpad (9–16)</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer bg-slate-900 p-2 rounded-lg border border-slate-800">
+                                    <input type="checkbox" ${qc.step3 ? 'checked' : ''} onchange="toggleAdminQcCheck(${idx}, 'step3')" class="rounded bg-slate-950 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span class="text-[11px] text-slate-200">3. Baterai & Charger (17–24)</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer bg-slate-900 p-2 rounded-lg border border-slate-800">
+                                    <input type="checkbox" ${qc.step4 ? 'checked' : ''} onchange="toggleAdminQcCheck(${idx}, 'step4')" class="rounded bg-slate-950 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span class="text-[11px] text-slate-200">4. Stress-Test Suhu (25–36)</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer bg-slate-900 p-2 rounded-lg border border-slate-800">
+                                    <input type="checkbox" ${qc.step5 ? 'checked' : ''} onchange="toggleAdminQcCheck(${idx}, 'step5')" class="rounded bg-slate-950 border-slate-700 text-indigo-600 focus:ring-0">
+                                    <span class="text-[11px] text-slate-200">5. Port & Wi-Fi (37–40)</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex flex-wrap items-center gap-2">
-                        ${o.receipt ? `<button onclick="previewOrderReceipt(${idx})" class="px-3 py-1.5 rounded-lg bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 font-bold">🖼️ Lihat Bukti</button>` : ''}
-                        <button onclick="openOfficialInvoiceModal('${o.id}')" class="px-3 py-1.5 rounded-lg bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 font-bold">🧾 Nota</button>
-                        <select onchange="updateOrderStatus(${idx}, this.value)" class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-white text-xs">
-                            <option value="Menunggu Verifikasi Admin" ${o.status === 'Menunggu Verifikasi Admin' ? 'selected' : ''}>Menunggu Verifikasi</option>
-                            <option value="Pembayaran Lunas & Sedang QC" ${o.status === 'Pembayaran Lunas & Sedang QC' ? 'selected' : ''}>Lunas & Sedang QC</option>
-                            <option value="Sedang Dikirim Kurir" ${o.status === 'Sedang Dikirim Kurir' ? 'selected' : ''}>Sedang Dikirim</option>
-                            <option value="Selesai Diterima" ${o.status === 'Selesai Diterima' ? 'selected' : ''}>Selesai</option>
-                        </select>
-                        <button onclick="deleteOrder(${idx})" class="px-2.5 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 font-bold">✕</button>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
         }
+
+        window.toggleAdminQcCheck = function(orderIdx, stepKey) {
+            if (!orders[orderIdx]) return;
+            if (!orders[orderIdx].qcChecklist) {
+                orders[orderIdx].qcChecklist = { step1: false, step2: false, step3: false, step4: false, step5: false };
+            }
+            orders[orderIdx].qcChecklist[stepKey] = !orders[orderIdx].qcChecklist[stepKey];
+            renderAdminOrders();
+            persistAllState();
+            showToast('Checklist QC pesanan diperbarui!');
+        };
+
+        window.updateOrderStatus = function(idx, newStatus) {
+            if (!orders[idx]) return;
+            orders[idx].status = newStatus;
+            renderAdminOrders();
+            persistAllState();
+            showToast(`Status pesanan ${orders[idx].id} diperbarui ke: ${newStatus}`);
+        };
 
         window.deleteOrder = function(idx) {
             orders.splice(idx, 1);
@@ -2457,6 +3423,7 @@
             renderServicesSection();
             renderTestimonialsSection();
             renderFaqSection();
+            renderTrackingQuickChips();
             initFirebaseConnection();
 
             // Support secret URL parameter ?admin=1
