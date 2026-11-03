@@ -31,18 +31,26 @@
     <style>
         :root {
             --card-radius: 1.25rem;
-            --card-padding: 1.25rem;
+            --card-padding: clamp(0.875rem, 2.2vw, 1.35rem);
             --img-aspect: 16/10;
+            --safe-bottom-offset: 6.5rem;
         }
         * {
             box-sizing: border-box;
+            min-width: 0;
         }
         html, body {
-            max-width: 100%;
+            width: 100%;
+            max-width: 100vw;
             overflow-x: hidden;
             background-color: #060913;
             color: #f8fafc;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-text-size-adjust: 100%;
+        }
+        img, iframe, video, canvas, svg {
+            max-width: 100%;
+            display: block;
         }
         .aurora-bg {
             background:
@@ -58,6 +66,11 @@
             border: 1px solid rgba(148, 163, 184, 0.14);
             border-radius: var(--card-radius);
             padding: var(--card-padding);
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
             transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease, box-shadow 0.28s ease;
         }
         .glass-card:hover {
@@ -90,11 +103,12 @@
             35%, 100% { left: 160%; }
         }
         .hero-title-fluid {
-            font-size: clamp(1.55rem, 4.2vw, 3.1rem);
-            line-height: 1.18;
+            font-size: clamp(1.4rem, 3.8vw, 2.85rem);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
         }
         .section-title-fluid {
-            font-size: clamp(1.3rem, 3vw, 2.15rem);
+            font-size: clamp(1.2rem, 2.8vw, 2rem);
             line-height: 1.25;
         }
         .touch-btn {
@@ -102,97 +116,163 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
             transition: all 0.2s ease;
         }
         .touch-btn:active {
             transform: scale(0.96);
         }
         .page-section {
+            width: 100%;
+            max-width: 100%;
             animation: pageFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1);
         }
         @keyframes pageFadeIn {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* Anti-overlap adjustments for small mobile screens (< 390px) */
+        @media (max-width: 390px) {
+            :root {
+                --card-radius: 1rem;
+                --card-padding: 0.85rem;
+            }
+            .touch-btn {
+                min-height: 40px;
+                padding-left: 0.65rem;
+                padding-right: 0.65rem;
+                font-size: 0.72rem;
+            }
+        }
+        /* Anti-Copy & Anti-Edit Official Invoice Protection */
+        .invoice-protected {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            position: relative;
+            overflow: hidden;
+        }
+        .invoice-watermark-pattern {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.055;
+            background-image: repeating-linear-gradient(
+                -32deg,
+                transparent,
+                transparent 65px,
+                rgba(99, 102, 241, 0.35) 65px,
+                rgba(99, 102, 241, 0.35) 66px
+            );
+        }
+        .digital-wet-stamp {
+            transform: rotate(-11deg);
+            pointer-events: none;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.18));
+        }
         @media print {
-            body * { visibility: hidden; }
-            #printableModalArea, #printableModalArea * { visibility: visible; }
+            @page {
+                size: A4 portrait;
+                margin: 10mm;
+            }
+            html, body {
+                background: #ffffff !important;
+                color: #0f172a !important;
+            }
+            body * {
+                visibility: hidden;
+            }
+            #printableModalArea, #printableModalArea * {
+                visibility: visible;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
             #printableModalArea {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                background: white !important;
-                color: black !important;
-                padding: 20px;
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                max-height: none !important;
+                overflow: visible !important;
+                background: #ffffff !important;
+                color: #0f172a !important;
+                padding: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+            .no-print {
+                display: none !important;
             }
         }
     </style>
 </head>
-<body class="aurora-bg min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white pb-24 xl:pb-8">
+<body class="aurora-bg min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white pb-28 xl:pb-10">
 
     <!-- TOP PROMO & STORE INFO BAR -->
     <div class="w-full bg-gradient-to-r from-indigo-950/90 via-slate-900/95 to-emerald-950/90 border-b border-slate-800/80 text-xs">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-center sm:text-left">
-            <div class="flex items-center justify-center sm:justify-start gap-2 text-emerald-300 font-medium">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 flex flex-col md:flex-row items-center justify-between gap-1 text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start gap-1.5 text-emerald-300 font-medium leading-snug">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-                <span id="uiTopbarPromo">✨ Promo Hari Ini: Garansi Penuh 30 Hari • Lulus 40 Titik QC • Gratis Tas, Mouse & Charger Ori!</span>
+                <span id="uiTopbarPromo" class="break-words">✨ Promo Hari Ini: Garansi Penuh 30 Hari • Lulus 40 Titik QC • Gratis Tas, Mouse & Charger Ori!</span>
             </div>
-            <div class="text-slate-300 text-[11px] sm:text-xs">
-                📍 <span id="uiTopbarAddress">Toko: Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat</span> • WA: <span id="uiTopbarWa" class="text-emerald-400 font-semibold">0822-9868-8189</span>
+            <div class="text-slate-300 text-[11px] sm:text-xs leading-snug break-words">
+                📍 <span id="uiTopbarAddress">Toko: Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat</span> • WA: <span id="uiTopbarWa" class="text-emerald-400 font-semibold whitespace-nowrap">0822-9868-8189</span>
             </div>
         </div>
     </div>
 
     <!-- STICKY FLOATING GLASSMORPHIC HEADER -->
-    <header class="sticky top-2 z-40 px-2.5 sm:px-6 mt-2">
-        <div class="max-w-7xl mx-auto bg-slate-900/85 backdrop-blur-xl border border-slate-700/60 rounded-2xl px-3 sm:px-5 py-2.5 shadow-2xl flex items-center justify-between gap-2">
+    <header class="sticky top-1.5 z-40 px-2 sm:px-6 mt-1.5">
+        <div class="max-w-7xl mx-auto bg-slate-900/90 backdrop-blur-xl border border-slate-700/70 rounded-2xl px-2.5 sm:px-5 py-2 shadow-2xl flex items-center justify-between gap-2">
             <!-- Brand Logo (Double click for secret Admin login) -->
-            <div class="flex items-center gap-2.5 min-w-0 cursor-pointer select-none" onclick="switchPage('home')" ondblclick="triggerSecretAdminAccess()">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-cyan-500 flex items-center justify-center font-display font-bold text-white text-base shadow-lg shadow-indigo-500/30 shrink-0">
+            <div class="flex items-center gap-2 min-w-0 flex-1 cursor-pointer select-none" onclick="switchPage('home')" ondblclick="triggerSecretAdminAccess()">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-cyan-500 flex items-center justify-center font-display font-bold text-white text-sm sm:text-base shadow-lg shadow-indigo-500/30 shrink-0">
                     JL
                 </div>
-                <div class="min-w-0">
-                    <div class="flex items-center gap-1.5">
-                        <span class="font-display font-bold text-sm sm:text-base tracking-tight text-white whitespace-nowrap">JAKBAR LAPTOP</span>
-                        <span id="cloudStatusBadge" class="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-1.5 min-w-0">
+                        <span class="font-display font-bold text-xs sm:text-base tracking-tight text-white truncate">JAKBAR LAPTOP</span>
+                        <span id="cloudStatusBadge" class="hidden md:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shrink-0">
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Cloud Ready
                         </span>
                     </div>
-                    <p class="text-[11px] text-slate-400 truncate">Pusat Laptop Second Grade A+ & Service</p>
+                    <p class="text-[10px] sm:text-[11px] text-slate-400 truncate">Toko Laptop Second Grade A+ & Service</p>
                 </div>
             </div>
 
             <!-- Desktop Navigation Pills -->
-            <nav class="hidden xl:flex items-center gap-1 bg-slate-950/70 p-1 rounded-xl border border-slate-800">
-                <button onclick="switchPage('home')" data-nav="home" class="nav-pill px-3.5 py-2 rounded-lg text-xs font-semibold transition-all bg-indigo-600 text-white">🏠 Beranda</button>
-                <button onclick="switchPage('catalog')" data-nav="catalog" class="nav-pill px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">💻 Katalog</button>
-                <button onclick="switchPage('service')" data-nav="service" class="nav-pill px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">🛠️ Jasa Service</button>
-                <button onclick="switchPage('tracking')" data-nav="tracking" class="nav-pill px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">📦 Lacak & Garansi</button>
-                <button onclick="switchPage('testimonials')" data-nav="testimonials" class="nav-pill px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">⭐ Ulasan</button>
-                <button onclick="switchPage('faq')" data-nav="faq" class="nav-pill px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">🛡️ Garansi & FAQ</button>
-                <button onclick="switchPage('about')" data-nav="about" class="nav-pill px-3.5 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all">📍 Lokasi Toko</button>
-                <button id="navAdminBtn" onclick="switchPage('admin')" data-nav="admin" class="nav-pill hidden px-3.5 py-2 rounded-lg text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">⚡ Panel Admin</button>
+            <nav class="hidden xl:flex items-center gap-1 bg-slate-950/70 p-1 rounded-xl border border-slate-800 shrink-0">
+                <button onclick="switchPage('home')" data-nav="home" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold transition-all bg-indigo-600 text-white whitespace-nowrap">🏠 Beranda</button>
+                <button onclick="switchPage('catalog')" data-nav="catalog" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">💻 Katalog</button>
+                <button onclick="switchPage('service')" data-nav="service" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">🛠️ Jasa Service</button>
+                <button onclick="switchPage('tracking')" data-nav="tracking" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">📦 Lacak & Garansi</button>
+                <button onclick="switchPage('testimonials')" data-nav="testimonials" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">⭐ Ulasan</button>
+                <button onclick="switchPage('faq')" data-nav="faq" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">🛡️ Garansi & FAQ</button>
+                <button onclick="switchPage('about')" data-nav="about" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">📍 Lokasi Toko</button>
+                <button id="navAdminBtn" onclick="switchPage('admin')" data-nav="admin" class="nav-pill hidden px-3 py-2 rounded-lg text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 whitespace-nowrap">⚡ Panel Admin</button>
             </nav>
 
             <!-- Action Buttons Right -->
-            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-                <button onclick="switchPage('compare')" title="Bandingkan Unit" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold border border-slate-700">
+            <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                <button onclick="switchPage('compare')" title="Bandingkan Unit" class="hidden md:inline-flex items-center gap-1 px-2.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold border border-slate-700">
                     <span>⚖️</span>
                     <span id="compareCountBadge" class="px-1.5 py-0.2 rounded-full bg-indigo-500/30 text-indigo-300 text-[11px]">0</span>
                 </button>
-                <button onclick="openWishlistModal()" title="Unit Favorit" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold border border-slate-700">
+                <button onclick="openWishlistModal()" title="Unit Favorit" class="hidden md:inline-flex items-center gap-1 px-2.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold border border-slate-700">
                     <span>❤️</span>
                     <span id="wishlistCountBadge" class="px-1.5 py-0.2 rounded-full bg-rose-500/30 text-rose-300 text-[11px]">0</span>
                 </button>
-                <button onclick="openCartModal()" title="Keranjang Belanja" class="touch-btn px-3 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold border border-slate-700 gap-1.5">
+                <button onclick="openCartModal()" title="Keranjang Belanja" class="touch-btn px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold border border-slate-700 gap-1">
                     <span>🛒</span>
-                    <span id="cartCountBadge" class="px-1.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-bold text-[11px]">0</span>
+                    <span id="cartCountBadge" class="px-1.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-bold text-[10px] sm:text-[11px]">0</span>
                 </button>
-                <button id="headerAuthBtn" onclick="openAuthModal()" class="touch-btn shimmer-btn px-3.5 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-bold shadow-lg shadow-indigo-600/30">
+                <button id="headerAuthBtn" onclick="openAuthModal()" class="touch-btn shimmer-btn px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-bold shadow-lg shadow-indigo-600/30 whitespace-nowrap">
                     Login
                 </button>
-                <button onclick="toggleMobileMenu()" class="xl:hidden touch-btn px-2.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700 text-slate-200 text-sm" aria-label="Menu">
+                <button onclick="toggleMobileMenu()" class="xl:hidden touch-btn px-2.5 py-1.5 sm:py-2 rounded-xl bg-slate-800/90 border border-slate-700 text-slate-200 text-sm" aria-label="Menu">
                     ☰
                 </button>
             </div>
@@ -265,18 +345,18 @@
                     </div>
 
                     <!-- 3 Trust Statistics -->
-                    <div class="grid grid-cols-3 gap-2.5 sm:gap-4 pt-3">
-                        <div class="glass-card p-3 sm:p-4 text-center sm:text-left">
-                            <div class="text-lg sm:text-2xl font-display font-bold text-white">100% QC</div>
-                            <div class="text-[11px] sm:text-xs text-slate-400">Lulus Uji 40 Titik Hardware</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 pt-3">
+                        <div class="glass-card p-3 sm:p-4 flex sm:block items-center justify-between">
+                            <div class="text-base sm:text-2xl font-display font-bold text-white">100% QC</div>
+                            <div class="text-xs text-slate-400">Lulus Uji 40 Titik Hardware</div>
                         </div>
-                        <div class="glass-card p-3 sm:p-4 text-center sm:text-left">
-                            <div class="text-lg sm:text-2xl font-display font-bold text-emerald-400">30 Hari</div>
-                            <div class="text-[11px] sm:text-xs text-slate-400">Garansi Penuh Toko</div>
+                        <div class="glass-card p-3 sm:p-4 flex sm:block items-center justify-between">
+                            <div class="text-base sm:text-2xl font-display font-bold text-emerald-400">30 Hari</div>
+                            <div class="text-xs text-slate-400">Garansi Penuh Toko</div>
                         </div>
-                        <div class="glass-card p-3 sm:p-4 text-center sm:text-left">
-                            <div class="text-lg sm:text-2xl font-display font-bold text-cyan-400">Grade A+</div>
-                            <div class="text-[11px] sm:text-xs text-slate-400">Jujur Plus & Minus</div>
+                        <div class="glass-card p-3 sm:p-4 flex sm:block items-center justify-between">
+                            <div class="text-base sm:text-2xl font-display font-bold text-cyan-400">Grade A+</div>
+                            <div class="text-xs text-slate-400">Jujur Plus & Minus</div>
                         </div>
                     </div>
                 </div>
@@ -837,16 +917,17 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="mt-auto border-t border-slate-800/80 bg-slate-950/90 pt-10 pb-24 xl:pb-10">
+    <footer class="mt-auto border-t border-slate-800/80 bg-slate-950/90 pt-10 pb-32 xl:pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-xs">
             <div class="space-y-3">
                 <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-display font-bold text-white">JL</div>
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-display font-bold text-white shrink-0">JL</div>
                     <span class="font-display font-bold text-base text-white">JAKBAR LAPTOP</span>
                 </div>
                 <p class="text-slate-400 leading-relaxed">
                     Toko Jual Beli Laptop Second Berkualitas Grade A+ & Laboratorium Service Bergaransi di Kebon Jeruk, Jakarta Barat.
-                    <p class="text-slate-400">
+                </p>
+                <p class="text-slate-400 leading-relaxed">
                     📍 Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat
                 </p>
             </div>
@@ -889,33 +970,33 @@
     </footer>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/6282298688189?text=Halo%20Admin%20Toko%20JAKBAR%20LAPTOP,%20saya%20ingin%20bertanya%20stok%20laptop%20/%20service" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 xl:bottom-6 right-4 z-40 shimmer-btn flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold text-xs shadow-2xl shadow-emerald-500/40">
-        <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+    <a id="floatingWaBtn" href="https://wa.me/6282298688189?text=Halo%20Admin%20Toko%20JAKBAR%20LAPTOP,%20saya%20ingin%20bertanya%20stok%20laptop%20/%20service" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 xl:bottom-6 right-3 sm:right-5 z-30 shimmer-btn flex items-center gap-1.5 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold text-xs shadow-2xl shadow-emerald-500/40">
+        <span class="w-2 h-2 rounded-full bg-white animate-ping shrink-0"></span>
         <span>💬 Chat WA</span>
         <span class="hidden sm:inline">: 0822-9868-8189</span>
     </a>
 
     <!-- MOBILE FLOATING BOTTOM DOCK BAR -->
-    <div class="xl:hidden fixed bottom-2.5 inset-x-3 z-40 bg-slate-900/95 backdrop-blur-xl border border-slate-700/80 rounded-2xl px-2 py-1.5 shadow-2xl flex items-center justify-around">
-        <button onclick="switchPage('home')" data-dock="home" class="dock-btn flex flex-col items-center py-1 px-2.5 rounded-xl text-indigo-400 font-bold text-[10px]">
-            <span class="text-base">🏠</span>
-            <span>Beranda</span>
+    <div id="mobileBottomDock" class="xl:hidden fixed bottom-2 inset-x-2.5 z-30 bg-slate-900/95 backdrop-blur-xl border border-slate-700/80 rounded-2xl px-1.5 py-1.5 shadow-2xl grid grid-cols-5 gap-1">
+        <button onclick="switchPage('home')" data-dock="home" class="dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-indigo-400 font-bold text-[10px] truncate">
+            <span class="text-sm sm:text-base leading-none">🏠</span>
+            <span class="mt-0.5 truncate">Beranda</span>
         </button>
-        <button onclick="switchPage('catalog')" data-dock="catalog" class="dock-btn flex flex-col items-center py-1 px-2.5 rounded-xl text-slate-400 font-medium text-[10px]">
-            <span class="text-base">💻</span>
-            <span>Katalog</span>
+        <button onclick="switchPage('catalog')" data-dock="catalog" class="dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-slate-400 font-medium text-[10px] truncate">
+            <span class="text-sm sm:text-base leading-none">💻</span>
+            <span class="mt-0.5 truncate">Katalog</span>
         </button>
-        <button onclick="switchPage('service')" data-dock="service" class="dock-btn flex flex-col items-center py-1 px-2.5 rounded-xl text-slate-400 font-medium text-[10px]">
-            <span class="text-base">🛠️</span>
-            <span>Service</span>
+        <button onclick="switchPage('service')" data-dock="service" class="dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-slate-400 font-medium text-[10px] truncate">
+            <span class="text-sm sm:text-base leading-none">🛠️</span>
+            <span class="mt-0.5 truncate">Service</span>
         </button>
-        <button onclick="switchPage('tracking')" data-dock="tracking" class="dock-btn flex flex-col items-center py-1 px-2.5 rounded-xl text-slate-400 font-medium text-[10px]">
-            <span class="text-base">📦</span>
-            <span>Lacak</span>
+        <button onclick="switchPage('tracking')" data-dock="tracking" class="dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-slate-400 font-medium text-[10px] truncate">
+            <span class="text-sm sm:text-base leading-none">📦</span>
+            <span class="mt-0.5 truncate">Lacak</span>
         </button>
-        <button onclick="switchPage('faq')" data-dock="faq" class="dock-btn flex flex-col items-center py-1 px-2.5 rounded-xl text-slate-400 font-medium text-[10px]">
-            <span class="text-base">🛡️</span>
-            <span>FAQ</span>
+        <button onclick="switchPage('faq')" data-dock="faq" class="dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-slate-400 font-medium text-[10px] truncate">
+            <span class="text-sm sm:text-base leading-none">🛡️</span>
+            <span class="mt-0.5 truncate">FAQ</span>
         </button>
     </div>
 
@@ -1308,8 +1389,8 @@
             document.querySelectorAll('.dock-btn').forEach(btn => {
                 const active = btn.getAttribute('data-dock') === pageId;
                 btn.className = active
-                    ? 'dock-btn flex flex-col items-center py-1 px-2.5 rounded-xl text-indigo-400 font-bold text-[10px]'
-                    : 'dock-btn flex flex-col items-center py-1 px-2.5 rounded-xl text-slate-400 font-medium text-[10px]';
+                    ? 'dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-indigo-400 font-bold text-[10px] truncate'
+                    : 'dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-slate-400 font-medium text-[10px] truncate';
             });
 
             // Record Visitor Analytics
@@ -1696,6 +1777,14 @@
                 const steps = ['Menunggu Verifikasi', 'Lulus QC 40 Titik', 'Sedang Dikirim / Siap Diambil', 'Selesai & Garansi Aktif'];
                 const stepIdx = Math.max(0, steps.indexOf(o.status));
                 const qcCheckedCount = Array.isArray(o.qcPassedItems) ? o.qcPassedItems.length : 40;
+                const payStatus = o.paymentStatus || 'LUNAS';
+                const payBadgeMap = {
+                    'LUNAS': 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+                    'BELUM BAYAR': 'bg-rose-500/20 text-rose-300 border-rose-500/40',
+                    'DP / UANG MUKA': 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+                    'CICILAN / PAYLATER': 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40',
+                    'COD / BAYAR DI TEMPAT': 'bg-indigo-500/20 text-indigo-300 border-indigo-500/40'
+                };
                 return `
                     <div class="glass-card space-y-4 border-indigo-500/40">
                         <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800">
@@ -1703,9 +1792,14 @@
                                 <span class="text-xs text-slate-400">Nomor Invoice Resmi:</span>
                                 <div class="font-display font-bold text-indigo-400 text-base">${o.id}</div>
                             </div>
-                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30">
-                                🛡️ Garansi Toko 30 Hari Aktif (${qcCheckedCount}/40 Titik QC Lulus)
-                            </span>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold border ${payBadgeMap[payStatus] || payBadgeMap['LUNAS']}">
+                                    💳 Status Nota: ${payStatus}
+                                </span>
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30">
+                                    🛡️ ${o.warrantyPeriod || 'Garansi Toko 30 Hari'} (${qcCheckedCount}/40 QC)
+                                </span>
+                            </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
                             <div><span class="text-slate-400">Pemesan:</span> <strong class="text-white">${o.customer}</strong></div>
@@ -1724,7 +1818,7 @@
                                 🛡️ Lihat Sertifikat Lulus 40 Titik QC
                             </button>
                             <button onclick="openInvoicePrintModal('${o.id}')" class="touch-btn px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-bold">
-                                🖨️ Cetak Nota Invoice & Kartu Garansi
+                                🖨️ Lihat & Cetak Nota Resmi Berstempel
                             </button>
                         </div>
                     </div>
@@ -1903,6 +1997,12 @@
                 method,
                 itemsSummary: cart.map(c => c.name).join(', '),
                 total,
+                discount: 0,
+                amountPaid: method.includes('Transfer') ? 0 : total,
+                paymentStatus: method.includes('Transfer') ? 'BELUM BAYAR' : (method.includes('COD') ? 'COD / BAYAR DI TEMPAT' : 'LUNAS'),
+                serialNumber: 'SN-JL-' + Date.now().toString().slice(-5),
+                warrantyPeriod: '30 Hari Penuh (Hardware & Tukar Unit)',
+                adminNote: 'Unit lulus 40 titik QC, segel toko utuh, gratis tas & charger original.',
                 status: 'Lulus QC 40 Titik',
                 qcPassedItems: all40Ids,
                 qcInspector: 'Tim QC Laboratorium JAKBAR LAPTOP',
@@ -1995,25 +2095,238 @@
         window.openInvoicePrintModal = function(orderId) {
             const o = orders.find(x => x.id === orderId);
             if (!o) return;
-            openUniversalModal(`🧾 Nota Invoice & Garansi Resmi — ${o.id}`, `
-                <div class="space-y-4 text-xs">
-                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-700 space-y-2">
-                        <div class="flex justify-between">
-                            <strong class="text-sm text-white">TOKO JAKBAR LAPTOP</strong>
-                            <span class="text-emerald-400 font-bold">${o.id}</span>
+
+            const payStatus = (o.paymentStatus || 'LUNAS').toUpperCase();
+            const subtotal = Number(o.total || 0) + Number(o.discount || 0);
+            const discount = Number(o.discount || 0);
+            const grandTotal = Number(o.total || 0);
+            const amountPaid = o.amountPaid !== undefined
+                ? Number(o.amountPaid)
+                : (payStatus === 'LUNAS' ? grandTotal : 0);
+            const remainingBalance = Math.max(0, grandTotal - amountPaid);
+            const snCode = o.serialNumber || ('SN-JL-' + (o.id || '').replace(/[^0-9]/g, '').slice(-5));
+            const warrantyText = o.warrantyPeriod || '30 Hari Penuh (Hardware & Tukar Unit)';
+            const noteText = o.adminNote || 'Unit telah lulus inspeksi laboratorium 40 titik QC. Segel garansi wajib utuh.';
+            const securityHash = 'AUTH-JL-' + btoa((o.id || 'INV') + '-' + grandTotal).replace(/[^A-Z0-9]/gi, '').slice(0, 10).toUpperCase();
+
+            const stampThemes = {
+                'LUNAS': {
+                    border: '#10b981',
+                    text: '#10b981',
+                    bg: 'rgba(16, 185, 129, 0.10)',
+                    label: 'LUNAS / PAID',
+                    sub: 'TERVERIFIKASI RESMI'
+                },
+                'BELUM BAYAR': {
+                    border: '#f43f5e',
+                    text: '#f43f5e',
+                    bg: 'rgba(244, 63, 94, 0.10)',
+                    label: 'BELUM BAYAR',
+                    sub: 'MENUNGGU PELUNASAN'
+                },
+                'DP / UANG MUKA': {
+                    border: '#f59e0b',
+                    text: '#f59e0b',
+                    bg: 'rgba(245, 158, 11, 0.10)',
+                    label: 'DP / DOWN PAYMENT',
+                    sub: 'SISA TAGIHAN AKTIF'
+                },
+                'CICILAN / PAYLATER': {
+                    border: '#06b6d4',
+                    text: '#06b6d4',
+                    bg: 'rgba(6, 182, 212, 0.10)',
+                    label: 'CICILAN AKTIF',
+                    sub: 'TERVERIFIKASI TOKO'
+                },
+                'COD / BAYAR DI TEMPAT': {
+                    border: '#6366f1',
+                    text: '#818cf8',
+                    bg: 'rgba(99, 102, 241, 0.10)',
+                    label: 'COD / BAYAR DI TEMPAT',
+                    sub: 'SIAP SERAH TERIMA'
+                }
+            };
+            const stTheme = stampThemes[payStatus] || stampThemes['LUNAS'];
+
+            openUniversalModal(`🧾 Nota Faktur & Kartu Garansi Resmi — ${o.id}`, `
+                <div class="space-y-4">
+                    <!-- Security Notice & Admin Quick Action Bar (Hidden when printed) -->
+                    <div class="no-print flex flex-wrap items-center justify-between gap-2 p-3 rounded-xl bg-slate-900/90 border border-slate-700 text-xs">
+                        <div class="flex items-center gap-2 text-emerald-300 font-semibold">
+                            <span>🔒 Dokumen Terkunci (Anti-Copy & Anti-Edit Aktif)</span>
                         </div>
-                        <p class="text-[11px] text-slate-400">Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat • WA: 0822-9868-8189</p>
-                        <hr class="border-slate-800">
-                        <div><strong>Pelanggan:</strong> ${o.customer} (${o.phone})</div>
-                        <div><strong>Tanggal:</strong> ${o.date}</div>
-                        <div><strong>Unit / Layanan:</strong> ${o.itemsSummary}</div>
-                        <div><strong>Metode:</strong> ${o.method}</div>
-                        <div class="text-sm font-bold text-emerald-400 pt-1">Total Lunas / Tagihan: ${formatRupiah(o.total)}</div>
-                        <div class="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-[11px] text-emerald-300">
-                            🛡️ Dilindungi Garansi Toko 30 Hari Penuh & Lulus 40 Titik QC Hardware.
+                        <div class="flex flex-wrap items-center gap-2">
+                            ${currentUser?.role === 'admin' ? `
+                                <button onclick="openEditOrderModal('${o.id}')" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold hover:bg-amber-400">
+                                    ✏️ Edit Status Lunas / Rincian Nota
+                                </button>
+                            ` : ''}
+                            <button onclick="window.print()" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-lg">
+                                🖨️ Cetak Nota / Simpan PDF
+                            </button>
                         </div>
                     </div>
-                    <button onclick="window.print()" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 text-white font-bold">🖨️ Cetak / Simpan PDF Nota Invoice</button>
+
+                    <!-- Official Uneditable Printable Invoice Sheet -->
+                    <div id="officialInvoiceSheet"
+                         oncontextmenu="return false;"
+                         oncopy="return false;"
+                         oncut="return false;"
+                         onpaste="return false;"
+                         ondragstart="return false;"
+                         contenteditable="false"
+                         class="invoice-protected relative rounded-2xl bg-white text-slate-900 p-5 sm:p-7 border-2 border-slate-300 shadow-2xl space-y-5">
+
+                        <!-- Anti-Counterfeit Diagonal Watermark Pattern -->
+                        <div class="invoice-watermark-pattern flex flex-col justify-around items-center select-none">
+                            <div class="text-3xl sm:text-4xl font-display font-extrabold tracking-widest text-slate-900 -rotate-12">DOKUMEN ASLI • JAKBAR LAPTOP • ${o.id}</div>
+                            <div class="text-3xl sm:text-4xl font-display font-extrabold tracking-widest text-slate-900 -rotate-12">${payStatus} • ${securityHash}</div>
+                            <div class="text-3xl sm:text-4xl font-display font-extrabold tracking-widest text-slate-900 -rotate-12">GARANSI RESMI TOKO KEBON JERUK</div>
+                        </div>
+
+                        <!-- Header / Kop Resmi Toko -->
+                        <div class="relative z-10 flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-4 border-b-2 border-slate-900">
+                            <div class="flex items-start gap-3">
+                                <div class="w-12 h-12 rounded-2xl bg-indigo-700 text-white font-display font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
+                                    JL
+                                </div>
+                                <div class="space-y-0.5">
+                                    <div class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-slate-900">TOKO JAKBAR LAPTOP</div>
+                                    <div class="text-[11px] font-bold text-indigo-700 uppercase tracking-wider">Pusat Laptop Second Grade A+ & Laboratorium Service</div>
+                                    <p class="text-[11px] text-slate-600 leading-snug max-w-sm">
+                                        Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat • WA Resmi: 0822-9868-8189
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="sm:text-right space-y-1 shrink-0">
+                                <div class="inline-block px-3 py-1 rounded-md bg-slate-900 text-white font-display font-bold text-xs tracking-wider uppercase">
+                                    NOTA FAKTUR & GARANSI
+                                </div>
+                                <div class="font-display font-extrabold text-base text-indigo-700">${o.id}</div>
+                                <div class="text-[11px] text-slate-600">Tanggal Terbit: <strong>${o.date || new Date().toLocaleDateString('id-ID')}</strong></div>
+                                <div class="text-[10px] font-mono text-slate-500">Kode Validasi: ${securityHash}</div>
+                            </div>
+                        </div>
+
+                        <!-- Customer & Status Banner -->
+                        <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 rounded-xl bg-slate-100 border border-slate-300 text-xs">
+                            <div class="space-y-1">
+                                <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Diterbitkan Kepada Pelanggan:</div>
+                                <div class="font-bold text-slate-900 text-sm">${o.customer}</div>
+                                <div class="text-slate-700">No. WhatsApp: <strong>${o.phone}</strong></div>
+                                <div class="text-slate-700">Metode Transaksi: <strong>${o.method || 'Toko Kebon Jeruk'}</strong></div>
+                            </div>
+                            <div class="sm:text-right space-y-1 flex flex-col justify-between">
+                                <div>
+                                    <div class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Status Pembayaran Resmi:</div>
+                                    <div class="inline-block mt-1 px-3 py-1 rounded-lg font-display font-extrabold text-xs border-2"
+                                         style="border-color:${stTheme.border}; color:${stTheme.text}; background:${stTheme.bg};">
+                                        ${stTheme.label}
+                                    </div>
+                                </div>
+                                <div class="text-[11px] text-slate-700">
+                                    Status Pesanan: <strong>${o.status || 'Lulus QC 40 Titik'}</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Itemized Table -->
+                        <div class="relative z-10 overflow-x-auto">
+                            <table class="w-full text-left border-collapse text-xs">
+                                <thead>
+                                    <tr class="bg-slate-900 text-white">
+                                        <th class="p-2.5 rounded-tl-lg">Deskripsi Unit Laptop / Jasa Service</th>
+                                        <th class="p-2.5">No. Seri / SN & QC</th>
+                                        <th class="p-2.5">Masa Garansi</th>
+                                        <th class="p-2.5 text-right rounded-tr-lg">Harga Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-300 border-x border-b border-slate-300">
+                                    <tr class="bg-white">
+                                        <td class="p-3 font-bold text-slate-900">
+                                            ${o.itemsSummary}
+                                            <div class="text-[11px] font-normal text-emerald-700 mt-0.5">✔ Lulus Inspeksi 40 Titik QC Hardware</div>
+                                        </td>
+                                        <td class="p-3 font-mono text-[11px] text-slate-700">${snCode}</td>
+                                        <td class="p-3 text-slate-800 font-semibold">${warrantyText}</td>
+                                        <td class="p-3 text-right font-bold text-slate-900">${formatRupiah(subtotal)}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Financial Breakdown + Official Wet Stamp Area -->
+                        <div class="relative z-10 grid grid-cols-1 sm:grid-cols-12 gap-5 items-center pt-2">
+                            <!-- Left: Terms, Notes & Official Circular Stamp -->
+                            <div class="sm:col-span-7 space-y-3">
+                                <div class="p-3 rounded-xl bg-slate-50 border border-slate-300 space-y-1 text-[11px] text-slate-700">
+                                    <div class="font-bold text-slate-900">📌 Catatan Pemeriksaan & Ketentuan Garansi:</div>
+                                    <p>${noteText}</p>
+                                    <p class="text-[10px] text-slate-500 pt-1">
+                                        * Syarat Klaim Garansi: Wajib menunjukkan Nota Faktur ini & segel baut Toko JAKBAR LAPTOP tidak rusak/terbuka, serta bukan akibat kesalahan pemakaian (jatuh/cairan).
+                                    </p>
+                                </div>
+
+                                <!-- Official Vector Stamp & Signature Row -->
+                                <div class="flex flex-wrap items-center justify-between gap-4 pt-2 px-2">
+                                    <!-- Circular Wet Stamp Toko JAKBAR LAPTOP -->
+                                    <div class="digital-wet-stamp relative inline-flex items-center justify-center w-36 h-36 rounded-full border-4 border-double border-indigo-700/85 bg-indigo-50/40 text-center p-2 select-none">
+                                        <div class="w-full h-full rounded-full border border-dashed border-indigo-700/70 flex flex-col items-center justify-center px-1">
+                                            <span class="text-[8px] font-extrabold tracking-widest text-indigo-800 uppercase">★ TOKO RESMI VERIFIED ★</span>
+                                            <span class="font-display font-extrabold text-xs text-indigo-900 tracking-tight leading-tight mt-0.5">JAKBAR LAPTOP</span>
+                                            <span class="text-[8px] font-bold text-emerald-700 uppercase">LULUS 40 TITIK QC</span>
+                                            <div class="my-1 px-2 py-0.5 rounded border font-display font-extrabold text-[10px] uppercase"
+                                                 style="border-color:${stTheme.border}; color:${stTheme.border}; background:${stTheme.bg};">
+                                                ${stTheme.label}
+                                            </div>
+                                            <span class="text-[7px] font-bold text-slate-600 uppercase">KEBON JERUK • JAKBAR</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Authorized Signatory -->
+                                    <div class="text-center space-y-1 text-xs">
+                                        <div class="text-[10px] text-slate-500 uppercase font-semibold">Otorisasi Resmi Toko,</div>
+                                        <div class="font-display font-bold italic text-indigo-800 text-sm py-2">
+                                            ✔ ${o.qcInspector || 'Admin & Tim QC JAKBAR LAPTOP'}
+                                        </div>
+                                        <div class="border-t border-slate-400 pt-1 text-[10px] font-bold text-slate-700">
+                                            Stempel & Tanda Tangan Digital Sah
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Payment Calculation Summary -->
+                            <div class="sm:col-span-5 p-4 rounded-xl bg-slate-900 text-white space-y-2.5 text-xs">
+                                <div class="flex justify-between text-slate-300">
+                                    <span>Subtotal Harga:</span>
+                                    <span class="font-semibold">${formatRupiah(subtotal)}</span>
+                                </div>
+                                <div class="flex justify-between text-emerald-400">
+                                    <span>Potongan / Diskon Promo:</span>
+                                    <span class="font-semibold">- ${formatRupiah(discount)}</span>
+                                </div>
+                                <div class="border-t border-slate-700 pt-2 flex justify-between items-center text-sm font-display font-bold">
+                                    <span>Total Tagihan:</span>
+                                    <span class="text-amber-300 text-base">${formatRupiah(grandTotal)}</span>
+                                </div>
+                                <div class="flex justify-between text-emerald-300 pt-1">
+                                    <span>Telah Dibayar (${payStatus}):</span>
+                                    <span class="font-bold">${formatRupiah(amountPaid)}</span>
+                                </div>
+                                <div class="border-t border-slate-700 pt-2 flex justify-between items-center font-bold ${remainingBalance > 0 ? 'text-rose-400' : 'text-emerald-400'}">
+                                    <span>Sisa Tagihan / Kurang Bayar:</span>
+                                    <span class="text-sm">${remainingBalance > 0 ? formatRupiah(remainingBalance) : 'Rp 0 (LUNAS)'}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Security Bar -->
+                        <div class="relative z-10 pt-3 border-t border-slate-300 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] text-slate-500">
+                            <span>🔒 Nota digital ini dilindungi sistem Anti-Edit JAKBAR LAPTOP. Segala bentuk perubahan tanpa otorisasi Admin tidak sah.</span>
+                            <span class="font-mono font-bold text-slate-700">${o.id} • ${payStatus}</span>
+                        </div>
+                    </div>
                 </div>
             `);
         };
@@ -2445,41 +2758,89 @@
                     </div>
                 `;
             } else if (activeAdminTab === 'orders') {
+                const paidCount = orders.filter(o => (o.paymentStatus || 'LUNAS') === 'LUNAS').length;
+                const unpaidCount = orders.length - paidCount;
                 box.innerHTML = `
-                    <div class="glass-card space-y-4">
-                        <h3 class="font-display font-bold text-white text-base">🏪 Input Transaksi Kasir Offline (POS Toko Kebon Jeruk)</h3>
-                        <form onsubmit="createPosOrderAdmin(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
-                            <input id="posCustName" required type="text" placeholder="Nama Pembeli" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                            <input id="posCustPhone" required type="text" placeholder="No. WhatsApp" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                            <input id="posItemName" required type="text" placeholder="Unit Laptop / Jasa Service" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                            <div class="flex gap-2">
-                                <input id="posTotal" required type="number" placeholder="Nominal (Rp)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                                <button type="submit" class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white font-bold shrink-0">+ Buat Nota</button>
+                    <!-- Quick POS & Full Invoice Creator -->
+                    <div class="glass-card space-y-4 border-emerald-500/30">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h3 class="font-display font-bold text-white text-base">🏪 Buat Nota Faktur & Kasir POS Lengkap (Toko Kebon Jeruk)</h3>
+                                <p class="text-xs text-slate-400">Terbitkan nota berstempel resmi (Lunas, Belum Bayar, DP, Cicilan, atau COD) lengkap dengan Nomor Seri & Garansi.</p>
                             </div>
+                            <div class="flex gap-2 text-xs">
+                                <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">✔ Lunas: ${paidCount}</span>
+                                <span class="px-3 py-1 rounded-lg bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30">⏳ Belum Lunas/DP: ${unpaidCount}</span>
+                            </div>
+                        </div>
+                        <form onsubmit="createPosOrderAdmin(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                            <input id="posCustName" required type="text" placeholder="Nama Pembeli *" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <input id="posCustPhone" required type="text" placeholder="No. WhatsApp Pembeli *" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <input id="posItemName" required type="text" placeholder="Unit Laptop / Jasa Service *" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <input id="posSerialNum" type="text" placeholder="No. Seri / SN Unit (Opsional)" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+
+                            <input id="posTotal" required type="number" placeholder="Total Harga (Rp) *" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <input id="posDiscount" type="number" placeholder="Diskon Potongan (Rp) [Opsional]" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <select id="posPayStatus" onchange="syncPosPaidAmount()" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-emerald-300 font-bold">
+                                <option value="LUNAS">✅ Status Nota: LUNAS (PAID)</option>
+                                <option value="BELUM BAYAR">❌ Status Nota: BELUM BAYAR (UNPAID)</option>
+                                <option value="DP / UANG MUKA">⏳ Status Nota: DP / UANG MUKA</option>
+                                <option value="CICILAN / PAYLATER">💳 Status Nota: CICILAN / PAYLATER</option>
+                                <option value="COD / BAYAR DI TEMPAT">🛵 Status Nota: COD / BAYAR DI TEMPAT</option>
+                            </select>
+                            <input id="posAmountPaid" type="number" placeholder="Nominal Sudah Dibayar (Rp)" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+
+                            <input id="posMethod" type="text" value="Transaksi Toko Kebon Jeruk" placeholder="Metode Pembayaran (Cash/BCA/QRIS/COD)" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <input id="posWarranty" type="text" value="30 Hari Penuh (Hardware & Tukar Unit)" placeholder="Masa Garansi" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <input id="posNote" type="text" placeholder="Catatan Nota / Kondisi Fisik & Kelengkapan" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <button type="submit" class="touch-btn px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold shadow-lg">
+                                🧾 Terbitkan & Buka Nota Resmi
+                            </button>
                         </form>
                     </div>
+
+                    <!-- Invoice List with 1-Click Payment Status Switcher -->
                     <div class="glass-card space-y-3">
                         <div class="flex flex-wrap items-center justify-between gap-2">
-                            <h3 class="font-display font-bold text-white text-base">📋 Daftar Semua Pesanan & Invoice (${orders.length})</h3>
+                            <h3 class="font-display font-bold text-white text-base">📋 Daftar Semua Pesanan & Nota Faktur (${orders.length})</h3>
                             ${orders.length > 0 ? `<button onclick="clearAllOrdersAdmin()" class="px-3 py-1.5 rounded-xl bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold">🗑️ Hapus Semua Invoice</button>` : ''}
                         </div>
-                        ${orders.length === 0 ? `<p class="text-xs text-slate-400">Belum ada transaksi tercatat.</p>` : orders.map(o => `
-                            <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-3 text-xs">
-                                <div class="space-y-1">
-                                    <div class="font-bold text-indigo-400">${o.id} — <span class="text-white">${o.customer} (${o.phone})</span> <span class="text-slate-500">• ${o.date || ''}</span></div>
-                                    <div class="text-slate-300">${o.itemsSummary} • <strong class="text-emerald-400">${formatRupiah(o.total)}</strong> (${o.method || 'Toko'})</div>
+                        ${orders.length === 0 ? `<p class="text-xs text-slate-400">Belum ada transaksi tercatat. Gunakan form di atas untuk menerbitkan nota.</p>` : orders.map(o => {
+                            const paySt = o.paymentStatus || 'LUNAS';
+                            const payColor = paySt === 'LUNAS'
+                                ? 'bg-emerald-950/90 border-emerald-500/50 text-emerald-300'
+                                : (paySt === 'BELUM BAYAR' ? 'bg-rose-950/90 border-rose-500/50 text-rose-300' : 'bg-amber-950/90 border-amber-500/50 text-amber-300');
+                            return `
+                                <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-3 text-xs">
+                                    <div class="space-y-1">
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <span class="font-bold text-indigo-400 text-sm">${o.id}</span>
+                                            <span class="px-2 py-0.5 rounded-md border text-[10px] font-extrabold ${payColor}">${paySt}</span>
+                                            <span class="text-white font-bold">${o.customer} (${o.phone})</span>
+                                            <span class="text-slate-500">• ${o.date || ''}</span>
+                                        </div>
+                                        <div class="text-slate-300">
+                                            ${o.itemsSummary} • Tagihan: <strong class="text-emerald-400">${formatRupiah(o.total)}</strong>
+                                            ${o.serialNumber ? ` • <span class="font-mono text-slate-400">SN: ${o.serialNumber}</span>` : ''}
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-1.5">
+                                        <!-- Quick Payment Status Selector -->
+                                        <select onchange="updateOrderPaymentStatusAdmin('${o.id}', this.value)" title="Ubah Status Bayar Nota" class="px-2.5 py-1.5 rounded-lg border font-bold text-xs ${payColor}">
+                                            ${['LUNAS', 'BELUM BAYAR', 'DP / UANG MUKA', 'CICILAN / PAYLATER', 'COD / BAYAR DI TEMPAT'].map(ps => `<option value="${ps}" ${paySt === ps ? 'selected' : ''}>Nota: ${ps}</option>`).join('')}
+                                        </select>
+                                        <!-- Order Progress Selector -->
+                                        <select onchange="updateOrderStatusAdmin('${o.id}', this.value)" title="Ubah Tahap Pengiriman/QC" class="px-2.5 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-xs">
+                                            ${['Menunggu Verifikasi', 'Lulus QC 40 Titik', 'Sedang Dikirim / Siap Diambil', 'Selesai & Garansi Aktif'].map(st => `<option value="${st}" ${o.status === st ? 'selected' : ''}>${st}</option>`).join('')}
+                                        </select>
+                                        <button onclick="openInvoicePrintModal('${o.id}')" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow">🖨️ Cetak Nota Berstempel</button>
+                                        <button onclick="sendOrderSurveyWhatsApp('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold">💖 Link WA</button>
+                                        <button onclick="openEditOrderModal('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">✏️ Edit Lengkap</button>
+                                        <button onclick="deleteOrderAdmin('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold">🗑️</button>
+                                    </div>
                                 </div>
-                                <div class="flex flex-wrap items-center gap-1.5">
-                                    <select onchange="updateOrderStatusAdmin('${o.id}', this.value)" class="px-2.5 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-xs">
-                                        ${['Menunggu Verifikasi', 'Lulus QC 40 Titik', 'Sedang Dikirim / Siap Diambil', 'Selesai & Garansi Aktif'].map(st => `<option value="${st}" ${o.status === st ? 'selected' : ''}>${st}</option>`).join('')}
-                                    </select>
-                                    <button onclick="openInvoicePrintModal('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 text-white font-bold">🖨️ Nota</button>
-                                    <button onclick="sendOrderSurveyWhatsApp('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold">💖 Link WA</button>
-                                    <button onclick="openEditOrderModal('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">✏️ Edit</button>
-                                    <button onclick="deleteOrderAdmin('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold">🗑️ Hapus</button>
-                                </div>
-                            </div>
-                        `).join('')}
+                            `;
+                        }).join('')}
                     </div>
                 `;
             } else if (activeAdminTab === 'qc') {
@@ -2725,26 +3086,72 @@
             showToast(`Preset visual "${mode.toUpperCase()}" diterapkan!`, 'success');
         };
 
+        window.syncPosPaidAmount = function() {
+            const st = document.getElementById('posPayStatus')?.value;
+            const total = Number(document.getElementById('posTotal')?.value || 0);
+            const paidInput = document.getElementById('posAmountPaid');
+            if (!paidInput) return;
+            if (st === 'LUNAS') paidInput.value = total || '';
+            else if (st === 'BELUM BAYAR' || st === 'COD / BAYAR DI TEMPAT') paidInput.value = 0;
+        };
+
         window.createPosOrderAdmin = function(e) {
             e.preventDefault();
-            const customer = document.getElementById('posCustName').value;
-            const phone = document.getElementById('posCustPhone').value;
-            const itemsSummary = document.getElementById('posItemName').value;
-            const total = Number(document.getElementById('posTotal').value);
+            const customer = document.getElementById('posCustName').value.trim();
+            const phone = document.getElementById('posCustPhone').value.trim();
+            const itemsSummary = document.getElementById('posItemName').value.trim();
+            const serialNumber = document.getElementById('posSerialNum').value.trim() || ('SN-JL-' + Date.now().toString().slice(-5));
+            const total = Number(document.getElementById('posTotal').value || 0);
+            const discount = Number(document.getElementById('posDiscount').value || 0);
+            const paymentStatus = document.getElementById('posPayStatus').value || 'LUNAS';
+            const rawPaid = document.getElementById('posAmountPaid').value;
+            const amountPaid = rawPaid !== ''
+                ? Number(rawPaid)
+                : (paymentStatus === 'LUNAS' ? total : 0);
+            const method = document.getElementById('posMethod').value.trim() || 'Transaksi Toko Kebon Jeruk';
+            const warrantyPeriod = document.getElementById('posWarranty').value.trim() || '30 Hari Penuh (Hardware & Tukar Unit)';
+            const adminNote = document.getElementById('posNote').value.trim() || 'Unit telah lulus 40 titik QC, segel garansi toko utuh.';
+
             const invId = 'INV-POS' + Date.now().toString().slice(-5);
-            orders.unshift({
+            const all40Ids = [];
+            QC_40_MASTER.forEach((g, gi) => g.items.forEach((_, ii) => all40Ids.push(`${gi}-${ii}`)));
+
+            const newOrd = {
                 id: invId,
                 customer,
                 phone,
-                method: 'Transaksi Langsung Kasir Toko Kebon Jeruk',
+                method,
                 itemsSummary,
+                serialNumber,
                 total,
-                status: 'Selesai & Garansi Aktif',
-                qcPassedItems: [],
+                discount,
+                paymentStatus,
+                amountPaid,
+                warrantyPeriod,
+                adminNote,
+                status: paymentStatus === 'LUNAS' ? 'Selesai & Garansi Aktif' : 'Menunggu Verifikasi',
+                qcPassedItems: all40Ids,
+                qcInspector: 'Admin & Tim QC JAKBAR LAPTOP',
                 date: new Date().toLocaleDateString('id-ID')
-            });
+            };
+            orders.unshift(newOrd);
+            e.target.reset();
             persistAllState();
-            showToast(`Nota POS ${invId} berhasil dibuat!`, 'success');
+            openInvoicePrintModal(invId);
+            showToast(`Nota Resmi ${invId} (${paymentStatus}) berhasil diterbitkan!`, 'success');
+        };
+
+        window.updateOrderPaymentStatusAdmin = function(id, payStatus) {
+            const o = orders.find(x => x.id === id);
+            if (!o) return;
+            o.paymentStatus = payStatus;
+            if (payStatus === 'LUNAS') {
+                o.amountPaid = Number(o.total || 0);
+            } else if (payStatus === 'BELUM BAYAR') {
+                o.amountPaid = 0;
+            }
+            persistAllState();
+            showToast(`Status Nota ${id} diubah menjadi: ${payStatus}`, 'success');
         };
 
         window.updateOrderStatusAdmin = function(id, status) {
@@ -2759,52 +3166,116 @@
         window.openEditOrderModal = function(orderId) {
             const o = orders.find(x => x.id === orderId);
             if (!o) return;
-            openUniversalModal(`✏️ Edit Data Invoice — ${o.id}`, `
+            const curPayStatus = o.paymentStatus || 'LUNAS';
+            openUniversalModal(`✏️ Edit Lengkap Nota Faktur & Status Bayar — ${o.id}`, `
                 <form onsubmit="saveEditOrderForm(event, '${o.id}')" class="space-y-3 text-xs">
-                    <div>
-                        <label class="block font-bold text-slate-300 mb-1">Nama Pelanggan</label>
-                        <input id="edOrdCustomer" required type="text" value="${o.customer || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                    </div>
-                    <div>
-                        <label class="block font-bold text-slate-300 mb-1">Nomor WhatsApp</label>
-                        <input id="edOrdPhone" required type="text" value="${o.phone || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                    </div>
-                    <div>
-                        <label class="block font-bold text-slate-300 mb-1">Unit Laptop / Layanan</label>
-                        <input id="edOrdItems" required type="text" value="${o.itemsSummary || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                    </div>
-                    <div class="grid grid-cols-2 gap-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         <div>
-                            <label class="block font-bold text-slate-300 mb-1">Total Transaksi (Rp)</label>
-                            <input id="edOrdTotal" required type="number" value="${o.total || 0}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <label class="block font-bold text-slate-300 mb-1">Nama Pelanggan</label>
+                            <input id="edOrdCustomer" required type="text" value="${o.customer || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
                         </div>
                         <div>
-                            <label class="block font-bold text-slate-300 mb-1">Tanggal</label>
+                            <label class="block font-bold text-slate-300 mb-1">Nomor WhatsApp</label>
+                            <input id="edOrdPhone" required type="text" value="${o.phone || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Unit Laptop / Jasa Service</label>
+                            <input id="edOrdItems" required type="text" value="${o.itemsSummary || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Nomor Seri / SN Unit</label>
+                            <input id="edOrdSn" type="text" value="${o.serialNumber || ''}" placeholder="SN-JL-..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 p-3 rounded-xl bg-slate-900 border border-indigo-500/30">
+                        <div>
+                            <label class="block font-bold text-emerald-300 mb-1">Status Pembayaran (Stempel Nota)</label>
+                            <select id="edOrdPayStatus" class="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white font-bold">
+                                ${['LUNAS', 'BELUM BAYAR', 'DP / UANG MUKA', 'CICILAN / PAYLATER', 'COD / BAYAR DI TEMPAT'].map(st => `<option value="${st}" ${curPayStatus === st ? 'selected' : ''}>${st}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Total Tagihan (Rp)</label>
+                            <input id="edOrdTotal" required type="number" value="${o.total || 0}" class="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Diskon Potongan (Rp)</label>
+                            <input id="edOrdDiscount" type="number" value="${o.discount || 0}" class="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Nominal Sudah Dibayar (Rp)</label>
+                            <input id="edOrdPaid" type="number" value="${o.amountPaid !== undefined ? o.amountPaid : (curPayStatus === 'LUNAS' ? (o.total || 0) : 0)}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Metode Transaksi / Bank</label>
+                            <input id="edOrdMethod" required type="text" value="${o.method || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Tanggal Nota</label>
                             <input id="edOrdDate" required type="text" value="${o.date || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
                         </div>
                     </div>
-                    <div>
-                        <label class="block font-bold text-slate-300 mb-1">Metode Pengambilan / Pembayaran</label>
-                        <input id="edOrdMethod" required type="text" value="${o.method || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Masa Garansi Tertulis</label>
+                            <input id="edOrdWarranty" type="text" value="${o.warrantyPeriod || '30 Hari Penuh (Hardware & Tukar Unit)'}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Nama Pemeriksa / Otorisasi</label>
+                            <input id="edOrdInspector" type="text" value="${o.qcInspector || 'Admin & Tim QC JAKBAR LAPTOP'}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
                     </div>
-                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 text-white font-bold">💾 Simpan Perubahan Invoice</button>
+
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Catatan Khusus di Nota (Kondisi Fisik / Kelengkapan / Ketentuan)</label>
+                        <textarea id="edOrdNote" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${o.adminNote || 'Unit telah lulus inspeksi laboratorium 40 titik QC. Segel garansi wajib utuh.'}</textarea>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <button type="submit" class="flex-1 touch-btn py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold">💾 Simpan & Perbarui Stempel Nota</button>
+                        <button type="button" onclick="saveAndPreviewOrder('${o.id}')" class="touch-btn px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold">🖨️ Simpan & Langsung Lihat Nota</button>
+                    </div>
                 </form>
             `);
         };
 
-        window.saveEditOrderForm = function(e, orderId) {
-            e.preventDefault();
+        window.saveEditOrderForm = function(e, orderId, openPrintAfter = false) {
+            if (e) e.preventDefault();
             const o = orders.find(x => x.id === orderId);
             if (!o) return;
-            o.customer = document.getElementById('edOrdCustomer').value;
-            o.phone = document.getElementById('edOrdPhone').value;
-            o.itemsSummary = document.getElementById('edOrdItems').value;
-            o.total = Number(document.getElementById('edOrdTotal').value);
-            o.date = document.getElementById('edOrdDate').value;
-            o.method = document.getElementById('edOrdMethod').value;
+            o.customer = document.getElementById('edOrdCustomer').value.trim();
+            o.phone = document.getElementById('edOrdPhone').value.trim();
+            o.itemsSummary = document.getElementById('edOrdItems').value.trim();
+            o.serialNumber = document.getElementById('edOrdSn').value.trim();
+            o.paymentStatus = document.getElementById('edOrdPayStatus').value;
+            o.total = Number(document.getElementById('edOrdTotal').value || 0);
+            o.discount = Number(document.getElementById('edOrdDiscount').value || 0);
+            o.amountPaid = Number(document.getElementById('edOrdPaid').value || 0);
+            o.method = document.getElementById('edOrdMethod').value.trim();
+            o.date = document.getElementById('edOrdDate').value.trim();
+            o.warrantyPeriod = document.getElementById('edOrdWarranty').value.trim();
+            o.qcInspector = document.getElementById('edOrdInspector').value.trim();
+            o.adminNote = document.getElementById('edOrdNote').value.trim();
+
             persistAllState();
-            closeUniversalModal();
-            showToast(`Invoice ${orderId} berhasil diperbarui!`, 'success');
+            if (openPrintAfter) {
+                openInvoicePrintModal(orderId);
+            } else {
+                closeUniversalModal();
+            }
+            showToast(`Nota ${orderId} (${o.paymentStatus}) berhasil diperbarui!`, 'success');
+        };
+
+        window.saveAndPreviewOrder = function(orderId) {
+            window.saveEditOrderForm(null, orderId, true);
         };
 
         window.deleteOrderAdmin = function(orderId) {
@@ -3252,7 +3723,42 @@
             }
         });
 
+        // Auto-Calibrate Viewport & Anti-Overlap Safe Spacing Engine
+        function autoCalibrateScreenLayout() {
+            const vw = window.innerWidth;
+            const root = document.documentElement;
+            const dock = document.getElementById('mobileBottomDock');
+            const waBtn = document.getElementById('floatingWaBtn');
+
+            if (vw < 380) {
+                root.style.setProperty('--card-padding', '0.85rem');
+                root.style.setProperty('--card-radius', '1rem');
+            } else if (vw < 768) {
+                root.style.setProperty('--card-padding', '1.05rem');
+                root.style.setProperty('--card-radius', '1.15rem');
+            } else {
+                root.style.setProperty('--card-padding', '1.3rem');
+                root.style.setProperty('--card-radius', '1.25rem');
+            }
+
+            // Dynamically position Floating WA button above Mobile Bottom Dock so they never collide
+            if (dock && waBtn) {
+                if (vw < 1280) {
+                    const dockHeight = dock.offsetHeight || 60;
+                    waBtn.style.bottom = `${dockHeight + 18}px`;
+                    document.body.style.paddingBottom = `${dockHeight + 76}px`;
+                } else {
+                    waBtn.style.bottom = '24px';
+                    document.body.style.paddingBottom = '40px';
+                }
+            }
+        }
+
+        window.addEventListener('resize', autoCalibrateScreenLayout);
+        window.addEventListener('orientationchange', autoCalibrateScreenLayout);
+
         window.addEventListener('DOMContentLoaded', () => {
+            autoCalibrateScreenLayout();
             renderAllSections();
             initFirebaseConnection();
 
