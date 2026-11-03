@@ -690,6 +690,119 @@
             <div id="compareTableContainer" class="glass-card overflow-x-auto"></div>
         </section>
 
+        <!-- ==================== PAGE 10: HALAMAN KHUSUS SURVEI KEPUASAN PELANGGAN ==================== -->
+        <section id="page-survey" class="page-section hidden space-y-6">
+            <div class="max-w-2xl mx-auto space-y-6">
+                <!-- Survey Header Banner -->
+                <div class="glass-card bg-gradient-to-br from-emerald-950/80 via-slate-900 to-indigo-950/80 border-emerald-500/40 text-center space-y-3 p-6 sm:p-8 shadow-2xl">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-400 text-slate-950 font-display font-bold text-2xl flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/30">
+                        ⭐
+                    </div>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold">
+                        💖 FORMULIR RESMI KEPUASAN PELANGGAN
+                    </span>
+                    <h1 class="section-title-fluid font-display font-bold text-white">
+                        Terima Kasih Telah Mempercayakan Kebutuhan Laptop Anda di Toko JAKBAR LAPTOP!
+                    </h1>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Pendapat jujur Anda sangat berarti bagi kami dan akan langsung tampil di <strong>Beranda Toko JAKBAR LAPTOP</strong> untuk membantu calon pembeli lainnya.
+                    </p>
+                </div>
+
+                <!-- Interactive Customer Satisfaction Form -->
+                <div id="surveyFormCard" class="glass-card border-indigo-500/30 p-5 sm:p-7 space-y-5">
+                    <form onsubmit="submitDedicatedSurvey(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1.5">Nama Lengkap Anda *</label>
+                                <input id="surveyCustomerName" required type="text" placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-emerald-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1.5">Pekerjaan & Domisili *</label>
+                                <input id="surveyCustomerRole" required type="text" placeholder="Contoh: Karyawan Swasta — Kebon Jeruk" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-emerald-500">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1.5">Unit Laptop / Layanan yang Diambil *</label>
+                                <input id="surveyUnitItem" required type="text" placeholder="Contoh: ThinkPad X1 Carbon / Upgrade SSD" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-emerald-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 mb-1.5">Nomor Invoice (Opsional)</label>
+                                <input id="surveyInvoiceId" type="text" placeholder="Contoh: INV-JL..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-emerald-500">
+                            </div>
+                        </div>
+
+                        <!-- Interactive Star Rating Selector -->
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold text-slate-300">Seberapa Puas Anda dengan Kualitas Unit & Pelayanan Kami? *</label>
+                            <input type="hidden" id="surveyRatingValue" value="5">
+                            <div class="grid grid-cols-5 gap-2" id="surveyStarButtons">
+                                <button type="button" onclick="selectSurveyStar(1)" data-star="1" class="survey-star-btn p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-center transition-all">
+                                    <div class="text-lg">⭐</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">1/5</div>
+                                </button>
+                                <button type="button" onclick="selectSurveyStar(2)" data-star="2" class="survey-star-btn p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-center transition-all">
+                                    <div class="text-lg">⭐⭐</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">2/5</div>
+                                </button>
+                                <button type="button" onclick="selectSurveyStar(3)" data-star="3" class="survey-star-btn p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-center transition-all">
+                                    <div class="text-lg">⭐⭐⭐</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">3/5</div>
+                                </button>
+                                <button type="button" onclick="selectSurveyStar(4)" data-star="4" class="survey-star-btn p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-center transition-all">
+                                    <div class="text-lg">⭐⭐⭐⭐</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">4/5</div>
+                                </button>
+                                <button type="button" onclick="selectSurveyStar(5)" data-star="5" class="survey-star-btn p-2.5 rounded-xl bg-emerald-950/80 border-2 border-emerald-400 text-center transition-all">
+                                    <div class="text-lg">⭐⭐⭐⭐⭐</div>
+                                    <div class="text-[10px] text-emerald-300 font-bold mt-0.5">5/5 Puas!</div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Quick Impression Tags (1-Click Helper for Customer) -->
+                        <div class="space-y-1.5">
+                            <label class="block text-xs font-bold text-slate-300">Klik Cepat Hal yang Paling Anda Sukai (Bisa pilih lebih dari satu):</label>
+                            <div class="flex flex-wrap gap-1.5">
+                                <button type="button" onclick="appendSurveyTag('Unit benar-benar mulus Grade A+ sesuai deskripsi.')" class="px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-indigo-600/30 border border-slate-700 text-[11px] text-indigo-300 font-semibold">+ Kondisi Mulus Grade A+</button>
+                                <button type="button" onclick="appendSurveyTag('Penjelasan 40 titik QC dan plus-minusnya sangat jujur & transparan.')" class="px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-indigo-600/30 border border-slate-700 text-[11px] text-emerald-300 font-semibold">+ Jujur & Transparan 40 QC</button>
+                                <button type="button" onclick="appendSurveyTag('Admin ramah, sabar, dan sangat membantu saat cek unit di Toko Kebon Jeruk.')" class="px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-indigo-600/30 border border-slate-700 text-[11px] text-cyan-300 font-semibold">+ Pelayanan Toko Ramah</button>
+                                <button type="button" onclick="appendSurveyTag('Pengerjaan service/upgrade cepat bisa ditunggu & data 100% aman.')" class="px-3 py-1.5 rounded-lg bg-slate-800/90 hover:bg-indigo-600/30 border border-slate-700 text-[11px] text-amber-300 font-semibold">+ Service Cepat & Data Aman</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1.5">Ceritakan Pengalaman Anda *</label>
+                            <textarea id="surveyCommentText" required rows="4" placeholder="Tulis kesan Anda mengenai kondisi unit laptop, kejujuran penjelasan QC, atau pelayanan tim Toko JAKBAR LAPTOP..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-emerald-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full touch-btn shimmer-btn py-4 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-500 to-indigo-600 text-white font-bold text-sm shadow-xl shadow-emerald-600/30">
+                            🚀 Kirim Penilaian & Tayangkan di Beranda Toko
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Thank You Confirmation Box (Shown after submit) -->
+                <div id="surveySuccessCard" class="hidden glass-card border-emerald-500/50 bg-emerald-950/30 text-center p-6 sm:p-8 space-y-4">
+                    <div class="text-4xl">🎉</div>
+                    <h2 class="text-xl font-display font-bold text-white">Terima Kasih! Ulasan Anda Telah Tampil di Beranda Toko</h2>
+                    <p class="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
+                        Penilaian Anda sudah langsung tersimpan dan otomatis muncul di bagian teratas <strong>Beranda Toko JAKBAR LAPTOP</strong>.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-3 pt-2">
+                        <button onclick="switchPage('home')" class="touch-btn px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-lg">
+                            🏠 Lihat Ulasan Saya di Beranda
+                        </button>
+                        <button onclick="resetSurveyForm()" class="touch-btn px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold">
+                            ✍️ Isi Ulasan Lainnya
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ==================== PAGE 9: ADMIN COMMAND CENTER ==================== -->
         <section id="page-admin" class="page-section hidden space-y-6">
             <div class="glass-card bg-gradient-to-r from-amber-950/50 via-slate-900 to-indigo-950/60 border-amber-500/40">
@@ -706,12 +819,12 @@
                     </div>
                 </div>
 
-                <!-- Admin Navigation Tabs -->
+                    <!-- Admin Navigation Tabs -->
                 <div class="flex flex-wrap gap-2 mt-5 pt-4 border-t border-slate-800">
                     <button onclick="switchAdminTab('overview')" data-admtab="overview" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-500 text-slate-950">📡 Monitoring & Trafik</button>
                     <button onclick="switchAdminTab('orders')" data-admtab="orders" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">💳 Transaksi & Kasir POS</button>
                     <button onclick="switchAdminTab('qc')" data-admtab="qc" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">🔬 Checklist 40 Titik QC</button>
-                    <button onclick="switchAdminTab('crm')" data-admtab="crm" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">💬 Tiket & Komunikasi WA</button>
+                    <button onclick="switchAdminTab('crm')" data-admtab="crm" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">💬 Tiket & Link Kepuasan WA</button>
                     <button onclick="switchAdminTab('inventory')" data-admtab="inventory" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">📦 Katalog, Service & FAQ</button>
                     <button onclick="switchAdminTab('settings')" data-admtab="settings" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">🎨 Copywriting & Preset</button>
                 </div>
@@ -733,8 +846,7 @@
                 </div>
                 <p class="text-slate-400 leading-relaxed">
                     Toko Jual Beli Laptop Second Berkualitas Grade A+ & Laboratorium Service Bergaransi di Kebon Jeruk, Jakarta Barat.
-                </p>
-                <p class="text-slate-400">
+                    <p class="text-slate-400">
                     📍 Gg. Mawar 1 No. 35 RT. 01/RW. 07 Jln. Pejuangan Kel. Kebon Jeruk, Kec. Kebon Jeruk, Jakarta Barat
                 </p>
             </div>
@@ -745,6 +857,7 @@
                     <li><button onclick="switchPage('service')" class="hover:text-white">🛠️ Jasa Service & Upgrade</button></li>
                     <li><button onclick="switchPage('tracking')" class="hover:text-white">📦 Lacak Pesanan & Garansi</button></li>
                     <li><button onclick="switchPage('testimonials')" class="hover:text-white">⭐ Ulasan Pelanggan</button></li>
+                    <li><button onclick="switchPage('survey')" class="hover:text-emerald-400 text-emerald-300 font-semibold">💖 Form Kepuasan Pelanggan</button></li>
                     <li><button onclick="switchPage('faq')" class="hover:text-white">🛡️ Ketentuan Garansi 30 Hari & FAQ</button></li>
                 </ul>
             </div>
@@ -820,17 +933,8 @@
     <!-- TOAST NOTIFICATION -->
     <div id="toastContainer" class="fixed top-4 right-4 z-50 space-y-2 pointer-events-none"></div>
 
-    <!-- FIREBASE & APPLICATION SCRIPT -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { initializeFirestore, doc, setDoc, getDoc, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        // Silence noisy Firestore network timeout logs in restricted/preview environments
-        try {
-            setLogLevel('silent');
-        } catch (e) {}
-
+    <!-- APPLICATION & FIREBASE SCRIPT -->
+    <script>
         // 40-Point QC Master Categories (5 Categories x 8 Checkpoints = 40 Checkpoints)
         const QC_40_MASTER = [
             {
@@ -1082,10 +1186,10 @@
         async function persistAllState() {
             saveToLocalCache();
             renderAllSections();
-            if (isCloudConnected && db && auth?.currentUser) {
+            if (isCloudConnected && db && auth?.currentUser && window._fbDoc && window._fbSetDoc) {
                 try {
-                    const stateRef = doc(db, 'artifacts', appId, 'public', 'data', 'jakbar_cms', 'main_state');
-                    await setDoc(stateRef, {
+                    const stateRef = window._fbDoc(db, 'artifacts', appId, 'public', 'data', 'jakbar_cms', 'main_state');
+                    await window._fbSetDoc(stateRef, {
                         products: JSON.stringify(products),
                         services: JSON.stringify(services),
                         testimonials: JSON.stringify(testimonials),
@@ -1115,15 +1219,28 @@
                     return;
                 }
 
-                const app = initializeApp(firebaseConfig);
-                auth = getAuth(app);
-                db = initializeFirestore(app, {
+                const [appMod, authMod, fsMod] = await Promise.all([
+                    import("https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js"),
+                    import("https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js"),
+                    import("https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js")
+                ]);
+
+                try {
+                    fsMod.setLogLevel('silent');
+                } catch (e) {}
+
+                window._fbDoc = fsMod.doc;
+                window._fbSetDoc = fsMod.setDoc;
+
+                const app = appMod.initializeApp(firebaseConfig);
+                auth = authMod.getAuth(app);
+                db = fsMod.initializeFirestore(app, {
                     experimentalAutoDetectLongPolling: true
                 });
 
                 const authPromise = (typeof __initial_auth_token !== 'undefined' && __initial_auth_token)
-                    ? signInWithCustomToken(auth, __initial_auth_token)
-                    : signInAnonymously(auth);
+                    ? authMod.signInWithCustomToken(auth, __initial_auth_token)
+                    : authMod.signInAnonymously(auth);
 
                 await Promise.race([
                     authPromise,
@@ -1132,9 +1249,9 @@
 
                 if (!auth.currentUser) return;
 
-                const stateRef = doc(db, 'artifacts', appId, 'public', 'data', 'jakbar_cms', 'main_state');
+                const stateRef = fsMod.doc(db, 'artifacts', appId, 'public', 'data', 'jakbar_cms', 'main_state');
                 const snap = await Promise.race([
-                    getDoc(stateRef),
+                    fsMod.getDoc(stateRef),
                     new Promise((_, reject) => setTimeout(() => reject(new Error('Firestore timeout')), 4500))
                 ]);
 
@@ -1172,7 +1289,7 @@
 
         // Page Navigation
         window.switchPage = function(pageId) {
-            const pages = ['home', 'catalog', 'service', 'tracking', 'testimonials', 'faq', 'about', 'compare', 'admin'];
+            const pages = ['home', 'catalog', 'service', 'tracking', 'testimonials', 'faq', 'about', 'compare', 'survey', 'admin'];
             pages.forEach(p => {
                 const el = document.getElementById(`page-${p}`);
                 if (el) el.classList.toggle('hidden', p !== pageId);
@@ -1479,9 +1596,15 @@
                     </div>
                     <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
                         <span class="font-display font-bold text-emerald-400 text-base">${formatRupiah(s.price)}</span>
-                        <button onclick="prefillBookingIssue('Paket ${s.name} (${formatRupiah(s.price)})')" class="touch-btn px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold">
-                            Pilih Paket
-                        </button>
+                        <div class="flex items-center gap-1.5">
+                            <button onclick="prefillBookingIssue('Paket ${s.name} (${formatRupiah(s.price)})')" class="touch-btn px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold">
+                                Pilih Paket
+                            </button>
+                            ${currentUser?.role === 'admin' ? `
+                                <button onclick="openServiceModal('${s.id}')" class="px-2.5 py-2 rounded-xl bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30" title="Edit Paket">✏️</button>
+                                <button onclick="deleteService('${s.id}')" class="px-2.5 py-2 rounded-xl bg-rose-500/20 text-rose-300 text-xs font-bold border border-rose-500/30" title="Hapus Paket">🗑️</button>
+                            ` : ''}
+                        </div>
                     </div>
                 </div>
             `).join('');
@@ -1501,12 +1624,17 @@
                         </div>
                         <p class="text-xs sm:text-sm text-slate-200 leading-relaxed italic">"${t.comment}"</p>
                     </div>
-                    <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                    <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
                         <div>
                             <div class="font-bold text-white text-xs">${t.name}</div>
                             <div class="text-[11px] text-slate-400">${t.role}</div>
                         </div>
-                        ${currentUser?.role === 'admin' ? `<button onclick="deleteTestimonial('${t.id}')" class="text-rose-400 text-xs font-bold">Hapus</button>` : ''}
+                        ${currentUser?.role === 'admin' ? `
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <button onclick="openTestimonialModal('${t.id}')" class="px-2 py-1 rounded-lg bg-amber-500/20 text-amber-300 text-[11px] font-bold">✏️ Edit</button>
+                                <button onclick="deleteTestimonial('${t.id}')" class="px-2 py-1 rounded-lg bg-rose-500/20 text-rose-300 text-[11px] font-bold">🗑️ Hapus</button>
+                            </div>
+                        ` : ''}
                     </div>
                 </div>
             `;
@@ -1522,7 +1650,12 @@
                 <div class="glass-card space-y-2">
                     <div class="flex items-start justify-between gap-3">
                         <h3 class="font-display font-bold text-white text-sm sm:text-base">Q${idx + 1}. ${f.q}</h3>
-                        ${currentUser?.role === 'admin' ? `<button onclick="deleteFaq('${f.id}')" class="text-rose-400 text-xs font-bold shrink-0">Hapus</button>` : ''}
+                        ${currentUser?.role === 'admin' ? `
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <button onclick="openFaqModal('${f.id}')" class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-bold">✏️ Edit</button>
+                                <button onclick="deleteFaq('${f.id}')" class="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-300 text-xs font-bold">🗑️ Hapus</button>
+                            </div>
+                        ` : ''}
                     </div>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${f.a}</p>
                 </div>
@@ -2034,7 +2167,114 @@
             });
             e.target.reset();
             persistAllState();
-            showToast('Terima kasih! Ulasan Anda berhasil ditayangkan.', 'success');
+            showToast('Terima kasih! Ulasan Anda berhasil ditayangkan di Beranda.', 'success');
+        };
+
+        // Dedicated Customer Satisfaction Survey Functions
+        window.selectSurveyStar = function(star) {
+            const input = document.getElementById('surveyRatingValue');
+            if (input) input.value = star;
+            document.querySelectorAll('.survey-star-btn').forEach(btn => {
+                const s = Number(btn.getAttribute('data-star'));
+                const active = s === Number(star);
+                btn.className = active
+                    ? 'survey-star-btn p-2.5 rounded-xl bg-emerald-950/80 border-2 border-emerald-400 text-center transition-all scale-105'
+                    : 'survey-star-btn p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-center transition-all opacity-75 hover:opacity-100';
+            });
+        };
+
+        window.appendSurveyTag = function(sentence) {
+            const area = document.getElementById('surveyCommentText');
+            if (!area) return;
+            const current = area.value.trim();
+            area.value = current ? `${current} ${sentence}` : sentence;
+            area.focus();
+        };
+
+        window.submitDedicatedSurvey = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('surveyCustomerName').value.trim();
+            const roleRaw = document.getElementById('surveyCustomerRole').value.trim();
+            const unitItem = document.getElementById('surveyUnitItem').value.trim();
+            const invId = document.getElementById('surveyInvoiceId').value.trim();
+            const rating = Number(document.getElementById('surveyRatingValue').value) || 5;
+            const comment = document.getElementById('surveyCommentText').value.trim();
+
+            const roleFormatted = unitItem
+                ? `${roleRaw} (Pembeli ${unitItem}${invId ? ' • ' + invId : ''})`
+                : roleRaw;
+
+            testimonials.unshift({
+                id: 'rev-' + Date.now(),
+                name,
+                role: roleFormatted,
+                rating,
+                comment
+            });
+
+            crmTickets.unshift({
+                id: 'SURVEY-' + Date.now().toString().slice(-4),
+                type: 'Kepuasan Pelanggan ⭐' + rating,
+                name,
+                contact: roleFormatted,
+                detail: comment,
+                time: new Date().toLocaleString('id-ID')
+            });
+
+            persistAllState();
+            document.getElementById('surveyFormCard')?.classList.add('hidden');
+            document.getElementById('surveySuccessCard')?.classList.remove('hidden');
+            showToast('Ulasan berhasil disimpan & otomatis tampil di Beranda Toko!', 'success');
+        };
+
+        window.resetSurveyForm = function() {
+            document.getElementById('surveyFormCard')?.classList.remove('hidden');
+            document.getElementById('surveySuccessCard')?.classList.add('hidden');
+            document.getElementById('surveyCommentText').value = '';
+        };
+
+        window.buildCustomerSurveyUrl = function(customer = '', unit = '', inv = '') {
+            const base = window.location.origin + window.location.pathname;
+            const params = new URLSearchParams();
+            params.set('page', 'survey');
+            if (customer) params.set('nama', customer);
+            if (unit) params.set('unit', unit);
+            if (inv) params.set('inv', inv);
+            return `${base}?${params.toString()}#survey`;
+        };
+
+        window.copyCustomerSurveyLink = function(customer = '', unit = '', inv = '') {
+            const link = window.buildCustomerSurveyUrl(customer, unit, inv);
+            const temp = document.createElement('textarea');
+            temp.value = link;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            temp.remove();
+            showToast('Link Form Kepuasan Pelanggan berhasil disalin!', 'success');
+        };
+
+        window.sendSurveyWhatsAppAdmin = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('admSurveyName').value.trim();
+            const rawPhone = document.getElementById('admSurveyPhone').value.trim();
+            const unit = document.getElementById('admSurveyUnit').value.trim();
+            const inv = document.getElementById('admSurveyInv').value.trim();
+
+            const cleanPhone = rawPhone.replace(/[^0-9]/g, '').replace(/^0/, '62');
+            const surveyLink = window.buildCustomerSurveyUrl(name, unit, inv);
+            const message = `Halo Kak *${name}* 🙏,\n\nTerima kasih telah bertransaksi *${unit}* di *Toko JAKBAR LAPTOP* (Gg. Mawar 1 No. 35, Kebon Jeruk, Jakarta Barat).\n\nMohon kesediaannya meluangkan waktu 1 menit untuk mengisi *Form Kepuasan Pelanggan* melalui link resmi berikut agar ulasan Kakak langsung tampil di Beranda Toko kami:\n\n👉 ${surveyLink}\n\nTerima kasih banyak, semoga laptopnya awet dan membawa berkah! 🌟`;
+
+            window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`, '_blank');
+        };
+
+        window.sendOrderSurveyWhatsApp = function(orderId) {
+            const o = orders.find(x => x.id === orderId);
+            if (!o) return;
+            const cleanPhone = (o.phone || '').replace(/[^0-9]/g, '').replace(/^0/, '62');
+            const surveyLink = window.buildCustomerSurveyUrl(o.customer, o.itemsSummary, o.id);
+            const message = `Halo Kak *${o.customer}* 🙏,\n\nTerima kasih atas pesanan *${o.itemsSummary}* (Invoice: *${o.id}*) di *Toko JAKBAR LAPTOP Kebon Jeruk*.\n\nSilakan klik link khusus di bawah ini untuk memberikan penilaian & ulasan kepuasan pelanggan (otomatis tampil di Beranda Toko kami):\n\n👉 ${surveyLink}\n\nTerima kasih banyak! 🌟`;
+            window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`, '_blank');
         };
 
         // Authentication & Hidden Admin Access
@@ -2166,12 +2406,18 @@
 
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
                         <div class="lg:col-span-6 glass-card space-y-3">
-                            <h3 class="font-display font-bold text-white text-sm">📊 Distribusi Trafik per Halaman</h3>
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-display font-bold text-white text-sm">📊 Distribusi Trafik per Halaman</h3>
+                                <button onclick="resetAnalyticsCounters()" class="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 text-[11px] font-bold">🗑️ Reset Trafik</button>
+                            </div>
                             ${Object.entries(analytics.views).map(([k, v]) => `
                                 <div class="space-y-1 text-xs">
-                                    <div class="flex justify-between">
+                                    <div class="flex justify-between items-center">
                                         <span class="uppercase font-semibold text-slate-300">${k}</span>
-                                        <span class="font-bold text-indigo-300">${v} klik</span>
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold text-indigo-300">${v} klik</span>
+                                            <button onclick="editPageCounterAdmin('${k}')" class="text-[10px] text-amber-300 hover:underline">✏️ Edit</button>
+                                        </div>
                                     </div>
                                     <div class="w-full h-2 rounded-full bg-slate-900 overflow-hidden">
                                         <div class="h-full bg-gradient-to-r from-indigo-500 to-cyan-400" style="width:${Math.min(100, Math.round((v / Math.max(1, totalViews)) * 100))}%"></div>
@@ -2180,12 +2426,18 @@
                             `).join('')}
                         </div>
                         <div class="lg:col-span-6 glass-card space-y-3">
-                            <h3 class="font-display font-bold text-white text-sm">🕒 Log Aktivitas Pengunjung Real-Time</h3>
+                            <div class="flex items-center justify-between">
+                                <h3 class="font-display font-bold text-white text-sm">🕒 Log Aktivitas Pengunjung Real-Time (${analytics.logs.length})</h3>
+                                <button onclick="clearVisitorLogs()" class="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 text-[11px] font-bold">🗑️ Bersihkan Log</button>
+                            </div>
                             <div class="space-y-1.5 max-h-56 overflow-y-auto text-xs">
-                                ${analytics.logs.map(l => `
-                                    <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex justify-between">
+                                ${analytics.logs.length === 0 ? `<p class="text-slate-400 text-xs">Log aktivitas kosong.</p>` : analytics.logs.map((l, idx) => `
+                                    <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between gap-2">
                                         <span>Membuka <strong>${l.page}</strong> (${l.device})</span>
-                                        <span class="text-slate-400">${l.time}</span>
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-slate-400">${l.time}</span>
+                                            <button onclick="deleteSingleVisitorLog(${idx})" class="text-rose-400 font-bold" title="Hapus Log">✕</button>
+                                        </div>
                                     </div>
                                 `).join('')}
                             </div>
@@ -2207,18 +2459,24 @@
                         </form>
                     </div>
                     <div class="glass-card space-y-3">
-                        <h3 class="font-display font-bold text-white text-base">📋 Daftar Semua Pesanan & Invoice (${orders.length})</h3>
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-display font-bold text-white text-base">📋 Daftar Semua Pesanan & Invoice (${orders.length})</h3>
+                            ${orders.length > 0 ? `<button onclick="clearAllOrdersAdmin()" class="px-3 py-1.5 rounded-xl bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold">🗑️ Hapus Semua Invoice</button>` : ''}
+                        </div>
                         ${orders.length === 0 ? `<p class="text-xs text-slate-400">Belum ada transaksi tercatat.</p>` : orders.map(o => `
-                            <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                            <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-3 text-xs">
                                 <div class="space-y-1">
-                                    <div class="font-bold text-indigo-400">${o.id} — <span class="text-white">${o.customer} (${o.phone})</span></div>
-                                    <div class="text-slate-300">${o.itemsSummary} • <strong class="text-emerald-400">${formatRupiah(o.total)}</strong></div>
+                                    <div class="font-bold text-indigo-400">${o.id} — <span class="text-white">${o.customer} (${o.phone})</span> <span class="text-slate-500">• ${o.date || ''}</span></div>
+                                    <div class="text-slate-300">${o.itemsSummary} • <strong class="text-emerald-400">${formatRupiah(o.total)}</strong> (${o.method || 'Toko'})</div>
                                 </div>
-                                <div class="flex flex-wrap items-center gap-2">
-                                    <select onchange="updateOrderStatusAdmin('${o.id}', this.value)" class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-xs">
+                                <div class="flex flex-wrap items-center gap-1.5">
+                                    <select onchange="updateOrderStatusAdmin('${o.id}', this.value)" class="px-2.5 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white text-xs">
                                         ${['Menunggu Verifikasi', 'Lulus QC 40 Titik', 'Sedang Dikirim / Siap Diambil', 'Selesai & Garansi Aktif'].map(st => `<option value="${st}" ${o.status === st ? 'selected' : ''}>${st}</option>`).join('')}
                                     </select>
-                                    <button onclick="openInvoicePrintModal('${o.id}')" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-bold">Nota</button>
+                                    <button onclick="openInvoicePrintModal('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-indigo-600 text-white font-bold">🖨️ Nota</button>
+                                    <button onclick="sendOrderSurveyWhatsApp('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold">💖 Link WA</button>
+                                    <button onclick="openEditOrderModal('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">✏️ Edit</button>
+                                    <button onclick="deleteOrderAdmin('${o.id}')" class="px-2.5 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold">🗑️ Hapus</button>
                                 </div>
                             </div>
                         `).join('')}
@@ -2238,21 +2496,32 @@
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                             <div>
                                 <h3 class="font-display font-bold text-white text-base">🔬 Checklist Inspeksi Laboratorium 40 Titik QC</h3>
-                                <p class="text-xs text-slate-400">Pastikan seluruh 40 titik telah dicentang oleh teknisi sebelum unit diserahkan ke pelanggan.</p>
+                                <p class="text-xs text-slate-400">Pilih target Invoice/Unit, edit nama poin inspeksi, atau centang kelulusan 40 titik QC.</p>
                             </div>
-                            <button onclick="checkAll40QcItems()" class="touch-btn px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold">✅ Centang Lulus Semua 40 Titik</button>
+                            <div class="flex flex-wrap gap-2">
+                                ${targetList.length > 0 ? `
+                                    <select onchange="selectQcTargetAdmin(this.value)" class="px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+                                        ${targetList.map(t => `<option value="${t.id}" ${t.id === selectedQcTargetId ? 'selected' : ''}>${t.label}</option>`).join('')}
+                                    </select>
+                                ` : ''}
+                                <button onclick="checkAll40QcItems(true)" class="touch-btn px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold">✅ Centang Semua</button>
+                                <button onclick="checkAll40QcItems(false)" class="touch-btn px-3.5 py-2 rounded-xl bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold">🔄 Reset Centang</button>
+                            </div>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             ${QC_40_MASTER.map((group, gi) => `
                                 <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
-                                    <div class="font-bold text-indigo-300 text-xs">${group.category}</div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="font-bold text-indigo-300 text-xs">${group.category}</div>
+                                        <button onclick="openEditQcCategoryModal(${gi})" class="text-[11px] text-amber-300 hover:underline font-semibold">✏️ Edit Poin</button>
+                                    </div>
                                     <div class="space-y-1.5">
                                         ${group.items.map((item, ii) => {
                                             const code = `${gi}-${ii}`;
-                                            const checked = passedArr.length === 0 || passedArr.includes(code);
+                                            const checked = !currentOrder || passedArr.includes(code);
                                             return `
                                                 <label class="flex items-center gap-2 text-xs text-slate-200 cursor-pointer">
-                                                    <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleSingleQcPoint('${code}')" class="rounded border-slate-600 text-emerald-500">
+                                                    <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleSingleQcPoint('${code}', this.checked)" class="rounded border-slate-600 text-emerald-500">
                                                     <span>${item}</span>
                                                 </label>
                                             `;
@@ -2265,36 +2534,141 @@
                 `;
             } else if (activeAdminTab === 'crm') {
                 box.innerHTML = `
+                    <div class="glass-card border-emerald-500/40 space-y-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">💖 FITUR UNDANGAN ULASAN OTOMATIS KE BERANDA</span>
+                                <h3 class="font-display font-bold text-white text-base mt-1">Kirim Link Halaman Kepuasan Pelanggan via WhatsApp</h3>
+                                <p class="text-xs text-slate-400">Saat pelanggan mengisi link ini, ulasannya otomatis masuk ke urutan teratas di <strong>Beranda Toko</strong>.</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <button onclick="copyCustomerSurveyLink()" class="touch-btn px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-emerald-500/40 text-xs font-bold">
+                                    📋 Salin Link Umum Survei
+                                </button>
+                                <button onclick="switchPage('survey')" class="touch-btn px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold">
+                                    👁️ Lihat Halaman Survei
+                                </button>
+                            </div>
+                        </div>
+                        <form onsubmit="sendSurveyWhatsAppAdmin(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 text-xs">
+                            <input id="admSurveyName" required type="text" placeholder="Nama Pelanggan (misal: Budi)" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <input id="admSurveyPhone" required type="tel" placeholder="No. WA Pelanggan (0812...)" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <input id="admSurveyUnit" required type="text" placeholder="Unit / Service (misal: ThinkPad X1)" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <input id="admSurveyInv" type="text" placeholder="No. Invoice (Opsional)" class="px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                            <button type="submit" class="touch-btn px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold">
+                                📲 Kirim Link via WA
+                            </button>
+                        </form>
+                    </div>
+
                     <div class="glass-card space-y-3">
-                        <h3 class="font-display font-bold text-white text-base">💬 Tiket Masuk: Booking Service & Request Unit (${crmTickets.length})</h3>
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-display font-bold text-white text-base">💬 Tiket Masuk: Booking Service, Survei & Request Unit (${crmTickets.length})</h3>
+                            <div class="flex gap-2">
+                                <button onclick="openCrmTicketModal()" class="px-3 py-1.5 rounded-xl bg-indigo-600 text-white text-xs font-bold">+ Tambah Tiket</button>
+                                ${crmTickets.length > 0 ? `<button onclick="clearAllCrmTickets()" class="px-3 py-1.5 rounded-xl bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold">🗑️ Hapus Semua Tiket</button>` : ''}
+                            </div>
+                        </div>
                         ${crmTickets.length === 0 ? `<p class="text-xs text-slate-400">Belum ada tiket masuk.</p>` : crmTickets.map(t => `
-                            <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                            <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
                                 <div>
                                     <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-bold">${t.type}</span>
                                     <strong class="text-white ml-1">${t.name} (${t.contact})</strong>
+                                    <span class="text-slate-500 text-[11px] ml-2">• ${t.time}</span>
                                     <p class="text-slate-300 mt-1">${t.detail}</p>
                                 </div>
-                                <span class="text-slate-500 text-[11px]">${t.time}</span>
+                                <div class="flex items-center gap-1.5 shrink-0">
+                                    <button onclick="openCrmTicketModal('${t.id}')" class="px-2.5 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">✏️ Edit</button>
+                                    <button onclick="deleteCrmTicket('${t.id}')" class="px-2.5 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold">🗑️ Hapus</button>
+                                </div>
                             </div>
                         `).join('')}
                     </div>
                 `;
             } else if (activeAdminTab === 'inventory') {
                 box.innerHTML = `
+                    <!-- 1. Katalog Laptop -->
                     <div class="glass-card space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h3 class="font-display font-bold text-white text-base">📦 Manajemen Stok Katalog Laptop (${products.length})</h3>
-                            <button onclick="openProductModal()" class="px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-bold">+ Tambah Unit Baru</button>
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-display font-bold text-white text-base">💻 1. Manajemen Stok Katalog Laptop (${products.length})</h3>
+                            <div class="flex gap-2">
+                                <button onclick="openProductModal()" class="px-3.5 py-2 rounded-xl bg-indigo-600 text-white text-xs font-bold">+ Tambah Unit Baru</button>
+                                ${products.length > 0 ? `<button onclick="clearAllProductsAdmin()" class="px-3 py-2 rounded-xl bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold">🗑️ Kosongkan Katalog</button>` : ''}
+                            </div>
                         </div>
                         ${products.length === 0 ? `<p class="text-xs text-slate-400">Katalog masih kosong. Klik "+ Tambah Unit Baru" untuk mulai mengisi stok.</p>` : products.map(p => `
-                            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between gap-3 text-xs">
+                            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
                                 <div>
-                                    <div class="font-bold text-white">${p.name}</div>
-                                    <div class="text-emerald-400 font-bold">${formatRupiah(p.price)} • Stok: ${p.stock ?? 1}</div>
+                                    <div class="font-bold text-white">${p.name} <span class="text-indigo-400">(${p.category || 'Grade A+'})</span></div>
+                                    <div class="text-slate-400">${p.specs || ''}</div>
+                                    <div class="text-emerald-400 font-bold mt-0.5">${formatRupiah(p.price)} • Stok: ${p.stock ?? 1} Unit</div>
                                 </div>
-                                <div class="flex gap-1.5">
-                                    <button onclick="openProductModal('${p.id}')" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 font-bold">Edit</button>
-                                    <button onclick="deleteProduct('${p.id}')" class="px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 font-bold">Hapus</button>
+                                <div class="flex flex-wrap items-center gap-1.5 shrink-0">
+                                    <button onclick="adjustProductStock('${p.id}', -1)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold">- Stok</button>
+                                    <button onclick="adjustProductStock('${p.id}', 1)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-300 font-bold">+ Stok</button>
+                                    <button onclick="openProductModal('${p.id}')" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">✏️ Edit</button>
+                                    <button onclick="deleteProduct('${p.id}')" class="px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold">🗑️ Hapus</button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- 2. Paket Service -->
+                    <div class="glass-card space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-display font-bold text-white text-base">🛠️ 2. Manajemen Paket Jasa Service & Upgrade (${services.length})</h3>
+                            <button onclick="openServiceModal()" class="px-3.5 py-2 rounded-xl bg-cyan-600 text-white text-xs font-bold">+ Tambah Paket Service</button>
+                        </div>
+                        ${services.length === 0 ? `<p class="text-xs text-slate-400">Belum ada paket service. Klik "+ Tambah Paket Service" untuk menambahkan.</p>` : services.map(s => `
+                            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                                <div>
+                                    <div class="font-bold text-white">${s.name} <span class="text-cyan-400">(${s.duration || 'Bisa Ditunggu'})</span></div>
+                                    <div class="text-slate-400">${s.desc}</div>
+                                    <div class="text-emerald-400 font-bold mt-0.5">${formatRupiah(s.price)}</div>
+                                </div>
+                                <div class="flex items-center gap-1.5 shrink-0">
+                                    <button onclick="openServiceModal('${s.id}')" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">✏️ Edit</button>
+                                    <button onclick="deleteService('${s.id}')" class="px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold">🗑️ Hapus</button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- 3. Ulasan Pelanggan -->
+                    <div class="glass-card space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-display font-bold text-white text-base">⭐ 3. Manajemen Ulasan & Testimoni Pelanggan (${testimonials.length})</h3>
+                            <button onclick="openTestimonialModal()" class="px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold">+ Tambah Ulasan</button>
+                        </div>
+                        ${testimonials.length === 0 ? `<p class="text-xs text-slate-400">Belum ada ulasan.</p>` : testimonials.map(t => `
+                            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                                <div class="space-y-0.5">
+                                    <div class="font-bold text-white">${t.name} <span class="text-slate-400 font-normal">— ${t.role}</span> <span class="text-amber-400">${'⭐'.repeat(Number(t.rating) || 5)}</span></div>
+                                    <p class="text-slate-300 italic">"${t.comment}"</p>
+                                </div>
+                                <div class="flex items-center gap-1.5 shrink-0">
+                                    <button onclick="openTestimonialModal('${t.id}')" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">✏️ Edit</button>
+                                    <button onclick="deleteTestimonial('${t.id}')" class="px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold">🗑️ Hapus</button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- 4. Pertanyaan FAQ & Garansi -->
+                    <div class="glass-card space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="font-display font-bold text-white text-base">🛡️ 4. Manajemen Pertanyaan FAQ & Ketentuan Garansi (${faqs.length})</h3>
+                            <button onclick="openFaqModal()" class="px-3.5 py-2 rounded-xl bg-indigo-600 text-white text-xs font-bold">+ Tambah FAQ</button>
+                        </div>
+                        ${faqs.length === 0 ? `<p class="text-xs text-slate-400">Belum ada daftar FAQ.</p>` : faqs.map((f, i) => `
+                            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                                <div class="space-y-0.5">
+                                    <div class="font-bold text-white">Q${i + 1}. ${f.q}</div>
+                                    <p class="text-slate-400">${f.a}</p>
+                                </div>
+                                <div class="flex items-center gap-1.5 shrink-0">
+                                    <button onclick="openFaqModal('${f.id}')" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">✏️ Edit</button>
+                                    <button onclick="deleteFaq('${f.id}')" class="px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold">🗑️ Hapus</button>
                                 </div>
                             </div>
                         `).join('')}
@@ -2318,10 +2692,17 @@
                                 <div class="text-slate-400">Sudut ekstra melengkung 1.75rem & rasio 16:9</div>
                             </button>
                         </div>
-                        <div class="pt-3 border-t border-slate-800">
+                        <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-2.5">
                             <button onclick="openHeroCopyEditorModal()" class="touch-btn px-5 py-2.5 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold">
-                                ✏️ Buka Editor Copywriting Beranda & Promo
+                                ✏️ Edit Copywriting, Rekening & Promo
                             </button>
+                            <button onclick="exportDatabaseJson()" class="touch-btn px-4 py-2.5 rounded-xl bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold">
+                                💾 Export Backup JSON
+                            </button>
+                            <label class="touch-btn px-4 py-2.5 rounded-xl bg-indigo-600/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold cursor-pointer">
+                                📂 Import / Restore JSON
+                                <input type="file" accept=".json" onchange="importDatabaseJson(event)" class="hidden">
+                            </label>
                         </div>
                     </div>
                 `;
@@ -2375,12 +2756,241 @@
             }
         };
 
-        window.checkAll40QcItems = function() {
-            showToast('Seluruh 40 Titik QC telah diverifikasi LULUS 100%!', 'success');
+        window.openEditOrderModal = function(orderId) {
+            const o = orders.find(x => x.id === orderId);
+            if (!o) return;
+            openUniversalModal(`✏️ Edit Data Invoice — ${o.id}`, `
+                <form onsubmit="saveEditOrderForm(event, '${o.id}')" class="space-y-3 text-xs">
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Nama Pelanggan</label>
+                        <input id="edOrdCustomer" required type="text" value="${o.customer || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Nomor WhatsApp</label>
+                        <input id="edOrdPhone" required type="text" value="${o.phone || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Unit Laptop / Layanan</label>
+                        <input id="edOrdItems" required type="text" value="${o.itemsSummary || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Total Transaksi (Rp)</label>
+                            <input id="edOrdTotal" required type="number" value="${o.total || 0}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Tanggal</label>
+                            <input id="edOrdDate" required type="text" value="${o.date || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Metode Pengambilan / Pembayaran</label>
+                        <input id="edOrdMethod" required type="text" value="${o.method || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 text-white font-bold">💾 Simpan Perubahan Invoice</button>
+                </form>
+            `);
         };
 
-        window.toggleSingleQcPoint = function() {
+        window.saveEditOrderForm = function(e, orderId) {
+            e.preventDefault();
+            const o = orders.find(x => x.id === orderId);
+            if (!o) return;
+            o.customer = document.getElementById('edOrdCustomer').value;
+            o.phone = document.getElementById('edOrdPhone').value;
+            o.itemsSummary = document.getElementById('edOrdItems').value;
+            o.total = Number(document.getElementById('edOrdTotal').value);
+            o.date = document.getElementById('edOrdDate').value;
+            o.method = document.getElementById('edOrdMethod').value;
+            persistAllState();
+            closeUniversalModal();
+            showToast(`Invoice ${orderId} berhasil diperbarui!`, 'success');
+        };
+
+        window.deleteOrderAdmin = function(orderId) {
+            orders = orders.filter(o => o.id !== orderId);
+            persistAllState();
+            showToast(`Invoice ${orderId} telah dihapus`, 'info');
+        };
+
+        window.clearAllOrdersAdmin = function() {
+            orders = [];
+            persistAllState();
+            showToast('Seluruh daftar invoice berhasil dikosongkan', 'info');
+        };
+
+        window.selectQcTargetAdmin = function(id) {
+            selectedQcTargetId = id;
+            renderAdminCommandCenter();
+        };
+
+        window.checkAll40QcItems = function(checkAll = true) {
+            const o = orders.find(x => x.id === selectedQcTargetId);
+            if (o) {
+                if (checkAll) {
+                    const allIds = [];
+                    QC_40_MASTER.forEach((g, gi) => g.items.forEach((_, ii) => allIds.push(`${gi}-${ii}`)));
+                    o.qcPassedItems = allIds;
+                } else {
+                    o.qcPassedItems = [];
+                }
+                persistAllState();
+            }
+            showToast(checkAll ? 'Seluruh 40 Titik QC telah diverifikasi LULUS 100%!' : 'Centang QC direset', 'success');
+        };
+
+        window.toggleSingleQcPoint = function(code, isChecked) {
+            const o = orders.find(x => x.id === selectedQcTargetId);
+            if (o) {
+                if (!Array.isArray(o.qcPassedItems)) o.qcPassedItems = [];
+                if (isChecked && !o.qcPassedItems.includes(code)) {
+                    o.qcPassedItems.push(code);
+                } else if (!isChecked) {
+                    o.qcPassedItems = o.qcPassedItems.filter(c => c !== code);
+                }
+                persistAllState();
+            }
             showToast('Status titik QC diperbarui', 'info');
+        };
+
+        window.openEditQcCategoryModal = function(groupIdx) {
+            const grp = QC_40_MASTER[groupIdx];
+            if (!grp) return;
+            openUniversalModal(`✏️ Edit Daftar Poin QC — ${grp.category}`, `
+                <form onsubmit="saveEditQcCategoryForm(event, ${groupIdx})" class="space-y-3 text-xs">
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Nama Kategori QC</label>
+                        <input id="edQcCatName" required type="text" value="${grp.category}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Daftar Poin (1 baris = 1 titik pengecekan)</label>
+                        <textarea id="edQcCatItems" required rows="8" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${grp.items.join('\n')}</textarea>
+                    </div>
+                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 text-white font-bold">💾 Simpan Poin QC</button>
+                </form>
+            `);
+        };
+
+        window.saveEditQcCategoryForm = function(e, groupIdx) {
+            e.preventDefault();
+            QC_40_MASTER[groupIdx].category = document.getElementById('edQcCatName').value.trim();
+            QC_40_MASTER[groupIdx].items = document.getElementById('edQcCatItems').value.split('\n').map(s => s.trim()).filter(Boolean);
+            persistAllState();
+            closeUniversalModal();
+            showToast('Kategori & Poin QC berhasil diperbarui!', 'success');
+        };
+
+        // Analytics & Logs Admin Controls
+        window.resetAnalyticsCounters = function() {
+            Object.keys(analytics.views).forEach(k => analytics.views[k] = 0);
+            analytics.devices = { mobile: 0, desktop: 0 };
+            persistAllState();
+            showToast('Statistik kunjungan berhasil direset ke 0', 'info');
+        };
+
+        window.editPageCounterAdmin = function(pageKey) {
+            const currentVal = analytics.views[pageKey] || 0;
+            openUniversalModal(`✏️ Edit Jumlah Kunjungan: ${pageKey.toUpperCase()}`, `
+                <form onsubmit="savePageCounterAdmin(event, '${pageKey}')" class="space-y-3 text-xs">
+                    <input id="edPageCountVal" required type="number" value="${currentVal}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    <button type="submit" class="w-full touch-btn py-2.5 rounded-xl bg-indigo-600 text-white font-bold">Simpan Angka</button>
+                </form>
+            `);
+        };
+
+        window.savePageCounterAdmin = function(e, pageKey) {
+            e.preventDefault();
+            analytics.views[pageKey] = Number(document.getElementById('edPageCountVal').value) || 0;
+            persistAllState();
+            closeUniversalModal();
+            showToast('Jumlah kunjungan diperbarui', 'success');
+        };
+
+        window.deleteSingleVisitorLog = function(idx) {
+            analytics.logs.splice(idx, 1);
+            persistAllState();
+            showToast('Baris log aktivitas dihapus', 'info');
+        };
+
+        window.clearVisitorLogs = function() {
+            analytics.logs = [];
+            persistAllState();
+            showToast('Seluruh log aktivitas pengunjung telah dibersihkan', 'info');
+        };
+
+        // CRM Tickets Admin CRUD
+        window.openCrmTicketModal = function(editId) {
+            const existing = crmTickets.find(t => t.id === editId);
+            openUniversalModal(existing ? '✏️ Edit Tiket Komunikasi' : '+ Tambah Tiket Komunikasi / Booking', `
+                <form onsubmit="saveCrmTicketForm(event, '${existing?.id || ''}')" class="space-y-3 text-xs">
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Kategori Tiket</label>
+                        <input id="tktType" required type="text" value="${existing?.type || 'Booking Service'}" placeholder="Booking Service / Request Unit / Follow-Up" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Nama Pelanggan</label>
+                            <input id="tktName" required type="text" value="${existing?.name || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Kontak / No. WA</label>
+                            <input id="tktContact" required type="text" value="${existing?.contact || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Rincian Pesan / Keluhan</label>
+                        <textarea id="tktDetail" required rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${existing?.detail || ''}</textarea>
+                    </div>
+                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 text-white font-bold">💾 Simpan Tiket</button>
+                </form>
+            `);
+        };
+
+        window.saveCrmTicketForm = function(e, editId) {
+            e.preventDefault();
+            const item = {
+                id: editId || ('TKT-' + Date.now().toString().slice(-4)),
+                type: document.getElementById('tktType').value,
+                name: document.getElementById('tktName').value,
+                contact: document.getElementById('tktContact').value,
+                detail: document.getElementById('tktDetail').value,
+                time: new Date().toLocaleString('id-ID')
+            };
+            if (editId) {
+                const idx = crmTickets.findIndex(t => t.id === editId);
+                if (idx >= 0) crmTickets[idx] = item;
+            } else {
+                crmTickets.unshift(item);
+            }
+            persistAllState();
+            closeUniversalModal();
+            showToast('Tiket berhasil disimpan!', 'success');
+        };
+
+        window.deleteCrmTicket = function(id) {
+            crmTickets = crmTickets.filter(t => t.id !== id);
+            persistAllState();
+            showToast('Tiket dihapus', 'info');
+        };
+
+        window.clearAllCrmTickets = function() {
+            crmTickets = [];
+            persistAllState();
+            showToast('Semua tiket telah dibersihkan', 'info');
+        };
+
+        window.adjustProductStock = function(id, delta) {
+            const p = products.find(x => x.id === id);
+            if (!p) return;
+            p.stock = Math.max(0, Number(p.stock ?? 1) + delta);
+            persistAllState();
+            showToast(`Stok ${p.name} menjadi ${p.stock} unit`, 'info');
+        };
+
+        window.clearAllProductsAdmin = function() {
+            products = [];
+            persistAllState();
+            showToast('Seluruh unit di katalog telah dikosongkan', 'info');
         };
 
         window.openProductModal = function(editId) {
@@ -2434,52 +3044,107 @@
             showToast('Unit dihapus dari katalog', 'info');
         };
 
-        window.openServiceModal = function() {
-            openUniversalModal('+ Tambah Paket Jasa Service', `
-                <form onsubmit="saveServiceForm(event)" class="space-y-3 text-xs">
-                    <input id="srvName" required type="text" placeholder="Nama Paket Service (misal: Deep Cleaning + Thermal Grizzly)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                    <input id="srvPrice" required type="number" placeholder="Biaya (Rp)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                    <input id="srvDuration" required type="text" placeholder="Estimasi Durasi (misal: Bisa Ditunggu 45 Menit)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                    <textarea id="srvDesc" required rows="3" placeholder="Rincian pengerjaan & masa garansi..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white"></textarea>
+        window.openServiceModal = function(editId) {
+            const existing = services.find(s => s.id === editId);
+            openUniversalModal(existing ? '✏️ Edit Paket Jasa Service' : '+ Tambah Paket Jasa Service', `
+                <form onsubmit="saveServiceForm(event, '${existing?.id || ''}')" class="space-y-3 text-xs">
+                    <input id="srvName" required type="text" value="${existing?.name || ''}" placeholder="Nama Paket Service (misal: Deep Cleaning + Thermal Grizzly)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    <input id="srvPrice" required type="number" value="${existing?.price || ''}" placeholder="Biaya (Rp)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    <input id="srvDuration" required type="text" value="${existing?.duration || ''}" placeholder="Estimasi Durasi (misal: Bisa Ditunggu 45 Menit)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    <textarea id="srvDesc" required rows="3" placeholder="Rincian pengerjaan & masa garansi..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${existing?.desc || ''}</textarea>
                     <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-cyan-600 text-white font-bold">💾 Simpan Paket Service</button>
                 </form>
             `);
         };
 
-        window.saveServiceForm = function(e) {
+        window.saveServiceForm = function(e, editId) {
             e.preventDefault();
-            services.push({
-                id: 'srv-' + Date.now(),
+            const item = {
+                id: editId || ('srv-' + Date.now()),
                 name: document.getElementById('srvName').value,
                 price: Number(document.getElementById('srvPrice').value),
                 duration: document.getElementById('srvDuration').value,
                 desc: document.getElementById('srvDesc').value
-            });
+            };
+            if (editId) {
+                const idx = services.findIndex(s => s.id === editId);
+                if (idx >= 0) services[idx] = item;
+            } else {
+                services.push(item);
+            }
             persistAllState();
             closeUniversalModal();
-            showToast('Paket service berhasil ditambahkan!', 'success');
+            showToast('Paket service berhasil disimpan!', 'success');
         };
 
-        window.openFaqModal = function() {
-            openUniversalModal('+ Tambah Pertanyaan FAQ Baru', `
-                <form onsubmit="saveFaqForm(event)" class="space-y-3 text-xs">
-                    <input id="faqQ" required type="text" placeholder="Pertanyaan (Q)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
-                    <textarea id="faqA" required rows="3" placeholder="Jawaban Lengkap (A)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white"></textarea>
+        window.deleteService = function(id) {
+            services = services.filter(s => s.id !== id);
+            persistAllState();
+            showToast('Paket service dihapus', 'info');
+        };
+
+        window.openTestimonialModal = function(editId) {
+            const existing = testimonials.find(t => t.id === editId);
+            openUniversalModal(existing ? '✏️ Edit Ulasan Pelanggan' : '+ Tambah Ulasan Pelanggan', `
+                <form onsubmit="saveTestimonialForm(event, '${existing?.id || ''}')" class="space-y-3 text-xs">
+                    <input id="admRevName" required type="text" value="${existing?.name || ''}" placeholder="Nama Pelanggan" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    <input id="admRevRole" required type="text" value="${existing?.role || ''}" placeholder="Profesi & Kota (contoh: Desainer — Jakarta Barat)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    <select id="admRevRating" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-amber-400 font-bold">
+                        ${[5, 4, 3, 2, 1].map(r => `<option value="${r}" ${Number(existing?.rating || 5) === r ? 'selected' : ''}>${'⭐'.repeat(r)} (${r}/5)</option>`).join('')}
+                    </select>
+                    <textarea id="admRevComment" required rows="4" placeholder="Isi testimoni pelanggan..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${existing?.comment || ''}</textarea>
+                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-emerald-600 text-white font-bold">💾 Simpan Ulasan</button>
+                </form>
+            `);
+        };
+
+        window.saveTestimonialForm = function(e, editId) {
+            e.preventDefault();
+            const item = {
+                id: editId || ('rev-' + Date.now()),
+                name: document.getElementById('admRevName').value,
+                role: document.getElementById('admRevRole').value,
+                rating: Number(document.getElementById('admRevRating').value) || 5,
+                comment: document.getElementById('admRevComment').value
+            };
+            if (editId) {
+                const idx = testimonials.findIndex(t => t.id === editId);
+                if (idx >= 0) testimonials[idx] = item;
+            } else {
+                testimonials.unshift(item);
+            }
+            persistAllState();
+            closeUniversalModal();
+            showToast('Ulasan pelanggan berhasil disimpan!', 'success');
+        };
+
+        window.openFaqModal = function(editId) {
+            const existing = faqs.find(f => f.id === editId);
+            openUniversalModal(existing ? '✏️ Edit Pertanyaan FAQ' : '+ Tambah Pertanyaan FAQ Baru', `
+                <form onsubmit="saveFaqForm(event, '${existing?.id || ''}')" class="space-y-3 text-xs">
+                    <input id="faqQ" required type="text" value="${existing?.q || ''}" placeholder="Pertanyaan (Q)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    <textarea id="faqA" required rows="4" placeholder="Jawaban Lengkap (A)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${existing?.a || ''}</textarea>
                     <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 text-white font-bold">💾 Simpan FAQ</button>
                 </form>
             `);
         };
 
-        window.saveFaqForm = function(e) {
+        window.saveFaqForm = function(e, editId) {
             e.preventDefault();
-            faqs.push({
-                id: 'faq-' + Date.now(),
+            const item = {
+                id: editId || ('faq-' + Date.now()),
                 q: document.getElementById('faqQ').value,
                 a: document.getElementById('faqA').value
-            });
+            };
+            if (editId) {
+                const idx = faqs.findIndex(f => f.id === editId);
+                if (idx >= 0) faqs[idx] = item;
+            } else {
+                faqs.push(item);
+            }
             persistAllState();
             closeUniversalModal();
-            showToast('FAQ baru ditambahkan!', 'success');
+            showToast('Data FAQ berhasil disimpan!', 'success');
         };
 
         window.deleteTestimonial = function(id) {
@@ -2495,21 +3160,29 @@
         };
 
         window.openHeroCopyEditorModal = function() {
-            openUniversalModal('✏️ Edit Kata-Kata Pemikat Beranda', `
+            openUniversalModal('✏️ Edit Copywriting Beranda, Rekening & Promo', `
                 <form onsubmit="saveHeroCopyForm(event)" class="space-y-3 text-xs">
                     <div>
                         <label class="block font-bold text-slate-300 mb-1">Teks Promo Topbar Atas</label>
-                        <input id="cpTopbar" required type="text" value="${siteCopy.topbarPromo}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        <input id="cpTopbar" required type="text" value="${siteCopy.topbarPromo || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Badge Kecil Hero Beranda</label>
+                        <input id="cpBadge" required type="text" value="${siteCopy.heroBadge || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
                     </div>
                     <div>
                         <label class="block font-bold text-slate-300 mb-1">Judul Utama Hero Beranda</label>
-                        <textarea id="cpTitle" required rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${siteCopy.heroTitle}</textarea>
+                        <textarea id="cpTitle" required rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${siteCopy.heroTitle || ''}</textarea>
                     </div>
                     <div>
                         <label class="block font-bold text-slate-300 mb-1">Subjudul Penjelasan Beranda</label>
-                        <textarea id="cpSub" required rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${siteCopy.heroSubtitle}</textarea>
+                        <textarea id="cpSub" required rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${siteCopy.heroSubtitle || ''}</textarea>
                     </div>
-                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-amber-500 text-slate-950 font-bold">💾 Simpan Perubahan Teks</button>
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Info Rekening Pembayaran Checkout</label>
+                        <input id="cpBank" required type="text" value="${siteCopy.bankInfo || ''}" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-amber-500 text-slate-950 font-bold">💾 Simpan Semua Perubahan</button>
                 </form>
             `);
         };
@@ -2517,11 +3190,36 @@
         window.saveHeroCopyForm = function(e) {
             e.preventDefault();
             siteCopy.topbarPromo = document.getElementById('cpTopbar').value;
+            siteCopy.heroBadge = document.getElementById('cpBadge').value;
             siteCopy.heroTitle = document.getElementById('cpTitle').value;
             siteCopy.heroSubtitle = document.getElementById('cpSub').value;
+            siteCopy.bankInfo = document.getElementById('cpBank').value;
             persistAllState();
             closeUniversalModal();
-            showToast('Copywriting Beranda berhasil diperbarui!', 'success');
+            showToast('Copywriting & Pengaturan Toko berhasil diperbarui!', 'success');
+        };
+
+        window.importDatabaseJson = function(e) {
+            const file = e.target.files?.[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                try {
+                    const d = JSON.parse(evt.target.result);
+                    if (Array.isArray(d.products)) products = d.products;
+                    if (Array.isArray(d.services)) services = d.services;
+                    if (Array.isArray(d.testimonials)) testimonials = d.testimonials;
+                    if (Array.isArray(d.faqs)) faqs = d.faqs;
+                    if (Array.isArray(d.orders)) orders = d.orders;
+                    if (Array.isArray(d.crmTickets)) crmTickets = d.crmTickets;
+                    if (d.siteCopy) siteCopy = { ...siteCopy, ...d.siteCopy };
+                    persistAllState();
+                    showToast('Database JSON berhasil dipulihkan!', 'success');
+                } catch (err) {
+                    showToast('Format file JSON tidak valid', 'warn');
+                }
+            };
+            reader.readAsText(file);
         };
 
         window.exportDatabaseJson = function() {
@@ -2557,7 +3255,17 @@
         window.addEventListener('DOMContentLoaded', () => {
             renderAllSections();
             initFirebaseConnection();
-            if (window.location.search.includes('admin=1') || window.location.hash === '#admin') {
+
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('page') === 'survey' || window.location.hash === '#survey') {
+                switchPage('survey');
+                const preName = urlParams.get('nama');
+                const preUnit = urlParams.get('unit');
+                const preInv = urlParams.get('inv');
+                if (preName && document.getElementById('surveyCustomerName')) document.getElementById('surveyCustomerName').value = preName;
+                if (preUnit && document.getElementById('surveyUnitItem')) document.getElementById('surveyUnitItem').value = preUnit;
+                if (preInv && document.getElementById('surveyInvoiceId')) document.getElementById('surveyInvoiceId').value = preInv;
+            } else if (window.location.search.includes('admin=1') || window.location.hash === '#admin') {
                 triggerSecretAdminAccess();
             }
         });
