@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>JAKBAR LAPTOP — Toko Laptop Second Grade A+ & Klinik Service Kebon Jeruk Jakarta Barat</title>
+    <!-- Production SEO & WhatsApp / Social Share OpenGraph Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="JAKBAR LAPTOP — Kebon Jeruk, Jakarta Barat">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="JAKBAR LAPTOP">
+    <meta property="og:title" content="JAKBAR LAPTOP — Toko Laptop Second Grade A+, Klinik Service & Pembuatan Website">
+    <meta property="og:description" content="Lulus 40 Titik QC Hardware, Garansi Penuh 30 Hari, Transparan Plus-Minus. Lokasi Toko: Gg. Mawar 1 No. 35 Kebon Jeruk, Jakarta Barat.">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- PWA Meta Tags & Mobile App Capabilities -->
+    <meta name="theme-color" content="#060913">
+    <meta name="description" content="Toko Laptop Second Berkualitas Grade A+ Lulus 40 Titik QC, Klinik Service & Jasa Pembuatan Website di Kebon Jeruk, Jakarta Barat.">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="JAKBAR LAPTOP">
+    <link id="pwaFaviconLink" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234f46e5'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='115' fill='url(%23g)'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='230'%3EJL%3C/text%3E%3C/svg%3E">
+    <link id="pwaAppleTouchIcon" rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234f46e5'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='115' fill='url(%23g)'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='230'%3EJL%3C/text%3E%3C/svg%3E">
+    <link id="pwaManifestLink" rel="manifest" href="">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -252,12 +270,16 @@
                 <button onclick="switchPage('tracking')" data-nav="tracking" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">📦 Lacak & Garansi</button>
                 <button onclick="switchPage('testimonials')" data-nav="testimonials" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">⭐ Ulasan</button>
                 <button onclick="switchPage('faq')" data-nav="faq" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">🛡️ Garansi & FAQ</button>
-                <button onclick="switchPage('about')" data-nav="about" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">📍 Lokasi Toko</button>
-                <button id="navAdminBtn" onclick="switchPage('admin')" data-nav="admin" class="nav-pill hidden px-3 py-2 rounded-lg text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 whitespace-nowrap">⚡ Panel Admin</button>
+                <button onclick="switchPage('about')" data-nav="about" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">📍 Lokasi</button>
+                <button id="navAdminBtn" onclick="switchPage('admin')" data-nav="admin" class="hidden nav-pill px-3 py-2 rounded-lg text-xs font-bold bg-amber-500 text-slate-950 whitespace-nowrap">⚡ Admin</button>
             </nav>
 
-            <!-- Action Buttons Right -->
+            <!-- Action Buttons Right (Always Visible on Mobile & Desktop) -->
             <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                <button id="headerInstallPwaBtn" onclick="triggerPwaInstall()" title="Install Aplikasi JAKBAR LAPTOP" class="touch-btn px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold gap-1 whitespace-nowrap">
+                    <span>📲</span>
+                    <span class="hidden sm:inline">Install</span>
+                </button>
                 <button onclick="switchPage('compare')" title="Bandingkan Unit" class="hidden md:inline-flex items-center gap-1 px-2.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-xs font-semibold border border-slate-700">
                     <span>⚖️</span>
                     <span id="compareCountBadge" class="px-1.5 py-0.2 rounded-full bg-indigo-500/30 text-indigo-300 text-[11px]">0</span>
@@ -270,8 +292,9 @@
                     <span>🛒</span>
                     <span id="cartCountBadge" class="px-1.5 py-0.5 rounded-full bg-emerald-500 text-slate-950 font-bold text-[10px] sm:text-[11px]">0</span>
                 </button>
-                <button id="headerAuthBtn" onclick="openAuthModal()" class="touch-btn shimmer-btn px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-bold shadow-lg shadow-indigo-600/30 whitespace-nowrap">
-                    Login
+                <button id="headerAuthBtn" onclick="openAuthModal()" class="touch-btn shimmer-btn px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-bold shadow-lg shadow-indigo-600/30 whitespace-nowrap gap-1">
+                    <span>🔐</span>
+                    <span id="headerAuthLabel">Login</span>
                 </button>
                 <button onclick="toggleMobileMenu()" class="xl:hidden touch-btn px-2.5 py-1.5 sm:py-2 rounded-xl bg-slate-800/90 border border-slate-700 text-slate-200 text-sm" aria-label="Menu">
                     ☰
@@ -292,10 +315,36 @@
                 <button onclick="switchPage('about'); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-slate-800/80 text-white">📍 Lokasi Toko</button>
                 <button onclick="switchPage('compare'); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-slate-800/80 text-indigo-300">⚖️ Bandingkan (<span id="mobileCompareCount">0</span>)</button>
                 <button onclick="openWishlistModal(); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-slate-800/80 text-rose-300">❤️ Favorit (<span id="mobileWishlistCount">0</span>)</button>
-                <button id="mobileAdminBtn" onclick="switchPage('admin'); toggleMobileMenu();" class="hidden col-span-2 touch-btn justify-center gap-2 px-3 py-2.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">⚡ Buka Panel Admin Enterprise</button>
+                <button onclick="openAuthModal(); toggleMobileMenu();" class="col-span-2 sm:col-span-1 touch-btn justify-center gap-2 px-3 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-bold">🔐 Login Pelanggan / Admin</button>
+                <button onclick="triggerPwaInstall(); toggleMobileMenu();" class="col-span-2 sm:col-span-3 touch-btn justify-center gap-2 px-3 py-2.5 rounded-xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">📲 Install Aplikasi JAKBAR LAPTOP ke HP / Laptop</button>
+                <button id="mobileAdminBtn" onclick="switchPage('admin'); toggleMobileMenu();" class="hidden col-span-2 sm:col-span-3 touch-btn justify-center gap-2 px-3 py-2.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">⚡ Buka Panel Admin Enterprise</button>
             </div>
         </div>
     </header>
+
+    <!-- FLOATING PWA INSTALL BANNER -->
+    <div id="pwaInstallBanner" class="hidden max-w-7xl w-full mx-auto px-3 sm:px-6 mt-3">
+        <div class="glass-card p-3 sm:p-4 bg-gradient-to-r from-indigo-950/90 via-slate-900/95 to-emerald-950/90 border-emerald-500/40 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xl">
+            <div class="flex items-center gap-3 min-w-0">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center font-display font-bold text-white text-sm shrink-0 shadow-lg">
+                    JL
+                </div>
+                <div class="min-w-0">
+                    <div class="flex items-center gap-1.5">
+                        <span class="font-display font-bold text-white text-xs sm:text-sm">Install Aplikasi JAKBAR LAPTOP</span>
+                        <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold">PWA Ringan & Cepat</span>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-300 truncate">Akses katalog, cek garansi & konsultasi service 1-klik langsung dari layar utama HP/Laptop Anda!</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 w-full sm:w-auto justify-end shrink-0">
+                <button onclick="dismissPwaBanner()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 text-xs font-semibold">Nanti</button>
+                <button onclick="triggerPwaInstall()" class="touch-btn shimmer-btn px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-bold text-xs shadow-lg">
+                    📲 Install Sekarang
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 pt-5 pb-12 space-y-12">
@@ -1097,7 +1146,10 @@
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-8 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
             <span onclick="handleFooterSecretClick()" class="cursor-pointer select-none">© 2026 JAKBAR LAPTOP Enterprise — Toko Kebon Jeruk Jakarta Barat. All rights reserved.</span>
-            <span>Lulus Inspeksi 40 Titik QC • Transparan & Bergaransi</span>
+            <div class="flex items-center gap-3">
+                <span>Lulus Inspeksi 40 Titik QC • Transparan & Bergaransi</span>
+                <button onclick="triggerSecretAdminAccess()" class="text-slate-600 hover:text-indigo-400 transition-colors" title="Portal Admin">🔐 Portal Admin</button>
+            </div>
         </div>
     </footer>
 
@@ -1140,6 +1192,36 @@
                 <button onclick="closeUniversalModal()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center font-bold">✕</button>
             </div>
             <div id="universalModalBody" class="space-y-4 text-sm"></div>
+        </div>
+    </div>
+
+    <!-- SECURITY ACTION CONFIRMATION MODAL (PREVENT ACCIDENTAL CLICK ON EDIT, DELETE & TRANSACTION) -->
+    <div id="actionConfirmModal" class="hidden fixed inset-0 z-[60] bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-card w-full max-w-md border-amber-500/40 shadow-2xl space-y-4 p-5 sm:p-6 animate-[pageFadeIn_0.2s_ease]">
+            <div class="flex items-start gap-3.5">
+                <div id="confirmModalIcon" class="w-11 h-11 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-xl shrink-0">
+                    ⚠️
+                </div>
+                <div class="space-y-1">
+                    <span id="confirmModalBadge" class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold uppercase tracking-wider">
+                        KONFIRMASI TINDAKAN
+                    </span>
+                    <h3 id="confirmModalTitle" class="font-display font-bold text-white text-base sm:text-lg leading-snug">
+                        Apakah Anda Yakin?
+                    </h3>
+                    <p id="confirmModalMessage" class="text-xs text-slate-300 leading-relaxed">
+                        Pastikan kembali data sebelum melanjutkan tindakan ini agar tidak terjadi kesalahan klik.
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-800">
+                <button type="button" onclick="closeActionConfirmModal()" class="touch-btn px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold">
+                    ✕ Batal / Cek Lagi
+                </button>
+                <button type="button" id="confirmModalProceedBtn" onclick="proceedActionConfirm()" class="touch-btn px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-lg">
+                    ✅ Ya, Lanjutkan
+                </button>
+            </div>
         </div>
     </div>
 
@@ -1410,6 +1492,92 @@
         function formatRupiah(num) {
             return 'Rp ' + (Number(num) || 0).toLocaleString('id-ID');
         }
+
+        // Reusable Custom Security Confirmation Dialog (Prevents accidental Edit, Delete & Transactions)
+        let pendingConfirmCallback = null;
+        let pendingCancelCallback = null;
+
+        window.askActionConfirmation = function({
+            title = 'Konfirmasi Tindakan',
+            message = 'Apakah Anda yakin ingin melanjutkan proses ini?',
+            confirmText = '✅ Ya, Lanjutkan',
+            type = 'warn', // 'danger' | 'edit' | 'transaction' | 'warn'
+            onConfirm = null,
+            onCancel = null
+        }) {
+            pendingConfirmCallback = onConfirm;
+            pendingCancelCallback = onCancel;
+
+            const modal = document.getElementById('actionConfirmModal');
+            const titleEl = document.getElementById('confirmModalTitle');
+            const msgEl = document.getElementById('confirmModalMessage');
+            const badgeEl = document.getElementById('confirmModalBadge');
+            const iconEl = document.getElementById('confirmModalIcon');
+            const proceedBtn = document.getElementById('confirmModalProceedBtn');
+
+            if (titleEl) titleEl.textContent = title;
+            if (msgEl) msgEl.textContent = message;
+            if (proceedBtn) proceedBtn.textContent = confirmText;
+
+            const themes = {
+                danger: {
+                    icon: '🗑️',
+                    badge: 'KONFIRMASI HAPUS DATA',
+                    badgeCls: 'px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 text-[10px] font-bold uppercase tracking-wider',
+                    iconCls: 'w-11 h-11 rounded-2xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-xl shrink-0',
+                    btnCls: 'touch-btn px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold shadow-lg shadow-rose-600/30'
+                },
+                edit: {
+                    icon: '✏️',
+                    badge: 'KONFIRMASI SIMPAN / EDIT',
+                    badgeCls: 'px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold uppercase tracking-wider',
+                    iconCls: 'w-11 h-11 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-xl shrink-0',
+                    btnCls: 'touch-btn px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-lg shadow-amber-500/30'
+                },
+                transaction: {
+                    icon: '🧾',
+                    badge: 'KONFIRMASI TRANSAKSI & NOTA',
+                    badgeCls: 'px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase tracking-wider',
+                    iconCls: 'w-11 h-11 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xl shrink-0',
+                    btnCls: 'touch-btn px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-lg shadow-emerald-600/30'
+                }
+            };
+
+            const t = themes[type] || themes.edit;
+            if (iconEl) {
+                iconEl.textContent = t.icon;
+                iconEl.className = t.iconCls;
+            }
+            if (badgeEl) {
+                badgeEl.textContent = t.badge;
+                badgeEl.className = t.badgeCls;
+            }
+            if (proceedBtn) {
+                proceedBtn.className = t.btnCls;
+            }
+
+            modal?.classList.remove('hidden');
+        };
+
+        window.closeActionConfirmModal = function() {
+            document.getElementById('actionConfirmModal')?.classList.add('hidden');
+            if (typeof pendingCancelCallback === 'function') {
+                const fn = pendingCancelCallback;
+                pendingCancelCallback = null;
+                fn();
+            }
+            pendingConfirmCallback = null;
+        };
+
+        window.proceedActionConfirm = function() {
+            document.getElementById('actionConfirmModal')?.classList.add('hidden');
+            pendingCancelCallback = null;
+            if (typeof pendingConfirmCallback === 'function') {
+                const fn = pendingConfirmCallback;
+                pendingConfirmCallback = null;
+                fn();
+            }
+        };
 
         function showToast(msg, type = 'info') {
             const container = document.getElementById('toastContainer');
@@ -1998,26 +2166,36 @@
 
         window.submitWebsiteOrder = function(e) {
             e.preventDefault();
+            const formEl = e.target;
             const name = document.getElementById('webOrdName').value.trim();
             const wa = document.getElementById('webOrdWa').value.trim();
             const pkg = document.getElementById('webOrdPackage').value.trim();
             const dbType = document.getElementById('webOrdDbType').value;
             const notes = document.getElementById('webOrdNotes').value.trim();
 
-            const ticketId = 'WEB-' + Date.now().toString().slice(-5);
-            crmTickets.unshift({
-                id: ticketId,
-                type: 'Order Pembuatan Website',
-                name,
-                contact: wa,
-                detail: `${pkg} [${dbType}] — ${notes}`,
-                time: new Date().toLocaleString('id-ID')
-            });
-            persistAllState();
-            showToast(`Permintaan Website (${ticketId}) tercatat! Mengarahkan ke WhatsApp...`, 'success');
+            askActionConfirmation({
+                type: 'transaction',
+                title: 'Konfirmasi Pemesanan & Konsultasi Website?',
+                message: `Kirim permintaan pembuatan website paket "${pkg}" (${dbType}) atas nama "${name}" (${wa}) ke Tim IT JAKBAR LAPTOP?`,
+                confirmText: '🚀 Ya, Kirim Permintaan',
+                onConfirm: () => {
+                    const ticketId = 'WEB-' + Date.now().toString().slice(-5);
+                    crmTickets.unshift({
+                        id: ticketId,
+                        type: 'Order Pembuatan Website',
+                        name,
+                        contact: wa,
+                        detail: `${pkg} [${dbType}] — ${notes}`,
+                        time: new Date().toLocaleString('id-ID')
+                    });
+                    persistAllState();
+                    formEl.reset();
+                    showToast(`Permintaan Website (${ticketId}) tercatat! Mengarahkan ke WhatsApp...`, 'success');
 
-            const message = `Halo Tim IT *JAKBAR LAPTOP* 🌐,\n\nSaya *${name}* (Tiket: *${ticketId}*) ingin memesan / berkonsultasi mengenai *Jasa Pembuatan Website*:\n\n📦 *Paket Pilihan:* ${pkg}\n🗄️ *Tipe Sistem:* ${dbType}\n📝 *Kebutuhan Fitur:* ${notes}\n📞 *No. WA:* ${wa}\n\nMohon info rincian dan langkah selanjutnya. Terima kasih!`;
-            window.open(`https://wa.me/6282298688189?text=${encodeURIComponent(message)}`, '_blank');
+                    const message = `Halo Tim IT *JAKBAR LAPTOP* 🌐,\n\nSaya *${name}* (Tiket: *${ticketId}*) ingin memesan / berkonsultasi mengenai *Jasa Pembuatan Website*:\n\n📦 *Paket Pilihan:* ${pkg}\n🗄️ *Tipe Sistem:* ${dbType}\n📝 *Kebutuhan Fitur:* ${notes}\n📞 *No. WA:* ${wa}\n\nMohon info rincian dan langkah selanjutnya. Terima kasih!`;
+                    window.open(`https://wa.me/6282298688189?text=${encodeURIComponent(message)}`, '_blank');
+                }
+            });
         };
 
         // Testimonials & FAQ Rendering
@@ -2304,46 +2482,67 @@
         };
 
         window.removeCartItem = function(idx) {
-            cart.splice(idx, 1);
-            renderSiteCopy();
-            openCartModal();
+            const item = cart[idx];
+            if (!item) return;
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Item dari Keranjang?',
+                message: `Apakah Anda yakin ingin mengeluarkan "${item.name}" dari keranjang belanja Anda?`,
+                confirmText: '🗑️ Ya, Hapus Item',
+                onConfirm: () => {
+                    cart.splice(idx, 1);
+                    renderSiteCopy();
+                    openCartModal();
+                    showToast('Item dihapus dari keranjang', 'info');
+                }
+            });
         };
 
         window.submitCheckoutOrder = function(e) {
             e.preventDefault();
-            const customer = document.getElementById('chkCustomerName').value;
-            const phone = document.getElementById('chkCustomerPhone').value;
+            const customer = document.getElementById('chkCustomerName').value.trim();
+            const phone = document.getElementById('chkCustomerPhone').value.trim();
             const method = document.getElementById('chkMethod').value;
             const total = cart.reduce((acc, c) => acc + Number(c.price || 0), 0);
-            const invId = 'INV-JL' + Date.now().toString().slice(-6);
-            const all40Ids = [];
-            QC_40_MASTER.forEach((g, gi) => g.items.forEach((_, ii) => all40Ids.push(`${gi}-${ii}`)));
+            const itemsSummary = cart.map(c => c.name).join(', ');
 
-            const newOrder = {
-                id: invId,
-                customer,
-                phone,
-                method,
-                itemsSummary: cart.map(c => c.name).join(', '),
-                total,
-                discount: 0,
-                amountPaid: method.includes('Transfer') ? 0 : total,
-                paymentStatus: method.includes('Transfer') ? 'BELUM BAYAR' : (method.includes('COD') ? 'COD / BAYAR DI TEMPAT' : 'LUNAS'),
-                serialNumber: 'SN-JL-' + Date.now().toString().slice(-5),
-                warrantyPeriod: '30 Hari Penuh (Hardware & Tukar Unit)',
-                adminNote: 'Unit lulus 40 titik QC, segel toko utuh, gratis tas & charger original.',
-                status: 'Lulus QC 40 Titik',
-                qcPassedItems: all40Ids,
-                qcInspector: 'Tim QC Laboratorium JAKBAR LAPTOP',
-                date: new Date().toLocaleDateString('id-ID')
-            };
-            orders.unshift(newOrder);
-            cart = [];
-            persistAllState();
-            closeUniversalModal();
-            switchPage('tracking');
-            handleTrackOrder(invId);
-            showToast(`Invoice ${invId} berhasil diterbitkan!`, 'success');
+            askActionConfirmation({
+                type: 'transaction',
+                title: 'Konfirmasi Checkout & Penerbitan Invoice',
+                message: `Terbitkan pesanan resmi atas nama "${customer}" (${phone}) untuk item "${itemsSummary}" dengan total ${formatRupiah(total)}?`,
+                confirmText: '🧾 Ya, Terbitkan Invoice',
+                onConfirm: () => {
+                    const invId = 'INV-JL' + Date.now().toString().slice(-6);
+                    const all40Ids = [];
+                    QC_40_MASTER.forEach((g, gi) => g.items.forEach((_, ii) => all40Ids.push(`${gi}-${ii}`)));
+
+                    const newOrder = {
+                        id: invId,
+                        customer,
+                        phone,
+                        method,
+                        itemsSummary,
+                        total,
+                        discount: 0,
+                        amountPaid: method.includes('Transfer') ? 0 : total,
+                        paymentStatus: method.includes('Transfer') ? 'BELUM BAYAR' : (method.includes('COD') ? 'COD / BAYAR DI TEMPAT' : 'LUNAS'),
+                        serialNumber: 'SN-JL-' + Date.now().toString().slice(-5),
+                        warrantyPeriod: '30 Hari Penuh (Hardware & Tukar Unit)',
+                        adminNote: 'Unit lulus 40 titik QC, segel toko utuh, gratis tas & charger original.',
+                        status: 'Lulus QC 40 Titik',
+                        qcPassedItems: all40Ids,
+                        qcInspector: 'Tim QC Laboratorium JAKBAR LAPTOP',
+                        date: new Date().toLocaleDateString('id-ID')
+                    };
+                    orders.unshift(newOrder);
+                    cart = [];
+                    persistAllState();
+                    closeUniversalModal();
+                    switchPage('tracking');
+                    handleTrackOrder(invId);
+                    showToast(`Invoice ${invId} berhasil diterbitkan!`, 'success');
+                }
+            });
         };
 
         // Modals: Detail, Smart Finder, Trade-In, QC Certificate, Printable Invoice
@@ -2488,6 +2687,9 @@
                             ${currentUser?.role === 'admin' ? `
                                 <button onclick="openEditOrderModal('${o.id}')" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold hover:bg-amber-400">
                                     ✏️ Edit Status Lunas / Rincian Nota
+                                </button>
+                                <button onclick="shareInvoiceToCustomerWa('${o.id}')" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold">
+                                    💬 Kirim Rincian Nota ke WA Pembeli
                                 </button>
                             ` : ''}
                             <button onclick="window.print()" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-lg">
@@ -2660,6 +2862,22 @@
             `);
         };
 
+        window.shareInvoiceToCustomerWa = function(orderId) {
+            const o = orders.find(x => x.id === orderId);
+            if (!o) return;
+            const cleanPhone = (o.phone || '').replace(/[^0-9]/g, '').replace(/^0/, '62');
+            const payStatus = o.paymentStatus || 'LUNAS';
+            const subtotal = Number(o.total || 0) + Number(o.discount || 0);
+            const discount = Number(o.discount || 0);
+            const grandTotal = Number(o.total || 0);
+            const amountPaid = o.amountPaid !== undefined ? Number(o.amountPaid) : (payStatus === 'LUNAS' ? grandTotal : 0);
+            const remaining = Math.max(0, grandTotal - amountPaid);
+            const trackUrl = `${window.location.origin}${window.location.pathname}#tracking`;
+
+            const text = `🧾 *NOTA FAKTUR & KARTU GARANSI RESMI*\n*TOKO JAKBAR LAPTOP — KEBON JERUK*\n----------------------------------------\n📌 *No. Invoice:* ${o.id}\n📅 *Tanggal:* ${o.date || new Date().toLocaleDateString('id-ID')}\n👤 *Pelanggan:* ${o.customer} (${o.phone})\n💻 *Unit / Layanan:* ${o.itemsSummary}\n🔢 *No. Seri (SN):* ${o.serialNumber || '-'}\n🛡️ *Garansi:* ${o.warrantyPeriod || '30 Hari Penuh'}\n----------------------------------------\n💵 *Subtotal:* ${formatRupiah(subtotal)}\n🏷️ *Diskon:* - ${formatRupiah(discount)}\n💰 *Total Tagihan:* *${formatRupiah(grandTotal)}*\n✅ *Telah Dibayar:* ${formatRupiah(amountPaid)}\n❗ *Sisa Tagihan:* ${remaining > 0 ? formatRupiah(remaining) : 'Rp 0 (LUNAS)'}\n🔖 *Status Stempel Nota:* *${payStatus}*\n----------------------------------------\n🔎 Cek & Cetak Nota Resmi di:\n${trackUrl}\n\nTerima kasih telah bertransaksi di *Toko JAKBAR LAPTOP* (Gg. Mawar 1 No. 35, Kebon Jeruk, Jakarta Barat). 🙏`;
+            window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(text)}`, '_blank');
+        };
+
         window.openSmartFinderModal = function() {
             openUniversalModal('🤖 Asisten AI Pencari Laptop Ideal', `
                 <form onsubmit="runSmartFinder(event)" class="space-y-3 text-xs">
@@ -2757,59 +2975,86 @@
         // Forms Submissions (Unit Request, Service Booking, Customer Review)
         window.submitUnitRequest = function(e) {
             e.preventDefault();
-            const name = document.getElementById('reqUnitName').value;
-            const spec = document.getElementById('reqUnitSpec').value;
-            crmTickets.unshift({
-                id: 'REQ-' + Date.now().toString().slice(-4),
-                type: 'Request Unit',
-                name,
-                contact: '-',
-                detail: spec,
-                time: new Date().toLocaleString('id-ID')
+            const name = document.getElementById('reqUnitName').value.trim();
+            const spec = document.getElementById('reqUnitSpec').value.trim();
+            askActionConfirmation({
+                type: 'transaction',
+                title: 'Konfirmasi Kirim Request Unit?',
+                message: `Kirim permintaan pencarian unit "${spec}" atas nama "${name}" ke Tim Gudang & WhatsApp JAKBAR LAPTOP?`,
+                confirmText: '📲 Ya, Kirim Request',
+                onConfirm: () => {
+                    crmTickets.unshift({
+                        id: 'REQ-' + Date.now().toString().slice(-4),
+                        type: 'Request Unit',
+                        name,
+                        contact: '-',
+                        detail: spec,
+                        time: new Date().toLocaleString('id-ID')
+                    });
+                    persistAllState();
+                    window.open(`https://wa.me/6282298688189?text=Halo%20Admin%20Toko%20JAKBAR%20LAPTOP,%20saya%20${encodeURIComponent(name)}%20ingin%20request%20cari%20unit:%20${encodeURIComponent(spec)}`, '_blank');
+                }
             });
-            persistAllState();
-            window.open(`https://wa.me/6282298688189?text=Halo%20Admin%20Toko%20JAKBAR%20LAPTOP,%20saya%20${encodeURIComponent(name)}%20ingin%20request%20cari%20unit:%20${encodeURIComponent(spec)}`, '_blank');
         };
 
         window.submitServiceBooking = function(e) {
             e.preventDefault();
-            const name = document.getElementById('srvBookName').value;
-            const wa = document.getElementById('srvBookWa').value;
-            const laptop = document.getElementById('srvBookLaptop').value;
+            const formEl = e.target;
+            const name = document.getElementById('srvBookName').value.trim();
+            const wa = document.getElementById('srvBookWa').value.trim();
+            const laptop = document.getElementById('srvBookLaptop').value.trim();
             const method = document.getElementById('srvBookMethod').value;
-            const issue = document.getElementById('srvBookIssue').value;
+            const issue = document.getElementById('srvBookIssue').value.trim();
 
-            const ticketId = 'SRV-' + Date.now().toString().slice(-5);
-            crmTickets.unshift({
-                id: ticketId,
-                type: 'Booking Service',
-                name,
-                contact: wa,
-                detail: `${laptop} (${method}) — ${issue}`,
-                time: new Date().toLocaleString('id-ID')
+            askActionConfirmation({
+                type: 'transaction',
+                title: 'Konfirmasi Booking Service & Upgrade?',
+                message: `Catat tiket booking service untuk laptop "${laptop}" atas nama "${name}" (${wa}) dan hubungkan ke Teknisi?`,
+                confirmText: '✅ Ya, Kirim Booking',
+                onConfirm: () => {
+                    const ticketId = 'SRV-' + Date.now().toString().slice(-5);
+                    crmTickets.unshift({
+                        id: ticketId,
+                        type: 'Booking Service',
+                        name,
+                        contact: wa,
+                        detail: `${laptop} (${method}) — ${issue}`,
+                        time: new Date().toLocaleString('id-ID')
+                    });
+                    persistAllState();
+                    formEl.reset();
+                    showToast(`Tiket Booking ${ticketId} berhasil dicatat!`, 'success');
+                    window.open(`https://wa.me/6282298688189?text=Halo%20Teknisi%20JAKBAR%20LAPTOP,%20saya%20${encodeURIComponent(name)}%20(Tiket:%20${ticketId})%20ingin%20booking%20service%20laptop%20${encodeURIComponent(laptop)}.%20Keluhan:%20${encodeURIComponent(issue)}.%20Metode:%20${encodeURIComponent(method)}`, '_blank');
+                }
             });
-            persistAllState();
-            showToast(`Tiket Booking ${ticketId} berhasil dicatat!`, 'success');
-            window.open(`https://wa.me/6282298688189?text=Halo%20Teknisi%20JAKBAR%20LAPTOP,%20saya%20${encodeURIComponent(name)}%20(Tiket:%20${ticketId})%20ingin%20booking%20service%20laptop%20${encodeURIComponent(laptop)}.%20Keluhan:%20${encodeURIComponent(issue)}.%20Metode:%20${encodeURIComponent(method)}`, '_blank');
         };
 
         window.submitCustomerReview = function(e) {
             e.preventDefault();
-            const name = document.getElementById('revInputName').value;
-            const role = document.getElementById('revInputRole').value;
+            const formEl = e.target;
+            const name = document.getElementById('revInputName').value.trim();
+            const role = document.getElementById('revInputRole').value.trim();
             const rating = Number(document.getElementById('revInputRating').value);
-            const comment = document.getElementById('revInputComment').value;
+            const comment = document.getElementById('revInputComment').value.trim();
 
-            testimonials.unshift({
-                id: 'rev-' + Date.now(),
-                name,
-                role,
-                rating,
-                comment
+            askActionConfirmation({
+                type: 'edit',
+                title: 'Tayangkan Ulasan Anda?',
+                message: `Apakah Anda yakin ingin mengirimkan ulasan atas nama "${name}" (${rating}/5 Bintang) ke halaman Toko JAKBAR LAPTOP?`,
+                confirmText: '🚀 Ya, Tayangkan Ulasan',
+                onConfirm: () => {
+                    testimonials.unshift({
+                        id: 'rev-' + Date.now(),
+                        name,
+                        role,
+                        rating,
+                        comment
+                    });
+                    formEl.reset();
+                    persistAllState();
+                    showToast('Terima kasih! Ulasan Anda berhasil ditayangkan di Beranda.', 'success');
+                }
             });
-            e.target.reset();
-            persistAllState();
-            showToast('Terima kasih! Ulasan Anda berhasil ditayangkan di Beranda.', 'success');
         };
 
         // Dedicated Customer Satisfaction Survey Functions
@@ -2842,31 +3087,39 @@
             const rating = Number(document.getElementById('surveyRatingValue').value) || 5;
             const comment = document.getElementById('surveyCommentText').value.trim();
 
-            const roleFormatted = unitItem
-                ? `${roleRaw} (Pembeli ${unitItem}${invId ? ' • ' + invId : ''})`
-                : roleRaw;
+            askActionConfirmation({
+                type: 'edit',
+                title: 'Kirim & Tayangkan Penilaian Anda?',
+                message: `Apakah Anda yakin ingin menayangkan ulasan kepuasan atas nama "${name}" (${rating}/5 Bintang) langsung ke Beranda Toko JAKBAR LAPTOP?`,
+                confirmText: '🚀 Ya, Kirim & Tayangkan',
+                onConfirm: () => {
+                    const roleFormatted = unitItem
+                        ? `${roleRaw} (Pembeli ${unitItem}${invId ? ' • ' + invId : ''})`
+                        : roleRaw;
 
-            testimonials.unshift({
-                id: 'rev-' + Date.now(),
-                name,
-                role: roleFormatted,
-                rating,
-                comment
+                    testimonials.unshift({
+                        id: 'rev-' + Date.now(),
+                        name,
+                        role: roleFormatted,
+                        rating,
+                        comment
+                    });
+
+                    crmTickets.unshift({
+                        id: 'SURVEY-' + Date.now().toString().slice(-4),
+                        type: 'Kepuasan Pelanggan ⭐' + rating,
+                        name,
+                        contact: roleFormatted,
+                        detail: comment,
+                        time: new Date().toLocaleString('id-ID')
+                    });
+
+                    persistAllState();
+                    document.getElementById('surveyFormCard')?.classList.add('hidden');
+                    document.getElementById('surveySuccessCard')?.classList.remove('hidden');
+                    showToast('Ulasan berhasil disimpan & otomatis tampil di Beranda Toko!', 'success');
+                }
             });
-
-            crmTickets.unshift({
-                id: 'SURVEY-' + Date.now().toString().slice(-4),
-                type: 'Kepuasan Pelanggan ⭐' + rating,
-                name,
-                contact: roleFormatted,
-                detail: comment,
-                time: new Date().toLocaleString('id-ID')
-            });
-
-            persistAllState();
-            document.getElementById('surveyFormCard')?.classList.add('hidden');
-            document.getElementById('surveySuccessCard')?.classList.remove('hidden');
-            showToast('Ulasan berhasil disimpan & otomatis tampil di Beranda Toko!', 'success');
         };
 
         window.resetSurveyForm = function() {
@@ -2934,7 +3187,7 @@
                 `);
                 return;
             }
-            openUniversalModal(isSecretAdmin ? '🔐 Login Administrator Toko JAKBAR LAPTOP' : '🔐 Login Pelanggan JAKBAR LAPTOP', `
+            openUniversalModal(isSecretAdmin ? '🔐 Login Administrator Toko JAKBAR LAPTOP' : '🔐 Login Akun JAKBAR LAPTOP', `
                 <form onsubmit="handleLoginSubmit(event)" class="space-y-3 text-xs">
                     <div>
                         <label class="block font-bold text-slate-300 mb-1">Email</label>
@@ -2944,7 +3197,7 @@
                         <label class="block font-bold text-slate-300 mb-1">Password</label>
                         <input id="loginPassInput" required type="password" placeholder="Masukkan password" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
                     </div>
-                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 text-white font-bold">Masuk Sekarang</button>
+                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold">🔐 Masuk Sekarang</button>
                 </form>
             `);
         };
@@ -2979,8 +3232,11 @@
         function updateAuthUI() {
             const isAdmin = currentUser?.role === 'admin';
             const authBtn = document.getElementById('headerAuthBtn');
-            if (authBtn) {
-                authBtn.textContent = currentUser ? (isAdmin ? '⚡ Admin' : '👤 Akun') : 'Login';
+            const authLabel = document.getElementById('headerAuthLabel');
+            if (authLabel) {
+                authLabel.textContent = currentUser ? (isAdmin ? 'Admin' : 'Akun') : 'Login';
+            } else if (authBtn) {
+                authBtn.textContent = currentUser ? (isAdmin ? '⚡ Admin' : '👤 Akun') : '🔐 Login';
             }
             document.getElementById('navAdminBtn')?.classList.toggle('hidden', !isAdmin);
             document.getElementById('mobileAdminBtn')?.classList.toggle('hidden', !isAdmin);
@@ -3450,6 +3706,7 @@
 
         window.createPosOrderAdmin = function(e) {
             e.preventDefault();
+            const formEl = e.target;
             const customer = document.getElementById('posCustName').value.trim();
             const phone = document.getElementById('posCustPhone').value.trim();
             const itemsSummary = document.getElementById('posItemName').value.trim();
@@ -3465,55 +3722,84 @@
             const warrantyPeriod = document.getElementById('posWarranty').value.trim() || '30 Hari Penuh (Hardware & Tukar Unit)';
             const adminNote = document.getElementById('posNote').value.trim() || 'Unit telah lulus 40 titik QC, segel garansi toko utuh.';
 
-            const invId = 'INV-POS' + Date.now().toString().slice(-5);
-            const all40Ids = [];
-            QC_40_MASTER.forEach((g, gi) => g.items.forEach((_, ii) => all40Ids.push(`${gi}-${ii}`)));
+            askActionConfirmation({
+                type: 'transaction',
+                title: 'Konfirmasi Terbitkan Nota Kasir POS?',
+                message: `Terbitkan Nota Faktur resmi untuk "${customer}" (${itemsSummary}) senilai ${formatRupiah(total)} dengan status stempel "${paymentStatus}"?`,
+                confirmText: '🧾 Ya, Terbitkan Nota',
+                onConfirm: () => {
+                    const invId = 'INV-POS' + Date.now().toString().slice(-5);
+                    const all40Ids = [];
+                    QC_40_MASTER.forEach((g, gi) => g.items.forEach((_, ii) => all40Ids.push(`${gi}-${ii}`)));
 
-            const newOrd = {
-                id: invId,
-                customer,
-                phone,
-                method,
-                itemsSummary,
-                serialNumber,
-                total,
-                discount,
-                paymentStatus,
-                amountPaid,
-                warrantyPeriod,
-                adminNote,
-                status: paymentStatus === 'LUNAS' ? 'Selesai & Garansi Aktif' : 'Menunggu Verifikasi',
-                qcPassedItems: all40Ids,
-                qcInspector: 'Admin & Tim QC JAKBAR LAPTOP',
-                date: new Date().toLocaleDateString('id-ID')
-            };
-            orders.unshift(newOrd);
-            e.target.reset();
-            persistAllState();
-            openInvoicePrintModal(invId);
-            showToast(`Nota Resmi ${invId} (${paymentStatus}) berhasil diterbitkan!`, 'success');
+                    const newOrd = {
+                        id: invId,
+                        customer,
+                        phone,
+                        method,
+                        itemsSummary,
+                        serialNumber,
+                        total,
+                        discount,
+                        paymentStatus,
+                        amountPaid,
+                        warrantyPeriod,
+                        adminNote,
+                        status: paymentStatus === 'LUNAS' ? 'Selesai & Garansi Aktif' : 'Menunggu Verifikasi',
+                        qcPassedItems: all40Ids,
+                        qcInspector: 'Admin & Tim QC JAKBAR LAPTOP',
+                        date: new Date().toLocaleDateString('id-ID')
+                    };
+                    orders.unshift(newOrd);
+                    formEl.reset();
+                    persistAllState();
+                    openInvoicePrintModal(invId);
+                    showToast(`Nota Resmi ${invId} (${paymentStatus}) berhasil diterbitkan!`, 'success');
+                }
+            });
         };
 
         window.updateOrderPaymentStatusAdmin = function(id, payStatus) {
             const o = orders.find(x => x.id === id);
             if (!o) return;
-            o.paymentStatus = payStatus;
-            if (payStatus === 'LUNAS') {
-                o.amountPaid = Number(o.total || 0);
-            } else if (payStatus === 'BELUM BAYAR') {
-                o.amountPaid = 0;
-            }
-            persistAllState();
-            showToast(`Status Nota ${id} diubah menjadi: ${payStatus}`, 'success');
+            askActionConfirmation({
+                type: 'transaction',
+                title: `Ubah Status Pembayaran ${id}?`,
+                message: `Apakah Anda yakin ingin mengubah status stempel nota "${id}" (${o.customer}) menjadi "${payStatus}"?`,
+                confirmText: '✅ Ya, Ubah Status Bayar',
+                onConfirm: () => {
+                    o.paymentStatus = payStatus;
+                    if (payStatus === 'LUNAS') {
+                        o.amountPaid = Number(o.total || 0);
+                    } else if (payStatus === 'BELUM BAYAR') {
+                        o.amountPaid = 0;
+                    }
+                    persistAllState();
+                    showToast(`Status Nota ${id} diubah menjadi: ${payStatus}`, 'success');
+                },
+                onCancel: () => {
+                    renderAdminCommandCenter();
+                }
+            });
         };
 
         window.updateOrderStatusAdmin = function(id, status) {
             const o = orders.find(x => x.id === id);
-            if (o) {
-                o.status = status;
-                persistAllState();
-                showToast(`Status ${id} diperbarui ke: ${status}`, 'success');
-            }
+            if (!o) return;
+            askActionConfirmation({
+                type: 'edit',
+                title: `Ubah Tahap Pesanan ${id}?`,
+                message: `Ubah progres pesanan "${id}" (${o.customer}) menjadi "${status}"?`,
+                confirmText: '✅ Ya, Perbarui Tahap',
+                onConfirm: () => {
+                    o.status = status;
+                    persistAllState();
+                    showToast(`Status ${id} diperbarui ke: ${status}`, 'success');
+                },
+                onCancel: () => {
+                    renderAdminCommandCenter();
+                }
+            });
         };
 
         window.openEditOrderModal = function(orderId) {
@@ -3604,27 +3890,49 @@
             if (e) e.preventDefault();
             const o = orders.find(x => x.id === orderId);
             if (!o) return;
-            o.customer = document.getElementById('edOrdCustomer').value.trim();
-            o.phone = document.getElementById('edOrdPhone').value.trim();
-            o.itemsSummary = document.getElementById('edOrdItems').value.trim();
-            o.serialNumber = document.getElementById('edOrdSn').value.trim();
-            o.paymentStatus = document.getElementById('edOrdPayStatus').value;
-            o.total = Number(document.getElementById('edOrdTotal').value || 0);
-            o.discount = Number(document.getElementById('edOrdDiscount').value || 0);
-            o.amountPaid = Number(document.getElementById('edOrdPaid').value || 0);
-            o.method = document.getElementById('edOrdMethod').value.trim();
-            o.date = document.getElementById('edOrdDate').value.trim();
-            o.warrantyPeriod = document.getElementById('edOrdWarranty').value.trim();
-            o.qcInspector = document.getElementById('edOrdInspector').value.trim();
-            o.adminNote = document.getElementById('edOrdNote').value.trim();
+            const customer = document.getElementById('edOrdCustomer').value.trim();
+            const phone = document.getElementById('edOrdPhone').value.trim();
+            const itemsSummary = document.getElementById('edOrdItems').value.trim();
+            const serialNumber = document.getElementById('edOrdSn').value.trim();
+            const paymentStatus = document.getElementById('edOrdPayStatus').value;
+            const total = Number(document.getElementById('edOrdTotal').value || 0);
+            const discount = Number(document.getElementById('edOrdDiscount').value || 0);
+            const amountPaid = Number(document.getElementById('edOrdPaid').value || 0);
+            const method = document.getElementById('edOrdMethod').value.trim();
+            const date = document.getElementById('edOrdDate').value.trim();
+            const warrantyPeriod = document.getElementById('edOrdWarranty').value.trim();
+            const qcInspector = document.getElementById('edOrdInspector').value.trim();
+            const adminNote = document.getElementById('edOrdNote').value.trim();
 
-            persistAllState();
-            if (openPrintAfter) {
-                openInvoicePrintModal(orderId);
-            } else {
-                closeUniversalModal();
-            }
-            showToast(`Nota ${orderId} (${o.paymentStatus}) berhasil diperbarui!`, 'success');
+            askActionConfirmation({
+                type: 'edit',
+                title: `Simpan Perubahan Nota ${orderId}?`,
+                message: `Simpan perubahan rincian nota untuk "${customer}" (${formatRupiah(total)} • Status: ${paymentStatus})?`,
+                confirmText: '💾 Ya, Simpan Nota',
+                onConfirm: () => {
+                    o.customer = customer;
+                    o.phone = phone;
+                    o.itemsSummary = itemsSummary;
+                    o.serialNumber = serialNumber;
+                    o.paymentStatus = paymentStatus;
+                    o.total = total;
+                    o.discount = discount;
+                    o.amountPaid = amountPaid;
+                    o.method = method;
+                    o.date = date;
+                    o.warrantyPeriod = warrantyPeriod;
+                    o.qcInspector = qcInspector;
+                    o.adminNote = adminNote;
+
+                    persistAllState();
+                    if (openPrintAfter) {
+                        openInvoicePrintModal(orderId);
+                    } else {
+                        closeUniversalModal();
+                    }
+                    showToast(`Nota ${orderId} (${o.paymentStatus}) berhasil diperbarui!`, 'success');
+                }
+            });
         };
 
         window.saveAndPreviewOrder = function(orderId) {
@@ -3632,15 +3940,32 @@
         };
 
         window.deleteOrderAdmin = function(orderId) {
-            orders = orders.filter(o => o.id !== orderId);
-            persistAllState();
-            showToast(`Invoice ${orderId} telah dihapus`, 'info');
+            const o = orders.find(x => x.id === orderId);
+            askActionConfirmation({
+                type: 'danger',
+                title: `Hapus Invoice ${orderId}?`,
+                message: `Apakah Anda yakin ingin menghapus permanen nota "${orderId}" (${o?.customer || 'Pelanggan'})? Tindakan ini tidak dapat dibatalkan.`,
+                confirmText: '🗑️ Ya, Hapus Nota',
+                onConfirm: () => {
+                    orders = orders.filter(ord => ord.id !== orderId);
+                    persistAllState();
+                    showToast(`Invoice ${orderId} telah dihapus`, 'info');
+                }
+            });
         };
 
         window.clearAllOrdersAdmin = function() {
-            orders = [];
-            persistAllState();
-            showToast('Seluruh daftar invoice berhasil dikosongkan', 'info');
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Seluruh Daftar Invoice?',
+                message: `Apakah Anda yakin ingin mengosongkan semua (${orders.length}) data transaksi/invoice? Pastikan Anda sudah melakukan Backup JSON terlebih dahulu.`,
+                confirmText: '🗑️ Ya, Hapus Semua Invoice',
+                onConfirm: () => {
+                    orders = [];
+                    persistAllState();
+                    showToast('Seluruh daftar invoice berhasil dikosongkan', 'info');
+                }
+            });
         };
 
         window.selectQcTargetAdmin = function(id) {
@@ -3649,18 +3974,28 @@
         };
 
         window.checkAll40QcItems = function(checkAll = true) {
-            const o = orders.find(x => x.id === selectedQcTargetId);
-            if (o) {
-                if (checkAll) {
-                    const allIds = [];
-                    QC_40_MASTER.forEach((g, gi) => g.items.forEach((_, ii) => allIds.push(`${gi}-${ii}`)));
-                    o.qcPassedItems = allIds;
-                } else {
-                    o.qcPassedItems = [];
+            askActionConfirmation({
+                type: checkAll ? 'edit' : 'danger',
+                title: checkAll ? 'Verifikasi Lulus Semua 40 Titik QC?' : 'Reset Semua Centang 40 Titik QC?',
+                message: checkAll
+                    ? 'Apakah Anda yakin seluruh 40 titik inspeksi hardware sudah diperiksa dan dinyatakan LULUS?'
+                    : 'Apakah Anda yakin ingin mengosongkan kembali centang checklist QC pada target ini?',
+                confirmText: checkAll ? '✅ Ya, Centang 40 Titik' : '🔄 Ya, Reset Centang',
+                onConfirm: () => {
+                    const o = orders.find(x => x.id === selectedQcTargetId);
+                    if (o) {
+                        if (checkAll) {
+                            const allIds = [];
+                            QC_40_MASTER.forEach((g, gi) => g.items.forEach((_, ii) => allIds.push(`${gi}-${ii}`)));
+                            o.qcPassedItems = allIds;
+                        } else {
+                            o.qcPassedItems = [];
+                        }
+                        persistAllState();
+                    }
+                    showToast(checkAll ? 'Seluruh 40 Titik QC telah diverifikasi LULUS 100%!' : 'Centang QC direset', 'success');
                 }
-                persistAllState();
-            }
-            showToast(checkAll ? 'Seluruh 40 Titik QC telah diverifikasi LULUS 100%!' : 'Centang QC direset', 'success');
+            });
         };
 
         window.toggleSingleQcPoint = function(code, isChecked) {
@@ -3697,19 +4032,37 @@
 
         window.saveEditQcCategoryForm = function(e, groupIdx) {
             e.preventDefault();
-            QC_40_MASTER[groupIdx].category = document.getElementById('edQcCatName').value.trim();
-            QC_40_MASTER[groupIdx].items = document.getElementById('edQcCatItems').value.split('\n').map(s => s.trim()).filter(Boolean);
-            persistAllState();
-            closeUniversalModal();
-            showToast('Kategori & Poin QC berhasil diperbarui!', 'success');
+            const newCat = document.getElementById('edQcCatName').value.trim();
+            const newItems = document.getElementById('edQcCatItems').value.split('\n').map(s => s.trim()).filter(Boolean);
+            askActionConfirmation({
+                type: 'edit',
+                title: 'Simpan Perubahan Poin QC?',
+                message: `Perbarui kategori "${newCat}" beserta ${newItems.length} titik pengecekan?`,
+                confirmText: '💾 Ya, Simpan Poin QC',
+                onConfirm: () => {
+                    QC_40_MASTER[groupIdx].category = newCat;
+                    QC_40_MASTER[groupIdx].items = newItems;
+                    persistAllState();
+                    closeUniversalModal();
+                    showToast('Kategori & Poin QC berhasil diperbarui!', 'success');
+                }
+            });
         };
 
         // Analytics & Logs Admin Controls
         window.resetAnalyticsCounters = function() {
-            Object.keys(analytics.views).forEach(k => analytics.views[k] = 0);
-            analytics.devices = { mobile: 0, desktop: 0 };
-            persistAllState();
-            showToast('Statistik kunjungan berhasil direset ke 0', 'info');
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Reset Seluruh Statistik Trafik?',
+                message: 'Apakah Anda yakin ingin mereset semua angka kunjungan halaman dan perangkat kembali ke 0?',
+                confirmText: '🗑️ Ya, Reset Trafik',
+                onConfirm: () => {
+                    Object.keys(analytics.views).forEach(k => analytics.views[k] = 0);
+                    analytics.devices = { mobile: 0, desktop: 0 };
+                    persistAllState();
+                    showToast('Statistik kunjungan berhasil direset ke 0', 'info');
+                }
+            });
         };
 
         window.editPageCounterAdmin = function(pageKey) {
@@ -3724,22 +4077,47 @@
 
         window.savePageCounterAdmin = function(e, pageKey) {
             e.preventDefault();
-            analytics.views[pageKey] = Number(document.getElementById('edPageCountVal').value) || 0;
-            persistAllState();
-            closeUniversalModal();
-            showToast('Jumlah kunjungan diperbarui', 'success');
+            const newVal = Number(document.getElementById('edPageCountVal').value) || 0;
+            askActionConfirmation({
+                type: 'edit',
+                title: `Ubah Angka Trafik ${pageKey.toUpperCase()}?`,
+                message: `Simpan perubahan jumlah kunjungan halaman ${pageKey.toUpperCase()} menjadi ${newVal} klik?`,
+                confirmText: '💾 Ya, Simpan',
+                onConfirm: () => {
+                    analytics.views[pageKey] = newVal;
+                    persistAllState();
+                    closeUniversalModal();
+                    showToast('Jumlah kunjungan diperbarui', 'success');
+                }
+            });
         };
 
         window.deleteSingleVisitorLog = function(idx) {
-            analytics.logs.splice(idx, 1);
-            persistAllState();
-            showToast('Baris log aktivitas dihapus', 'info');
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Baris Log Aktivitas?',
+                message: 'Apakah Anda yakin ingin menghapus baris riwayat kunjungan ini?',
+                confirmText: '🗑️ Ya, Hapus Log',
+                onConfirm: () => {
+                    analytics.logs.splice(idx, 1);
+                    persistAllState();
+                    showToast('Baris log aktivitas dihapus', 'info');
+                }
+            });
         };
 
         window.clearVisitorLogs = function() {
-            analytics.logs = [];
-            persistAllState();
-            showToast('Seluruh log aktivitas pengunjung telah dibersihkan', 'info');
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Bersihkan Seluruh Log Aktivitas?',
+                message: 'Apakah Anda yakin ingin menghapus semua riwayat log aktivitas pengunjung?',
+                confirmText: '🗑️ Ya, Bersihkan Semua',
+                onConfirm: () => {
+                    analytics.logs = [];
+                    persistAllState();
+                    showToast('Seluruh log aktivitas pengunjung telah dibersihkan', 'info');
+                }
+            });
         };
 
         // CRM Tickets Admin CRUD
@@ -3780,41 +4158,83 @@
                 detail: document.getElementById('tktDetail').value,
                 time: new Date().toLocaleString('id-ID')
             };
-            if (editId) {
-                const idx = crmTickets.findIndex(t => t.id === editId);
-                if (idx >= 0) crmTickets[idx] = item;
-            } else {
-                crmTickets.unshift(item);
-            }
-            persistAllState();
-            closeUniversalModal();
-            showToast('Tiket berhasil disimpan!', 'success');
+            askActionConfirmation({
+                type: 'edit',
+                title: editId ? 'Simpan Perubahan Tiket?' : 'Tambahkan Tiket Baru?',
+                message: `Simpan data tiket komunikasi untuk "${item.name}" (${item.type})?`,
+                confirmText: '💾 Ya, Simpan Tiket',
+                onConfirm: () => {
+                    if (editId) {
+                        const idx = crmTickets.findIndex(t => t.id === editId);
+                        if (idx >= 0) crmTickets[idx] = item;
+                    } else {
+                        crmTickets.unshift(item);
+                    }
+                    persistAllState();
+                    closeUniversalModal();
+                    showToast('Tiket berhasil disimpan!', 'success');
+                }
+            });
         };
 
         window.deleteCrmTicket = function(id) {
-            crmTickets = crmTickets.filter(t => t.id !== id);
-            persistAllState();
-            showToast('Tiket dihapus', 'info');
+            const t = crmTickets.find(x => x.id === id);
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Tiket Komunikasi?',
+                message: `Apakah Anda yakin ingin menghapus tiket "${t?.name || id}" (${t?.type || ''})?`,
+                confirmText: '🗑️ Ya, Hapus Tiket',
+                onConfirm: () => {
+                    crmTickets = crmTickets.filter(tk => tk.id !== id);
+                    persistAllState();
+                    showToast('Tiket dihapus', 'info');
+                }
+            });
         };
 
         window.clearAllCrmTickets = function() {
-            crmTickets = [];
-            persistAllState();
-            showToast('Semua tiket telah dibersihkan', 'info');
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Semua Tiket Komunikasi?',
+                message: `Apakah Anda yakin ingin menghapus seluruh (${crmTickets.length}) tiket booking & komunikasi?`,
+                confirmText: '🗑️ Ya, Hapus Semua Tiket',
+                onConfirm: () => {
+                    crmTickets = [];
+                    persistAllState();
+                    showToast('Semua tiket telah dibersihkan', 'info');
+                }
+            });
         };
 
         window.adjustProductStock = function(id, delta) {
             const p = products.find(x => x.id === id);
             if (!p) return;
-            p.stock = Math.max(0, Number(p.stock ?? 1) + delta);
-            persistAllState();
-            showToast(`Stok ${p.name} menjadi ${p.stock} unit`, 'info');
+            const nextStock = Math.max(0, Number(p.stock ?? 1) + delta);
+            askActionConfirmation({
+                type: 'edit',
+                title: 'Konfirmasi Perubahan Stok Unit?',
+                message: `Ubah jumlah stok "${p.name}" dari ${p.stock ?? 1} unit menjadi ${nextStock} unit?`,
+                confirmText: '✅ Ya, Ubah Stok',
+                onConfirm: () => {
+                    p.stock = nextStock;
+                    persistAllState();
+                    showToast(`Stok ${p.name} menjadi ${p.stock} unit`, 'info');
+                }
+            });
         };
 
         window.clearAllProductsAdmin = function() {
-            products = [];
-            persistAllState();
-            showToast('Seluruh unit di katalog telah dikosongkan', 'info');
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Kosongkan Seluruh Katalog Laptop?',
+                message: `Apakah Anda yakin ingin menghapus semua (${products.length}) unit laptop dari katalog?`,
+                confirmText: '🗑️ Ya, Kosongkan Katalog',
+                onConfirm: () => {
+                    products = [];
+                    persistAllState();
+                    showToast('Seluruh unit di katalog telah dikosongkan', 'info');
+                }
+            });
         };
 
         window.openProductModal = function(editId) {
@@ -3851,21 +4271,38 @@
                 pros: document.getElementById('prdPros').value.split(',').map(s => s.trim()).filter(Boolean),
                 cons: document.getElementById('prdCons').value.split(',').map(s => s.trim()).filter(Boolean)
             };
-            if (editId) {
-                const idx = products.findIndex(p => p.id === editId);
-                if (idx >= 0) products[idx] = item;
-            } else {
-                products.unshift(item);
-            }
-            persistAllState();
-            closeUniversalModal();
-            showToast('Unit laptop berhasil disimpan!', 'success');
+            askActionConfirmation({
+                type: 'edit',
+                title: editId ? 'Simpan Perubahan Unit Laptop?' : 'Tambahkan Unit Baru ke Katalog?',
+                message: `Simpan unit "${item.name}" dengan harga ${formatRupiah(item.price)} (Stok: ${item.stock} unit)?`,
+                confirmText: '💾 Ya, Simpan Unit',
+                onConfirm: () => {
+                    if (editId) {
+                        const idx = products.findIndex(p => p.id === editId);
+                        if (idx >= 0) products[idx] = item;
+                    } else {
+                        products.unshift(item);
+                    }
+                    persistAllState();
+                    closeUniversalModal();
+                    showToast('Unit laptop berhasil disimpan!', 'success');
+                }
+            });
         };
 
         window.deleteProduct = function(id) {
-            products = products.filter(p => p.id !== id);
-            persistAllState();
-            showToast('Unit dihapus dari katalog', 'info');
+            const p = products.find(x => x.id === id);
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Unit Laptop dari Katalog?',
+                message: `Apakah Anda yakin ingin menghapus unit "${p?.name || id}" secara permanen dari katalog?`,
+                confirmText: '🗑️ Ya, Hapus Unit',
+                onConfirm: () => {
+                    products = products.filter(pr => pr.id !== id);
+                    persistAllState();
+                    showToast('Unit dihapus dari katalog', 'info');
+                }
+            });
         };
 
         window.openServiceModal = function(editId) {
@@ -3890,21 +4327,38 @@
                 duration: document.getElementById('srvDuration').value,
                 desc: document.getElementById('srvDesc').value
             };
-            if (editId) {
-                const idx = services.findIndex(s => s.id === editId);
-                if (idx >= 0) services[idx] = item;
-            } else {
-                services.push(item);
-            }
-            persistAllState();
-            closeUniversalModal();
-            showToast('Paket service berhasil disimpan!', 'success');
+            askActionConfirmation({
+                type: 'edit',
+                title: editId ? 'Simpan Perubahan Paket Service?' : 'Tambah Paket Service Baru?',
+                message: `Simpan paket layanan "${item.name}" dengan biaya ${formatRupiah(item.price)}?`,
+                confirmText: '💾 Ya, Simpan Paket',
+                onConfirm: () => {
+                    if (editId) {
+                        const idx = services.findIndex(s => s.id === editId);
+                        if (idx >= 0) services[idx] = item;
+                    } else {
+                        services.push(item);
+                    }
+                    persistAllState();
+                    closeUniversalModal();
+                    showToast('Paket service berhasil disimpan!', 'success');
+                }
+            });
         };
 
         window.deleteService = function(id) {
-            services = services.filter(s => s.id !== id);
-            persistAllState();
-            showToast('Paket service dihapus', 'info');
+            const s = services.find(x => x.id === id);
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Paket Jasa Service?',
+                message: `Apakah Anda yakin ingin menghapus paket service "${s?.name || id}"?`,
+                confirmText: '🗑️ Ya, Hapus Paket',
+                onConfirm: () => {
+                    services = services.filter(sv => sv.id !== id);
+                    persistAllState();
+                    showToast('Paket service dihapus', 'info');
+                }
+            });
         };
 
         // Admin CRUD for Website Creation Packages
@@ -3966,21 +4420,38 @@
                 badge: document.getElementById('webPkgBadge').value.trim(),
                 features: document.getElementById('webPkgFeatures').value.split('\n').map(s => s.trim()).filter(Boolean)
             };
-            if (editId) {
-                const idx = webPackages.findIndex(w => w.id === editId);
-                if (idx >= 0) webPackages[idx] = item;
-            } else {
-                webPackages.push(item);
-            }
-            persistAllState();
-            closeUniversalModal();
-            showToast('Paket pembuatan website berhasil disimpan!', 'success');
+            askActionConfirmation({
+                type: 'edit',
+                title: editId ? 'Simpan Perubahan Paket Website?' : 'Tambah Paket Website Baru?',
+                message: `Simpan paket "${item.name}" (${item.tier}) dengan harga ${formatRupiah(item.price)}?`,
+                confirmText: '💾 Ya, Simpan Paket Website',
+                onConfirm: () => {
+                    if (editId) {
+                        const idx = webPackages.findIndex(w => w.id === editId);
+                        if (idx >= 0) webPackages[idx] = item;
+                    } else {
+                        webPackages.push(item);
+                    }
+                    persistAllState();
+                    closeUniversalModal();
+                    showToast('Paket pembuatan website berhasil disimpan!', 'success');
+                }
+            });
         };
 
         window.deleteWebPackage = function(id) {
-            webPackages = webPackages.filter(w => w.id !== id);
-            persistAllState();
-            showToast('Paket pembuatan website telah dihapus', 'info');
+            const w = webPackages.find(x => x.id === id);
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Paket Pembuatan Website?',
+                message: `Apakah Anda yakin ingin menghapus paket "${w?.name || id}" dari daftar harga?`,
+                confirmText: '🗑️ Ya, Hapus Paket',
+                onConfirm: () => {
+                    webPackages = webPackages.filter(wp => wp.id !== id);
+                    persistAllState();
+                    showToast('Paket pembuatan website telah dihapus', 'info');
+                }
+            });
         };
 
         window.openTestimonialModal = function(editId) {
@@ -4007,15 +4478,23 @@
                 rating: Number(document.getElementById('admRevRating').value) || 5,
                 comment: document.getElementById('admRevComment').value
             };
-            if (editId) {
-                const idx = testimonials.findIndex(t => t.id === editId);
-                if (idx >= 0) testimonials[idx] = item;
-            } else {
-                testimonials.unshift(item);
-            }
-            persistAllState();
-            closeUniversalModal();
-            showToast('Ulasan pelanggan berhasil disimpan!', 'success');
+            askActionConfirmation({
+                type: 'edit',
+                title: editId ? 'Simpan Perubahan Ulasan?' : 'Tambah Ulasan Pelanggan?',
+                message: `Simpan ulasan pelanggan atas nama "${item.name}" (${item.rating}/5 Bintang)?`,
+                confirmText: '💾 Ya, Simpan Ulasan',
+                onConfirm: () => {
+                    if (editId) {
+                        const idx = testimonials.findIndex(t => t.id === editId);
+                        if (idx >= 0) testimonials[idx] = item;
+                    } else {
+                        testimonials.unshift(item);
+                    }
+                    persistAllState();
+                    closeUniversalModal();
+                    showToast('Ulasan pelanggan berhasil disimpan!', 'success');
+                }
+            });
         };
 
         window.openFaqModal = function(editId) {
@@ -4036,27 +4515,53 @@
                 q: document.getElementById('faqQ').value,
                 a: document.getElementById('faqA').value
             };
-            if (editId) {
-                const idx = faqs.findIndex(f => f.id === editId);
-                if (idx >= 0) faqs[idx] = item;
-            } else {
-                faqs.push(item);
-            }
-            persistAllState();
-            closeUniversalModal();
-            showToast('Data FAQ berhasil disimpan!', 'success');
+            askActionConfirmation({
+                type: 'edit',
+                title: editId ? 'Simpan Perubahan FAQ?' : 'Tambah Pertanyaan FAQ Baru?',
+                message: `Simpan pertanyaan FAQ: "${item.q}"?`,
+                confirmText: '💾 Ya, Simpan FAQ',
+                onConfirm: () => {
+                    if (editId) {
+                        const idx = faqs.findIndex(f => f.id === editId);
+                        if (idx >= 0) faqs[idx] = item;
+                    } else {
+                        faqs.push(item);
+                    }
+                    persistAllState();
+                    closeUniversalModal();
+                    showToast('Data FAQ berhasil disimpan!', 'success');
+                }
+            });
         };
 
         window.deleteTestimonial = function(id) {
-            testimonials = testimonials.filter(t => t.id !== id);
-            persistAllState();
-            showToast('Ulasan dihapus', 'info');
+            const t = testimonials.find(x => x.id === id);
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Ulasan Pelanggan?',
+                message: `Apakah Anda yakin ingin menghapus ulasan dari "${t?.name || id}"?`,
+                confirmText: '🗑️ Ya, Hapus Ulasan',
+                onConfirm: () => {
+                    testimonials = testimonials.filter(tm => tm.id !== id);
+                    persistAllState();
+                    showToast('Ulasan dihapus', 'info');
+                }
+            });
         };
 
         window.deleteFaq = function(id) {
-            faqs = faqs.filter(f => f.id !== id);
-            persistAllState();
-            showToast('FAQ dihapus', 'info');
+            const f = faqs.find(x => x.id === id);
+            askActionConfirmation({
+                type: 'danger',
+                title: 'Hapus Pertanyaan FAQ?',
+                message: `Apakah Anda yakin ingin menghapus pertanyaan FAQ: "${f?.q || id}"?`,
+                confirmText: '🗑️ Ya, Hapus FAQ',
+                onConfirm: () => {
+                    faqs = faqs.filter(fq => fq.id !== id);
+                    persistAllState();
+                    showToast('FAQ dihapus', 'info');
+                }
+            });
         };
 
         window.openHeroCopyEditorModal = function() {
@@ -4089,14 +4594,28 @@
 
         window.saveHeroCopyForm = function(e) {
             e.preventDefault();
-            siteCopy.topbarPromo = document.getElementById('cpTopbar').value;
-            siteCopy.heroBadge = document.getElementById('cpBadge').value;
-            siteCopy.heroTitle = document.getElementById('cpTitle').value;
-            siteCopy.heroSubtitle = document.getElementById('cpSub').value;
-            siteCopy.bankInfo = document.getElementById('cpBank').value;
-            persistAllState();
-            closeUniversalModal();
-            showToast('Copywriting & Pengaturan Toko berhasil diperbarui!', 'success');
+            const newTopbar = document.getElementById('cpTopbar').value;
+            const newBadge = document.getElementById('cpBadge').value;
+            const newTitle = document.getElementById('cpTitle').value;
+            const newSub = document.getElementById('cpSub').value;
+            const newBank = document.getElementById('cpBank').value;
+
+            askActionConfirmation({
+                type: 'edit',
+                title: 'Simpan Perubahan Copywriting & Rekening?',
+                message: 'Apakah Anda yakin ingin memperbarui teks promosi Beranda dan informasi rekening pembayaran toko?',
+                confirmText: '💾 Ya, Simpan Perubahan',
+                onConfirm: () => {
+                    siteCopy.topbarPromo = newTopbar;
+                    siteCopy.heroBadge = newBadge;
+                    siteCopy.heroTitle = newTitle;
+                    siteCopy.heroSubtitle = newSub;
+                    siteCopy.bankInfo = newBank;
+                    persistAllState();
+                    closeUniversalModal();
+                    showToast('Copywriting & Pengaturan Toko berhasil diperbarui!', 'success');
+                }
+            });
         };
 
         window.importDatabaseJson = function(e) {
@@ -4106,16 +4625,24 @@
             reader.onload = function(evt) {
                 try {
                     const d = JSON.parse(evt.target.result);
-                    if (Array.isArray(d.products)) products = d.products;
-                    if (Array.isArray(d.services)) services = d.services;
-                    if (Array.isArray(d.webPackages)) webPackages = d.webPackages;
-                    if (Array.isArray(d.testimonials)) testimonials = d.testimonials;
-                    if (Array.isArray(d.faqs)) faqs = d.faqs;
-                    if (Array.isArray(d.orders)) orders = d.orders;
-                    if (Array.isArray(d.crmTickets)) crmTickets = d.crmTickets;
-                    if (d.siteCopy) siteCopy = { ...siteCopy, ...d.siteCopy };
-                    persistAllState();
-                    showToast('Database JSON berhasil dipulihkan!', 'success');
+                    askActionConfirmation({
+                        type: 'edit',
+                        title: 'Konfirmasi Restore / Import Database JSON?',
+                        message: `Apakah Anda yakin ingin menimpa data saat ini dengan isi file "${file.name}"?`,
+                        confirmText: '📂 Ya, Pulihkan Database',
+                        onConfirm: () => {
+                            if (Array.isArray(d.products)) products = d.products;
+                            if (Array.isArray(d.services)) services = d.services;
+                            if (Array.isArray(d.webPackages)) webPackages = d.webPackages;
+                            if (Array.isArray(d.testimonials)) testimonials = d.testimonials;
+                            if (Array.isArray(d.faqs)) faqs = d.faqs;
+                            if (Array.isArray(d.orders)) orders = d.orders;
+                            if (Array.isArray(d.crmTickets)) crmTickets = d.crmTickets;
+                            if (d.siteCopy) siteCopy = { ...siteCopy, ...d.siteCopy };
+                            persistAllState();
+                            showToast('Database JSON berhasil dipulihkan!', 'success');
+                        }
+                    });
                 } catch (err) {
                     showToast('Format file JSON tidak valid', 'warn');
                 }
@@ -4144,13 +4671,22 @@
             renderFaqSection();
             renderRecentOrderChips();
             renderComparePage();
-            renderAdminCommandCenter();
+            if (currentUser?.role === 'admin') {
+                renderAdminCommandCenter();
+            }
         }
 
-        // Keyboard Shortcut Alt + Shift + A for Secret Admin
+        // Keyboard Shortcut Alt + Shift + A for Secret Admin & Escape to Close Modals
         window.addEventListener('keydown', (e) => {
             if (e.altKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
                 triggerSecretAdminAccess();
+            } else if (e.key === 'Escape') {
+                const confirmModal = document.getElementById('actionConfirmModal');
+                if (confirmModal && !confirmModal.classList.contains('hidden')) {
+                    closeActionConfirmModal();
+                    return;
+                }
+                closeUniversalModal();
             }
         });
 
@@ -4188,8 +4724,250 @@
         window.addEventListener('resize', autoCalibrateScreenLayout);
         window.addEventListener('orientationchange', autoCalibrateScreenLayout);
 
+        // ==================== PROGRESSIVE WEB APP (PWA) ENGINE ====================
+        let deferredPwaPrompt = null;
+        let isPwaInstalled = false;
+
+        function generatePwaAppIconDataUrl(size = 512) {
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+
+                // Background rounded gradient
+                const grad = ctx.createLinearGradient(0, 0, size, size);
+                grad.addColorStop(0, '#4f46e5');
+                grad.addColorStop(0.55, '#6366f1');
+                grad.addColorStop(1, '#06b6d4');
+
+                const radius = Math.round(size * 0.22);
+                ctx.beginPath();
+                ctx.moveTo(radius, 0);
+                ctx.lineTo(size - radius, 0);
+                ctx.quadraticCurveTo(size, 0, size, radius);
+                ctx.lineTo(size, size - radius);
+                ctx.quadraticCurveTo(size, size, size - radius, size);
+                ctx.lineTo(radius, size);
+                ctx.quadraticCurveTo(0, size, 0, size - radius);
+                ctx.lineTo(0, radius);
+                ctx.quadraticCurveTo(0, 0, radius, 0);
+                ctx.closePath();
+                ctx.fillStyle = grad;
+                ctx.fill();
+
+                // Subtle inner border
+                ctx.lineWidth = Math.max(4, Math.round(size * 0.02));
+                ctx.strokeStyle = 'rgba(255,255,255,0.22)';
+                ctx.stroke();
+
+                // Text JL
+                ctx.fillStyle = '#ffffff';
+                ctx.font = `800 ${Math.round(size * 0.44)}px "Space Grotesk", "Plus Jakarta Sans", sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('JL', size / 2, size * 0.52);
+
+                return canvas.toDataURL('image/png');
+            } catch (e) {
+                return '';
+            }
+        }
+
+        function initPwaCapabilities() {
+            // 1. Check if already running in standalone installed mode
+            if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+                isPwaInstalled = true;
+                document.getElementById('headerInstallPwaBtn')?.classList.add('hidden');
+                document.getElementById('pwaInstallBanner')?.classList.add('hidden');
+            }
+
+            // 2. Build Dynamic Web App Manifest Blob
+            try {
+                const icon192 = generatePwaAppIconDataUrl(192);
+                const icon512 = generatePwaAppIconDataUrl(512);
+                const appleIconEl = document.getElementById('pwaAppleTouchIcon');
+                if (appleIconEl && icon192) appleIconEl.href = icon192;
+
+                const startUrl = window.location.origin + window.location.pathname;
+                const manifestObj = {
+                    id: startUrl,
+                    name: 'JAKBAR LAPTOP — Toko Laptop Grade A+ & Klinik Service',
+                    short_name: 'JAKBAR LAPTOP',
+                    description: 'Toko Jual Beli Laptop Second Grade A+ Lulus 40 Titik QC, Klinik Service & Jasa Pembuatan Website di Kebon Jeruk, Jakarta Barat.',
+                    start_url: startUrl,
+                    scope: startUrl,
+                    display: 'standalone',
+                    orientation: 'portrait-primary',
+                    background_color: '#060913',
+                    theme_color: '#060913',
+                    categories: ['shopping', 'business', 'utilities'],
+                    icons: [
+                        {
+                            src: icon192 || 'https://placehold.co/192x192/4f46e5/ffffff.png?text=JL',
+                            sizes: '192x192',
+                            type: 'image/png',
+                            purpose: 'any maskable'
+                        },
+                        {
+                            src: icon512 || 'https://placehold.co/512x512/4f46e5/ffffff.png?text=JL',
+                            sizes: '512x512',
+                            type: 'image/png',
+                            purpose: 'any maskable'
+                        }
+                    ]
+                };
+
+                const manifestBlob = new Blob([JSON.stringify(manifestObj)], { type: 'application/manifest+json' });
+                const manifestUrl = URL.createObjectURL(manifestBlob);
+                const manifestLink = document.getElementById('pwaManifestLink');
+                if (manifestLink) manifestLink.setAttribute('href', manifestUrl);
+            } catch (err) {}
+
+            // 3. Register Offline-Ready Service Worker (Safe fallback for iframe/blob environments)
+            if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
+                try {
+                    const swCode = `
+                        const CACHE_NAME = 'jakbar-laptop-pwa-v1';
+                        self.addEventListener('install', (event) => {
+                            self.skipWaiting();
+                        });
+                        self.addEventListener('activate', (event) => {
+                            event.waitUntil(self.clients.claim());
+                        });
+                        self.addEventListener('fetch', (event) => {
+                            if (event.request.method !== 'GET') return;
+                            event.respondWith(
+                                fetch(event.request)
+                                    .then((res) => {
+                                        const resClone = res.clone();
+                                        caches.open(CACHE_NAME).then((cache) => {
+                                            cache.put(event.request, resClone);
+                                        }).catch(() => {});
+                                        return res;
+                                    })
+                                    .catch(() => caches.match(event.request))
+                            );
+                        });
+                    `;
+                    const swBlob = new Blob([swCode], { type: 'application/javascript' });
+                    const swUrl = URL.createObjectURL(swBlob);
+                    navigator.serviceWorker.register(swUrl).catch(() => {});
+                } catch (e) {}
+            }
+
+            // 4. Listen for Native `beforeinstallprompt` Event (Chrome / Edge / Android)
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPwaPrompt = e;
+                if (!isPwaInstalled && sessionStorage.getItem('pwa_banner_dismissed') !== '1') {
+                    document.getElementById('pwaInstallBanner')?.classList.remove('hidden');
+                }
+            });
+
+            // 5. Listen for `appinstalled` Event
+            window.addEventListener('appinstalled', () => {
+                isPwaInstalled = true;
+                deferredPwaPrompt = null;
+                document.getElementById('pwaInstallBanner')?.classList.add('hidden');
+                document.getElementById('headerInstallPwaBtn')?.classList.add('hidden');
+                showToast('🎉 Aplikasi JAKBAR LAPTOP berhasil terinstal di perangkat Anda!', 'success');
+            });
+
+            // Show install banner on mobile if not dismissed & not standalone
+            if (!isPwaInstalled && window.innerWidth < 1024 && sessionStorage.getItem('pwa_banner_dismissed') !== '1') {
+                setTimeout(() => {
+                    document.getElementById('pwaInstallBanner')?.classList.remove('hidden');
+                }, 1500);
+            }
+        }
+
+        window.dismissPwaBanner = function() {
+            sessionStorage.setItem('pwa_banner_dismissed', '1');
+            document.getElementById('pwaInstallBanner')?.classList.add('hidden');
+        };
+
+        window.triggerPwaInstall = async function() {
+            if (isPwaInstalled) {
+                showToast('Aplikasi JAKBAR LAPTOP sudah terinstal di perangkat Anda!', 'success');
+                return;
+            }
+
+            // Native 1-Click Install Prompt if available
+            if (deferredPwaPrompt) {
+                try {
+                    deferredPwaPrompt.prompt();
+                    const { outcome } = await deferredPwaPrompt.userChoice;
+                    if (outcome === 'accepted') {
+                        deferredPwaPrompt = null;
+                        document.getElementById('pwaInstallBanner')?.classList.add('hidden');
+                        showToast('Menginstal Aplikasi JAKBAR LAPTOP...', 'success');
+                    }
+                    return;
+                } catch (err) {}
+            }
+
+            // Smart Interactive Guide Modal for iOS Safari / Mobile Browsers / Desktop
+            const ua = navigator.userAgent || '';
+            const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+
+            openUniversalModal('📲 Install Aplikasi JAKBAR LAPTOP (PWA)', `
+                <div class="space-y-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-gradient-to-r from-indigo-950/80 to-emerald-950/60 border border-emerald-500/40 flex items-center gap-3.5">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center font-display font-bold text-white text-lg shrink-0 shadow-lg">
+                            JL
+                        </div>
+                        <div>
+                            <div class="font-display font-bold text-white text-sm">Aplikasi Web Resmi JAKBAR LAPTOP</div>
+                            <p class="text-slate-300 text-[11px] mt-0.5">Hemat memori (tanpa download puluhan MB), akses instan dari layar utama HP/Laptop, dan mendukung mode hemat kuota.</p>
+                        </div>
+                    </div>
+
+                    ${isIOS ? `
+                        <div class="p-4 rounded-2xl bg-slate-900 border border-indigo-500/40 space-y-2.5">
+                            <div class="font-bold text-indigo-300 text-sm">🍎 Cara Install di iPhone / iPad (Safari):</div>
+                            <ol class="space-y-2 text-slate-200 list-decimal list-inside">
+                                <li>Ketuk ikon <strong>Bagikan / Share</strong> <span class="px-2 py-0.5 rounded bg-slate-800 text-cyan-300 font-mono">⬆️</span> di bagian bawah browser Safari.</li>
+                                <li>Geser ke bawah lalu pilih menu <strong>"Tambah ke Layar Utama" (Add to Home Screen)</strong> <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-bold">➕</span>.</li>
+                                <li>Ketuk <strong>Tambah (Add)</strong> di pojok kanan atas. Ikon <strong>JL</strong> akan langsung muncul di layar utama iPhone Anda!</li>
+                            </ol>
+                        </div>
+                    ` : `
+                        <div class="p-4 rounded-2xl bg-slate-900 border border-emerald-500/40 space-y-2.5">
+                            <div class="font-bold text-emerald-300 text-sm">🤖 Cara Install 1-Klik di Android (Chrome) & Laptop/PC:</div>
+                            <ol class="space-y-2 text-slate-200 list-decimal list-inside">
+                                <li>Di HP Android: Ketuk ikon menu <strong>Titik Tiga (⋮)</strong> di pojok kanan atas browser Chrome, lalu pilih <strong>"Instal Aplikasi"</strong> atau <strong>"Tambahkan ke Layar Utama"</strong>.</li>
+                                <li>Di Komputer / Laptop: Klik ikon <strong>Install (📥)</strong> di sebelah kanan kolom alamat URL browser Chrome/Edge.</li>
+                                <li>Konfirmasi klik <strong>Instal</strong>, dan aplikasi <strong>JAKBAR LAPTOP</strong> siap dibuka langsung seperti aplikasi native!</li>
+                            </ol>
+                        </div>
+                    `}
+
+                    <div class="grid grid-cols-3 gap-2 text-center pt-1">
+                        <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+                            <div class="font-bold text-emerald-400">⚡ Instan</div>
+                            <div class="text-[10px] text-slate-400">Tanpa Loading Berat</div>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+                            <div class="font-bold text-cyan-400">🪶 < 1 MB</div>
+                            <div class="text-[10px] text-slate-400">Hemat Memori HP</div>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+                            <div class="font-bold text-indigo-400">🔒 Aman</div>
+                            <div class="text-[10px] text-slate-400">Resmi Toko Kebon Jeruk</div>
+                        </div>
+                    </div>
+
+                    <button onclick="closeUniversalModal()" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold">
+                        👍 Mengerti, Siap Digunakan
+                    </button>
+                </div>
+            `);
+        };
+
         window.addEventListener('DOMContentLoaded', () => {
             autoCalibrateScreenLayout();
+            initPwaCapabilities();
             renderAllSections();
             initFirebaseConnection();
 
