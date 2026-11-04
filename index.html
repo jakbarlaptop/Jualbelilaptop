@@ -248,6 +248,7 @@
                 <button onclick="switchPage('home')" data-nav="home" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold transition-all bg-indigo-600 text-white whitespace-nowrap">🏠 Beranda</button>
                 <button onclick="switchPage('catalog')" data-nav="catalog" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">💻 Katalog</button>
                 <button onclick="switchPage('service')" data-nav="service" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">🛠️ Jasa Service</button>
+                <button onclick="switchPage('webdev')" data-nav="webdev" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">🌐 Buat Website</button>
                 <button onclick="switchPage('tracking')" data-nav="tracking" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">📦 Lacak & Garansi</button>
                 <button onclick="switchPage('testimonials')" data-nav="testimonials" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">⭐ Ulasan</button>
                 <button onclick="switchPage('faq')" data-nav="faq" class="nav-pill px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white transition-all whitespace-nowrap">🛡️ Garansi & FAQ</button>
@@ -284,6 +285,7 @@
                 <button onclick="switchPage('home'); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-slate-800/80 text-white">🏠 Beranda</button>
                 <button onclick="switchPage('catalog'); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-slate-800/80 text-white">💻 Katalog Unit</button>
                 <button onclick="switchPage('service'); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-slate-800/80 text-white">🛠️ Jasa Service</button>
+                <button onclick="switchPage('webdev'); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-indigo-950/90 border border-indigo-500/40 text-indigo-300">🌐 Jasa Buat Website</button>
                 <button onclick="switchPage('tracking'); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-slate-800/80 text-white">📦 Lacak Pesanan</button>
                 <button onclick="switchPage('testimonials'); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-slate-800/80 text-white">⭐ Ulasan Pembeli</button>
                 <button onclick="switchPage('faq'); toggleMobileMenu();" class="touch-btn justify-start gap-2 px-3 py-2.5 rounded-xl bg-slate-800/80 text-white">🛡️ Garansi & FAQ</button>
@@ -328,6 +330,9 @@
                         <button onclick="switchPage('catalog')" class="touch-btn shimmer-btn px-6 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white font-bold text-sm shadow-xl shadow-indigo-600/30 gap-2">
                             <span>🚀 Jelajahi Katalog Unit</span>
                             <span>→</span>
+                        </button>
+                        <button onclick="switchPage('webdev')" class="touch-btn px-5 py-3.5 rounded-2xl bg-purple-950/70 hover:bg-purple-900/70 text-purple-300 border border-purple-500/40 font-semibold text-sm gap-2">
+                            <span>🌐 Jasa Pembuatan Website</span>
                         </button>
                         <button onclick="openSmartFinderModal()" class="touch-btn px-5 py-3.5 rounded-2xl bg-slate-800/90 hover:bg-slate-700 text-indigo-300 border border-indigo-500/40 font-semibold text-sm gap-2">
                             <span>🤖 Asisten Pilih Laptop</span>
@@ -641,6 +646,132 @@
             </div>
         </section>
 
+        <!-- ==================== PAGE 3B: JASA PEMBUATAN WEBSITE (WEBDEV) ==================== -->
+        <section id="page-webdev" class="page-section hidden space-y-8">
+            <!-- Hero Header Banner -->
+            <div class="glass-card bg-gradient-to-r from-indigo-950/80 via-slate-900 to-purple-950/70 border-indigo-500/40">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div class="space-y-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold border border-indigo-500/30">🌐 DIVISI IT & SOFTWARE DEVELOPMENT JAKBAR LAPTOP</span>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold">⚡ Responsif HP & Desktop</span>
+                            <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold">🗄️ Tersedia Sistem Database Cloud</span>
+                        </div>
+                        <h1 class="section-title-fluid font-display font-bold text-white">
+                            Jasa Pembuatan Website Profesional: Dari Landing Page Sederhana hingga Sistem Database & Kasir Enterprise
+                        </h1>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+                            Ingin punya website elegan seperti Toko JAKBAR LAPTOP ini untuk bisnis Anda? Tim developer kami siap membangun website mulai dari profil UMKM sederhana hingga aplikasi web ber-database real-time lengkap dengan Panel Admin, Kasir POS, dan Nota Berstempel!
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 shrink-0">
+                        <button onclick="openWebPackageModal()" class="admin-only-control hidden touch-btn px-4 py-2.5 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold shadow-lg">
+                            + Tambah Paket Website (Admin)
+                        </button>
+                        <a href="#webOrderFormSection" class="touch-btn shimmer-btn px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 text-white text-xs font-bold shadow-lg">
+                            🚀 Konsultasi & Pesan Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Tier Pills (Simple vs Database) -->
+            <div class="glass-card space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">PILIH SESUAI KEBUTUHAN BISNIS ANDA</span>
+                        <h2 class="text-lg sm:text-xl font-display font-bold text-white">Daftar Paket & Harga Pembuatan Website Transparan</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5" id="webTierFilterButtons">
+                        <button onclick="setWebTierFilter('Semua')" data-webtier="Semua" class="web-tier-chip px-3.5 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white">🔥 Semua Paket</button>
+                        <button onclick="setWebTierFilter('Sederhana / Statis')" data-webtier="Sederhana / Statis" class="web-tier-chip px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white">📄 Website Sederhana (Non-Database)</button>
+                        <button onclick="setWebTierFilter('Dinamis + Database')" data-webtier="Dinamis + Database" class="web-tier-chip px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white">🗄️ Website + Database Cloud & Admin</button>
+                        <button onclick="setWebTierFilter('Custom Enterprise')" data-webtier="Custom Enterprise" class="web-tier-chip px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white">🏢 Sistem Custom & Kasir POS</button>
+                    </div>
+                </div>
+
+                <!-- Packages Grid -->
+                <div id="webPackagesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-2"></div>
+            </div>
+
+            <!-- Comparison Table: Website Sederhana vs Website Database -->
+            <div class="glass-card border-indigo-500/30 space-y-4 overflow-x-auto">
+                <div>
+                    <span class="text-xs font-bold text-emerald-400 uppercase">📊 PERBANDINGAN ARSITEKTUR</span>
+                    <h3 class="text-base sm:text-lg font-display font-bold text-white">Apa Bedanya Website Sederhana vs Website dengan Database?</h3>
+                </div>
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="border-b border-slate-800 text-slate-400">
+                            <th class="p-3">Fitur & Kemampuan</th>
+                            <th class="p-3 text-cyan-300 font-bold">📄 Website Sederhana (Statis / Landing Page)</th>
+                            <th class="p-3 text-emerald-300 font-bold">🗄️ Website + Database Cloud (Dinamis & CMS Admin)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/80 text-slate-200">
+                        <tr>
+                            <td class="p-3 font-semibold text-white">Cara Update Produk / Konten</td>
+                            <td class="p-3 text-slate-300">Melalui perubahan kode HTML atau dibantu tim admin</td>
+                            <td class="p-3 text-emerald-300 font-semibold">✅ Bisa tambah, edit & hapus sendiri dari Panel Admin kapan saja</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-white">Penyimpanan Data Transaksi & Pelanggan</td>
+                            <td class="p-3 text-slate-300">Langsung diarahkan ke chat WhatsApp tanpa riwayat di web</td>
+                            <td class="p-3 text-emerald-300 font-semibold">✅ Tersimpan otomatis di Database (Ada Invoice, Lacak Pesanan & Kasir POS)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-white">Fitur Interaktif Pelanggan</td>
+                            <td class="p-3 text-slate-300">Tampilan informasi produk, galeri foto, peta lokasi & tombol WA</td>
+                            <td class="p-3 text-emerald-300 font-semibold">✅ Keranjang Belanja, Lacak Status Garansi/Order, Form Ulasan Otomatis</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-white">Cocok Untuk Bisnis</td>
+                            <td class="p-3 text-slate-300">UMKM baru, promosi jasa, portofolio pribadi, brosur online</td>
+                            <td class="p-3 text-emerald-300 font-semibold">✅ Toko ritel, showroom, klinik service, distributor & perusahaan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Order / Consultation Form for Website Creation -->
+            <div id="webOrderFormSection" class="glass-card border-emerald-500/30 bg-gradient-to-br from-slate-900 via-indigo-950/30 to-slate-900">
+                <h3 class="text-lg sm:text-xl font-display font-bold text-white mb-1">📝 Form Pemesanan & Konsultasi Pembuatan Website</h3>
+                <p class="text-xs text-slate-400 mb-5">Pilih paket atau ceritakan kebutuhan sistem website Anda. Tim programmer kami akan mengirimkan rincian proposal & demo gratis.</p>
+                <form onsubmit="submitWebsiteOrder(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                    <div>
+                        <label class="block font-semibold text-slate-300 mb-1">Nama Anda / Nama Usaha *</label>
+                        <input id="webOrdName" required type="text" placeholder="Contoh: Hendra — Toko Berkah Jaya" class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-300 mb-1">Nomor WhatsApp Aktif *</label>
+                        <input id="webOrdWa" required type="tel" placeholder="Contoh: 081234567890" class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-300 mb-1">Paket Website yang Diminati *</label>
+                        <input id="webOrdPackage" required type="text" placeholder="Klik tombol 'Pilih Paket' di atas atau ketik manual" class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-300 mb-1">Kebutuhan Sistem Database</label>
+                        <select id="webOrdDbType" class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                            <option value="Website Sederhana (Tanpa Database / Statis Cepat)">📄 Website Sederhana (Tanpa Database)</option>
+                            <option value="Website + Database Cloud (Bisa Edit Katalog & Admin)">🗄️ Website + Database Cloud (CMS Admin)</option>
+                            <option value="Full Sistem E-Commerce + Database + Kasir POS + Nota">🏢 Full Sistem Database + Kasir POS + Nota Resmi</option>
+                            <option value="Ingin Konsultasi Dulu dengan Programmer">💬 Ingin Konsultasi Dulu dengan Programmer</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block font-semibold text-slate-300 mb-1">Catatan Fitur yang Diinginkan *</label>
+                        <textarea id="webOrdNotes" required rows="3" placeholder="Jelaskan jenis usaha Anda dan fitur apa saja yang dibutuhkan (misal: katalog produk, tombol WA, halaman lacak pesanan, cetak nota, dll.)..." class="w-full px-3.5 py-3 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white"></textarea>
+                    </div>
+                    <div class="sm:col-span-2 flex justify-end">
+                        <button type="submit" class="touch-btn shimmer-btn px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-emerald-500 text-white font-bold text-sm shadow-xl">
+                            🚀 Kirim Permintaan Pembuatan Website via WA
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
         <!-- ==================== PAGE 4: LACAK PESANAN & GARANSI ==================== -->
         <section id="page-tracking" class="page-section hidden space-y-6">
             <div class="glass-card border-indigo-500/30 space-y-4">
@@ -905,7 +1036,7 @@
                     <button onclick="switchAdminTab('orders')" data-admtab="orders" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">💳 Transaksi & Kasir POS</button>
                     <button onclick="switchAdminTab('qc')" data-admtab="qc" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">🔬 Checklist 40 Titik QC</button>
                     <button onclick="switchAdminTab('crm')" data-admtab="crm" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">💬 Tiket & Link Kepuasan WA</button>
-                    <button onclick="switchAdminTab('inventory')" data-admtab="inventory" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">📦 Katalog, Service & FAQ</button>
+                    <button onclick="switchAdminTab('inventory')" data-admtab="inventory" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">📦 Katalog, Service, Web & FAQ</button>
                     <button onclick="switchAdminTab('settings')" data-admtab="settings" class="adm-tab-btn px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300">🎨 Copywriting & Preset</button>
                 </div>
             </div>
@@ -936,6 +1067,7 @@
                 <ul class="space-y-2 text-slate-400">
                     <li><button onclick="switchPage('catalog')" class="hover:text-white">💻 Katalog Unit Grade A+</button></li>
                     <li><button onclick="switchPage('service')" class="hover:text-white">🛠️ Jasa Service & Upgrade</button></li>
+                    <li><button onclick="switchPage('webdev')" class="hover:text-indigo-400 text-indigo-300 font-semibold">🌐 Jasa Pembuatan Website & Database</button></li>
                     <li><button onclick="switchPage('tracking')" class="hover:text-white">📦 Lacak Pesanan & Garansi</button></li>
                     <li><button onclick="switchPage('testimonials')" class="hover:text-white">⭐ Ulasan Pelanggan</button></li>
                     <li><button onclick="switchPage('survey')" class="hover:text-emerald-400 text-emerald-300 font-semibold">💖 Form Kepuasan Pelanggan</button></li>
@@ -990,13 +1122,13 @@
             <span class="text-sm sm:text-base leading-none">🛠️</span>
             <span class="mt-0.5 truncate">Service</span>
         </button>
+        <button onclick="switchPage('webdev')" data-dock="webdev" class="dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-slate-400 font-medium text-[10px] truncate">
+            <span class="text-sm sm:text-base leading-none">🌐</span>
+            <span class="mt-0.5 truncate">Buat Web</span>
+        </button>
         <button onclick="switchPage('tracking')" data-dock="tracking" class="dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-slate-400 font-medium text-[10px] truncate">
             <span class="text-sm sm:text-base leading-none">📦</span>
             <span class="mt-0.5 truncate">Lacak</span>
-        </button>
-        <button onclick="switchPage('faq')" data-dock="faq" class="dock-btn flex flex-col items-center justify-center py-1 px-1 rounded-xl text-slate-400 font-medium text-[10px] truncate">
-            <span class="text-sm sm:text-base leading-none">🛡️</span>
-            <span class="mt-0.5 truncate">FAQ</span>
         </button>
     </div>
 
@@ -1088,6 +1220,72 @@
         // Production State: Convincing Customer Reviews & Comprehensive FAQs Ready Out-of-the-Box
         let products = [];
         let services = [];
+        let webPackages = [
+            {
+                id: 'web-101',
+                name: 'Paket Basic — Landing Page UMKM Sederhana',
+                tier: 'Sederhana / Statis',
+                databaseTech: 'Tanpa Database (HTML5 + Tailwind Cepat & Ringan)',
+                price: 750000,
+                duration: 'Estimasi 2 – 3 Hari Kerja',
+                badge: 'Cocok Untuk Pemula',
+                features: [
+                    '1 Halaman Panjang Responsif (Mobile & Desktop Friendly)',
+                    'Banner Hero Promosi + Galeri Produk / Layanan',
+                    'Tombol Order Langsung ke WhatsApp Otomatis',
+                    'Integrasi Titik Lokasi Google Maps Toko',
+                    'Gratis Setup Hosting Cepat & Sertifikat SSL (HTTPS)'
+                ]
+            },
+            {
+                id: 'web-102',
+                name: 'Paket Bisnis — Website Company Profile & Katalog',
+                tier: 'Sederhana / Statis',
+                databaseTech: 'Statis Modern + Penyimpanan Lokal / JSON Config',
+                price: 1500000,
+                duration: 'Estimasi 3 – 5 Hari Kerja',
+                badge: 'Populer UMKM',
+                features: [
+                    'Hingga 5 Menu Halaman (Beranda, Profil, Katalog, FAQ, Kontak)',
+                    'Fitur Pencarian & Filter Kategori Produk Cepat',
+                    'Formulir Konsultasi / Booking Langsung ke WhatsApp',
+                    'Desain Elegan Modern (Dark / Light Mode)',
+                    'Optimasi SEO Dasar Agar Mudah Ditemukan di Google'
+                ]
+            },
+            {
+                id: 'web-103',
+                name: 'Paket Dynamic Pro — Toko Online + Database Cloud & Admin',
+                tier: 'Dinamis + Database',
+                databaseTech: 'Database Cloud Real-Time (Firebase Firestore / MySQL)',
+                price: 2850000,
+                duration: 'Estimasi 5 – 7 Hari Kerja',
+                badge: 'Best Seller Database',
+                features: [
+                    'Terhubung Database Cloud Real-Time (Data Tersimpan Permanen)',
+                    'Panel Login Admin (Tambah, Edit & Hapus Produk Sendiri)',
+                    'Keranjang Belanja & Checkout Invoice Otomatis',
+                    'Halaman Lacak Status Pesanan Pelanggan Real-Time',
+                    'Fitur Ulasan Pelanggan Otomatis Tampil di Beranda'
+                ]
+            },
+            {
+                id: 'web-104',
+                name: 'Paket Enterprise — Full E-Commerce, Kasir POS & Nota Berstempel',
+                tier: 'Custom Enterprise',
+                databaseTech: 'Full Cloud Database + Sistem Kasir POS & CRM Terpadu',
+                price: 4500000,
+                duration: 'Estimasi 7 – 12 Hari Kerja',
+                badge: 'Selevel Web JAKBAR LAPTOP',
+                features: [
+                    'Semua Fitur Paket Dynamic Pro + Database Cloud Penuh',
+                    'Pusat Kendali Admin 6 Tab + Kasir POS Toko Offline/Online',
+                    'Cetak Nota Faktur Resmi Berstempel Digital (Anti-Copy & Anti-Edit)',
+                    'Sistem Checklist QC / Tracking Garansi & Tiket Service',
+                    'Backup & Restore Database JSON 1-Klik + Garansi Maintenance'
+                ]
+            }
+        ];
         let testimonials = [
             {
                 id: 'rev-101',
@@ -1188,7 +1386,7 @@
             promoDiscount: 150000
         };
         let analytics = {
-            views: { home: 1, catalog: 0, service: 0, tracking: 0, testimonials: 0, faq: 0, about: 0 },
+            views: { home: 1, catalog: 0, service: 0, webdev: 0, tracking: 0, testimonials: 0, faq: 0, about: 0 },
             devices: { mobile: 0, desktop: 0 },
             logs: []
         };
@@ -1198,6 +1396,7 @@
         let compareList = [];
         let currentUser = null;
         let activeCatalogCategory = 'Semua';
+        let activeWebTierFilter = 'Semua';
         let activeAdminTab = 'overview';
         let selectedQcTargetId = '';
         let footerSecretClicks = 0;
@@ -1237,6 +1436,7 @@
                 localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({
                     products,
                     services,
+                    webPackages,
                     testimonials,
                     faqs,
                     orders,
@@ -1254,6 +1454,7 @@
                 const d = JSON.parse(raw);
                 if (Array.isArray(d.products)) products = d.products;
                 if (Array.isArray(d.services)) services = d.services;
+                if (Array.isArray(d.webPackages) && d.webPackages.length > 0) webPackages = d.webPackages;
                 if (Array.isArray(d.testimonials) && d.testimonials.length > 0) testimonials = d.testimonials;
                 if (Array.isArray(d.faqs) && d.faqs.length > 0) faqs = d.faqs;
                 if (Array.isArray(d.orders)) orders = d.orders;
@@ -1273,6 +1474,7 @@
                     await window._fbSetDoc(stateRef, {
                         products: JSON.stringify(products),
                         services: JSON.stringify(services),
+                        webPackages: JSON.stringify(webPackages),
                         testimonials: JSON.stringify(testimonials),
                         faqs: JSON.stringify(faqs),
                         orders: JSON.stringify(orders),
@@ -1344,6 +1546,10 @@
                     const d = snap.data();
                     if (d.products) products = JSON.parse(d.products);
                     if (d.services) services = JSON.parse(d.services);
+                    if (d.webPackages) {
+                        const parsedWeb = JSON.parse(d.webPackages);
+                        if (Array.isArray(parsedWeb) && parsedWeb.length > 0) webPackages = parsedWeb;
+                    }
                     if (d.testimonials) {
                         const parsedRev = JSON.parse(d.testimonials);
                         if (Array.isArray(parsedRev) && parsedRev.length > 0) testimonials = parsedRev;
@@ -1370,7 +1576,7 @@
 
         // Page Navigation
         window.switchPage = function(pageId) {
-            const pages = ['home', 'catalog', 'service', 'tracking', 'testimonials', 'faq', 'about', 'compare', 'survey', 'admin'];
+            const pages = ['home', 'catalog', 'service', 'webdev', 'tracking', 'testimonials', 'faq', 'about', 'compare', 'survey', 'admin'];
             pages.forEach(p => {
                 const el = document.getElementById(`page-${p}`);
                 if (el) el.classList.toggle('hidden', p !== pageId);
@@ -1690,6 +1896,129 @@
                 </div>
             `).join('');
         }
+
+        // Website Creation Packages Filtering & Rendering
+        window.setWebTierFilter = function(tier) {
+            activeWebTierFilter = tier;
+            document.querySelectorAll('.web-tier-chip').forEach(btn => {
+                const isMatch = btn.getAttribute('data-webtier') === tier;
+                btn.className = isMatch
+                    ? 'web-tier-chip px-3.5 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white'
+                    : 'web-tier-chip px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white';
+            });
+            renderWebDevSection();
+        };
+
+        function renderWebDevSection() {
+            const grid = document.getElementById('webPackagesGrid');
+            if (!grid) return;
+
+            const filtered = webPackages.filter(w => activeWebTierFilter === 'Semua' || w.tier === activeWebTierFilter);
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full glass-card text-center py-10 space-y-2">
+                        <div class="text-2xl">🌐</div>
+                        <div class="font-bold text-white text-sm">Belum ada paket website pada kategori ini.</div>
+                        ${currentUser?.role === 'admin' ? `<button onclick="openWebPackageModal()" class="mt-2 px-4 py-2 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold">+ Tambah Paket Website</button>` : ''}
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(w => {
+                const isDb = (w.tier || '').includes('Database') || (w.tier || '').includes('Enterprise');
+                const tierBadgeClass = isDb
+                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+                    : 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40';
+                const featList = Array.isArray(w.features) ? w.features : (w.features || '').split(',').map(s => s.trim()).filter(Boolean);
+
+                return `
+                    <div class="glass-card flex flex-col justify-between space-y-4 border ${isDb ? 'border-indigo-500/40' : 'border-slate-800'}">
+                        <div class="space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-1.5">
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold border ${tierBadgeClass}">
+                                    ${isDb ? '🗄️ ' : '📄 '}${w.tier || 'Paket Website'}
+                                </span>
+                                ${w.badge ? `<span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/30">★ ${w.badge}</span>` : ''}
+                            </div>
+
+                            <div>
+                                <h3 class="font-display font-bold text-white text-base sm:text-lg leading-snug">${w.name}</h3>
+                                <div class="text-2xl font-display font-bold text-emerald-400 mt-1.5">${formatRupiah(w.price)}</div>
+                                <div class="text-[11px] text-slate-400 mt-0.5">⏱️ ${w.duration || '3–7 Hari Kerja'}</div>
+                            </div>
+
+                            <div class="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs">
+                                <span class="text-slate-400 font-semibold">Teknologi & Database:</span>
+                                <div class="text-indigo-300 font-bold mt-0.5">${w.databaseTech || 'HTML5 + Tailwind CSS'}</div>
+                            </div>
+
+                            <div class="space-y-1.5 pt-1">
+                                <div class="text-xs font-bold text-slate-300">Fitur yang Didapatkan:</div>
+                                ${featList.map(f => `
+                                    <div class="flex items-start gap-2 text-xs text-slate-200 leading-relaxed">
+                                        <span class="text-emerald-400 font-bold shrink-0">✔</span>
+                                        <span>${f}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-800/80 space-y-2">
+                            <button onclick="selectWebPackageOrder('${w.id}')" class="w-full touch-btn py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-bold shadow-lg">
+                                🚀 Pilih Paket Ini & Konsultasi
+                            </button>
+                            ${currentUser?.role === 'admin' ? `
+                                <div class="grid grid-cols-2 gap-1.5">
+                                    <button onclick="openWebPackageModal('${w.id}')" class="px-2.5 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[11px] font-bold">✏️ Edit Paket</button>
+                                    <button onclick="deleteWebPackage('${w.id}')" class="px-2.5 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 text-[11px] font-bold">🗑️ Hapus</button>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        window.selectWebPackageOrder = function(id) {
+            const w = webPackages.find(x => x.id === id);
+            if (!w) return;
+            const pkgInput = document.getElementById('webOrdPackage');
+            const dbSelect = document.getElementById('webOrdDbType');
+            if (pkgInput) pkgInput.value = `${w.name} (${formatRupiah(w.price)})`;
+            if (dbSelect) {
+                if ((w.tier || '').includes('Sederhana')) dbSelect.selectedIndex = 0;
+                else if ((w.tier || '').includes('Database')) dbSelect.selectedIndex = 1;
+                else if ((w.tier || '').includes('Enterprise')) dbSelect.selectedIndex = 2;
+            }
+            document.getElementById('webOrderFormSection')?.scrollIntoView({ behavior: 'smooth' });
+            showToast(`Paket "${w.name}" dipilih! Silakan lengkapi form di bawah.`, 'success');
+        };
+
+        window.submitWebsiteOrder = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('webOrdName').value.trim();
+            const wa = document.getElementById('webOrdWa').value.trim();
+            const pkg = document.getElementById('webOrdPackage').value.trim();
+            const dbType = document.getElementById('webOrdDbType').value;
+            const notes = document.getElementById('webOrdNotes').value.trim();
+
+            const ticketId = 'WEB-' + Date.now().toString().slice(-5);
+            crmTickets.unshift({
+                id: ticketId,
+                type: 'Order Pembuatan Website',
+                name,
+                contact: wa,
+                detail: `${pkg} [${dbType}] — ${notes}`,
+                time: new Date().toLocaleString('id-ID')
+            });
+            persistAllState();
+            showToast(`Permintaan Website (${ticketId}) tercatat! Mengarahkan ke WhatsApp...`, 'success');
+
+            const message = `Halo Tim IT *JAKBAR LAPTOP* 🌐,\n\nSaya *${name}* (Tiket: *${ticketId}*) ingin memesan / berkonsultasi mengenai *Jasa Pembuatan Website*:\n\n📦 *Paket Pilihan:* ${pkg}\n🗄️ *Tipe Sistem:* ${dbType}\n📝 *Kebutuhan Fitur:* ${notes}\n📞 *No. WA:* ${wa}\n\nMohon info rincian dan langkah selanjutnya. Terima kasih!`;
+            window.open(`https://wa.me/6282298688189?text=${encodeURIComponent(message)}`, '_blank');
+        };
 
         // Testimonials & FAQ Rendering
         function renderTestimonialsSection() {
@@ -2995,10 +3324,34 @@
                         `).join('')}
                     </div>
 
+                    <!-- 2B. Paket Jasa Pembuatan Website & Database -->
+                    <div class="glass-card space-y-4 border-indigo-500/30">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div>
+                                <h3 class="font-display font-bold text-white text-base">🌐 3. Manajemen Paket Jasa Pembuatan Website & Database (${webPackages.length})</h3>
+                                <p class="text-xs text-slate-400">Atur harga paket website sederhana (statis) hingga website ber-database cloud & kasir POS.</p>
+                            </div>
+                            <button onclick="openWebPackageModal()" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold">+ Tambah Paket Website</button>
+                        </div>
+                        ${webPackages.length === 0 ? `<p class="text-xs text-slate-400">Belum ada paket pembuatan website.</p>` : webPackages.map(w => `
+                            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                                <div class="space-y-0.5">
+                                    <div class="font-bold text-white">${w.name} <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-[10px] ml-1">${w.tier}</span></div>
+                                    <div class="text-slate-400">Teknologi: <strong class="text-cyan-300">${w.databaseTech}</strong> • Durasi: ${w.duration}</div>
+                                    <div class="text-emerald-400 font-bold mt-0.5">${formatRupiah(w.price)}</div>
+                                </div>
+                                <div class="flex items-center gap-1.5 shrink-0">
+                                    <button onclick="openWebPackageModal('${w.id}')" class="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">✏️ Edit</button>
+                                    <button onclick="deleteWebPackage('${w.id}')" class="px-3 py-1.5 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-bold">🗑️ Hapus</button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
                     <!-- 3. Ulasan Pelanggan -->
                     <div class="glass-card space-y-4">
                         <div class="flex flex-wrap items-center justify-between gap-2">
-                            <h3 class="font-display font-bold text-white text-base">⭐ 3. Manajemen Ulasan & Testimoni Pelanggan (${testimonials.length})</h3>
+                            <h3 class="font-display font-bold text-white text-base">⭐ 4. Manajemen Ulasan & Testimoni Pelanggan (${testimonials.length})</h3>
                             <button onclick="openTestimonialModal()" class="px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold">+ Tambah Ulasan</button>
                         </div>
                         ${testimonials.length === 0 ? `<p class="text-xs text-slate-400">Belum ada ulasan.</p>` : testimonials.map(t => `
@@ -3018,7 +3371,7 @@
                     <!-- 4. Pertanyaan FAQ & Garansi -->
                     <div class="glass-card space-y-4">
                         <div class="flex flex-wrap items-center justify-between gap-2">
-                            <h3 class="font-display font-bold text-white text-base">🛡️ 4. Manajemen Pertanyaan FAQ & Ketentuan Garansi (${faqs.length})</h3>
+                            <h3 class="font-display font-bold text-white text-base">🛡️ 5. Manajemen Pertanyaan FAQ & Ketentuan Garansi (${faqs.length})</h3>
                             <button onclick="openFaqModal()" class="px-3.5 py-2 rounded-xl bg-indigo-600 text-white text-xs font-bold">+ Tambah FAQ</button>
                         </div>
                         ${faqs.length === 0 ? `<p class="text-xs text-slate-400">Belum ada daftar FAQ.</p>` : faqs.map((f, i) => `
@@ -3554,6 +3907,82 @@
             showToast('Paket service dihapus', 'info');
         };
 
+        // Admin CRUD for Website Creation Packages
+        window.openWebPackageModal = function(editId) {
+            const existing = webPackages.find(w => w.id === editId);
+            const featText = existing
+                ? (Array.isArray(existing.features) ? existing.features.join('\n') : existing.features)
+                : '';
+            openUniversalModal(existing ? '✏️ Edit Paket Pembuatan Website' : '+ Tambah Paket Pembuatan Website Baru', `
+                <form onsubmit="saveWebPackageForm(event, '${existing?.id || ''}')" class="space-y-3 text-xs">
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Nama Paket Website *</label>
+                        <input id="webPkgName" required type="text" value="${existing?.name || ''}" placeholder="Contoh: Paket Dynamic Pro — Toko Online + Database Cloud" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Kategori / Tingkat Sistem *</label>
+                            <select id="webPkgTier" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                                ${['Sederhana / Statis', 'Dinamis + Database', 'Custom Enterprise'].map(t => `<option value="${t}" ${existing?.tier === t ? 'selected' : ''}>${t}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Harga Paket (Rp) *</label>
+                            <input id="webPkgPrice" required type="number" value="${existing?.price || ''}" placeholder="Contoh: 2850000" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Teknologi & Jenis Database *</label>
+                            <input id="webPkgDbTech" required type="text" value="${existing?.databaseTech || ''}" placeholder="Contoh: Firebase Firestore / MySQL / Tanpa Database" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-300 mb-1">Estimasi Waktu Pengerjaan *</label>
+                            <input id="webPkgDuration" required type="text" value="${existing?.duration || 'Estimasi 3 – 7 Hari Kerja'}" placeholder="Contoh: Estimasi 5 – 7 Hari Kerja" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Label Lencana / Badge (Opsional)</label>
+                        <input id="webPkgBadge" type="text" value="${existing?.badge || ''}" placeholder="Contoh: Best Seller Database / Cocok Untuk Pemula" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-300 mb-1">Daftar Fitur Paket (1 baris = 1 fitur) *</label>
+                        <textarea id="webPkgFeatures" required rows="5" placeholder="Tulis 1 fitur per baris..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-white">${featText}</textarea>
+                    </div>
+                    <button type="submit" class="w-full touch-btn py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold">💾 Simpan Paket Website</button>
+                </form>
+            `);
+        };
+
+        window.saveWebPackageForm = function(e, editId) {
+            e.preventDefault();
+            const item = {
+                id: editId || ('web-' + Date.now()),
+                name: document.getElementById('webPkgName').value.trim(),
+                tier: document.getElementById('webPkgTier').value,
+                price: Number(document.getElementById('webPkgPrice').value || 0),
+                databaseTech: document.getElementById('webPkgDbTech').value.trim(),
+                duration: document.getElementById('webPkgDuration').value.trim(),
+                badge: document.getElementById('webPkgBadge').value.trim(),
+                features: document.getElementById('webPkgFeatures').value.split('\n').map(s => s.trim()).filter(Boolean)
+            };
+            if (editId) {
+                const idx = webPackages.findIndex(w => w.id === editId);
+                if (idx >= 0) webPackages[idx] = item;
+            } else {
+                webPackages.push(item);
+            }
+            persistAllState();
+            closeUniversalModal();
+            showToast('Paket pembuatan website berhasil disimpan!', 'success');
+        };
+
+        window.deleteWebPackage = function(id) {
+            webPackages = webPackages.filter(w => w.id !== id);
+            persistAllState();
+            showToast('Paket pembuatan website telah dihapus', 'info');
+        };
+
         window.openTestimonialModal = function(editId) {
             const existing = testimonials.find(t => t.id === editId);
             openUniversalModal(existing ? '✏️ Edit Ulasan Pelanggan' : '+ Tambah Ulasan Pelanggan', `
@@ -3679,6 +4108,7 @@
                     const d = JSON.parse(evt.target.result);
                     if (Array.isArray(d.products)) products = d.products;
                     if (Array.isArray(d.services)) services = d.services;
+                    if (Array.isArray(d.webPackages)) webPackages = d.webPackages;
                     if (Array.isArray(d.testimonials)) testimonials = d.testimonials;
                     if (Array.isArray(d.faqs)) faqs = d.faqs;
                     if (Array.isArray(d.orders)) orders = d.orders;
@@ -3694,7 +4124,7 @@
         };
 
         window.exportDatabaseJson = function() {
-            const payload = JSON.stringify({ products, services, testimonials, faqs, orders, crmTickets, siteCopy }, null, 2);
+            const payload = JSON.stringify({ products, services, webPackages, testimonials, faqs, orders, crmTickets, siteCopy }, null, 2);
             const blob = new Blob([payload], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -3709,6 +4139,7 @@
             renderHomeSection();
             renderCatalog();
             renderServiceSection();
+            renderWebDevSection();
             renderTestimonialsSection();
             renderFaqSection();
             renderRecentOrderChips();
